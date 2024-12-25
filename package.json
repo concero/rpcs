@@ -1,0 +1,36 @@
+{
+  "name": "concero-rpcs",
+  "version": "1.0.0",
+  "description": "A service for upkeeping a list of healthy RPC endpoints for multiple chains",
+  "main": "index.ts",
+  "scripts": {
+    "build": "swc src -d dist",
+    "lint": "eslint --ext .ts src/",
+    "lint:fix": "eslint --ext .ts src/ --fix",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/concero/rpcs.git"
+  },
+  "keywords": [
+    "rpcs"
+  ],
+  "author": "Concero GMBH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/concero/rpcs/issues"
+  },
+  "homepage": "https://github.com/concero/rpcs#readme",
+  "dependencies": {
+    "acorn": "^8.14.0",
+    "acorn-walk": "^8.3.4",
+    "node-cron": "^3.0.3",
+    "simple-git": "^3.27.0",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "swc": "^1.0.11"
+  }
+}
