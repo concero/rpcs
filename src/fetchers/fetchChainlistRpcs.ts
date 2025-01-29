@@ -1,4 +1,4 @@
-import config from "../config";
+import config from "../constants/config";
 import parseChainlistRpcs from "../parsers/parseChainlistRpcs";
 
 export default async function fetchExtraRpcs() {

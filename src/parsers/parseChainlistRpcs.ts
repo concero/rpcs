@@ -1,6 +1,6 @@
 import { parse } from "acorn";
 import { simple } from "acorn-walk";
-import config from "../config";
+import config from "../constants/config";
 interface JSNode {
     type: string;
     [key: string]: any;

@@ -1,5 +1,5 @@
 import runService from "./serviceRunner";
-import config from "./config";
+import config from "./constants/config";
 import cron from "node-cron";
 
 try {
