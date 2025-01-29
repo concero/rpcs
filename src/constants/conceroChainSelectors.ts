@@ -6,10 +6,12 @@ export const chainIdToSelector: { [key: string]: number } = {
   "42161": 42161, // Arbitrum
   "43114": 43114, // Avalanche
   // Testnets
-  "421613": 42162, // Arbitrum Sepolia
-  "84531": 8454, // Base Sepolia
-  "11155420": 11, // Optimism Sepolia
-  "5000": 138, // Polygon Amoy
+  "11155111": 11155111, // Ethereum Sepolia
+  "421614": 421614, // Arbitrum Sepolia
+  "84532": 84532, // Base Sepolia
+  "11155420": 11155420, // Optimism Sepolia
+  "80002": 80002, // Polygon Amoy
+  "43113": 43113, // Avalanche Fuji
 };
 
 export const selectorToChainId: { [key: number]: string } = Object.entries(
