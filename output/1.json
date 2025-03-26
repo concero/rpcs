@@ -1,19 +1,18 @@
 {
   "id": "1",
   "urls": [
-    "eth-mainnet.public.blastapi.io",
-    "singapore.rpc.blxrbdn.com/",
-    "eth.rpc.blxrbdn.com/",
-    "rpc.payload.de",
-    "eth.merkle.io",
-    "eth-pokt.nodies.app",
+    "gateway.tenderly.co/public/mainnet",
     "eth.blockrazor.xyz",
-    "virginia.rpc.blxrbdn.com/",
-    "ethereum-rpc.publicnode.com",
-    "rpc.mevblocker.io",
-    "ethereum.blockpi.network/v1/rpc/public",
-    "core.gashawk.io/rpc",
-    "api.securerpc.com/v1"
+    "rpc.eth.gateway.fm",
+    "eth-mainnet.public.blastapi.io",
+    "uk.rpc.blxrbdn.com/",
+    "eth.meowrpc.com",
+    "rpc.flashbots.net/",
+    "eth.rpc.blxrbdn.com/",
+    "eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
+    "1rpc.io/eth",
+    "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+    "eth.nodeconnect.org/"
   ],
   "chainSelector": 1
 }
