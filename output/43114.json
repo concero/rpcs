@@ -1,5 +1,21 @@
 {
   "id": "43114",
+<<<<<<< HEAD
   "urls": ["avalanche-c-chain-rpc.publicnode.com", "rpc.ankr.com/avalanche"],
+=======
+  "urls": [
+    "endpoints.omniatech.io/v1/avax/mainnet/public",
+    "0xrpc.io/avax",
+    "avalanche-c-chain-rpc.publicnode.com",
+    "ava-mainnet.public.blastapi.io/ext/bc/C/rpc",
+    "avalanche-mainnet.gateway.tenderly.co",
+    "avax-pokt.nodies.app/ext/bc/C/rpc",
+    "avalanche.api.onfinality.io/public/ext/bc/C/rpc",
+    "avax.meowrpc.com",
+    "api.zan.top/avax-mainnet/ext/bc/C/rpc",
+    "1rpc.io/avax/c",
+    "avalanche.drpc.org"
+  ],
+>>>>>>> 933e6b0 (Update chain RPC files 2025-03-26T14:05:54.648Z)
   "chainSelector": 43114
 }

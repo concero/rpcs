@@ -1,23 +1,22 @@
 {
   "id": "10",
   "urls": [
-    "rpc.ankr.com/optimism",
-    "gateway.tenderly.co/public/optimism",
     "go.getblock.io/e8a75f8dcf614861becfbcb185be6eb4",
-    "opt-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
+    "gateway.tenderly.co/public/optimism",
+    "api.zan.top/opt-mainnet",
     "op-pokt.nodies.app",
-    "optimism-mainnet.public.blastapi.io",
+    "endpoints.omniatech.io/v1/op/mainnet/public",
     "optimism.blockpi.network/v1/rpc/public",
-    "optimism-rpc.publicnode.com",
+    "optimism-mainnet.public.blastapi.io",
     "optimism.meowrpc.com",
-    "optimism.api.onfinality.io/public",
+    "optimism-rpc.publicnode.com",
     "0xrpc.io/op",
+    "optimism.drpc.org",
     "optimism.gateway.tenderly.co",
     "1rpc.io/op",
-    "endpoints.omniatech.io/v1/op/mainnet/public",
     "optimism.lava.build",
-    "optimism.drpc.org",
-    "api.zan.top/opt-mainnet"
+    "opt-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
+    "optimism.api.onfinality.io/public"
   ],
   "chainSelector": 10
 }

@@ -1,6 +1,7 @@
 {
   "id": "1",
   "urls": [
+<<<<<<< HEAD
     "gateway.tenderly.co/public/mainnet",
     "eth.blockrazor.xyz",
     "rpc.eth.gateway.fm",
@@ -13,6 +14,36 @@
     "1rpc.io/eth",
     "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
     "eth.nodeconnect.org/"
+=======
+    "ethereum-rpc.publicnode.com",
+    "eth-mainnet.public.blastapi.io",
+    "eth-pokt.nodies.app",
+    "ethereum.blockpi.network/v1/rpc/public",
+    "rpc.payload.de",
+    "api.securerpc.com/v1",
+    "rpc.eth.gateway.fm",
+    "rpc.flashbots.net/",
+    "mainnet.gateway.tenderly.co",
+    "eth.drpc.org",
+    "gateway.tenderly.co/public/mainnet",
+    "eth.meowrpc.com",
+    "eth.rpc.blxrbdn.com/",
+    "rpc.mevblocker.io",
+    "eth.merkle.io",
+    "core.gashawk.io/rpc",
+    "1rpc.io/eth",
+    "uk.rpc.blxrbdn.com/",
+    "singapore.rpc.blxrbdn.com/",
+    "virginia.rpc.blxrbdn.com/",
+    "api.zan.top/eth-mainnet",
+    "eth.nodeconnect.org/",
+    "eth.blockrazor.xyz",
+    "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+    "0xrpc.io/eth",
+    "eth1.lava.build",
+    "endpoints.omniatech.io/v1/eth/mainnet/public",
+    "eth-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f"
+>>>>>>> 933e6b0 (Update chain RPC files 2025-03-26T14:05:54.648Z)
   ],
   "chainSelector": 1
 }
