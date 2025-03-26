@@ -3,9 +3,9 @@
   "urls": [
     "gateway.tenderly.co/public/sepolia",
     "0xrpc.io/sep",
-    "endpoints.omniatech.io/v1/eth/sepolia/public",
-    "eth-sepolia.public.blastapi.io",
     "sepolia.gateway.tenderly.co",
+    "eth-sepolia.public.blastapi.io",
+    "endpoints.omniatech.io/v1/eth/sepolia/public",
     "ethereum-sepolia-rpc.publicnode.com",
     "1rpc.io/sepolia",
     "eth-testnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",

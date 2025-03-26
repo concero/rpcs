@@ -2,24 +2,19 @@
   "id": "137",
   "urls": [
     "gateway.tenderly.co/public/polygon",
-<<<<<<< HEAD
-    "1rpc.io/matic"
-=======
     "go.getblock.io/02667b699f05444ab2c64f9bff28f027",
     "endpoints.omniatech.io/v1/matic/mainnet/public",
     "polygon.gateway.tenderly.co",
+    "polygon-mainnet.public.blastapi.io",
     "polygon.meowrpc.com",
     "polygon.lava.build",
-    "api.zan.top/polygon-mainnet",
-    "polygon.drpc.org",
-    "polygon-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
-    "polygon.api.onfinality.io/public",
-    "1rpc.io/matic",
     "polygon-pokt.nodies.app",
+    "polygon.drpc.org",
     "polygon-bor-rpc.publicnode.com",
-    "polygon-mainnet.public.blastapi.io",
-    "rpc-mainnet.matic.quiknode.pro"
->>>>>>> 933e6b0 (Update chain RPC files 2025-03-26T14:05:54.648Z)
+    "rpc-mainnet.matic.quiknode.pro",
+    "api.zan.top/polygon-mainnet",
+    "1rpc.io/matic",
+    "polygon.api.onfinality.io/public"
   ],
   "chainSelector": 137
 }

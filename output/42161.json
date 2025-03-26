@@ -2,14 +2,14 @@
   "id": "42161",
   "urls": [
     "endpoints.omniatech.io/v1/arbitrum/one/public",
+    "arbitrum-one.public.blastapi.io",
     "arbitrum.gateway.tenderly.co",
-    "arbitrum.blockpi.network/v1/rpc/public",
+    "arbitrum-one-rpc.publicnode.com",
+    "arbitrum.meowrpc.com",
     "arb-pokt.nodies.app",
     "arb1.lava.build",
-    "arbitrum-one.public.blastapi.io",
-    "arbitrum.meowrpc.com",
     "arbitrum.drpc.org",
-    "arbitrum-one-rpc.publicnode.com",
+    "arbitrum.blockpi.network/v1/rpc/public",
     "api.zan.top/arb-one",
     "1rpc.io/arb"
   ],

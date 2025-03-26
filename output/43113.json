@@ -3,8 +3,8 @@
   "urls": [
     "endpoints.omniatech.io/v1/avax/fuji/public",
     "avalanche-fuji-c-chain-rpc.publicnode.com",
-    "ava-testnet.public.blastapi.io/ext/bc/C/rpc",
     "avalanche-fuji.drpc.org",
+    "ava-testnet.public.blastapi.io/ext/bc/C/rpc",
     "api.zan.top/avax-fuji/ext/bc/C/rpc"
   ],
   "chainSelector": 43113

@@ -1,13 +1,9 @@
 {
   "id": "80002",
-<<<<<<< HEAD
-  "urls": ["polygon-amoy-bor-rpc.publicnode.com", "rpc.ankr.com/polygon_amoy"],
-=======
   "urls": [
     "polygon-amoy.gateway.tenderly.co",
     "polygon-amoy.drpc.org",
     "api.zan.top/polygon-amoy"
   ],
->>>>>>> 933e6b0 (Update chain RPC files 2025-03-26T14:05:54.648Z)
   "chainSelector": 80002
 }
