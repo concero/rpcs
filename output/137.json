@@ -2,19 +2,19 @@
   "id": "137",
   "urls": [
     "gateway.tenderly.co/public/polygon",
-    "go.getblock.io/02667b699f05444ab2c64f9bff28f027",
     "endpoints.omniatech.io/v1/matic/mainnet/public",
-    "polygon.gateway.tenderly.co",
-    "polygon-mainnet.public.blastapi.io",
-    "polygon.meowrpc.com",
+    "go.getblock.io/02667b699f05444ab2c64f9bff28f027",
     "polygon.lava.build",
+    "api.zan.top/polygon-mainnet",
+    "polygon.meowrpc.com",
+    "polygon.gateway.tenderly.co",
     "polygon-pokt.nodies.app",
-    "polygon.drpc.org",
     "polygon-bor-rpc.publicnode.com",
     "rpc-mainnet.matic.quiknode.pro",
-    "api.zan.top/polygon-mainnet",
+    "polygon.drpc.org",
     "1rpc.io/matic",
-    "polygon.api.onfinality.io/public"
+    "polygon.api.onfinality.io/public",
+    "polygon-mainnet.public.blastapi.io"
   ],
   "chainSelector": 137
 }

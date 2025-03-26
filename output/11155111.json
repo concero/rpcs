@@ -2,15 +2,14 @@
   "id": "11155111",
   "urls": [
     "gateway.tenderly.co/public/sepolia",
+    "endpoints.omniatech.io/v1/eth/sepolia/public",
     "0xrpc.io/sep",
     "sepolia.gateway.tenderly.co",
     "eth-sepolia.public.blastapi.io",
-    "endpoints.omniatech.io/v1/eth/sepolia/public",
     "ethereum-sepolia-rpc.publicnode.com",
-    "1rpc.io/sepolia",
-    "eth-testnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
     "api.zan.top/eth-sepolia",
-    "eth-sepolia.api.onfinality.io/public"
+    "eth-sepolia.api.onfinality.io/public",
+    "1rpc.io/sepolia"
   ],
   "chainSelector": 11155111
 }

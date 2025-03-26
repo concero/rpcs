@@ -2,16 +2,16 @@
   "id": "42161",
   "urls": [
     "endpoints.omniatech.io/v1/arbitrum/one/public",
+    "1rpc.io/arb",
+    "arbitrum.meowrpc.com",
+    "arbitrum.blockpi.network/v1/rpc/public",
+    "arb1.lava.build",
     "arbitrum-one.public.blastapi.io",
     "arbitrum.gateway.tenderly.co",
-    "arbitrum-one-rpc.publicnode.com",
-    "arbitrum.meowrpc.com",
     "arb-pokt.nodies.app",
-    "arb1.lava.build",
     "arbitrum.drpc.org",
-    "arbitrum.blockpi.network/v1/rpc/public",
-    "api.zan.top/arb-one",
-    "1rpc.io/arb"
+    "arbitrum-one-rpc.publicnode.com",
+    "api.zan.top/arb-one"
   ],
   "chainSelector": 42161
 }
