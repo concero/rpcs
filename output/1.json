@@ -1,20 +1,18 @@
 {
   "id": "1",
   "urls": [
-    "ethereum-rpc.publicnode.com",
     "gateway.tenderly.co/public/mainnet",
-    "virginia.rpc.blxrbdn.com/",
-    "eth-mainnet.public.blastapi.io",
-    "ethereum.blockpi.network/v1/rpc/public",
-    "rpc.mevblocker.io",
-    "eth.rpc.blxrbdn.com/",
-    "rpc.payload.de",
     "singapore.rpc.blxrbdn.com/",
-    "eth.drpc.org",
-    "eth.merkle.io",
-    "rpc.flashbots.net/",
-    "1rpc.io/eth",
-    "eth.nodeconnect.org/"
+    "rpc.payload.de",
+    "rpc.mevblocker.io",
+    "eth-pokt.nodies.app",
+    "ethereum-rpc.publicnode.com",
+    "eth.rpc.blxrbdn.com/",
+    "ethereum.blockpi.network/v1/rpc/public",
+    "eth.meowrpc.com",
+    "eth-mainnet.public.blastapi.io",
+    "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+    "eth1.lava.build"
   ],
   "chainSelector": 1
 }
