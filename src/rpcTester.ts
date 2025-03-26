@@ -1,7 +1,7 @@
 import http from "http";
 import https from "https";
 import config from "./constants/config";
-import { debug } from "./logger";
+import logger, { debug } from "./logger";
 import { HealthyRpc, RpcEndpoint } from "./types";
 
 const httpAgent = new http.Agent({ keepAlive: true });
@@ -15,6 +15,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
   let attempt = 0;
   const maxRetries = config.MAX_RETRIES;
 
+  debug(`Testing endpoint: ${endpoint.url}`);
   while (attempt <= maxRetries) {
     const start = Date.now();
     const controller = new AbortController();
@@ -33,6 +34,8 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
         signal: controller.signal,
         agent: endpoint.url.startsWith("https") ? httpsAgent : httpAgent,
       });
+      debug(`${endpoint.url} response status: ${response.status}`);
+
       clearTimeout(timeoutId);
 
       if (response.status === 429) {
@@ -43,6 +46,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
         }
         return null;
       }
+
 
       if (!response.ok) return null;
 

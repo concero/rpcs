@@ -7,7 +7,6 @@ import fetchChainlistRpcs from "./fetchers/fetchChainlistRpcs";
 import { debug, error, info } from "./logger";
 import { testRpcEndpoints } from "./rpcTester";
 import { ChainRpcOutput, HealthyRpc, RpcEndpoint } from "./types";
-
 export default async function runService() {
   try {
     info("Starting RPC service...");
@@ -15,15 +14,18 @@ export default async function runService() {
     const extraRpcs = await fetchChainlistRpcs();
     debug(`Found ${Object.keys(extraRpcs).length} chains to process`);
     const allEndpoints: RpcEndpoint[] = [];
+
     for (const chainId of Object.keys(extraRpcs)) {
       const { rpcs } = extraRpcs[chainId];
-      for (const rpc of rpcs as RpcEndpoint[]) {
+      for (const rpc of rpcs) {
+
         allEndpoints.push({
           chainId,
-          url: rpc.url,
+          url: rpc
         });
       }
     }
+
 
     const tested = await testRpcEndpoints(allEndpoints);
 

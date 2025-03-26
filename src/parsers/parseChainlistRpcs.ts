@@ -1,6 +1,8 @@
 import { parse } from "acorn";
 import { simple } from "acorn-walk";
 import config from "../constants/config";
+import { debug } from "../logger";
+
 interface JSNode {
     type: string;
     [key: string]: any;
@@ -21,6 +23,7 @@ function isWssUrl(value: any): boolean {
 
 function parseValue(node: JSNode): any {
     if (!node) return undefined;
+
     if (node.type === "ObjectExpression") {
         const obj: Record<string, any> = {};
         for (const prop of node.properties) {
@@ -37,19 +40,28 @@ function parseValue(node: JSNode): any {
         if (isWssUrl(obj)) return undefined;
         return obj;
     }
+
     if (node.type === "ArrayExpression") {
         const arr: any[] = [];
         for (const elem of node.elements) {
-            const val = parseValue(elem);
-            if (val !== undefined && !isWssUrl(val)) {
-                arr.push(val);
+            if (elem.type === "Literal" && typeof elem.value === "string") {
+                // Direct string RPC URL
+                arr.push(elem.value);
+            } else {
+                // Object RPC or other value
+                const val = parseValue(elem);
+                if (val !== undefined && !isWssUrl(val)) {
+                    arr.push(val);
+                }
             }
         }
         return arr;
     }
+
     if (node.type === "Literal") {
         return node.value;
     }
+
     return undefined;
 }
 
@@ -95,13 +107,40 @@ export default function parseChainlistRpcs(
         throw new Error("Parsed `extraRpcs` is not an object.");
     }
 
+    // Post-processing to ensure all RPC endpoints are properly formatted as strings
+    for (const chainId in parsed) {
+        if (parsed[chainId] && parsed[chainId].rpcs) {
+            debug(`Processing RPCs for chainId ${chainId}`);
+            debug(`Before processing: ${JSON.stringify(parsed[chainId].rpcs)}`);
+
+            // Transform the RPCs array to extract URLs from objects when needed
+            parsed[chainId].rpcs = parsed[chainId].rpcs.map((rpc: any) => {
+                if (typeof rpc === "string") {
+                    debug(`Found string RPC: ${rpc}`);
+                    return rpc;
+                } else if (rpc && typeof rpc === "object" && typeof rpc.url === "string") {
+                    debug(`Found object RPC with URL: ${rpc.url}`);
+                    return rpc.url;
+                } else {
+                    debug(`Found unknown RPC format: ${JSON.stringify(rpc)}`);
+                    return null;
+                }
+            }).filter(Boolean); // Remove any null entries
+
+            debug(`After processing: ${JSON.stringify(parsed[chainId].rpcs)}`);
+        }
+    }
+
     if (config.WHITELISTED_CHAIN_IDS.length === 0) {
         return parsed;
     }
 
-    return Object.fromEntries(
+    const result = Object.fromEntries(
         Object.entries(parsed).filter(([chainId]) =>
             config.WHITELISTED_CHAIN_IDS.includes(parseInt(chainId, 10)),
         ),
     );
+
+    debug(`Chain: ${JSON.stringify(result, null, 2)}`);
+    return result;
 }
