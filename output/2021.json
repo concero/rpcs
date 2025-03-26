@@ -1,0 +1,10 @@
+{
+  "id": "2021",
+  "urls": [
+    "edgeware-evm1.jelliedowl.net/",
+    "edgeware-evm0.jelliedowl.net/",
+    "edgeware-evm3.jelliedowl.net/",
+    "edgeware-evm2.jelliedowl.net/"
+  ],
+  "chainSelector": 2021
+}
