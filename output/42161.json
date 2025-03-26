@@ -1,0 +1,19 @@
+{
+  "id": "42161",
+  "urls": [
+    "endpoints.omniatech.io/v1/arbitrum/one/public",
+    "1rpc.io/arb",
+    "api.zan.top/arb-one",
+    "arbitrum-one.public.blastapi.io",
+    "arb-pokt.nodies.app",
+    "arbitrum.gateway.tenderly.co",
+    "arbitrum-one-rpc.publicnode.com",
+    "arbitrum.meowrpc.com",
+    "arbitrum.blockpi.network/v1/rpc/public",
+    "arb1.arbitrum.io/rpc",
+    "arb1.lava.build",
+    "arbitrum.rpc.subquery.network/public",
+    "arbitrum.drpc.org"
+  ],
+  "chainSelector": 42161
+}

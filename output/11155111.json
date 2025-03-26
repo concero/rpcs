@@ -1,0 +1,16 @@
+{
+  "id": "11155111",
+  "urls": [
+    "gateway.tenderly.co/public/sepolia",
+    "eth-sepolia.public.blastapi.io",
+    "endpoints.omniatech.io/v1/eth/sepolia/public",
+    "0xrpc.io/sep",
+    "ethereum-sepolia-rpc.publicnode.com",
+    "sepolia.gateway.tenderly.co",
+    "1rpc.io/sepolia",
+    "api.zan.top/eth-sepolia",
+    "ethereum-sepolia.rpc.subquery.network/public",
+    "eth-sepolia.api.onfinality.io/public"
+  ],
+  "chainSelector": 11155111
+}
