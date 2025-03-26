@@ -1,0 +1,18 @@
+{
+  "id": "1",
+  "urls": [
+    "eth-mainnet.public.blastapi.io",
+    "ethereum.blockpi.network/v1/rpc/public",
+    "eth.rpc.blxrbdn.com/",
+    "virginia.rpc.blxrbdn.com/",
+    "eth.blockrazor.xyz",
+    "ethereum-rpc.publicnode.com",
+    "eth.meowrpc.com",
+    "rpc.flashbots.net/",
+    "1rpc.io/eth",
+    "eth.nodeconnect.org/",
+    "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+    "rpc.mevblocker.io"
+  ],
+  "chainSelector": 1
+}
