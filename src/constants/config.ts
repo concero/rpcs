@@ -9,7 +9,7 @@ export default {
   HEALTHY_RPCS_FILE: "output/healthy-rpcs.json",
   CRON_SCHEDULE: process.env.CRON_SCHEDULE || "0 0 * * *", // daily midnight
   CONCURRENCY_LIMIT: parseInt(process.env.CONCURRENCY_LIMIT || "100", 10),
-  WHITELISTED_CHAIN_IDS: [1, 137],
+  WHITELISTED_CHAIN_IDS: [1, 137, 81, 2021],
   RETRY_DELAY_MS: 12000,
   MAX_RETRIES: 1,
   OUTPUT_DIR: "output/",

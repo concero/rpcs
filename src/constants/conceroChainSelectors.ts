@@ -12,6 +12,8 @@ export const chainIdToSelector: { [key: string]: number } = {
   "11155420": 11155420, // Optimism Sepolia
   "80002": 80002, // Polygon Amoy
   "43113": 43113, // Avalanche Fuji
+  "81": 81, // Astar testnet
+  "2021": 2021, // Ronin testnet
 };
 
 export const selectorToChainId: { [key: number]: string } = Object.entries(
