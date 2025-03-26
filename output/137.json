@@ -1,9 +1,6 @@
 {
   "id": "137",
   "urls": [
-    "gateway.tenderly.co/public/polygon",
-    "polygon-pokt.nodies.app",
-    "polygon.drpc.org",
     "go.getblock.io/02667b699f05444ab2c64f9bff28f027"
   ],
   "chainSelector": 137

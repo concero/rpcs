@@ -1,19 +1,19 @@
 {
   "id": "1",
   "urls": [
-    "gateway.tenderly.co/public/mainnet",
-    "ethereum.blockpi.network/v1/rpc/public",
-    "singapore.rpc.blxrbdn.com/",
-    "eth-pokt.nodies.app",
     "eth-mainnet.public.blastapi.io",
-    "rpc.payload.de",
-    "ethereum-rpc.publicnode.com",
-    "eth.meowrpc.com",
-    "eth1.lava.build",
+    "singapore.rpc.blxrbdn.com/",
     "eth.rpc.blxrbdn.com/",
+    "rpc.payload.de",
+    "eth.merkle.io",
+    "eth-pokt.nodies.app",
+    "eth.blockrazor.xyz",
+    "virginia.rpc.blxrbdn.com/",
+    "ethereum-rpc.publicnode.com",
     "rpc.mevblocker.io",
-    "go.getblock.io/aefd01aa907c4805ba3c00a9e5b48c6b",
-    "openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet"
+    "ethereum.blockpi.network/v1/rpc/public",
+    "core.gashawk.io/rpc",
+    "api.securerpc.com/v1"
   ],
   "chainSelector": 1
 }
