@@ -1,9 +1,0 @@
-{
-  "id": "80002",
-  "urls": [
-    "polygon-amoy.gateway.tenderly.co",
-    "polygon-amoy.drpc.org",
-    "api.zan.top/polygon-amoy"
-  ],
-  "chainSelector": 80002
-}
