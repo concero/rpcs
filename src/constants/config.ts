@@ -1,5 +1,5 @@
 export default {
-  WHITELISTED_CHAIN_IDS: [],
+  WHITELISTED_CHAIN_IDS: [1, 10, 81, 137, 2021, 6342, 8453, 42161, 43113, 43114, 80002, 84532, 421614, 11155111, 11155420],
   LOG_LEVEL: process.env.LOG_LEVEL || "info", // "error" | "warn" | "info" | "debug"
   LOG_DIR: "logs",
   LOG_MAX_FILES: "7d",
