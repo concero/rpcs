@@ -1,5 +1,5 @@
 {
-    "id": "59141",
-    "urls": ["linea-sepolia-rpc.publicnode.com"],
-    "chainSelector": 59141
+  "id": "59141",
+  "urls": ["rpc.sepolia.linea.build"],
+  "chainSelector": 59141
 }
