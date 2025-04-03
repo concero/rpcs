@@ -3,9 +3,8 @@
   "urls": [
     "endpoints.omniatech.io/v1/op/sepolia/public",
     "optimism-sepolia.gateway.tenderly.co",
-    "sepolia.optimism.io",
-    "api.zan.top/opt-sepolia",
-    "optimism-sepolia.api.onfinality.io/public"
+    "optimism-sepolia.api.onfinality.io/public",
+    "api.zan.top/opt-sepolia"
   ],
   "chainSelector": 11155420
 }
