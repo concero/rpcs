@@ -1,5 +1,5 @@
 {
-    "id": "10200",
-    "urls": ["rpc.chiadochain.net"],
-    "chainSelector": 10200
+  "id": "10200",
+  "urls": ["gnosis-chiado-rpc.publicnode.com"],
+  "chainSelector": 10200
 }
