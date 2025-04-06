@@ -3,7 +3,6 @@
   "urls": [
     "rpc.ankr.com/polygon_amoy",
     "polygon-amoy.gateway.tenderly.co",
-    "polygon-amoy.drpc.org",
     "api.zan.top/polygon-amoy"
   ],
   "chainSelector": 80002

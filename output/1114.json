@@ -1,5 +1,5 @@
 {
   "id": "1114",
-  "urls": ["core-testnet.drpc.org"],
+  "urls": ["rpc.test2.btcs.network"],
   "chainSelector": 1114
 }
