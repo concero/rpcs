@@ -1,5 +1,5 @@
 {
-    "id": "421614",
-    "urls": ["arbitrum-sepolia-rpc.publicnode.com", "arbitrum-sepolia.drpc.org"],
-    "chainSelector": 421614
+  "id": "421614",
+  "urls": ["arbitrum-sepolia-rpc.publicnode.com"],
+  "chainSelector": 421614
 }
