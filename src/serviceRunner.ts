@@ -1,31 +1,54 @@
 import fs from "fs";
 import path from "path";
 import simpleGit from "simple-git";
-import { getChainSelector } from "./constants/conceroChainSelectors";
 import config from "./constants/config";
+import { mainnetNetworks, testnetNetworks } from "@concero/contract-utils";
 import fetchChainlistRpcs from "./fetchers/fetchChainlistRpcs";
 import { debug, error, info } from "./logger";
 import { testRpcEndpoints } from "./rpcTester";
 import { ChainRpcOutput, HealthyRpc, RpcEndpoint } from "./types";
+
 export default async function runService() {
   try {
     info("Starting RPC service...");
 
+    // Determine which networks to use based on config
+    const conceroNetworks = config.USE_MAINNET ? mainnetNetworks : testnetNetworks;
+
+    // Get chainIds from conceroNetworks
+    const supportedChainIds = Object.values(conceroNetworks).map(network =>
+      network.chainId.toString(),
+    );
+
+    info(
+      `Using ${config.USE_MAINNET ? "mainnet" : "testnet"} networks. Supported chain IDs: ${supportedChainIds.join(", ")}`,
+    );
+
     const extraRpcs = await fetchChainlistRpcs();
-    debug(`Found ${Object.keys(extraRpcs).length} chains to process`);
+
+    // Filter by supported chain IDs and exclude ignored chains
+    const filteredRpcs = Object.fromEntries(
+      Object.entries(extraRpcs).filter(
+        ([chainId]) =>
+          supportedChainIds.includes(chainId) &&
+          !config.IGNORE_CHAIN_IDS.includes(parseInt(chainId, 10)),
+      ),
+    );
+
+    debug(
+      `Found ${Object.keys(filteredRpcs).length} chains to process out of ${Object.keys(extraRpcs).length} total chains`,
+    );
     const allEndpoints: RpcEndpoint[] = [];
 
-    for (const chainId of Object.keys(extraRpcs)) {
-      const { rpcs } = extraRpcs[chainId];
+    for (const chainId of Object.keys(filteredRpcs)) {
+      const { rpcs } = filteredRpcs[chainId];
       for (const rpc of rpcs) {
-
         allEndpoints.push({
           chainId,
-          url: rpc
+          url: rpc,
         });
       }
     }
-
 
     const tested = await testRpcEndpoints(allEndpoints);
 
@@ -53,11 +76,21 @@ export default async function runService() {
         responseTimeMap.set(rpc.url, rpc.responseTime);
       });
 
-      const chainSelector = getChainSelector(chainId);
+      // Find the network in conceroNetworks
+      const network = Object.values(conceroNetworks).find(
+        network => network.chainId.toString() === chainId,
+      );
+
+      if (!network) {
+        debug(`No network configuration found for chain ID ${chainId}`);
+        continue;
+      }
+
       const chainOutput: ChainRpcOutput = {
         id: chainId,
         urls: rpcs.map(rpc => rpc.url.replace("https://", "")),
-        ...(chainSelector !== undefined && { chainSelector }),
+        chainSelector: network.chainSelector,
+        name: network.name,
       };
 
       fs.writeFileSync(outputPath, JSON.stringify(chainOutput, null, 2));

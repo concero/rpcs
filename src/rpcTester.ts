@@ -1,7 +1,7 @@
 import http from "http";
 import https from "https";
 import config from "./constants/config";
-import logger, { debug } from "./logger";
+import { debug } from "./logger";
 import { HealthyRpc, RpcEndpoint } from "./types";
 
 const httpAgent = new http.Agent({ keepAlive: true });
@@ -46,7 +46,6 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
         }
         return null;
       }
-
 
       if (!response.ok) return null;
 
