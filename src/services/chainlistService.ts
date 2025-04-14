@@ -1,10 +1,17 @@
 import { parse } from "acorn";
 import { simple } from "acorn-walk";
-import { debug } from "../logger";
+import { debug } from "../utils/logger";
+import config from "../constants/config";
 
 interface JSNode {
   type: string;
   [key: string]: any;
+}
+
+export async function fetchChainlistRpcs() {
+  const response = await fetch(config.CHAINLIST_URL);
+  const data = await response.text();
+  return data;
 }
 
 function isWssUrl(value: any): boolean {
@@ -63,7 +70,7 @@ function parseValue(node: JSNode): any {
   return undefined;
 }
 
-export default function parseChainlistRpcs(jsFileContent: string): Record<string, any> {
+export function parseChainlistRpcs(jsFileContent: string): Record<string, any> {
   const marker = "export const extraRpcs =";
   const idx = jsFileContent.indexOf(marker);
   const contentToParse = idx !== -1 ? jsFileContent.substring(idx) : jsFileContent;
@@ -104,7 +111,6 @@ export default function parseChainlistRpcs(jsFileContent: string): Record<string
   for (const chainId in parsed) {
     if (parsed[chainId] && parsed[chainId].rpcs) {
       debug(`Processing RPCs for chainId ${chainId}`);
-      debug(`Before processing: ${JSON.stringify(parsed[chainId].rpcs)}`);
 
       // Transform the RPCs array to extract URLs from objects when needed
       parsed[chainId].rpcs = parsed[chainId].rpcs
@@ -122,7 +128,7 @@ export default function parseChainlistRpcs(jsFileContent: string): Record<string
         })
         .filter(Boolean); // Remove any null entries
 
-      debug(`After processing: ${JSON.stringify(parsed[chainId].rpcs)}`);
+      debug(`Parsed Chainlist urls: ${JSON.stringify(parsed[chainId].rpcs)}`);
     }
   }
 

@@ -17,10 +17,10 @@ export default {
     CRON_SCHEDULE: process.env.CRON_SCHEDULE || "0 0 * * *",
     LOG_DIR: "logs",
     LOG_MAX_FILES: "7d",
-    CONCURRENCY_LIMIT: parseInt(process.env.CONCURRENCY_LIMIT || "100", 10),
+    RPC_CHECKER_REQUEST_CONCURRENCY: parseInt(process.env.RPC_CHECKER_REQUEST_CONCURRENCY || "100", 10),
     WHITELISTED_CHAIN_IDS: [1, 137],
-    RETRY_DELAY_MS: 12000,
-    MAX_RETRIES: 1,
+    RPC_CHECKER_RETRY_DELAY_MS: 12000,
+    RPC_CHECKER_MAX_RETRIES: 1,
 };
 ```
 

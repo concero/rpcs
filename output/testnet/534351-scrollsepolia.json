@@ -1,10 +1,12 @@
 {
   "id": "534351",
   "urls": [
-    "endpoints.omniatech.io/v1/scroll/sepolia/public",
-    "scroll-sepolia.chainstacklabs.com",
-    "sepolia-rpc.scroll.io",
-    "scroll-public.scroll-testnet.quiknode.pro/"
+    "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
+    "https://rpc.ankr.com/scroll_sepolia_testnet",
+    "https://scroll-sepolia.chainstacklabs.com",
+    "https://sepolia-rpc.scroll.io",
+    "https://scroll-sepolia-rpc.publicnode.com",
+    "https://scroll-public.scroll-testnet.quiknode.pro"
   ],
   "chainSelector": 534351,
   "name": "scrollSepolia"

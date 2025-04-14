@@ -1,6 +1,6 @@
 import winston from "winston";
 import "winston-daily-rotate-file";
-import config from "./constants/config";
+import config from "../constants/config";
 
 const LOG_LEVELS = {
   error: 0,

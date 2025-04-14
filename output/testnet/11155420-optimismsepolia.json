@@ -1,11 +1,12 @@
 {
   "id": "11155420",
   "urls": [
-    "optimism-sepolia.gateway.tenderly.co",
-    "sepolia.optimism.io",
-    "endpoints.omniatech.io/v1/op/sepolia/public",
-    "optimism-sepolia.api.onfinality.io/public",
-    "api.zan.top/opt-sepolia"
+    "https://endpoints.omniatech.io/v1/op/sepolia/public",
+    "https://optimism-sepolia.drpc.org",
+    "https://sepolia.optimism.io",
+    "https://optimism-sepolia.api.onfinality.io/public",
+    "https://optimism-sepolia.gateway.tenderly.co",
+    "https://api.zan.top/opt-sepolia"
   ],
   "chainSelector": 11155420,
   "name": "optimismSepolia"

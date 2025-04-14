@@ -1,19 +1,19 @@
 {
   "id": "42161",
   "urls": [
-    "arbitrum-one.public.blastapi.io",
-    "arbitrum.gateway.tenderly.co",
-    "arbitrum.meowrpc.com",
-    "arbitrum.drpc.org",
-    "arb-pokt.nodies.app",
-    "arbitrum.blockpi.network/v1/rpc/public",
-    "arbitrum-one-rpc.publicnode.com",
-    "arb1.lava.build",
-    "1rpc.io/arb",
-    "arbitrum.rpc.subquery.network/public",
-    "arb1.arbitrum.io/rpc",
-    "api.zan.top/arb-one",
-    "endpoints.omniatech.io/v1/arbitrum/one/public"
+    "https://arb1.lava.build",
+    "https://arbitrum-one.public.blastapi.io",
+    "https://arbitrum.meowrpc.com",
+    "https://arbitrum-one-rpc.publicnode.com",
+    "https://arbitrum.gateway.tenderly.co",
+    "https://arbitrum.drpc.org",
+    "https://arb1.arbitrum.io/rpc",
+    "https://arbitrum.rpc.subquery.network/public",
+    "https://arbitrum.blockpi.network/v1/rpc/public",
+    "https://arb-pokt.nodies.app",
+    "https://1rpc.io/arb",
+    "https://endpoints.omniatech.io/v1/arbitrum/one/public",
+    "https://api.zan.top/arb-one"
   ],
   "chainSelector": 42161,
   "name": "arbitrum"

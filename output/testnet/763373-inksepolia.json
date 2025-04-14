@@ -1,8 +1,8 @@
 {
   "id": "763373",
   "urls": [
-    "rpc-gel-sepolia.inkonchain.com",
-    "ink-sepolia.drpc.org"
+    "https://rpc-gel-sepolia.inkonchain.com",
+    "https://ink-sepolia.drpc.org"
   ],
   "chainSelector": 763373,
   "name": "inkSepolia"

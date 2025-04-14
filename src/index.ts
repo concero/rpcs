@@ -1,13 +1,13 @@
-import runService from "./serviceRunner";
+import { runRpcService } from "./services/rpcService";
 import config from "./constants/config";
 import cron from "node-cron";
 
 try {
   if (process.argv.includes("--run-once")) {
-    runService();
+    runRpcService();
   } else {
     cron.schedule(config.CRON_SCHEDULE, async () => {
-      await runService();
+      await runRpcService();
     });
   }
 } catch (err) {

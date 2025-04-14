@@ -1,8 +1,8 @@
 import http from "http";
 import https from "https";
-import config from "./constants/config";
-import { debug } from "./logger";
-import { HealthyRpc, RpcEndpoint } from "./types";
+import config from "../constants/config";
+import { debug, warn } from "../utils/logger";
+import { HealthyRpc, RpcEndpoint, RpcTestResult } from "../types";
 
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
@@ -13,7 +13,7 @@ async function delay(ms: number) {
 
 async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
   let attempt = 0;
-  const maxRetries = config.MAX_RETRIES;
+  const maxRetries = config.RPC_CHECKER_MAX_RETRIES;
 
   debug(`Testing endpoint: ${endpoint.url}`);
   while (attempt <= maxRetries) {
@@ -22,79 +22,183 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
     const timeoutId = setTimeout(() => controller.abort(), config.RPC_REQUEST_TIMEOUT_MS);
 
     try {
-      const response = await fetch(endpoint.url, {
+      const chainIdResponse = await fetch(endpoint.url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           jsonrpc: "2.0",
-          method: "eth_blockNumber",
+          method: "eth_chainId",
           params: [],
           id: 1,
         }),
         signal: controller.signal,
         agent: endpoint.url.startsWith("https") ? httpsAgent : httpAgent,
       });
-      debug(`${endpoint.url} response status: ${response.status}`);
 
       clearTimeout(timeoutId);
 
-      if (response.status === 429) {
+      if (chainIdResponse.status === 429) {
+        debug(`Rate limited (status 429) for endpoint: ${endpoint.url}`);
         if (attempt < maxRetries) {
-          await delay(config.RETRY_DELAY_MS);
+          await delay(config.RPC_CHECKER_RETRY_DELAY_MS);
           attempt++;
           continue;
         }
         return null;
       }
 
-      if (!response.ok) return null;
-
-      const json = await response.json();
-      if (json?.result && /^0x[0-9A-Fa-f]+$/.test(json.result)) {
-        return {
-          chainId: endpoint.chainId,
-          url: endpoint.url,
-          responseTime: Date.now() - start,
-        };
+      if (!chainIdResponse.ok) {
+        debug(
+          `Error response for endpoint: ${endpoint.url}, status: ${chainIdResponse.status}, statusText: ${chainIdResponse.statusText}`,
+        );
+        return null;
       }
-      return null;
+
+      const chainIdJson = await chainIdResponse.json();
+      if (!chainIdJson?.result || !/^0x[0-9A-Fa-f]+$/.test(chainIdJson.result)) {
+        debug(`Invalid chainId result from endpoint: ${endpoint.url}`);
+        return null;
+      }
+
+      const returnedChainId = parseInt(chainIdJson.result, 16).toString();
+
+      return {
+        chainId: endpoint.chainId,
+        url: endpoint.url,
+        responseTime: Date.now() - start,
+        returnedChainId,
+        source: endpoint.source,
+      };
     } catch (err) {
       clearTimeout(timeoutId);
+      const errorMessage = err.message || "Unknown error";
+      const statusCode = err.status || (err.cause && err.cause.code) || "N/A";
+
+      debug(
+        `Exception testing endpoint: ${endpoint.url}, status code: ${statusCode}, error: ${errorMessage}`,
+      );
+
+      if (attempt < maxRetries) {
+        await delay(config.RPC_CHECKER_RETRY_DELAY_MS);
+        attempt++;
+        continue;
+      }
       return null;
     }
   }
   return null;
 }
 
-export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<HealthyRpc[]> {
-  let concurrency = config.CONCURRENCY_LIMIT;
-  if (concurrency === 0) {
-    concurrency = endpoints.length;
-  } else if (!concurrency || concurrency < 0) {
-    concurrency = 10;
-  }
-
+export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTestResult> {
+  let concurrency = config.RPC_CHECKER_REQUEST_CONCURRENCY;
   const healthy: HealthyRpc[] = [];
-  let i = 0;
+  const queue = [...endpoints];
+  let activeCount = 0;
+  const chainIdMap = new Map<string, Set<string>>();
 
-  while (i < endpoints.length) {
-    const remaining = endpoints.length - i;
-    const batchSize = Math.min(concurrency, remaining);
-    const slice = endpoints.slice(i, i + batchSize);
+  return new Promise(resolve => {
+    function processNext() {
+      if (queue.length === 0 && activeCount === 0) {
+        const validatedRpcs = new Array<HealthyRpc>();
+        const chainIdMismatchMap = new Map<string, string[]>();
 
-    debug(`Processing batch of ${slice.length} endpoints...`);
-    const settled = await Promise.allSettled(slice.map(e => testOneRpc(e)));
+        const rpcsByChain = new Map<string, HealthyRpc[]>();
+        healthy.forEach(rpc => {
+          if (!rpcsByChain.has(rpc.chainId)) {
+            rpcsByChain.set(rpc.chainId, []);
+          }
+          rpcsByChain.get(rpc.chainId)!.push(rpc);
+        });
 
-    const successCount = settled.filter(s => s.status === "fulfilled" && s.value).length;
-    debug(`Batch completed: ${successCount}/${slice.length} endpoints healthy`);
+        // Check for chain ID mismatches within each chain
+        rpcsByChain.forEach((rpcs, expectedChainId) => {
+          const chainIdCounts = new Map<string, number>();
+          rpcs.forEach(rpc => {
+            const count = chainIdCounts.get(rpc.returnedChainId) || 0;
+            chainIdCounts.set(rpc.returnedChainId, count + 1);
+          });
 
-    for (const s of settled) {
-      if (s.status === "fulfilled" && s.value) {
-        healthy.push(s.value);
+          let dominantChainId = expectedChainId;
+          let maxCount = 0;
+
+          chainIdCounts.forEach((count, chainId) => {
+            if (count > maxCount) {
+              maxCount = count;
+              dominantChainId = chainId;
+            }
+          });
+
+          // Log warnings and collect mismatches
+          if (dominantChainId !== expectedChainId) {
+            warn(
+              `Chain ID mismatch for chain ${expectedChainId}: Most RPC endpoints returned ${dominantChainId}`,
+            );
+            chainIdMismatchMap.set(expectedChainId, [dominantChainId]);
+          }
+
+          // Add all RPCs that return the dominant chain ID
+          rpcs.forEach(rpc => {
+            if (rpc.returnedChainId === dominantChainId) {
+              validatedRpcs.push(rpc);
+            } else {
+              // Collect individual mismatches for reporting
+              const mismatches = chainIdMismatchMap.get(expectedChainId) || [];
+              if (!mismatches.includes(rpc.returnedChainId)) {
+                mismatches.push(rpc.returnedChainId);
+                chainIdMismatchMap.set(expectedChainId, mismatches);
+              }
+              warn(
+                `RPC ${rpc.url} returned chain ID ${rpc.returnedChainId} when ${dominantChainId} was expected`,
+              );
+            }
+          });
+        });
+
+        resolve({
+          healthyRpcs: validatedRpcs,
+          chainIdMismatches: chainIdMismatchMap,
+        });
+        return;
+      }
+
+      while (queue.length > 0 && activeCount < concurrency) {
+        const endpoint = queue.shift()!;
+        activeCount++;
+
+        debug(
+          `Testing endpoint: ${endpoint.url} (active: ${activeCount}, remaining: ${queue.length})`,
+        );
+
+        testOneRpc(endpoint)
+          .then(result => {
+            if (result) {
+              // debug(
+              //   `Endpoint healthy: ${endpoint.url} (response time: ${result.responseTime}ms, chain ID: ${result.returnedChainId})`,
+              // );
+
+              // Track all returned chain IDs for this expected chain ID
+              if (!chainIdMap.has(result.chainId)) {
+                chainIdMap.set(result.chainId, new Set());
+              }
+              chainIdMap.get(result.chainId)!.add(result.returnedChainId);
+
+              healthy.push(result);
+            } else {
+              // debug(`Endpoint unhealthy: ${endpoint.url}`);
+            }
+          })
+          .catch(err => {
+            const statusCode = err.status || (err.cause && err.cause.code) || "N/A";
+            debug(
+              `Error testing endpoint ${endpoint.url}: status code: ${statusCode}, error: ${err}`,
+            );
+          })
+          .finally(() => {
+            activeCount--;
+            processNext();
+          });
       }
     }
-    i += batchSize;
-  }
-
-  return healthy;
+    processNext();
+  });
 }
