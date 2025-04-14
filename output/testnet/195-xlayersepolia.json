@@ -1,8 +1,8 @@
 {
   "id": "195",
   "urls": [
-    "endpoints.omniatech.io/v1/xlayer/testnet/public",
     "xlayertestrpc.okx.com",
+    "endpoints.omniatech.io/v1/xlayer/testnet/public",
     "testrpc.xlayer.tech"
   ],
   "chainSelector": 195,

@@ -1,15 +1,15 @@
 {
   "id": "43114",
   "urls": [
-    "0xrpc.io/avax",
-    "avalanche.api.onfinality.io/public/ext/bc/C/rpc",
-    "endpoints.omniatech.io/v1/avax/mainnet/public",
-    "avalanche.drpc.org",
     "avalanche-mainnet.gateway.tenderly.co",
+    "ava-mainnet.public.blastapi.io/ext/bc/C/rpc",
+    "api.avax.network/ext/bc/C/rpc",
+    "avalanche.drpc.org",
+    "endpoints.omniatech.io/v1/avax/mainnet/public",
     "avax.meowrpc.com",
     "avax-pokt.nodies.app/ext/bc/C/rpc",
-    "api.avax.network/ext/bc/C/rpc",
-    "ava-mainnet.public.blastapi.io/ext/bc/C/rpc",
+    "0xrpc.io/avax",
+    "avalanche.api.onfinality.io/public/ext/bc/C/rpc",
     "avalanche-c-chain-rpc.publicnode.com",
     "1rpc.io/avax/c",
     "api.zan.top/avax-mainnet/ext/bc/C/rpc"

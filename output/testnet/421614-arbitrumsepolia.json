@@ -1,9 +1,9 @@
 {
   "id": "421614",
   "urls": [
-    "endpoints.omniatech.io/v1/arbitrum/sepolia/public",
-    "arbitrum-sepolia.gateway.tenderly.co",
     "arbitrum-sepolia.drpc.org",
+    "arbitrum-sepolia.gateway.tenderly.co",
+    "endpoints.omniatech.io/v1/arbitrum/sepolia/public",
     "api.zan.top/arb-sepolia"
   ],
   "chainSelector": 421614,

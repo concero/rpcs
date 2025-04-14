@@ -1,10 +1,10 @@
 {
   "id": "10200",
   "urls": [
-    " endpoints.omniatech.io/v1/gnosis/chiado/public",
     "rpc.chiado.gnosis.gateway.fm",
-    "rpc.chiadochain.net",
-    "gnosis-chiado-rpc.publicnode.com"
+    " endpoints.omniatech.io/v1/gnosis/chiado/public",
+    "gnosis-chiado-rpc.publicnode.com",
+    "rpc.chiadochain.net"
   ],
   "chainSelector": 10200,
   "name": "gnosisChiado"
