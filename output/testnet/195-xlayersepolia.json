@@ -1,0 +1,10 @@
+{
+  "id": "195",
+  "urls": [
+    "endpoints.omniatech.io/v1/xlayer/testnet/public",
+    "xlayertestrpc.okx.com",
+    "testrpc.xlayer.tech"
+  ],
+  "chainSelector": 195,
+  "name": "xlayerSepolia"
+}

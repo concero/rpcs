@@ -1,0 +1,24 @@
+{
+  "id": "10",
+  "urls": [
+    "optimism.drpc.org",
+    "optimism.gateway.tenderly.co",
+    "mainnet.optimism.io/",
+    "optimism-mainnet.public.blastapi.io",
+    "optimism.blockpi.network/v1/rpc/public",
+    "optimism.api.onfinality.io/public",
+    "optimism-rpc.publicnode.com",
+    "endpoints.omniatech.io/v1/op/mainnet/public",
+    "gateway.tenderly.co/public/optimism",
+    "optimism.lava.build",
+    "optimism.meowrpc.com",
+    "op-pokt.nodies.app",
+    "0xrpc.io/op",
+    "go.getblock.io/e8a75f8dcf614861becfbcb185be6eb4",
+    "optimism.rpc.subquery.network/public",
+    "api.zan.top/opt-mainnet",
+    "1rpc.io/op"
+  ],
+  "chainSelector": 10,
+  "name": "optimism"
+}

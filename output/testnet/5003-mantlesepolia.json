@@ -1,0 +1,9 @@
+{
+  "id": "5003",
+  "urls": [
+    "endpoints.omniatech.io/v1/mantle/sepolia/public",
+    "rpc.sepolia.mantle.xyz"
+  ],
+  "chainSelector": 5003,
+  "name": "mantleSepolia"
+}
