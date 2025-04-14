@@ -15,6 +15,7 @@ interface HealthyRpcsByChain {
 
 interface ChainRpcOutput {
   id: string;
+  name?: string;
   urls: string[];
   chainSelector?: number;
 }

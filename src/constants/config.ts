@@ -1,5 +1,6 @@
 export default {
-  WHITELISTED_CHAIN_IDS: [1, 10, 81, 137, 2021, 6342, 8453, 42161, 43113, 43114, 80002, 84532, 421614, 11155111, 11155420],
+  IGNORE_CHAIN_IDS: [], // Chain IDs to ignore from chainlist
+  USE_MAINNET: process.env.USE_MAINNET === "true" || false,
   LOG_LEVEL: process.env.LOG_LEVEL || "info", // "error" | "warn" | "info" | "debug"
   LOG_DIR: "logs",
   LOG_MAX_FILES: "7d",

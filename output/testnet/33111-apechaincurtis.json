@@ -1,0 +1,9 @@
+{
+  "id": "33111",
+  "urls": [
+    "apechain-curtis.drpc.org",
+    "rpc.curtis.apechain.com"
+  ],
+  "chainSelector": 33111,
+  "name": "apechainCurtis"
+}

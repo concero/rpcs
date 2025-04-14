@@ -2,7 +2,7 @@
   "name": "concero-rpcs",
   "version": "1.0.0",
   "description": "A service for upkeeping a list of healthy RPC endpoints for multiple chains",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "swc src -d dist",
     "lint": "eslint --ext .ts src/",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/concero/rpcs#readme",
   "dependencies": {
+    "@concero/contract-utils": "github:concero/contract-utils",
     "acorn": "^8.14.0",
     "acorn-walk": "^8.3.4",
     "node-cron": "^3.0.3",

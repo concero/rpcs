@@ -1,0 +1,9 @@
+{
+  "id": "1946",
+  "urls": [
+    "rpc.minato.soneium.org/",
+    "soneium-minato.drpc.org"
+  ],
+  "chainSelector": 1946,
+  "name": "soneiumMinato"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "97",
+  "urls": [
+    "bsc-testnet-rpc.publicnode.com",
+    "bsc-testnet.drpc.org",
+    "bsc-testnet.public.blastapi.io",
+    "endpoints.omniatech.io/v1/bsc/testnet/public",
+    "api.zan.top/bsc-testnet"
+  ],
+  "chainSelector": 97,
+  "name": "bnbTestnet"
+}
