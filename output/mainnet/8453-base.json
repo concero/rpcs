@@ -1,0 +1,24 @@
+{
+  "id": "8453",
+  "urls": [
+    "https://gateway.tenderly.co/public/base",
+    "https://base-pokt.nodies.app",
+    "https://base-mainnet.public.blastapi.io",
+    "https://base-rpc.publicnode.com",
+    "https://base.lava.build",
+    "https://base.drpc.org",
+    "https://1rpc.io/base",
+    "https://base.meowrpc.com",
+    "https://base.blockpi.network/v1/rpc/public",
+    "https://base.rpc.subquery.network/public",
+    "https://mainnet.base.org",
+    "https://developer-access-mainnet.base.org",
+    "https://base.api.onfinality.io/public",
+    "https://base.gateway.tenderly.co",
+    "https://0xrpc.io/base",
+    "https://endpoints.omniatech.io/v1/base/mainnet/public",
+    "https://api.zan.top/base-mainnet"
+  ],
+  "chainSelector": 8453,
+  "name": "base"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "10143",
+  "urls": [
+    "https://testnet-rpc.monad.xyz"
+  ],
+  "chainSelector": 10143,
+  "name": "monadTestnet"
+}

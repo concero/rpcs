@@ -1,0 +1,25 @@
+{
+  "id": "10",
+  "urls": [
+    "https://gateway.tenderly.co/public/optimism",
+    "https://1rpc.io/op",
+    "https://opt-mainnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
+    "https://op-pokt.nodies.app",
+    "https://optimism-mainnet.public.blastapi.io",
+    "https://optimism.blockpi.network/v1/rpc/public",
+    "https://api.zan.top/opt-mainnet",
+    "https://optimism.drpc.org",
+    "https://optimism.gateway.tenderly.co",
+    "https://mainnet.optimism.io",
+    "https://optimism-rpc.publicnode.com",
+    "https://0xrpc.io/op",
+    "https://optimism.meowrpc.com",
+    "https://optimism.api.onfinality.io/public",
+    "https://optimism.lava.build",
+    "https://optimism.rpc.subquery.network/public",
+    "https://go.getblock.io/e8a75f8dcf614861becfbcb185be6eb4",
+    "https://endpoints.omniatech.io/v1/op/mainnet/public"
+  ],
+  "chainSelector": 10,
+  "name": "optimism"
+}
