@@ -84,15 +84,28 @@ export function writeChainRpcFiles(
 }
 
 export function generateSupportedChainsFile(): void {
-    const outputPath = path.join(config.OUTPUT_DIR, 'supported-chains.json');
+  const outputPath = path.join(config.OUTPUT_DIR, "supported-chains.json");
 
-    const supportedChains = {
-    mainnet: Object.values(mainnetNetworks).map(network => parseInt(network.chainId.toString(), 10)),
-    testnet: Object.values(testnetNetworks).map(network => parseInt(network.chainId.toString(), 10))
+  const mainnetObj = Object.values(mainnetNetworks).reduce(
+    (acc, network) => {
+      acc[network.chainId.toString()] = network.name;
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
+
+  const testnetObj = Object.values(testnetNetworks).reduce(
+    (acc, network) => {
+      acc[network.chainId.toString()] = network.name;
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
+
+  const supportedChains = {
+    mainnet: mainnetObj,
+    testnet: testnetObj,
   };
 
-  fs.writeFileSync(
-    outputPath,
-    JSON.stringify(supportedChains, null, 2)
-  );
+  fs.writeFileSync(outputPath, JSON.stringify(supportedChains, null, 2));
 }

@@ -2,8 +2,8 @@
   "id": "200810",
   "urls": [
     "https://testnet-rpc.bitlayer-rpc.com",
-    "https://rpc.ankr.com/bitlayer_testnet",
-    "https://testnet-rpc.bitlayer.org"
+    "https://testnet-rpc.bitlayer.org",
+    "https://rpc.ankr.com/bitlayer_testnet"
   ],
   "chainSelector": 200810,
   "name": "bitlayerTestnet"

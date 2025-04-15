@@ -1,8 +1,8 @@
 {
   "id": "57054",
   "urls": [
-    "https://rpc.blaze.soniclabs.com",
     "https://sonic-blaze-rpc.publicnode.com",
+    "https://rpc.blaze.soniclabs.com",
     "https://sonic-testnet.drpc.org"
   ],
   "chainSelector": 57054,
