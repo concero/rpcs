@@ -1,9 +1,0 @@
-{
-  "id": "48899",
-  "urls": [
-    "https://testnet.zircuit.com",
-    "https://zircuit1-testnet.p2pify.com"
-  ],
-  "chainSelector": 48899,
-  "name": "zircuitTestnet"
-}

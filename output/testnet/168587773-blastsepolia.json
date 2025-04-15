@@ -1,9 +1,0 @@
-{
-  "id": "168587773",
-  "urls": [
-    "https://endpoints.omniatech.io/v1/blast/sepolia/public",
-    "https://sepolia.blast.io"
-  ],
-  "chainSelector": 1685877,
-  "name": "blastSepolia"
-}
