@@ -3,14 +3,14 @@ export default {
     200810, // bitlayer
     6342, // megaeth
     3636, // botanix
-    2021, // saigon-testnet
+    2021, // roninSaigon
     1114, // btcs-testnet
     919, // mode-sepolia
     157, // puppynet
     81, // astar-shibuya
   ], // Chain IDs to ignore from chainlist
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
-    2021, // saigon-testnet
+    2021, // roninSaigon
     81, // astar-shibuya
   ], // Chain IDs to ignore from ethereum-lists
   NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
