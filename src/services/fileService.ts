@@ -3,6 +3,8 @@ import path from "path";
 import { debug } from "../utils/logger";
 import { ConceroNetwork } from "@concero/contract-utils";
 import { ChainRpcOutput, HealthyRpc } from "../types";
+import { mainnetNetworks, testnetNetworks } from "@concero/contract-utils";
+import config from "../constants/config";
 
 export function ensureDirectoriesExist(outputDir: string) {
   const mainnetDir = path.join(outputDir, "mainnet");
@@ -79,4 +81,18 @@ export function writeChainRpcFiles(
   });
 
   return modifiedFiles;
+}
+
+export function generateSupportedChainsFile(): void {
+    const outputPath = path.join(config.OUTPUT_DIR, 'supported-chains.json');
+
+    const supportedChains = {
+    mainnet: Object.values(mainnetNetworks).map(network => parseInt(network.chainId.toString(), 10)),
+    testnet: Object.values(testnetNetworks).map(network => parseInt(network.chainId.toString(), 10))
+  };
+
+  fs.writeFileSync(
+    outputPath,
+    JSON.stringify(supportedChains, null, 2)
+  );
 }

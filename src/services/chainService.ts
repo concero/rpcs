@@ -10,7 +10,7 @@ export function getSupportedChainIds(): string[] {
   ];
 }
 
-export function filterRelevantChains(
+export function filterChainlistChains(
   rawChainlistRpcs: ChainlistRpcs,
   supportedChainIds: string[],
 ): ChainlistRpcs {
@@ -19,6 +19,19 @@ export function filterRelevantChains(
       ([chainId]) =>
         supportedChainIds.includes(chainId) &&
         !config.IGNORED_CHAINLIST_CHAIN_IDS.includes(parseInt(chainId, 10)),
+    ),
+  );
+}
+
+export function filterEthereumListsChains(
+  rawEthereumListsChains: EthereumListsChains,
+  supportedChainIds: string[],
+): EthereumListsChains {
+  return Object.fromEntries(
+    Object.entries(rawEthereumListsChains).filter(
+      ([chainId]) =>
+        supportedChainIds.includes(chainId) &&
+        !config.IGNORED_ETHEREUM_LISTS_CHAIN_IDS.includes(parseInt(chainId, 10)),
     ),
   );
 }

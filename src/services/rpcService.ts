@@ -6,11 +6,12 @@ import { testRpcEndpoints } from "./rpcTester";
 import {
   extractChainlistEndpoints,
   extractEthereumListsEndpoints,
-  filterRelevantChains,
+  filterChainlistChains,
+  filterEthereumListsChains,
   getNetworkForChain,
   getSupportedChainIds,
 } from "./chainService";
-import { writeChainRpcFiles } from "./fileService";
+import { generateSupportedChainsFile, writeChainRpcFiles } from "./fileService";
 import { commitAndPushChanges } from "./gitService";
 import { ChainStats, HealthyRpc, RpcEndpoint } from "../types";
 import { displayNetworkStats } from "../utils/displayNetworkStats";
@@ -27,20 +28,24 @@ export async function runRpcService() {
     // Fetch and filter chainlist RPCs
     const rawChainlistRpcs = await fetchChainlistRpcs();
     const parsedChainlistRpcs = parseChainlistRpcs(rawChainlistRpcs);
-    const filteredChainlistRpcs = filterRelevantChains(parsedChainlistRpcs, supportedChainIds);
+    const filteredChainlistRpcs = filterChainlistChains(parsedChainlistRpcs, supportedChainIds);
 
     // Fetch ethereum-lists chains
     const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
+    const filteredEthereumListsChains = filterEthereumListsChains(
+      ethereumListsChains,
+      supportedChainIds,
+    );
 
     debug(
       `Found ${Object.keys(filteredChainlistRpcs).length} chains from chainlist and ${
-        Object.keys(ethereumListsChains).length
+        Object.keys(filteredEthereumListsChains).length
       } chains from ethereum-lists to process`,
     );
 
     // Extract endpoints from both sources
     const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
-    const ethereumListsEndpoints = extractEthereumListsEndpoints(ethereumListsChains);
+    const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
 
     // Track initial endpoint counts by chain ID and source
     const initialEndpoints = {
@@ -67,10 +72,8 @@ export async function runRpcService() {
     const allEndpointsArray = [...chainlistEndpoints, ...ethereumListsEndpoints];
 
     allEndpointsArray.forEach(endpoint => {
-
       const sanitizedUrl = sanitizeUrl(endpoint.url);
       endpoint.url = sanitizedUrl;
-
 
       if (!urlMap.has(sanitizedUrl) || endpoint.source === "chainlist") {
         urlMap.set(sanitizedUrl, endpoint);
@@ -128,6 +131,8 @@ export async function runRpcService() {
       shouldProcessMainnet,
       shouldProcessTestnet,
     );
+
+    generateSupportedChainsFile();
 
     // Collect statistics
     filteredSortedRpcs.forEach((rpcs, chainId) => {
