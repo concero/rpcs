@@ -1,0 +1,22 @@
+declare const _default: {
+    IGNORED_CHAINLIST_CHAIN_IDS: number[];
+    IGNORED_ETHEREUM_LISTS_CHAIN_IDS: number[];
+    NETWORK_MODE: number;
+    ENABLE_GIT_SERVICE: boolean;
+    LOG_LEVEL: string;
+    LOG_DIR: string;
+    LOG_MAX_FILES: string;
+    CHAINLIST_URL: string;
+    ETHEREUM_LISTS_URL_TEMPLATE: string;
+    CONCERO_NETWORKS_GITHUB_BASE_URL: string;
+    CONCERO_NETWORKS_DATA_URL_TEMPLATE: string;
+    CONCERO_NETWORK_DETAILS_URL_TEMPLATE: string;
+    GIT_REPO_PATH: string;
+    CRON_SCHEDULE: string;
+    RPC_CHECKER_REQUEST_CONCURRENCY: number;
+    RPC_CHECKER_RETRY_DELAY_MS: number;
+    RPC_CHECKER_MAX_RETRIES: number;
+    RPC_REQUEST_TIMEOUT_MS: number;
+    OUTPUT_DIR: string;
+};
+export default _default;
