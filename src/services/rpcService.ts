@@ -6,9 +6,10 @@ import { testRpcEndpoints } from "./rpcTester";
 import {
   extractChainlistEndpoints,
   extractEthereumListsEndpoints,
+  extractNetworkEndpoints,
   filterChainlistChains,
   filterEthereumListsChains,
-  getNetworkForChain,
+  getNetworkDetails,
   getSupportedChainIds,
 } from "./chainService";
 import { generateSupportedChainsFile, writeChainRpcFiles } from "./fileService";
@@ -16,13 +17,17 @@ import { commitAndPushChanges } from "./gitService";
 import { ChainStats, HealthyRpc, RpcEndpoint } from "../types";
 import { displayNetworkStats } from "../utils/displayNetworkStats";
 import { sanitizeUrl } from "../utils/sanitizeUrl";
+import { fetchAllNetworkDetails } from "./networkService";
 
 export async function runRpcService() {
   try {
     info("Starting RPC service...");
 
-    // Get supported chain IDs
-    const supportedChainIds = getSupportedChainIds();
+    // Fetch network details from GitHub repository
+    const networkDetails = await fetchAllNetworkDetails();
+
+    // Get supported chain IDs from fetched network details
+    const supportedChainIds = getSupportedChainIds(networkDetails);
     info(`Supported chain IDs: ${supportedChainIds.join(", ")}`);
 
     // Fetch and filter chainlist RPCs
@@ -43,14 +48,16 @@ export async function runRpcService() {
       } chains from ethereum-lists to process`,
     );
 
-    // Extract endpoints from both sources
+    // Extract endpoints from all sources
     const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
     const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
+    const networkEndpoints = extractNetworkEndpoints(networkDetails);
 
     // Track initial endpoint counts by chain ID and source
     const initialEndpoints = {
       chainlist: new Map<string, RpcEndpoint[]>(),
       ethereumLists: new Map<string, RpcEndpoint[]>(),
+      v2Networks: new Map<string, RpcEndpoint[]>(),
     };
 
     // Group by chain ID for later statistics
@@ -68,14 +75,31 @@ export async function runRpcService() {
       initialEndpoints.ethereumLists.get(endpoint.chainId)!.push(endpoint);
     });
 
+    networkEndpoints.forEach(endpoint => {
+      if (!initialEndpoints.v2Networks.has(endpoint.chainId)) {
+        initialEndpoints.v2Networks.set(endpoint.chainId, []);
+      }
+      initialEndpoints.v2Networks.get(endpoint.chainId)!.push(endpoint);
+    });
+
     const urlMap = new Map<string, RpcEndpoint>();
-    const allEndpointsArray = [...chainlistEndpoints, ...ethereumListsEndpoints];
+    const allEndpointsArray = [
+      ...chainlistEndpoints,
+      ...ethereumListsEndpoints,
+      ...networkEndpoints,
+    ];
 
     allEndpointsArray.forEach(endpoint => {
       const sanitizedUrl = sanitizeUrl(endpoint.url);
       endpoint.url = sanitizedUrl;
 
-      if (!urlMap.has(sanitizedUrl) || endpoint.source === "chainlist") {
+      // Prioritize v2-networks over chainlist over ethereum-lists
+      if (
+        !urlMap.has(sanitizedUrl) ||
+        (endpoint.source === "chainlist" &&
+          urlMap.get(sanitizedUrl)?.source === "ethereum-lists") ||
+        endpoint.source === "v2-networks"
+      ) {
         urlMap.set(sanitizedUrl, endpoint);
       }
     });
@@ -83,7 +107,7 @@ export async function runRpcService() {
     const dedupedEndpoints = Array.from(urlMap.values());
 
     info(
-      `Testing ${dedupedEndpoints.length} unique endpoints (${chainlistEndpoints.length} from chainlist, ${ethereumListsEndpoints.length} from ethereum-lists, ${chainlistEndpoints.length + ethereumListsEndpoints.length - dedupedEndpoints.length} duplicates removed)`,
+      `Testing ${dedupedEndpoints.length} unique endpoints (${chainlistEndpoints.length} from chainlist, ${ethereumListsEndpoints.length} from ethereum-lists, ${networkEndpoints.length} from v2-networks, ${allEndpointsArray.length - dedupedEndpoints.length} duplicates removed)`,
     );
 
     const testResult = await testRpcEndpoints(dedupedEndpoints);
@@ -115,10 +139,16 @@ export async function runRpcService() {
 
     const filteredSortedRpcs = new Map(
       Array.from(rpcsByReturnedChainId.entries()).filter(([chainId]) => {
-        const { mainnetNetwork, testnetNetwork } = getNetworkForChain(chainId);
+        const network = getNetworkDetails(chainId, networkDetails);
+        if (!network) return false;
 
-        if (mainnetNetwork && shouldProcessMainnet) return true;
-        if (testnetNetwork && shouldProcessTestnet) return true;
+        const isMainnet =
+          network.name.indexOf("testnet") === -1 &&
+          network.name.indexOf("sepolia") === -1 &&
+          network.name.indexOf("goerli") === -1;
+
+        if (isMainnet && shouldProcessMainnet) return true;
+        if (!isMainnet && shouldProcessTestnet) return true;
 
         return false;
       }),
@@ -127,61 +157,75 @@ export async function runRpcService() {
     const modifiedFiles = writeChainRpcFiles(
       filteredSortedRpcs,
       config.OUTPUT_DIR,
-      getNetworkForChain,
+      chainId => {
+        const network = getNetworkDetails(chainId, networkDetails);
+        if (!network) return {};
+
+        const isMainnet =
+          network.name.indexOf("testnet") === -1 &&
+          network.name.indexOf("sepolia") === -1 &&
+          network.name.indexOf("goerli") === -1;
+
+        return {
+          mainnetNetwork: isMainnet ? network : undefined,
+          testnetNetwork: !isMainnet ? network : undefined,
+        };
+      },
       shouldProcessMainnet,
       shouldProcessTestnet,
     );
 
-    generateSupportedChainsFile();
+    generateSupportedChainsFile(networkDetails);
 
     // Collect statistics
     filteredSortedRpcs.forEach((rpcs, chainId) => {
-      const { mainnetNetwork, testnetNetwork } = getNetworkForChain(chainId);
+      const network = getNetworkDetails(chainId, networkDetails);
+      if (!network) return;
+
+      const isMainnet =
+        network.name.indexOf("testnet") === -1 &&
+        network.name.indexOf("sepolia") === -1 &&
+        network.name.indexOf("goerli") === -1;
 
       const chainlistRpcs = rpcs.filter(rpc => rpc.source === "chainlist");
       const ethereumListsRpcs = rpcs.filter(rpc => rpc.source === "ethereum-lists");
+      const v2NetworksRpcs = rpcs.filter(rpc => rpc.source === "v2-networks");
 
       const uniqueChainlistUrls = new Set(chainlistRpcs.map(rpc => rpc.url)).size;
       const uniqueEthereumListsUrls = new Set(ethereumListsRpcs.map(rpc => rpc.url)).size;
+      const uniqueV2NetworksUrls = new Set(v2NetworksRpcs.map(rpc => rpc.url)).size;
 
       const initialChainlistCount = initialEndpoints.chainlist.get(chainId)?.length || 0;
       const initialEthereumListsCount = initialEndpoints.ethereumLists.get(chainId)?.length || 0;
+      const initialV2NetworksCount = initialEndpoints.v2Networks.get(chainId)?.length || 0;
 
       const unhealthyChainlistCount = initialChainlistCount - chainlistRpcs.length;
       const unhealthyEthereumListsCount = initialEthereumListsCount - ethereumListsRpcs.length;
+      const unhealthyV2NetworksCount = initialV2NetworksCount - v2NetworksRpcs.length;
 
-      if (mainnetNetwork && shouldProcessMainnet) {
-        mainnetStats.push({
-          chainId,
-          name: mainnetNetwork.name,
-          chainSelector: mainnetNetwork.chainSelector,
-          healthyRpcCount: rpcs.length,
-          chainlistRpcCount: chainlistRpcs.length,
-          uniqueChainlistRpcCount: uniqueChainlistUrls,
-          ethereumListsRpcCount: ethereumListsRpcs.length,
-          uniqueEthereumListsRpcCount: uniqueEthereumListsUrls,
-          unhealthyChainlistCount,
-          unhealthyEthereumListsCount,
-          initialChainlistCount,
-          initialEthereumListsCount,
-        });
-      }
+      const stats = {
+        chainId,
+        name: network.name,
+        chainSelector: network.chainSelector,
+        healthyRpcCount: rpcs.length,
+        chainlistRpcCount: chainlistRpcs.length,
+        uniqueChainlistRpcCount: uniqueChainlistUrls,
+        ethereumListsRpcCount: ethereumListsRpcs.length,
+        uniqueEthereumListsRpcCount: uniqueEthereumListsUrls,
+        v2NetworksRpcCount: v2NetworksRpcs.length,
+        uniqueV2NetworksRpcCount: uniqueV2NetworksUrls,
+        unhealthyChainlistCount,
+        unhealthyEthereumListsCount,
+        unhealthyV2NetworksCount,
+        initialChainlistCount,
+        initialEthereumListsCount,
+        initialV2NetworksCount,
+      };
 
-      if (testnetNetwork && shouldProcessTestnet) {
-        testnetStats.push({
-          chainId,
-          name: testnetNetwork.name,
-          chainSelector: testnetNetwork.chainSelector,
-          healthyRpcCount: rpcs.length,
-          chainlistRpcCount: chainlistRpcs.length,
-          uniqueChainlistRpcCount: uniqueChainlistUrls,
-          ethereumListsRpcCount: ethereumListsRpcs.length,
-          uniqueEthereumListsRpcCount: uniqueEthereumListsUrls,
-          unhealthyChainlistCount,
-          unhealthyEthereumListsCount,
-          initialChainlistCount,
-          initialEthereumListsCount,
-        });
+      if (isMainnet && shouldProcessMainnet) {
+        mainnetStats.push(stats);
+      } else if (!isMainnet && shouldProcessTestnet) {
+        testnetStats.push(stats);
       }
     });
 
@@ -202,7 +246,6 @@ export async function runRpcService() {
     return filteredSortedRpcs;
   } catch (err) {
     error(`Service run error: ${String(err)}`);
-
     throw err;
   }
 }

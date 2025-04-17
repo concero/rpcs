@@ -1,13 +1,9 @@
-import { mainnetNetworks, testnetNetworks } from "@concero/contract-utils";
 import config from "../constants/config";
 import { ChainlistRpcs, HealthyRpc, RpcEndpoint } from "../types";
-import { ConceroNetwork } from "@concero/contract-utils";
+import { NetworkDetails } from "./networkService";
 
-export function getSupportedChainIds(): string[] {
-  return [
-    ...Object.values(mainnetNetworks).map(network => network.chainId.toString()),
-    ...Object.values(testnetNetworks).map(network => network.chainId.toString()),
-  ];
+export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
+  return Object.keys(networkDetails);
 }
 
 export function filterChainlistChains(
@@ -24,9 +20,9 @@ export function filterChainlistChains(
 }
 
 export function filterEthereumListsChains(
-  rawEthereumListsChains: EthereumListsChains,
+  rawEthereumListsChains: Record<string, any>,
   supportedChainIds: string[],
-): EthereumListsChains {
+): Record<string, any> {
   return Object.fromEntries(
     Object.entries(rawEthereumListsChains).filter(
       ([chainId]) =>
@@ -37,11 +33,11 @@ export function filterEthereumListsChains(
 }
 
 export function extractEthereumListsEndpoints(
-  ethereumListsChains: Record<string, EthereumListsChain>,
+  ethereumListsChains: Record<string, any>,
 ): RpcEndpoint[] {
   return Object.entries(ethereumListsChains).flatMap(([chainId, chain]) =>
     chain.rpc
-      .filter(url => url.startsWith("http")) // Filter out non-HTTP RPCs
+      .filter(url => url.startsWith("http"))
       .map(url => ({
         chainId,
         url,
@@ -50,7 +46,6 @@ export function extractEthereumListsEndpoints(
   );
 }
 
-// Update the existing extractEndpoints function
 export function extractChainlistEndpoints(chainlistRpcs: ChainlistRpcs): RpcEndpoint[] {
   return Object.entries(chainlistRpcs).flatMap(([chainId, { rpcs }]) =>
     rpcs.map(rpc => ({
@@ -59,6 +54,22 @@ export function extractChainlistEndpoints(chainlistRpcs: ChainlistRpcs): RpcEndp
       source: "chainlist" as const,
     })),
   );
+}
+
+export function extractNetworkEndpoints(
+  networkDetails: Record<string, NetworkDetails>,
+): RpcEndpoint[] {
+  return Object.entries(networkDetails)
+    .filter(([_, details]) => details.rpcs && details.rpcs.length > 0)
+    .flatMap(([chainId, details]) =>
+      details.rpcs
+        .filter(url => url && url.startsWith("http"))
+        .map(url => ({
+          chainId,
+          url,
+          source: "v2-networks" as const,
+        })),
+    );
 }
 
 export function sortRpcs(testedRpcs: HealthyRpc[]): Map<string, HealthyRpc[]> {
@@ -71,26 +82,14 @@ export function sortRpcs(testedRpcs: HealthyRpc[]): Map<string, HealthyRpc[]> {
     rpcsByChain.get(rpc.chainId)!.push(rpc);
   });
 
-  // Sort each chain's RPCs by response time
   rpcsByChain.forEach(rpcs => rpcs.sort((a, b) => a.responseTime - b.responseTime));
 
   return rpcsByChain;
 }
 
-export function getNetworkForChain(chainId: string): {
-  mainnetNetwork?: ConceroNetwork;
-  testnetNetwork?: ConceroNetwork;
-} {
-  const mainnetNetwork = Object.values(mainnetNetworks).find(
-    network => network.chainId.toString() === chainId,
-  );
-
-  const testnetNetwork = Object.values(testnetNetworks).find(
-    network => network.chainId.toString() === chainId,
-  );
-
-  return {
-    mainnetNetwork: mainnetNetwork,
-    testnetNetwork: testnetNetwork,
-  };
+export function getNetworkDetails(
+  chainId: string,
+  networkDetails: Record<string, NetworkDetails>,
+): NetworkDetails | undefined {
+  return networkDetails[chainId];
 }

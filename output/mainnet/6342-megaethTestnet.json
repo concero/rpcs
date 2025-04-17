@@ -1,0 +1,8 @@
+{
+  "id": "6342",
+  "urls": [
+    "https://carrot.megaeth.com/rpc"
+  ],
+  "chainSelector": 6342,
+  "name": "megaethTestnet"
+}

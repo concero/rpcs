@@ -1,0 +1,9 @@
+{
+  "id": "133",
+  "urls": [
+    "https://hashkey-testnet.drpc.org",
+    "https://hashkeychain-testnet.alt.technology"
+  ],
+  "chainSelector": 133,
+  "name": "hashkeyTestnet"
+}

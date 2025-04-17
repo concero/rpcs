@@ -1,10 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { debug } from "../utils/logger";
-import { ConceroNetwork } from "@concero/contract-utils";
 import { ChainRpcOutput, HealthyRpc } from "../types";
-import { mainnetNetworks, testnetNetworks } from "@concero/contract-utils";
 import config from "../constants/config";
+import { NetworkDetails } from "./networkService";
 
 export function ensureDirectoriesExist(outputDir: string) {
   const mainnetDir = path.join(outputDir, "mainnet");
@@ -29,7 +28,7 @@ export function writeNetworkFile(
   directory: string,
   chainId: string,
   rpcs: HealthyRpc[],
-  network: ConceroNetwork,
+  network: NetworkDetails,
 ): string {
   const fileName = `${chainId}-${network.name}.json`;
   const outputPath = path.join(directory, fileName);
@@ -51,8 +50,8 @@ export function writeChainRpcFiles(
   rpcsByChain: Map<string, HealthyRpc[]>,
   outputDir: string,
   getNetworkForChain: (chainId: string) => {
-    mainnetNetwork?: ConceroNetwork;
-    testnetNetwork?: ConceroNetwork;
+    mainnetNetwork?: NetworkDetails;
+    testnetNetwork?: NetworkDetails;
   },
   processMainnet: boolean = true,
   processTestnet: boolean = true,
@@ -83,24 +82,24 @@ export function writeChainRpcFiles(
   return modifiedFiles;
 }
 
-export function generateSupportedChainsFile(): void {
+export function generateSupportedChainsFile(networkDetails: Record<string, NetworkDetails>): void {
   const outputPath = path.join(config.OUTPUT_DIR, "supported-chains.json");
 
-  const mainnetObj = Object.values(mainnetNetworks).reduce(
-    (acc, network) => {
-      acc[network.chainId.toString()] = network.name;
-      return acc;
-    },
-    {} as Record<string, string>,
-  );
+  const mainnetObj: Record<string, string> = {};
+  const testnetObj: Record<string, string> = {};
 
-  const testnetObj = Object.values(testnetNetworks).reduce(
-    (acc, network) => {
-      acc[network.chainId.toString()] = network.name;
-      return acc;
-    },
-    {} as Record<string, string>,
-  );
+  Object.values(networkDetails).forEach(network => {
+    const isMainnet =
+      network.name.indexOf("testnet") === -1 &&
+      network.name.indexOf("sepolia") === -1 &&
+      network.name.indexOf("goerli") === -1;
+
+    if (isMainnet) {
+      mainnetObj[network.chainId.toString()] = network.name;
+    } else {
+      testnetObj[network.chainId.toString()] = network.name;
+    }
+  });
 
   const supportedChains = {
     mainnet: mainnetObj,

@@ -1,8 +1,14 @@
 interface RpcEndpoint {
   chainId: string;
   url: string;
-  source: "chainlist" | "ethereum-lists";
+  source: "chainlist" | "ethereum-lists" | "v2-networks";
 }
+
+interface RpcTestResult {
+  healthyRpcs: HealthyRpc[];
+  chainIdMismatches: Map<string, string[]>;
+}
+
 interface HealthyRpc extends RpcEndpoint {
   responseTime: number;
   returnedChainId: string;
@@ -75,4 +81,4 @@ interface ChainStats {
   unhealthyChainlistCount: number;
 }
 
-export { ChainRpcOutput, ChainStats, HealthyRpc, RpcEndpoint, HealthyRpcsByChain };
+export { ChainRpcOutput, ChainStats, HealthyRpc, RpcEndpoint, HealthyRpcsByChain, RpcTestResult };
