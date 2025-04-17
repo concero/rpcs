@@ -161,14 +161,9 @@ export async function runRpcService() {
         const network = getNetworkDetails(chainId, networkDetails);
         if (!network) return {};
 
-        const isMainnet =
-          network.name.indexOf("testnet") === -1 &&
-          network.name.indexOf("sepolia") === -1 &&
-          network.name.indexOf("goerli") === -1;
-
         return {
-          mainnetNetwork: isMainnet ? network : undefined,
-          testnetNetwork: !isMainnet ? network : undefined,
+          mainnetNetwork: network.networkType === "mainnet" ? network : undefined,
+          testnetNetwork: network.networkType === "testnet" ? network : undefined,
         };
       },
       shouldProcessMainnet,
@@ -182,10 +177,7 @@ export async function runRpcService() {
       const network = getNetworkDetails(chainId, networkDetails);
       if (!network) return;
 
-      const isMainnet =
-        network.name.indexOf("testnet") === -1 &&
-        network.name.indexOf("sepolia") === -1 &&
-        network.name.indexOf("goerli") === -1;
+      const isMainnet = network.networkType === "mainnet";
 
       const chainlistRpcs = rpcs.filter(rpc => rpc.source === "chainlist");
       const ethereumListsRpcs = rpcs.filter(rpc => rpc.source === "ethereum-lists");

@@ -2,8 +2,8 @@
   "id": "338",
   "urls": [
     "https://cronos-testnet.drpc.org",
-    "https://evm-t3.cronos.org",
-    "https://endpoints.omniatech.io/v1/cronos/testnet/public"
+    "https://endpoints.omniatech.io/v1/cronos/testnet/public",
+    "https://evm-t3.cronos.org"
   ],
   "chainSelector": 338,
   "name": "cronosTestnet"

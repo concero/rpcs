@@ -7,7 +7,6 @@ export interface NetworkData {
     chainSelector: number;
   };
 }
-
 export interface NetworkDetails {
   name: string;
   chainId: number;
@@ -19,6 +18,7 @@ export interface NetworkDetails {
     apiUrl: string;
   }[];
   faucets: string[];
+  networkType: "mainnet" | "testnet";
 }
 
 export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData> {
@@ -44,7 +44,6 @@ export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData
     throw err;
   }
 }
-
 export async function fetchNetworkDetails(
   networkName: string,
   isMainnet: boolean,
@@ -69,7 +68,10 @@ export async function fetchNetworkDetails(
     }
 
     const data = await response.json();
-    return data as NetworkDetails;
+    return {
+      ...data,
+      networkType: networkType,
+    } as NetworkDetails;
   } catch (err) {
     debug(`Error fetching network details for ${networkName}: ${err}`);
     return null;

@@ -89,12 +89,7 @@ export function generateSupportedChainsFile(networkDetails: Record<string, Netwo
   const testnetObj: Record<string, string> = {};
 
   Object.values(networkDetails).forEach(network => {
-    const isMainnet =
-      network.name.indexOf("testnet") === -1 &&
-      network.name.indexOf("sepolia") === -1 &&
-      network.name.indexOf("goerli") === -1;
-
-    if (isMainnet) {
+    if (network.networkType === "mainnet") {
       mainnetObj[network.chainId.toString()] = network.name;
     } else {
       testnetObj[network.chainId.toString()] = network.name;

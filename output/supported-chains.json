@@ -1,6 +1,9 @@
 {
   "mainnet": {
     "1": "ethereum",
+    "42161": "arbitrum"
+  },
+  "testnet": {
     "81": "astarShibuya",
     "97": "bnbTestnet",
     "133": "hashkeyTestnet",
@@ -19,7 +22,6 @@
     "10143": "monadTestnet",
     "10200": "gnosisChiado",
     "33111": "apechainCurtis",
-    "42161": "arbitrum",
     "43113": "avalancheFuji",
     "44787": "celoAlfajores",
     "48899": "zircuitTestnet",
@@ -33,6 +35,5 @@
     "763373": "inkSepolia",
     "11155420": "optimismSepolia",
     "168587773": "blastSepolia"
-  },
-  "testnet": {}
+  }
 }

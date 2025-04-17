@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  rpc-classifier:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./rpcs/input:/data/input
+      - ./rpcs/output:/data/output
+    environment:
+      - NODE_ENV=production
+      - INPUT_DIR=/data/input
+      - OUTPUT_DIR=/data/output
+    restart: unless-stopped

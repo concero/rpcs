@@ -1,8 +1,0 @@
-{
-  "id": "1114",
-  "urls": [
-    "https://rpc.test2.btcs.network"
-  ],
-  "chainSelector": 1114,
-  "name": "coreTestnet"
-}
