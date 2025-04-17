@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc ./index.ts",
     "build:types": "tsc --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
