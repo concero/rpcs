@@ -1,25 +1,6 @@
 import { debug, error, info } from "../utils/logger";
 import config from "../constants/config";
-
-export interface NetworkData {
-  [networkName: string]: {
-    chainId: number;
-    chainSelector: number;
-  };
-}
-export interface NetworkDetails {
-  name: string;
-  chainId: number;
-  chainSelector: number;
-  rpcs: string[];
-  blockExplorers: {
-    name: string;
-    url: string;
-    apiUrl: string;
-  }[];
-  faucets: string[];
-  networkType: "mainnet" | "testnet";
-}
+import { NetworkDetails, NetworkData } from "../types";
 
 export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData> {
   const networkType = isMainnet ? "mainnet" : "testnet";

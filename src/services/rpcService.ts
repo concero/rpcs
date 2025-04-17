@@ -14,273 +14,337 @@ import {
 } from "./chainService";
 import { generateSupportedChainsFile, writeChainRpcFiles } from "./fileService";
 import { commitAndPushChanges } from "./gitService";
-import { ChainStats, HealthyRpc, RpcEndpoint } from "../types";
+import { ChainStats, HealthyRpc, NetworkDetails, RpcEndpoint } from "../types";
 import { displayNetworkStats } from "../utils/displayNetworkStats";
 import { sanitizeUrl } from "../utils/sanitizeUrl";
 import { fetchAllNetworkDetails } from "./networkService";
 
-export async function runRpcService() {
+type EndpointMap = Map<string, RpcEndpoint[]>;
+type EndpointCollection = {
+  chainlist: EndpointMap;
+  ethereumLists: EndpointMap;
+  v2Networks: EndpointMap;
+};
+
+interface TestResultsCollection {
+  healthyRpcs: Map<string, HealthyRpc[]>;
+  networkDetails: NetworkDetails;
+  initialEndpoints: EndpointCollection;
+}
+
+export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
   try {
     info("Starting RPC service...");
 
-    // Fetch network details from GitHub repository
     const networkDetails = await fetchAllNetworkDetails();
-
-    // Get supported chain IDs from fetched network details
     const supportedChainIds = getSupportedChainIds(networkDetails);
     info(`Supported chain IDs: ${supportedChainIds.join(", ")}`);
 
-    // Fetch and filter chainlist RPCs
-    const rawChainlistRpcs = await fetchChainlistRpcs();
-    const parsedChainlistRpcs = parseChainlistRpcs(rawChainlistRpcs);
-    const filteredChainlistRpcs = filterChainlistChains(parsedChainlistRpcs, supportedChainIds);
-
-    // Fetch ethereum-lists chains
-    const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
-    const filteredEthereumListsChains = filterEthereumListsChains(
-      ethereumListsChains,
-      supportedChainIds,
-    );
-
-    debug(
-      `Found ${Object.keys(filteredChainlistRpcs).length} chains from chainlist and ${
-        Object.keys(filteredEthereumListsChains).length
-      } chains from ethereum-lists to process`,
-    );
-
-    // Extract endpoints from all sources
-    const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
-    const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
-    const networkEndpoints = extractNetworkEndpoints(networkDetails);
-
-    // Track initial endpoint counts by chain ID and source
-    const initialEndpoints = {
-      chainlist: new Map<string, RpcEndpoint[]>(),
-      ethereumLists: new Map<string, RpcEndpoint[]>(),
-      v2Networks: new Map<string, RpcEndpoint[]>(),
-    };
-
-    // Group by chain ID for later statistics
-    chainlistEndpoints.forEach(endpoint => {
-      if (!initialEndpoints.chainlist.has(endpoint.chainId)) {
-        initialEndpoints.chainlist.set(endpoint.chainId, []);
-      }
-      initialEndpoints.chainlist.get(endpoint.chainId)!.push(endpoint);
-    });
-
-    ethereumListsEndpoints.forEach(endpoint => {
-      if (!initialEndpoints.ethereumLists.has(endpoint.chainId)) {
-        initialEndpoints.ethereumLists.set(endpoint.chainId, []);
-      }
-      initialEndpoints.ethereumLists.get(endpoint.chainId)!.push(endpoint);
-    });
-
-    networkEndpoints.forEach(endpoint => {
-      if (!initialEndpoints.v2Networks.has(endpoint.chainId)) {
-        initialEndpoints.v2Networks.set(endpoint.chainId, []);
-      }
-      initialEndpoints.v2Networks.get(endpoint.chainId)!.push(endpoint);
-    });
-
-    const urlMap = new Map<string, RpcEndpoint>();
-    const allEndpointsArray = [
-      ...chainlistEndpoints,
-      ...ethereumListsEndpoints,
-      ...networkEndpoints,
-    ];
-
-    allEndpointsArray.forEach(endpoint => {
-      const sanitizedUrl = sanitizeUrl(endpoint.url);
-      endpoint.url = sanitizedUrl;
-
-      // Prioritize v2-networks over chainlist over ethereum-lists
-      if (
-        !urlMap.has(sanitizedUrl) ||
-        (endpoint.source === "chainlist" &&
-          urlMap.get(sanitizedUrl)?.source === "ethereum-lists") ||
-        endpoint.source === "v2-networks"
-      ) {
-        urlMap.set(sanitizedUrl, endpoint);
-      }
-    });
-
-    const dedupedEndpoints = Array.from(urlMap.values());
+    const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
+    const dedupedEndpoints = deduplicateEndpoints(endpoints);
 
     info(
-      `Testing ${dedupedEndpoints.length} unique endpoints (${chainlistEndpoints.length} from chainlist, ${ethereumListsEndpoints.length} from ethereum-lists, ${networkEndpoints.length} from v2-networks, ${allEndpointsArray.length - dedupedEndpoints.length} duplicates removed)`,
+      `Testing ${dedupedEndpoints.length} unique endpoints (${endpoints.chainlist.length} from chainlist, ` +
+        `${endpoints.ethereumLists.length} from ethereum-lists, ${endpoints.v2Networks.length} from v2-networks, ` +
+        `${endpoints.total - dedupedEndpoints.length} duplicates removed)`,
     );
 
     const testResult = await testRpcEndpoints(dedupedEndpoints);
-    const testedEndpoints = testResult.healthyRpcs;
+    const results = processTestResults(testResult, networkDetails, endpoints.initialCollection);
 
-    if (testResult.chainIdMismatches.size > 0) {
-      info("=== Chain ID Mismatches ===");
-      testResult.chainIdMismatches.forEach((returnedIds, expectedId) => {
-        info(`Chain ID ${expectedId} had mismatches: ${returnedIds.join(", ")}`);
-      });
-    }
+    const modifiedFiles = writeOutputFiles(results, networkDetails);
+    generateStatistics(results);
 
-    const rpcsByReturnedChainId = new Map<string, HealthyRpc[]>();
-
-    testedEndpoints.forEach(rpc => {
-      if (!rpcsByReturnedChainId.has(rpc.returnedChainId)) {
-        rpcsByReturnedChainId.set(rpc.returnedChainId, []);
-      }
-      rpcsByReturnedChainId.get(rpc.returnedChainId)!.push(rpc);
-    });
-
-    rpcsByReturnedChainId.forEach(rpcs => rpcs.sort((a, b) => a.responseTime - b.responseTime));
-
-    const mainnetStats: ChainStats[] = [];
-    const testnetStats: ChainStats[] = [];
-
-    const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
-    const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
-
-    const filteredSortedRpcs = new Map(
-      Array.from(rpcsByReturnedChainId.entries()).filter(([chainId]) => {
-        const network = getNetworkDetails(chainId, networkDetails);
-        if (!network) return false;
-
-        const isMainnet =
-          network.name.indexOf("testnet") === -1 &&
-          network.name.indexOf("sepolia") === -1 &&
-          network.name.indexOf("goerli") === -1;
-
-        if (isMainnet && shouldProcessMainnet) return true;
-        if (!isMainnet && shouldProcessTestnet) return true;
-
-        return false;
-      }),
-    );
-
-    const modifiedFiles = writeChainRpcFiles(
-      filteredSortedRpcs,
-      config.OUTPUT_DIR,
-      chainId => {
-        const network = getNetworkDetails(chainId, networkDetails);
-        if (!network) return {};
-
-        return {
-          mainnetNetwork: network.networkType === "mainnet" ? network : undefined,
-          testnetNetwork: network.networkType === "testnet" ? network : undefined,
-        };
-      },
-      shouldProcessMainnet,
-      shouldProcessTestnet,
-    );
-
-    generateSupportedChainsFile(networkDetails);
-    const processedChainIds = new Set<string>();
-
-    filteredSortedRpcs.forEach((rpcs, chainId) => {
-      const network = getNetworkDetails(chainId, networkDetails);
-      if (!network) return;
-
-      processedChainIds.add(chainId);
-
-      const isMainnet = network.networkType === "mainnet";
-
-      const chainlistRpcs = rpcs.filter(rpc => rpc.source === "chainlist");
-      const ethereumListsRpcs = rpcs.filter(rpc => rpc.source === "ethereum-lists");
-      const v2NetworksRpcs = rpcs.filter(rpc => rpc.source === "v2-networks");
-
-      const uniqueChainlistUrls = new Set(chainlistRpcs.map(rpc => rpc.url)).size;
-      const uniqueEthereumListsUrls = new Set(ethereumListsRpcs.map(rpc => rpc.url)).size;
-      const uniqueV2NetworksUrls = new Set(v2NetworksRpcs.map(rpc => rpc.url)).size;
-
-      const initialChainlistCount = initialEndpoints.chainlist.get(chainId)?.length || 0;
-      const initialEthereumListsCount = initialEndpoints.ethereumLists.get(chainId)?.length || 0;
-      const initialV2NetworksCount = initialEndpoints.v2Networks.get(chainId)?.length || 0;
-
-      const unhealthyChainlistCount = initialChainlistCount - chainlistRpcs.length;
-      const unhealthyEthereumListsCount = initialEthereumListsCount - ethereumListsRpcs.length;
-      const unhealthyV2NetworksCount = initialV2NetworksCount - v2NetworksRpcs.length;
-
-      const stats = {
-        chainId,
-        name: network.name,
-        chainSelector: network.chainSelector,
-        healthyRpcCount: rpcs.length,
-        chainlistRpcCount: chainlistRpcs.length,
-        uniqueChainlistRpcCount: uniqueChainlistUrls,
-        ethereumListsRpcCount: ethereumListsRpcs.length,
-        uniqueEthereumListsRpcCount: uniqueEthereumListsUrls,
-        v2NetworksRpcCount: v2NetworksRpcs.length,
-        uniqueV2NetworksRpcCount: uniqueV2NetworksUrls,
-        unhealthyChainlistCount,
-        unhealthyEthereumListsCount,
-        unhealthyV2NetworksCount,
-        initialChainlistCount,
-        initialEthereumListsCount,
-        initialV2NetworksCount,
-      };
-
-      if (isMainnet && shouldProcessMainnet) {
-        mainnetStats.push(stats);
-      } else if (!isMainnet && shouldProcessTestnet) {
-        testnetStats.push(stats);
-      }
-    });
-
-    // Then add statistics for networks with no healthy RPCs
-    Object.entries(networkDetails).forEach(([chainId, network]) => {
-      if (processedChainIds.has(chainId)) return; // Skip already processed networks
-
-      const isMainnet = network.networkType === "mainnet";
-
-      // Skip networks that shouldn't be processed based on mode
-      if ((isMainnet && !shouldProcessMainnet) || (!isMainnet && !shouldProcessTestnet)) {
-        return;
-      }
-
-      const initialChainlistCount = initialEndpoints.chainlist.get(chainId)?.length || 0;
-      const initialEthereumListsCount = initialEndpoints.ethereumLists.get(chainId)?.length || 0;
-      const initialV2NetworksCount = initialEndpoints.v2Networks.get(chainId)?.length || 0;
-
-      const stats = {
-        chainId,
-        name: network.name,
-        chainSelector: network.chainSelector,
-        healthyRpcCount: 0,
-        chainlistRpcCount: 0,
-        uniqueChainlistRpcCount: 0,
-        ethereumListsRpcCount: 0,
-        uniqueEthereumListsRpcCount: 0,
-        v2NetworksRpcCount: 0,
-        uniqueV2NetworksRpcCount: 0,
-        unhealthyChainlistCount: initialChainlistCount,
-        unhealthyEthereumListsCount: initialEthereumListsCount,
-        unhealthyV2NetworksCount: initialV2NetworksCount,
-        initialChainlistCount,
-        initialEthereumListsCount,
-        initialV2NetworksCount,
-      };
-
-      if (isMainnet && shouldProcessMainnet) {
-        mainnetStats.push(stats);
-      } else if (!isMainnet && shouldProcessTestnet) {
-        testnetStats.push(stats);
-      }
-    });
-
-    // Display statistics
-    displayNetworkStats(mainnetStats, testnetStats);
-
-    // Commit and push changes if enabled
-    if (config.ENABLE_GIT_SERVICE && modifiedFiles.length > 0) {
-      info(`Committing ${modifiedFiles.length} modified files to git repository`);
+    if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT_REPO_PATH, modifiedFiles);
-    } else if (!config.ENABLE_GIT_SERVICE) {
-      info("Git service is disabled, skipping commit and push");
-    } else {
-      info("No files were modified, skipping git operations");
     }
 
     info("Service run complete");
-    return filteredSortedRpcs;
+    return results.healthyRpcs;
   } catch (err) {
     error(`Service run error: ${String(err)}`);
     throw err;
+  }
+}
+
+async function fetchEndpoints(
+  supportedChainIds: string[],
+  networkDetails: NetworkDetails,
+): Promise<{
+  chainlist: RpcEndpoint[];
+  ethereumLists: RpcEndpoint[];
+  v2Networks: RpcEndpoint[];
+  total: number;
+  initialCollection: EndpointCollection;
+}> {
+  const rawChainlistRpcs = await fetchChainlistRpcs();
+  const parsedChainlistRpcs = parseChainlistRpcs(rawChainlistRpcs);
+  const filteredChainlistRpcs = filterChainlistChains(parsedChainlistRpcs, supportedChainIds);
+
+  const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
+  const filteredEthereumListsChains = filterEthereumListsChains(
+    ethereumListsChains,
+    supportedChainIds,
+  );
+
+  debug(
+    `Found ${Object.keys(filteredChainlistRpcs).length} chains from chainlist and ` +
+      `${Object.keys(filteredEthereumListsChains).length} chains from ethereum-lists to process`,
+  );
+
+  const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
+  const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
+  const networkEndpoints = extractNetworkEndpoints(networkDetails);
+
+  const initialEndpoints = createInitialEndpointCollection(
+    chainlistEndpoints,
+    ethereumListsEndpoints,
+    networkEndpoints,
+  );
+
+  return {
+    chainlist: chainlistEndpoints,
+    ethereumLists: ethereumListsEndpoints,
+    v2Networks: networkEndpoints,
+    total: chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length,
+    initialCollection: initialEndpoints,
+  };
+}
+
+function createInitialEndpointCollection(
+  chainlistEndpoints: RpcEndpoint[],
+  ethereumListsEndpoints: RpcEndpoint[],
+  networkEndpoints: RpcEndpoint[],
+): EndpointCollection {
+  const initialEndpoints: EndpointCollection = {
+    chainlist: new Map<string, RpcEndpoint[]>(),
+    ethereumLists: new Map<string, RpcEndpoint[]>(),
+    v2Networks: new Map<string, RpcEndpoint[]>(),
+  };
+
+  const addToCollection = (endpoint: RpcEndpoint, collection: Map<string, RpcEndpoint[]>) => {
+    if (!collection.has(endpoint.chainId)) {
+      collection.set(endpoint.chainId, []);
+    }
+    collection.get(endpoint.chainId)!.push(endpoint);
+  };
+
+  chainlistEndpoints.forEach(endpoint => {
+    addToCollection(endpoint, initialEndpoints.chainlist);
+  });
+
+  ethereumListsEndpoints.forEach(endpoint => {
+    addToCollection(endpoint, initialEndpoints.ethereumLists);
+  });
+
+  networkEndpoints.forEach(endpoint => {
+    addToCollection(endpoint, initialEndpoints.v2Networks);
+  });
+
+  return initialEndpoints;
+}
+
+function deduplicateEndpoints(endpoints: {
+  chainlist: RpcEndpoint[];
+  ethereumLists: RpcEndpoint[];
+  v2Networks: RpcEndpoint[];
+}): RpcEndpoint[] {
+  const urlMap = new Map<string, RpcEndpoint>();
+  const allEndpointsArray = [
+    ...endpoints.chainlist,
+    ...endpoints.ethereumLists,
+    ...endpoints.v2Networks,
+  ];
+
+  allEndpointsArray.forEach(endpoint => {
+    const sanitizedUrl = sanitizeUrl(endpoint.url);
+    endpoint.url = sanitizedUrl;
+
+    if (
+      !urlMap.has(sanitizedUrl) ||
+      (endpoint.source === "chainlist" && urlMap.get(sanitizedUrl)?.source === "ethereum-lists") ||
+      endpoint.source === "v2-networks"
+    ) {
+      urlMap.set(sanitizedUrl, endpoint);
+    }
+  });
+
+  return Array.from(urlMap.values());
+}
+
+function processTestResults(
+  testResult: {
+    healthyRpcs: HealthyRpc[];
+    chainIdMismatches: Map<string, string[]>;
+  },
+  networkDetails: NetworkDetails,
+  initialEndpoints: EndpointCollection,
+): TestResultsCollection {
+  if (testResult.chainIdMismatches.size > 0) {
+    info("=== Chain ID Mismatches ===");
+    testResult.chainIdMismatches.forEach((returnedIds, expectedId) => {
+      info(`Chain ID ${expectedId} had mismatches: ${returnedIds.join(", ")}`);
+    });
+  }
+
+  const rpcsByReturnedChainId = new Map<string, HealthyRpc[]>();
+
+  testResult.healthyRpcs.forEach(rpc => {
+    if (!rpcsByReturnedChainId.has(rpc.returnedChainId)) {
+      rpcsByReturnedChainId.set(rpc.returnedChainId, []);
+    }
+    rpcsByReturnedChainId.get(rpc.returnedChainId)!.push(rpc);
+  });
+
+  rpcsByReturnedChainId.forEach(rpcs => rpcs.sort((a, b) => a.responseTime - b.responseTime));
+
+  const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
+  const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
+
+  const filteredSortedRpcs = new Map(
+    Array.from(rpcsByReturnedChainId.entries()).filter(([chainId]) => {
+      const network = getNetworkDetails(chainId, networkDetails);
+      if (!network) return false;
+
+      const isMainnet = network.networkType === "mainnet";
+      return (isMainnet && shouldProcessMainnet) || (!isMainnet && shouldProcessTestnet);
+    }),
+  );
+
+  return {
+    healthyRpcs: filteredSortedRpcs,
+    networkDetails,
+    initialEndpoints,
+  };
+}
+
+function writeOutputFiles(
+  results: TestResultsCollection,
+  networkDetails: NetworkDetails,
+): string[] {
+  const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
+  const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
+
+  const modifiedFiles = writeChainRpcFiles(
+    results.healthyRpcs,
+    config.OUTPUT_DIR,
+    chainId => {
+      const network = getNetworkDetails(chainId, networkDetails);
+      if (!network) return {};
+
+      return {
+        mainnetNetwork: network.networkType === "mainnet" ? network : undefined,
+        testnetNetwork: network.networkType === "testnet" ? network : undefined,
+      };
+    },
+    shouldProcessMainnet,
+    shouldProcessTestnet,
+  );
+
+  generateSupportedChainsFile(networkDetails);
+  return modifiedFiles;
+}
+
+function generateStatistics(results: TestResultsCollection): void {
+  const mainnetStats: ChainStats[] = [];
+  const testnetStats: ChainStats[] = [];
+  const processedChainIds = new Set<string>();
+  const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
+  const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
+
+  results.healthyRpcs.forEach((rpcs, chainId) => {
+    const network = getNetworkDetails(chainId, results.networkDetails);
+    if (!network) return;
+
+    processedChainIds.add(chainId);
+    const isMainnet = network.networkType === "mainnet";
+
+    const chainlistRpcs = rpcs.filter(rpc => rpc.source === "chainlist");
+    const ethereumListsRpcs = rpcs.filter(rpc => rpc.source === "ethereum-lists");
+
+    const initialChainlistCount = results.initialEndpoints.chainlist.get(chainId)?.length || 0;
+    const initialEthereumListsCount =
+      results.initialEndpoints.ethereumLists.get(chainId)?.length || 0;
+
+    const unhealthyChainlistCount = initialChainlistCount - chainlistRpcs.length;
+    const unhealthyEthereumListsCount = initialEthereumListsCount - ethereumListsRpcs.length;
+
+    const stats = {
+      chainId,
+      name: network.name,
+      healthyRpcCount: rpcs.length,
+      chainlistRpcCount: chainlistRpcs.length,
+      unhealthyChainlistCount,
+      ethereumListsRpcCount: ethereumListsRpcs.length,
+      unhealthyEthereumListsCount,
+    };
+
+    if (isMainnet && shouldProcessMainnet) {
+      mainnetStats.push(stats);
+    } else if (!isMainnet && shouldProcessTestnet) {
+      testnetStats.push(stats);
+    }
+  });
+
+  addMissingNetworksToStats(
+    results.networkDetails,
+    processedChainIds,
+    results.initialEndpoints,
+    mainnetStats,
+    testnetStats,
+  );
+
+  displayNetworkStats(mainnetStats, testnetStats);
+}
+
+function addMissingNetworksToStats(
+  networkDetails: NetworkDetails,
+  processedChainIds: Set<string>,
+  initialEndpoints: EndpointCollection,
+  mainnetStats: ChainStats[],
+  testnetStats: ChainStats[],
+): void {
+  const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
+  const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
+
+  Object.entries(networkDetails).forEach(([chainId, network]) => {
+    if (processedChainIds.has(chainId)) return;
+
+    const isMainnet = network.networkType === "mainnet";
+    if ((isMainnet && !shouldProcessMainnet) || (!isMainnet && !shouldProcessTestnet)) {
+      return;
+    }
+
+    const initialChainlistCount = initialEndpoints.chainlist.get(chainId)?.length || 0;
+    const initialEthereumListsCount = initialEndpoints.ethereumLists.get(chainId)?.length || 0;
+
+    const stats = {
+      chainId,
+      name: network.name,
+      healthyRpcCount: 0,
+      chainlistRpcCount: 0,
+      unhealthyChainlistCount: initialChainlistCount,
+      ethereumListsRpcCount: 0,
+      unhealthyEthereumListsCount: initialEthereumListsCount,
+    };
+
+    if (isMainnet && shouldProcessMainnet) {
+      mainnetStats.push(stats);
+    } else if (!isMainnet && shouldProcessTestnet) {
+      testnetStats.push(stats);
+    }
+  });
+}
+
+function shouldCommitChanges(modifiedFiles: string[]): boolean {
+  if (config.ENABLE_GIT_SERVICE && modifiedFiles.length > 0) {
+    info(`Committing ${modifiedFiles.length} modified files to git repository`);
+    return true;
+  } else if (!config.ENABLE_GIT_SERVICE) {
+    info("Git service is disabled, skipping commit and push");
+    return false;
+  } else {
+    info("No files were modified, skipping git operations");
+    return false;
   }
 }

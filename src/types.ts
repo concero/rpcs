@@ -71,14 +71,41 @@ export interface EthereumListsChain {
 interface ChainStats {
   chainId: string;
   name: string;
-  chainSelector?: number;
   healthyRpcCount: number;
-  ethereumListsRpcCount: number;
-  uniqueEthereumListsRpcCount: number;
   chainlistRpcCount: number;
-  uniqueChainlistRpcCount: number;
+  ethereumListsRpcCount: number;
   unhealthyEthereumListsCount: number;
   unhealthyChainlistCount: number;
 }
 
-export { ChainRpcOutput, ChainStats, HealthyRpc, RpcEndpoint, HealthyRpcsByChain, RpcTestResult };
+interface NetworkDetails {
+  name: string;
+  chainId: number;
+  chainSelector: number;
+  rpcs: string[];
+  blockExplorers: {
+    name: string;
+    url: string;
+    apiUrl: string;
+  }[];
+  faucets: string[];
+  networkType: "mainnet" | "testnet";
+}
+
+interface NetworkData {
+  [networkName: string]: {
+    chainId: number;
+    chainSelector: number;
+  };
+}
+
+export {
+  ChainRpcOutput,
+  ChainStats,
+  HealthyRpc,
+  RpcEndpoint,
+  HealthyRpcsByChain,
+  RpcTestResult,
+  NetworkDetails,
+  NetworkData,
+};

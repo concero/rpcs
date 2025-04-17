@@ -1,6 +1,6 @@
 import config from "../constants/config";
-import { debug, error, info } from "../utils/logger";
-import { ChainlistRpcs, EthereumListsChain } from "../types";
+import { debug, info } from "../utils/logger";
+import { EthereumListsChain } from "../types";
 
 export async function fetchChainFromEthereumLists(
   chainId: string,

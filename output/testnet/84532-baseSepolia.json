@@ -2,8 +2,8 @@
   "id": "84532",
   "urls": [
     "https://base-sepolia.gateway.tenderly.co",
-    "https://base-sepolia.drpc.org",
     "https://base-sepolia-rpc.publicnode.com",
+    "https://base-sepolia.drpc.org",
     "https://sepolia.base.org"
   ],
   "chainSelector": 84532,

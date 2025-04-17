@@ -2,8 +2,8 @@
   "id": "195",
   "urls": [
     "https://xlayertestrpc.okx.com",
-    "https://endpoints.omniatech.io/v1/xlayer/testnet/public",
-    "https://testrpc.xlayer.tech"
+    "https://testrpc.xlayer.tech",
+    "https://endpoints.omniatech.io/v1/xlayer/testnet/public"
   ],
   "chainSelector": 195,
   "name": "xlayerSepolia"
