@@ -2,9 +2,15 @@
   "name": "concero-rpcs",
   "version": "1.0.0",
   "description": "A service for upkeeping a list of healthy RPC endpoints for multiple chains",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "output"
+  ],
   "scripts": {
     "build": "swc src -d dist",
+    "build:types": "tsc --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
     "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\""
@@ -32,7 +38,9 @@
     "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
+    "@types/node": "22.14.1",
     "prettier": "^3.5.3",
-    "swc": "^1.0.11"
+    "swc": "^1.0.11",
+    "typescript": "^5.3.3"
   }
 }

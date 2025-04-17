@@ -17,7 +17,7 @@ export async function fetchChainFromEthereumLists(
     }
 
     const chainData = await response.json();
-    return chainData;
+    return chainData as EthereumListsChain;
   } catch (err) {
     debug(`Error fetching chain ${chainId} from ethereum-lists: ${err}`);
     return null;
@@ -29,7 +29,7 @@ export async function fetchEthereumListsChains(
 ): Promise<Record<string, EthereumListsChain>> {
   const result: Record<string, EthereumListsChain> = {};
 
-  info(`Fetching ${chainIds.length} chains from ethereum-lists...`);
+  // info(`Fetching ${chainIds.length} chains from ethereum-lists...`);
 
   const fetchPromises = chainIds
     .filter(id => !config.IGNORED_ETHEREUM_LISTS_CHAIN_IDS.includes(parseInt(id, 10)))
@@ -42,6 +42,6 @@ export async function fetchEthereumListsChains(
 
   await Promise.all(fetchPromises);
 
-  info(`Successfully fetched ${Object.keys(result).length} chains from ethereum-lists`);
+  info(`Fetched ${Object.keys(result).length} chains from ethereum-lists`);
   return result;
 }

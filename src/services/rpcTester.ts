@@ -7,6 +7,21 @@ import { HealthyRpc, RpcEndpoint, RpcTestResult } from "../types";
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 
+interface JsonRpcResponse {
+  jsonrpc: string;
+  id: number | string;
+  result?: string;
+  error?: {
+    code: number;
+    message: string;
+    data?: any;
+  };
+}
+
+interface NodeFetchOptions extends RequestInit {
+  agent?: http.Agent | https.Agent;
+}
+
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -22,7 +37,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
     const timeoutId = setTimeout(() => controller.abort(), config.RPC_REQUEST_TIMEOUT_MS);
 
     try {
-      const chainIdResponse = await fetch(endpoint.url, {
+      const options: NodeFetchOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -32,9 +47,10 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
           id: 1,
         }),
         signal: controller.signal,
-        agent: endpoint.url.startsWith("https") ? httpsAgent : httpAgent,
-      });
+      };
 
+      options.agent = endpoint.url.startsWith("https") ? httpsAgent : httpAgent;
+      const chainIdResponse = await fetch(endpoint.url, options);
       clearTimeout(timeoutId);
 
       if (chainIdResponse.status === 429) {
@@ -54,7 +70,8 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
         return null;
       }
 
-      const chainIdJson = await chainIdResponse.json();
+      const chainIdJson = (await chainIdResponse.json()) as JsonRpcResponse;
+
       if (!chainIdJson?.result || !/^0x[0-9A-Fa-f]+$/.test(chainIdJson.result)) {
         debug(`Invalid chainId result from endpoint: ${endpoint.url}`);
         return null;
@@ -110,7 +127,6 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
           rpcsByChain.get(rpc.chainId)!.push(rpc);
         });
 
-        // Check for chain ID mismatches within each chain
         rpcsByChain.forEach((rpcs, expectedChainId) => {
           const chainIdCounts = new Map<string, number>();
           rpcs.forEach(rpc => {
@@ -128,20 +144,16 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
             }
           });
 
-          // Log warnings and collect mismatches
           if (dominantChainId !== expectedChainId) {
             warn(
               `Chain ID mismatch for chain ${expectedChainId}: Most RPC endpoints returned ${dominantChainId}`,
             );
             chainIdMismatchMap.set(expectedChainId, [dominantChainId]);
           }
-
-          // Add all RPCs that return the dominant chain ID
           rpcs.forEach(rpc => {
             if (rpc.returnedChainId === dominantChainId) {
               validatedRpcs.push(rpc);
             } else {
-              // Collect individual mismatches for reporting
               const mismatches = chainIdMismatchMap.get(expectedChainId) || [];
               if (!mismatches.includes(rpc.returnedChainId)) {
                 mismatches.push(rpc.returnedChainId);
@@ -176,7 +188,6 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
               //   `Endpoint healthy: ${endpoint.url} (response time: ${result.responseTime}ms, chain ID: ${result.returnedChainId})`,
               // );
 
-              // Track all returned chain IDs for this expected chain ID
               if (!chainIdMap.has(result.chainId)) {
                 chainIdMap.set(result.chainId, new Set());
               }

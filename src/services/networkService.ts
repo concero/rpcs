@@ -29,7 +29,7 @@ export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData
   ).replace("${networkType}", networkType);
 
   try {
-    info(`Fetching ${networkType} networks from GitHub...`);
+    // info(`Fetching ${networkType} networks from GitHub...`);
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -37,13 +37,14 @@ export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData
     }
 
     const data = await response.json();
-    info(`Successfully fetched ${Object.keys(data).length} ${networkType} networks`);
+    info(`Fetched ${Object.keys(data).length} ${networkType} networks from Concero`);
     return data as NetworkData;
   } catch (err) {
     error(`Error fetching ${networkType} networks: ${err}`);
     throw err;
   }
 }
+
 export async function fetchNetworkDetails(
   networkName: string,
   isMainnet: boolean,
@@ -57,7 +58,7 @@ export async function fetchNetworkDetails(
     .replace("${networkName}", networkName);
 
   try {
-    debug(`Fetching details for ${networkName} (${networkType})...`);
+    debug(`Fetching details for ${networkName} (${networkType})... from Concero`);
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -67,7 +68,7 @@ export async function fetchNetworkDetails(
       return null;
     }
 
-    const data = await response.json();
+    const data = (await response.json()) as Record<string, any>;
     return {
       ...data,
       networkType: networkType,
@@ -85,7 +86,7 @@ export async function fetchAllNetworkDetails(): Promise<Record<string, NetworkDe
     const networks = await fetchNetworksData(isMainnet);
     const networkType = isMainnet ? "mainnet" : "testnet";
 
-    info(`Fetching details for ${Object.keys(networks).length} ${networkType} networks...`);
+    // info(`Fetching details for ${Object.keys(networks).length} ${networkType} networks...`);
 
     const fetchPromises = Object.entries(networks).map(async ([networkName, network]) => {
       const details = await fetchNetworkDetails(networkName, isMainnet);
@@ -105,6 +106,6 @@ export async function fetchAllNetworkDetails(): Promise<Record<string, NetworkDe
     await processNetworks(false);
   }
 
-  info(`Successfully fetched details for ${Object.keys(result).length} networks`);
+  info(`Fetched details for ${Object.keys(result).length} networks from Concero`);
   return result;
 }

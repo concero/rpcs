@@ -4,12 +4,17 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "declaration": true,
+    "outDir": "dist",
+    "types": ["node"],
+    "lib": ["es2020"],
     "paths": {
       "@concero/contract-utils": ["./node_modules/@concero/contract-utils"]
     }
   },
-  "ts-node": {}
+  "include": ["index.ts", "src/**/*"],
+  "exclude": ["node_modules"]
 }

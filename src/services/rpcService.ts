@@ -171,11 +171,13 @@ export async function runRpcService() {
     );
 
     generateSupportedChainsFile(networkDetails);
+    const processedChainIds = new Set<string>();
 
-    // Collect statistics
     filteredSortedRpcs.forEach((rpcs, chainId) => {
       const network = getNetworkDetails(chainId, networkDetails);
       if (!network) return;
+
+      processedChainIds.add(chainId);
 
       const isMainnet = network.networkType === "mainnet";
 
@@ -209,6 +211,47 @@ export async function runRpcService() {
         unhealthyChainlistCount,
         unhealthyEthereumListsCount,
         unhealthyV2NetworksCount,
+        initialChainlistCount,
+        initialEthereumListsCount,
+        initialV2NetworksCount,
+      };
+
+      if (isMainnet && shouldProcessMainnet) {
+        mainnetStats.push(stats);
+      } else if (!isMainnet && shouldProcessTestnet) {
+        testnetStats.push(stats);
+      }
+    });
+
+    // Then add statistics for networks with no healthy RPCs
+    Object.entries(networkDetails).forEach(([chainId, network]) => {
+      if (processedChainIds.has(chainId)) return; // Skip already processed networks
+
+      const isMainnet = network.networkType === "mainnet";
+
+      // Skip networks that shouldn't be processed based on mode
+      if ((isMainnet && !shouldProcessMainnet) || (!isMainnet && !shouldProcessTestnet)) {
+        return;
+      }
+
+      const initialChainlistCount = initialEndpoints.chainlist.get(chainId)?.length || 0;
+      const initialEthereumListsCount = initialEndpoints.ethereumLists.get(chainId)?.length || 0;
+      const initialV2NetworksCount = initialEndpoints.v2Networks.get(chainId)?.length || 0;
+
+      const stats = {
+        chainId,
+        name: network.name,
+        chainSelector: network.chainSelector,
+        healthyRpcCount: 0,
+        chainlistRpcCount: 0,
+        uniqueChainlistRpcCount: 0,
+        ethereumListsRpcCount: 0,
+        uniqueEthereumListsRpcCount: 0,
+        v2NetworksRpcCount: 0,
+        uniqueV2NetworksRpcCount: 0,
+        unhealthyChainlistCount: initialChainlistCount,
+        unhealthyEthereumListsCount: initialEthereumListsCount,
+        unhealthyV2NetworksCount: initialV2NetworksCount,
         initialChainlistCount,
         initialEthereumListsCount,
         initialV2NetworksCount,
