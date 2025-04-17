@@ -3,8 +3,8 @@
   "urls": [
     "https://arbitrum-sepolia.gateway.tenderly.co",
     "https://arbitrum-sepolia-rpc.publicnode.com",
-    "https://endpoints.omniatech.io/v1/arbitrum/sepolia/public",
     "https://arbitrum-sepolia.drpc.org",
+    "https://endpoints.omniatech.io/v1/arbitrum/sepolia/public",
     "https://sepolia-rollup.arbitrum.io/rpc",
     "https://api.zan.top/arb-sepolia"
   ],

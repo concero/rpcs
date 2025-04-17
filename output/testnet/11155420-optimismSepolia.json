@@ -4,8 +4,8 @@
     "https://optimism-sepolia.gateway.tenderly.co",
     "https://sepolia.optimism.io",
     "https://optimism-sepolia.api.onfinality.io/public",
-    "https://optimism-sepolia.drpc.org",
     "https://endpoints.omniatech.io/v1/op/sepolia/public",
+    "https://optimism-sepolia.drpc.org",
     "https://api.zan.top/opt-sepolia"
   ],
   "chainSelector": 11155420,
