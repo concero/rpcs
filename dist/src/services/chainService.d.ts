@@ -1,5 +1,5 @@
 import { ChainlistRpcs, HealthyRpc, RpcEndpoint } from "../types";
-import { NetworkDetails } from "./networkService";
+import { NetworkDetails } from "../types";
 export declare function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[];
 export declare function filterChainlistChains(rawChainlistRpcs: ChainlistRpcs, supportedChainIds: string[]): ChainlistRpcs;
 export declare function filterEthereumListsChains(rawEthereumListsChains: Record<string, any>, supportedChainIds: string[]): Record<string, any>;

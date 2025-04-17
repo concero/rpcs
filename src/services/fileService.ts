@@ -3,7 +3,7 @@ import path from "path";
 import { debug } from "../utils/logger";
 import { ChainRpcOutput, HealthyRpc } from "../types";
 import config from "../constants/config";
-import { NetworkDetails } from "./networkService";
+import { NetworkDetails } from "../types";
 
 export function ensureDirectoriesExist(outputDir: string) {
   const mainnetDir = path.join(outputDir, "mainnet");

@@ -2,9 +2,11 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "declaration": true,
@@ -15,6 +17,6 @@
       "@concero/contract-utils": ["./node_modules/@concero/contract-utils"]
     }
   },
-  "include": ["index.ts", "src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }

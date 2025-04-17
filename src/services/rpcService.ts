@@ -28,7 +28,7 @@ type EndpointCollection = {
 
 interface TestResultsCollection {
   healthyRpcs: Map<string, HealthyRpc[]>;
-  networkDetails: NetworkDetails;
+  networkDetails: Record<string, NetworkDetails>;
   initialEndpoints: EndpointCollection;
 }
 
@@ -69,7 +69,7 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
 async function fetchEndpoints(
   supportedChainIds: string[],
-  networkDetails: NetworkDetails,
+  networkDetails: Record<string, NetworkDetails>,
 ): Promise<{
   chainlist: RpcEndpoint[];
   ethereumLists: RpcEndpoint[];
@@ -177,7 +177,7 @@ function processTestResults(
     healthyRpcs: HealthyRpc[];
     chainIdMismatches: Map<string, string[]>;
   },
-  networkDetails: NetworkDetails,
+  networkDetails: Record<string, NetworkDetails>,
   initialEndpoints: EndpointCollection,
 ): TestResultsCollection {
   if (testResult.chainIdMismatches.size > 0) {
@@ -220,7 +220,7 @@ function processTestResults(
 
 function writeOutputFiles(
   results: TestResultsCollection,
-  networkDetails: NetworkDetails,
+  networkDetails: Record<string, NetworkDetails>,
 ): string[] {
   const shouldProcessMainnet = config.NETWORK_MODE === 1 || config.NETWORK_MODE === 2;
   const shouldProcessTestnet = config.NETWORK_MODE === 0 || config.NETWORK_MODE === 2;
@@ -298,7 +298,7 @@ function generateStatistics(results: TestResultsCollection): void {
 }
 
 function addMissingNetworksToStats(
-  networkDetails: NetworkDetails,
+  networkDetails: Record<string, NetworkDetails>,
   processedChainIds: Set<string>,
   initialEndpoints: EndpointCollection,
   mainnetStats: ChainStats[],

@@ -1,19 +1,21 @@
-export default {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
     IGNORED_CHAINLIST_CHAIN_IDS: [
-        200810,
-        6342,
-        3636,
-        2021,
-        1114,
-        919,
-        157,
-        81
+        200810, // bitlayer
+        6342, // megaeth
+        3636, // botanix
+        2021, // roninSaigon
+        1114, // btcs-testnet
+        919, // mode-sepolia
+        157, // puppynet
+        81, // astar-shibuya
     ],
     IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
-        2021,
-        81
+        2021, // roninSaigon
+        81, // astar-shibuya
     ],
-    NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10),
+    NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
     ENABLE_GIT_SERVICE: process.env.ENABLE_GIT_SERVICE === "true" || false,
     LOG_LEVEL: process.env.LOG_LEVEL || "info",
     LOG_DIR: "logs",
@@ -29,5 +31,5 @@ export default {
     RPC_CHECKER_RETRY_DELAY_MS: 0,
     RPC_CHECKER_MAX_RETRIES: 1,
     RPC_REQUEST_TIMEOUT_MS: 6 * 1000,
-    OUTPUT_DIR: "output/"
+    OUTPUT_DIR: "output/",
 };

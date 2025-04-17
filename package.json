@@ -9,7 +9,7 @@
     "output"
   ],
   "scripts": {
-    "build": "swc src -d dist",
+    "build": "rm -rf dist && tsc",
     "build:types": "tsc --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",

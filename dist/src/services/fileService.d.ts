@@ -1,5 +1,5 @@
 import { HealthyRpc } from "../types";
-import { NetworkDetails } from "./networkService";
+import { NetworkDetails } from "../types";
 export declare function ensureDirectoriesExist(outputDir: string): {
     mainnetDir: string;
     testnetDir: string;
