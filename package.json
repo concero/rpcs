@@ -2,14 +2,13 @@
   "name": "concero-rpcs",
   "version": "1.0.0",
   "description": "A service for upkeeping a list of healthy RPC endpoints for multiple chains",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "dist",
-    "output"
+    "index.js"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "tsc",
     "build:types": "tsc --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",

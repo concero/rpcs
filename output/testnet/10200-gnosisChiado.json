@@ -3,8 +3,8 @@
   "urls": [
     "https://gnosis-chiado.drpc.org",
     "https://endpoints.omniatech.io/v1/gnosis/chiado/public",
-    "https://gnosis-chiado-rpc.publicnode.com",
     "https://rpc.chiado.gnosis.gateway.fm",
+    "https://gnosis-chiado-rpc.publicnode.com",
     "https://rpc.chiadochain.net"
   ],
   "chainSelector": 10200,

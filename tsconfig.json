@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "outDir": "dist",
+    "outDir": ".",
     "types": ["node"],
     "lib": ["es2020"],
     "paths": {
