@@ -28,13 +28,17 @@ async function delay(ms: number) {
 
 async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
   let attempt = 0;
-  const maxRetries = config.RPC_CHECKER_MAX_RETRIES;
+  const maxRetries = config.RPC_TESTER.MAX_RETRIES;
+  const retryDelayMs = config.RPC_TESTER.RETRY_DELAY_MS;
 
   debug(`Testing endpoint: ${endpoint.url}`);
   while (attempt <= maxRetries) {
     const start = Date.now();
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), config.RPC_REQUEST_TIMEOUT_MS);
+    const timeoutId = setTimeout(
+      () => controller.abort(),
+      config.RPC_TESTER.HTTP_REQUEST_TIMEOUT_MS,
+    );
 
     try {
       const options: NodeFetchOptions = {
@@ -56,7 +60,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
       if (chainIdResponse.status === 429) {
         debug(`Rate limited (status 429) for endpoint: ${endpoint.url}`);
         if (attempt < maxRetries) {
-          await delay(config.RPC_CHECKER_RETRY_DELAY_MS);
+          await delay(retryDelayMs);
           attempt++;
           continue;
         }
@@ -96,7 +100,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
       );
 
       if (attempt < maxRetries) {
-        await delay(config.RPC_CHECKER_RETRY_DELAY_MS);
+        await delay(retryDelayMs);
         attempt++;
         continue;
       }
@@ -107,7 +111,7 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
 }
 
 export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTestResult> {
-  let concurrency = config.RPC_CHECKER_REQUEST_CONCURRENCY;
+  let concurrency = config.RPC_TESTER.HTTP_REQUEST_CONCURRENCY;
   const healthy: HealthyRpc[] = [];
   const queue = [...endpoints];
   let activeCount = 0;

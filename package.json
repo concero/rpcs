@@ -8,8 +8,10 @@
     "index.js"
   ],
   "scripts": {
+    "start": "bun run clean && bun ./src/index.ts --run-once",
     "build": "tsc ./index.ts",
-    "build:types": "tsc --emitDeclarationOnly",
+    "clean": "rm -rf output",
+    "build:types": "tsc ./index.ts --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
     "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\""

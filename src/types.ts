@@ -14,12 +14,6 @@ interface HealthyRpc extends RpcEndpoint {
   returnedChainId: string;
 }
 
-interface HealthyRpcsByChain {
-  [chainId: string]: {
-    rpcs: HealthyRpc[];
-  };
-}
-
 interface ChainRpcOutput {
   id: string;
   name?: string;
@@ -97,6 +91,20 @@ interface NetworkData {
     chainId: number;
     chainSelector: number;
   };
+}
+
+type EndpointMap = Map<string, RpcEndpoint[]>;
+
+export type EndpointCollection = {
+  chainlist: EndpointMap;
+  ethereumLists: EndpointMap;
+  v2Networks: EndpointMap;
+};
+
+export interface TestResultsCollection {
+  healthyRpcs: Map<string, HealthyRpc[]>;
+  networkDetails: Record<string, NetworkDetails>;
+  initialEndpoints: EndpointCollection;
 }
 
 export {
