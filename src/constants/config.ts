@@ -10,12 +10,16 @@ export default {
     81, // astar-shibuya
     44787, // celo
     168587773,
+    1946,
+    10200,
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
     44787, // celo
     168587773,
+    1946,
+    10200,
   ],
 
   NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
