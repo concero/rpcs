@@ -1,12 +1,6 @@
 {
   "id": "80002",
-  "urls": [
-    "https://polygon-amoy.gateway.tenderly.co",
-    "https://rpc-amoy.polygon.technology",
-    "https://polygon-amoy.drpc.org",
-    "https://polygon-amoy-bor-rpc.publicnode.com",
-    "https://api.zan.top/polygon-amoy"
-  ],
+  "urls": ["https://polygon-amoy-bor-rpc.publicnode.com"],
   "chainSelector": 80002,
   "name": "polygonAmoy"
 }

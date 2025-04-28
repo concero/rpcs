@@ -12,6 +12,8 @@ export default {
     168587773,
     1946,
     10200,
+    80002,
+    534351,
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
     2021, // roninSaigon
@@ -20,6 +22,8 @@ export default {
     168587773,
     1946,
     10200,
+    80002,
+    534351,
   ],
 
   NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
