@@ -8,10 +8,12 @@ export default {
     919, // mode-sepolia
     157, // puppynet
     81, // astar-shibuya
+    44787, // celo
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
+    44787, // celo
   ],
 
   NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
