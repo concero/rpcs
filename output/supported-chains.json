@@ -38,6 +38,7 @@
     "168587773": "blastSepolia",
     "300": "zksyncSepolia",
     "2358": "kromaSepolia",
-    "296": "hederaTestnet"
+    "296": "hederaTestnet",
+    "80069": "berachainBepolia"
   }
 }
