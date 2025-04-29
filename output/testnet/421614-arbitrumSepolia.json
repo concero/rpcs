@@ -1,6 +1,6 @@
 {
   "id": "421614",
-  "urls": ["https://arbitrum-sepolia-rpc.publicnode.com"],
+  "urls": ["https://sepolia-rollup.arbitrum.io/rpc"],
   "chainSelector": 421614,
   "name": "arbitrumSepolia"
 }
