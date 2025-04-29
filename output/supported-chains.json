@@ -37,6 +37,7 @@
     "11155420": "optimismSepolia",
     "168587773": "blastSepolia",
     "300": "zksyncSepolia",
-    "2358": "kromaSepolia"
+    "2358": "kromaSepolia",
+    "295": "hederaTestnet"
   }
 }
