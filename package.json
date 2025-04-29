@@ -8,7 +8,7 @@
     "index.js"
   ],
   "scripts": {
-    "start": "bun run clean && bun ./src/index.ts --run-once",
+    "start": "bun ./src/index.ts --run-once",
     "build": "tsc ./index.ts",
     "clean": "rm -rf output",
     "build:types": "tsc ./index.ts --emitDeclarationOnly",

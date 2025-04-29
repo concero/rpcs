@@ -36,6 +36,7 @@
     "11155111": "ethereumSepolia",
     "11155420": "optimismSepolia",
     "168587773": "blastSepolia",
-    "300": "zksyncSepolia"
+    "300": "zksyncSepolia",
+    "2358": "kromaSepolia"
   }
 }
