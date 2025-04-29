@@ -1,6 +1,6 @@
 {
-  "id": "295",
+  "id": "296",
   "urls": ["https://testnet.hashio.io/api"],
-  "chainSelector": 295,
+  "chainSelector": 296,
   "name": "hederaTestnet"
 }
