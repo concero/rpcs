@@ -1,0 +1,6 @@
+{
+  "id": "31",
+  "urls": ["https://public-node.testnet.rsk.co"],
+  "chainSelector": 31,
+  "name": "rootstockTestnet"
+}
