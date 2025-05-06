@@ -1,8 +1,9 @@
 {
   "id": "195",
   "urls": [
-    "https://rpc.ankr.com/xlayer_testnet",
     "https://endpoints.omniatech.io/v1/xlayer/testnet/public",
+    "https://rpc.ankr.com/xlayer_testnet",
+    "https://xlayer-testnet.drpc.org",
     "https://xlayertestrpc.okx.com",
     "https://testrpc.xlayer.tech"
   ],

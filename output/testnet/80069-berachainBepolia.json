@@ -1,6 +1,8 @@
 {
   "id": "80069",
-  "urls": ["https://bepolia.rpc.berachain.com"],
+  "urls": [
+    "https://bepolia.rpc.berachain.com"
+  ],
   "chainSelector": 80069,
   "name": "berachainBepolia"
 }

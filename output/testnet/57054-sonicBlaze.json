@@ -3,7 +3,9 @@
   "urls": [
     "https://sonic-testnet.drpc.org",
     "https://sonic-blaze-rpc.publicnode.com",
-    "https://rpc.blaze.soniclabs.com"
+    "https://rpc.blaze.soniclabs.com",
+    "https://rpc.ankr.com/sonic_blaze_testnet",
+    "https://rpc.therpc.io/sonic-blaze"
   ],
   "chainSelector": 57054,
   "name": "sonicBlaze"

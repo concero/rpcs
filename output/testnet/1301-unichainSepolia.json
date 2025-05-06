@@ -3,9 +3,10 @@
   "urls": [
     "https://endpoints.omniatech.io/v1/unichain/sepolia/public",
     "https://unichain-sepolia.drpc.org",
+    "https://rpc.therpc.io/unichain-sepolia",
     "https://unichain-sepolia-rpc.publicnode.com",
-    "https://sepolia.unichain.org",
-    "https://unichain-sepolia.api.onfinality.io/public"
+    "https://unichain-sepolia.api.onfinality.io/public",
+    "https://sepolia.unichain.org"
   ],
   "chainSelector": 1301,
   "name": "unichainSepolia"
