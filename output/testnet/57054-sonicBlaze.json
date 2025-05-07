@@ -1,9 +1,9 @@
 {
   "id": "57054",
   "urls": [
-    "https://rpc.ankr.com/sonic_blaze_testnet",
+    "https://sonic-testnet.drpc.org",
     "https://rpc.blaze.soniclabs.com",
-    "https://sonic-testnet.drpc.org"
+    "https://rpc.ankr.com/sonic_blaze_testnet"
   ],
   "chainSelector": 57054,
   "name": "sonicBlaze"

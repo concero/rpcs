@@ -6,6 +6,17 @@ interface RpcEndpoint {
   url: string;
   source: "chainlist" | "ethereum-lists" | "v2-networks";
 }
+export interface RpcTestStepResult {
+  success: boolean;
+  rateLimited?: boolean;
+  retryAfter?: number | null;
+  responseTime?: number;
+  jsonResult?: JsonRpcResponse;
+  error?: string;
+  isTimeout?: boolean;
+  chainId?: string;
+  blockNumber?: number;
+}
 
 interface RpcTestResult {
   healthyRpcs: HealthyRpc[];

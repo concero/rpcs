@@ -1,8 +1,8 @@
 {
   "id": "43113",
   "urls": [
-    "https://api.avax-test.network/ext/bc/C/rpc",
-    "https://avalanche-fuji.drpc.org"
+    "https://avalanche-fuji.drpc.org",
+    "https://api.avax-test.network/ext/bc/C/rpc"
   ],
   "chainSelector": 43113,
   "name": "avalancheFuji"

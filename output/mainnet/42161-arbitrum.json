@@ -1,14 +1,14 @@
 {
   "id": "42161",
   "urls": [
+    "https://arbitrum.gateway.tenderly.co",
     "https://arb-pokt.nodies.app",
+    "https://arbitrum.drpc.org",
     "https://arb1.lava.build",
     "https://arbitrum.meowrpc.com",
-    "https://arbitrum.drpc.org",
-    "https://arbitrum.gateway.tenderly.co",
     "https://arbitrum.blockpi.network/v1/rpc/public",
-    "https://arbitrum.rpc.subquery.network/public",
     "https://arb1.arbitrum.io/rpc",
+    "https://arbitrum.rpc.subquery.network/public",
     "https://1rpc.io/arb"
   ],
   "chainSelector": 42161,
