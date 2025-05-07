@@ -1,26 +1,17 @@
 import http from "http";
 import https from "https";
 import config from "../constants/config";
-import { debug, warn } from "../utils/logger";
-import { HealthyRpc, RpcEndpoint, RpcTestResult } from "../types";
+import { debug, info, warn } from "../utils/logger";
+import {
+  HealthyRpc,
+  JsonRpcResponse,
+  NodeFetchOptions,
+  RpcEndpoint,
+  RpcTestResult,
+} from "../types";
 
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
-
-interface JsonRpcResponse {
-  jsonrpc: string;
-  id: number | string;
-  result?: string;
-  error?: {
-    code: number;
-    message: string;
-    data?: any;
-  };
-}
-
-interface NodeFetchOptions extends RequestInit {
-  agent?: http.Agent | https.Agent;
-}
 
 async function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -34,71 +25,12 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
   debug(`Testing endpoint: ${endpoint.url}`);
   while (attempt <= maxRetries) {
     const start = Date.now();
-    const controller = new AbortController();
-    const timeoutId = setTimeout(
-      () => controller.abort(),
-      config.RPC_TESTER.HTTP_REQUEST_TIMEOUT_MS,
-    );
+    let chainIdResponseTime = 0;
+    let getLogsResponseTime = 0;
 
-    try {
-      const options: NodeFetchOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          jsonrpc: "2.0",
-          method: "eth_chainId",
-          params: [],
-          id: 1,
-        }),
-        signal: controller.signal,
-      };
-
-      options.agent = endpoint.url.startsWith("https") ? httpsAgent : httpAgent;
-      const chainIdResponse = await fetch(endpoint.url, options);
-      clearTimeout(timeoutId);
-
-      if (chainIdResponse.status === 429) {
-        debug(`Rate limited (status 429) for endpoint: ${endpoint.url}`);
-        if (attempt < maxRetries) {
-          await delay(retryDelayMs);
-          attempt++;
-          continue;
-        }
-        return null;
-      }
-
-      if (!chainIdResponse.ok) {
-        debug(
-          `Error response for endpoint: ${endpoint.url}, status: ${chainIdResponse.status}, statusText: ${chainIdResponse.statusText}`,
-        );
-        return null;
-      }
-
-      const chainIdJson = (await chainIdResponse.json()) as JsonRpcResponse;
-
-      if (!chainIdJson?.result || !/^0x[0-9A-Fa-f]+$/.test(chainIdJson.result)) {
-        debug(`Invalid chainId result from endpoint: ${endpoint.url}`);
-        return null;
-      }
-
-      const returnedChainId = parseInt(chainIdJson.result, 16).toString();
-
-      return {
-        chainId: endpoint.chainId,
-        url: endpoint.url,
-        responseTime: Date.now() - start,
-        returnedChainId,
-        source: endpoint.source,
-      };
-    } catch (err) {
-      clearTimeout(timeoutId);
-      const errorMessage = err.message || "Unknown error";
-      const statusCode = err.status || (err.cause && err.cause.code) || "N/A";
-
-      debug(
-        `Exception testing endpoint: ${endpoint.url}, status code: ${statusCode}, error: ${errorMessage}`,
-      );
-
+    // Test chainId
+    const chainIdResult = await testChainId(endpoint);
+    if (!chainIdResult.success) {
       if (attempt < maxRetries) {
         await delay(retryDelayMs);
         attempt++;
@@ -106,8 +38,163 @@ async function testOneRpc(endpoint: RpcEndpoint): Promise<HealthyRpc | null> {
       }
       return null;
     }
+
+    chainIdResponseTime = chainIdResult.responseTime;
+    const returnedChainId = chainIdResult.chainId;
+
+    // Test getLogs
+    const getLogsResult = await testGetLogs(endpoint);
+    if (!getLogsResult.success) {
+      if (attempt < maxRetries) {
+        await delay(retryDelayMs);
+        attempt++;
+        continue;
+      }
+      return null;
+    }
+
+    getLogsResponseTime = getLogsResult.responseTime;
+
+    // Both tests passed
+    const totalResponseTime = chainIdResponseTime + getLogsResponseTime;
+
+    return {
+      chainId: endpoint.chainId,
+      url: endpoint.url,
+      responseTime: totalResponseTime,
+      returnedChainId,
+      source: endpoint.source,
+    };
   }
   return null;
+}
+
+async function testChainId(endpoint: RpcEndpoint) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), config.RPC_TESTER.HTTP_REQUEST_TIMEOUT_MS);
+
+  const start = Date.now();
+
+  try {
+    const options: NodeFetchOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "eth_chainId",
+        params: [],
+        id: 1,
+      }),
+      signal: controller.signal,
+    };
+
+    options.agent = endpoint.url.startsWith("https") ? httpsAgent : httpAgent;
+    const chainIdResponse = await fetch(endpoint.url, options);
+    clearTimeout(timeoutId);
+
+    if (chainIdResponse.status === 429) {
+      debug(`Rate limited (status 429) for endpoint: ${endpoint.url}`);
+      return { success: false };
+    }
+
+    if (!chainIdResponse.ok) {
+      debug(
+        `Error response for endpoint: ${endpoint.url}, status: ${chainIdResponse.status}, statusText: ${chainIdResponse.statusText}`,
+      );
+      return { success: false };
+    }
+
+    const chainIdJson = (await chainIdResponse.json()) as JsonRpcResponse;
+
+    if (!chainIdJson?.result || !/^0x[0-9A-Fa-f]+$/.test(chainIdJson.result)) {
+      debug(`Invalid chainId result from endpoint: ${endpoint.url}`);
+      return { success: false };
+    }
+
+    const returnedChainId = parseInt(chainIdJson.result, 16).toString();
+    return {
+      success: true,
+      chainId: returnedChainId,
+      responseTime: Date.now() - start,
+    };
+  } catch (err) {
+    clearTimeout(timeoutId);
+    const errorMessage = err.message || "Unknown error";
+    const statusCode = err.status || (err.cause && err.cause.code) || "N/A";
+
+    debug(
+      `Exception testing chainId for endpoint: ${endpoint.url}, status code: ${statusCode}, error: ${errorMessage}`,
+    );
+    return { success: false };
+  }
+}
+async function testGetLogs(endpoint: RpcEndpoint) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), config.RPC_TESTER.HTTP_REQUEST_TIMEOUT_MS);
+
+  const start = Date.now();
+
+  try {
+    // Use a small block range to minimize load on the RPC
+    const options: NodeFetchOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        method: "eth_getLogs",
+        params: [
+          {
+            fromBlock: "0x1",
+            toBlock: "0x2",
+            address: [], // No address filter
+            topics: [], // No topic filter
+          },
+        ],
+        id: 2,
+      }),
+      signal: controller.signal,
+    };
+
+    options.agent = endpoint.url.startsWith("https") ? httpsAgent : httpAgent;
+    const logsResponse = await fetch(endpoint.url, options);
+    clearTimeout(timeoutId);
+
+    if (logsResponse.status === 429) {
+      debug(`Rate limited (status 429) for getLogs on endpoint: ${endpoint.url}`);
+      return { success: false };
+    }
+
+    if (!logsResponse.ok) {
+      debug(
+        `Error response for getLogs on endpoint: ${endpoint.url}, status: ${logsResponse.status}, statusText: ${logsResponse.statusText}`,
+      );
+      return { success: false };
+    }
+
+    const logsJson = (await logsResponse.json()) as JsonRpcResponse;
+
+    if (logsJson.error) {
+      debug(
+        `Error in getLogs response from endpoint: ${endpoint.url}, error: ${JSON.stringify(logsJson.error)}`,
+      );
+      return { success: false };
+    }
+
+    // We don't need to validate the actual logs content, just that the request was successful
+    return {
+      success: true,
+      responseTime: Date.now() - start,
+    };
+  } catch (err) {
+    clearTimeout(timeoutId);
+    const errorMessage = err.message || "Unknown error";
+    const statusCode = err.status || (err.cause && err.cause.code) || "N/A";
+
+    debug(
+      `Exception testing getLogs for endpoint: ${endpoint.url}, status code: ${statusCode}, error: ${errorMessage}`,
+    );
+    return { success: false };
+  }
 }
 
 export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTestResult> {
@@ -176,7 +263,6 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
         });
         return;
       }
-
       while (queue.length > 0 && activeCount < concurrency) {
         const endpoint = queue.shift()!;
         activeCount++;
@@ -188,18 +274,12 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
         testOneRpc(endpoint)
           .then(result => {
             if (result) {
-              // debug(
-              //   `Endpoint healthy: ${endpoint.url} (response time: ${result.responseTime}ms, chain ID: ${result.returnedChainId})`,
-              // );
-
               if (!chainIdMap.has(result.chainId)) {
                 chainIdMap.set(result.chainId, new Set());
               }
               chainIdMap.get(result.chainId)!.add(result.returnedChainId);
 
               healthy.push(result);
-            } else {
-              // debug(`Endpoint unhealthy: ${endpoint.url}`);
             }
           })
           .catch(err => {

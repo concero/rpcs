@@ -8,24 +8,10 @@ export default {
     919, // mode-sepolia
     157, // puppynet
     81, // astar-shibuya
-    44787, // celo
-    168587773,
-    1946,
-    10200,
-    80002,
-    534351,
-    11155420,
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
-    44787, // celo
-    168587773,
-    1946,
-    10200,
-    80002,
-    534351,
-    11155420,
   ],
 
   NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
@@ -36,14 +22,15 @@ export default {
   LOG_MAX_FILES: "7d",
 
   RPC_TESTER: {
-    HTTP_REQUEST_CONCURRENCY: 100,
-    HTTP_REQUEST_TIMEOUT_MS: 6 * 1000,
-    RETRY_DELAY_MS: 0,
-    MAX_RETRIES: 1,
+    HTTP_REQUEST_CONCURRENCY: 50,
+    HTTP_REQUEST_TIMEOUT_MS: 2 * 1000,
+    RETRY_DELAY_MS: 10 * 1000,
+    MAX_RETRIES: 3,
   },
 
   // urls
-  CHAINLIST_URL:
+  CHAINLIST_RPCS_URL: "https://chainlist.org/rpcs.json",
+  CHAINLIST_EXTRA_RPCS_URL:
     "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
   ETHEREUM_LISTS_URL_TEMPLATE:
     "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",

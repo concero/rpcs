@@ -1,3 +1,6 @@
+import http from "http";
+import https from "https";
+
 interface RpcEndpoint {
   chainId: string;
   url: string;
@@ -28,6 +31,36 @@ export interface ChainlistRpc {
   chain?: string;
   ethereumListsVerified?: boolean;
   [key: string]: any;
+}
+
+export interface ChainlistRpcData {
+  name: string;
+  chain: string;
+  icon?: string;
+  features?: { name: string }[];
+  rpc: { url: string }[];
+  faucets?: string[];
+  nativeCurrency: {
+    name: string;
+    symbol: string;
+    decimals: number;
+  };
+  infoURL?: string;
+  shortName: string;
+  chainId: number;
+  networkId: number;
+  slip44?: number;
+  explorers?: {
+    name: string;
+    url: string;
+    icon?: string;
+    standard?: string;
+  }[];
+  parent?: {
+    type: string;
+    chain: string;
+    bridges?: { url: string }[];
+  };
 }
 
 export interface ChainlistRpcs {
@@ -112,8 +145,22 @@ export {
   ChainStats,
   HealthyRpc,
   RpcEndpoint,
-  HealthyRpcsByChain,
   RpcTestResult,
   NetworkDetails,
   NetworkData,
 };
+
+export interface JsonRpcResponse {
+  jsonrpc: string;
+  id: number | string;
+  result?: string;
+  error?: {
+    code: number;
+    message: string;
+    data?: any;
+  };
+}
+
+export interface NodeFetchOptions extends RequestInit {
+  agent?: http.Agent | https.Agent;
+}

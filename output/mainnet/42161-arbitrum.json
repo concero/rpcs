@@ -2,18 +2,14 @@
   "id": "42161",
   "urls": [
     "https://arb-pokt.nodies.app",
-    "https://arbitrum-one.public.blastapi.io",
-    "https://arbitrum.blockpi.network/v1/rpc/public",
-    "https://arbitrum.drpc.org",
-    "https://arbitrum-one-rpc.publicnode.com",
-    "https://arbitrum.gateway.tenderly.co",
+    "https://arb1.lava.build",
     "https://arbitrum.meowrpc.com",
-    "https://arb1.arbitrum.io/rpc",
-    "https://1rpc.io/arb",
+    "https://arbitrum.drpc.org",
+    "https://arbitrum.gateway.tenderly.co",
+    "https://arbitrum.blockpi.network/v1/rpc/public",
     "https://arbitrum.rpc.subquery.network/public",
-    "https://api.zan.top/arb-one",
-    "https://rpc.therpc.io/arbitrum",
-    "https://arb1.lava.build"
+    "https://arb1.arbitrum.io/rpc",
+    "https://1rpc.io/arb"
   ],
   "chainSelector": 42161,
   "name": "arbitrum"

@@ -2,16 +2,91 @@ import { parse } from "acorn";
 import { simple } from "acorn-walk";
 import { debug } from "../utils/logger";
 import config from "../constants/config";
+import { ChainlistRpcs } from "../types";
 
 interface JSNode {
   type: string;
   [key: string]: any;
 }
 
-export async function fetchChainlistRpcs() {
-  const response = await fetch(config.CHAINLIST_URL);
+export async function fetchChainlistExtraRpcs(): Promise<string> {
+  const response = await fetch(config.CHAINLIST_EXTRA_RPCS_URL);
   const data = await response.text();
   return data;
+}
+
+export function parseChainlistExtraRpcs(jsFileContent: string): ChainlistRpcs {
+  const marker = "export const extraRpcs =";
+  const idx = jsFileContent.indexOf(marker);
+  const contentToParse = idx !== -1 ? jsFileContent.substring(idx) : jsFileContent;
+
+  const ast = parse(contentToParse, {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  });
+
+  let extraRpcsNode: JSNode | null = null;
+  simple(ast, {
+    ExportNamedDeclaration(node: JSNode) {
+      if (!node.declaration) return;
+      if (node.declaration.type === "VariableDeclaration") {
+        for (const decl of node.declaration.declarations) {
+          if (
+            decl.id.type === "Identifier" &&
+            decl.id.name === "extraRpcs" &&
+            decl.init?.type === "ObjectExpression"
+          ) {
+            extraRpcsNode = decl.init;
+          }
+        }
+      }
+    },
+  });
+
+  if (!extraRpcsNode) {
+    throw new Error("Could not find `export const extraRpcs = {...}` in the file.");
+  }
+
+  const parsed = parseValue(extraRpcsNode);
+  if (!parsed || typeof parsed !== "object") {
+    throw new Error("Parsed `extraRpcs` is not an object.");
+  }
+
+  // Post-processing to ensure all RPC endpoints are properly formatted as strings
+  const result: ChainlistRpcs = {};
+
+  for (const chainId in parsed) {
+    if (parsed[chainId] && parsed[chainId].rpcs) {
+      debug(`Processing RPCs for chainId ${chainId}`);
+
+      // Transform the RPCs array to extract URLs from objects when needed
+      const rpcs = parsed[chainId].rpcs
+        .map((rpc: any) => {
+          if (typeof rpc === "string") {
+            debug(`Found string RPC: ${rpc}`);
+            return rpc;
+          } else if (rpc && typeof rpc === "object" && typeof rpc.url === "string") {
+            debug(`Found object RPC with URL: ${rpc.url}`);
+            return rpc.url;
+          } else {
+            debug(`Found unknown RPC format: ${JSON.stringify(rpc)}`);
+            return null;
+          }
+        })
+        .filter(Boolean); // Remove any null entries
+
+      if (rpcs.length > 0) {
+        result[chainId] = {
+          rpcs,
+          name: parsed[chainId].name,
+          shortName: parsed[chainId].shortName,
+          chain: parsed[chainId].chain,
+        };
+      }
+    }
+  }
+
+  return result;
 }
 
 function isWssUrl(value: any): boolean {
@@ -68,69 +143,4 @@ function parseValue(node: JSNode): any {
   }
 
   return undefined;
-}
-
-export function parseChainlistRpcs(jsFileContent: string): Record<string, any> {
-  const marker = "export const extraRpcs =";
-  const idx = jsFileContent.indexOf(marker);
-  const contentToParse = idx !== -1 ? jsFileContent.substring(idx) : jsFileContent;
-
-  const ast = parse(contentToParse, {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  });
-
-  let extraRpcsNode: JSNode | null = null;
-  simple(ast, {
-    ExportNamedDeclaration(node: JSNode) {
-      if (!node.declaration) return;
-      if (node.declaration.type === "VariableDeclaration") {
-        for (const decl of node.declaration.declarations) {
-          if (
-            decl.id.type === "Identifier" &&
-            decl.id.name === "extraRpcs" &&
-            decl.init?.type === "ObjectExpression"
-          ) {
-            extraRpcsNode = decl.init;
-          }
-        }
-      }
-    },
-  });
-
-  if (!extraRpcsNode) {
-    throw new Error("Could not find `export const extraRpcs = {...}` in the file.");
-  }
-
-  const parsed = parseValue(extraRpcsNode);
-  if (!parsed || typeof parsed !== "object") {
-    throw new Error("Parsed `extraRpcs` is not an object.");
-  }
-
-  // Post-processing to ensure all RPC endpoints are properly formatted as strings
-  for (const chainId in parsed) {
-    if (parsed[chainId] && parsed[chainId].rpcs) {
-      debug(`Processing RPCs for chainId ${chainId}`);
-
-      // Transform the RPCs array to extract URLs from objects when needed
-      parsed[chainId].rpcs = parsed[chainId].rpcs
-        .map((rpc: any) => {
-          if (typeof rpc === "string") {
-            debug(`Found string RPC: ${rpc}`);
-            return rpc;
-          } else if (rpc && typeof rpc === "object" && typeof rpc.url === "string") {
-            debug(`Found object RPC with URL: ${rpc.url}`);
-            return rpc.url;
-          } else {
-            debug(`Found unknown RPC format: ${JSON.stringify(rpc)}`);
-            return null;
-          }
-        })
-        .filter(Boolean); // Remove any null entries
-
-      debug(`Parsed Chainlist urls: ${JSON.stringify(parsed[chainId].rpcs)}`);
-    }
-  }
-
-  return parsed;
 }

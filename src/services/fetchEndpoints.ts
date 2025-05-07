@@ -1,14 +1,13 @@
 import { EndpointCollection, NetworkDetails, RpcEndpoint } from "../types";
-import { fetchChainlistRpcs, parseChainlistRpcs } from "./chainlistService";
+import { fetchChainlistData } from "./chainlistRpcService";
 import {
   extractChainlistEndpoints,
   extractEthereumListsEndpoints,
   extractNetworkEndpoints,
-  filterChainlistChains,
   filterEthereumListsChains,
 } from "./chainService";
 import { fetchEthereumListsChains } from "./ethereumListsService";
-import { debug } from "../utils/logger";
+import { info } from "../utils/logger";
 import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
 
 export async function fetchEndpoints(
@@ -21,21 +20,22 @@ export async function fetchEndpoints(
   total: number;
   initialCollection: EndpointCollection;
 }> {
-  const rawChainlistRpcs = await fetchChainlistRpcs();
-  const parsedChainlistRpcs = parseChainlistRpcs(rawChainlistRpcs);
-  const filteredChainlistRpcs = filterChainlistChains(parsedChainlistRpcs, supportedChainIds);
+  // Fetch chainlist data with filtering already applied
+  const filteredChainlistRpcs = await fetchChainlistData(supportedChainIds);
 
+  // Fetch ethereum-lists data
   const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
   const filteredEthereumListsChains = filterEthereumListsChains(
     ethereumListsChains,
     supportedChainIds,
   );
 
-  debug(
+  info(
     `Found ${Object.keys(filteredChainlistRpcs).length} chains from chainlist and ` +
       `${Object.keys(filteredEthereumListsChains).length} chains from ethereum-lists to process`,
   );
 
+  // Extract endpoints from the filtered data
   const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
   const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
   const networkEndpoints = extractNetworkEndpoints(networkDetails);

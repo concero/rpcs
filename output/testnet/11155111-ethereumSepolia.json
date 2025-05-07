@@ -1,18 +1,14 @@
 {
   "id": "11155111",
   "urls": [
-    "https://gateway.tenderly.co/public/sepolia",
-    "https://sepolia.gateway.tenderly.co",
     "https://eth-sepolia.api.onfinality.io/public",
-    "https://1rpc.io/sepolia",
+    "https://gateway.tenderly.co/public/sepolia",
     "https://sepolia.drpc.org",
-    "https://rpc.therpc.io/ethereum-sepolia",
-    "https://rpc.sepolia.ethpandaops.io",
+    "https://sepolia.gateway.tenderly.co",
     "https://0xrpc.io/sep",
-    "https://api.zan.top/eth-sepolia",
+    "https://rpc.sepolia.ethpandaops.io",
     "https://ethereum-sepolia.rpc.subquery.network/public",
-    "https://ethereum-sepolia-rpc.publicnode.com",
-    "https://eth-sepolia.public.blastapi.io"
+    "https://1rpc.io/sepolia"
   ],
   "chainSelector": 11155111,
   "name": "ethereumSepolia"

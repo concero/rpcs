@@ -11,7 +11,7 @@ The service can be run manually or scheduled to run periodically using a cron jo
 ```ts
 // src/config.ts
 export default {
-    CHAINLIST_URL: "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
+    CHAINLIST_EXTRA_RPCS_URL: "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
     RPC_REQUEST_TIMEOUT_MS: 10000,
     GIT_REPO_PATH: process.env.GIT_REPO_PATH || ".",
     CRON_SCHEDULE: process.env.CRON_SCHEDULE || "0 0 * * *",
