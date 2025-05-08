@@ -1,0 +1,10 @@
+{
+  "url": "https://rpc.owlracle.info/arb/70d38ce1826c4a60bb2a8e05a6c8b20f",
+  "expectedChainId": "42161",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:34.342Z",
+  "stage": "eth_chainId",
+  "reason": "HTTP Error",
+  "attempts": 3,
+  "testDuration": 32789
+}

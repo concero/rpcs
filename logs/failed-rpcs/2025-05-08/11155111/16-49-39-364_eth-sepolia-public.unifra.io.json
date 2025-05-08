@@ -1,0 +1,10 @@
+{
+  "url": "https://eth-sepolia-public.unifra.io",
+  "expectedChainId": "11155111",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:39.364Z",
+  "stage": "eth_chainId",
+  "reason": "Timeout",
+  "attempts": 3,
+  "testDuration": 36024
+}

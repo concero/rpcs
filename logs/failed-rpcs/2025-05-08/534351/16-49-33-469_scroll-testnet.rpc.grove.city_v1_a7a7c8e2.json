@@ -1,0 +1,10 @@
+{
+  "url": "https://scroll-testnet.rpc.grove.city/v1/a7a7c8e2",
+  "expectedChainId": "534351",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:33.469Z",
+  "stage": "eth_chainId",
+  "reason": "Invalid chainId format",
+  "attempts": 3,
+  "testDuration": 30471
+}

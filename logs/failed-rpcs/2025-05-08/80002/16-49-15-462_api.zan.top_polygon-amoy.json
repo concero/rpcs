@@ -1,0 +1,9 @@
+{
+  "url": "https://api.zan.top/polygon-amoy",
+  "expectedChainId": "80002",
+  "timestamp": "2025-05-08T16:49:15.462Z",
+  "stage": "eth_getLogs",
+  "reason": "Rate Limited",
+  "attempts": 2,
+  "testDuration": 13908
+}

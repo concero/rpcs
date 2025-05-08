@@ -1,0 +1,9 @@
+{
+  "url": "https://cloudflare-eth.com",
+  "expectedChainId": "1",
+  "timestamp": "2025-05-08T16:49:31.858Z",
+  "stage": "eth_blockNumber",
+  "reason": "Invalid blockNumber format",
+  "attempts": 3,
+  "testDuration": 30308
+}

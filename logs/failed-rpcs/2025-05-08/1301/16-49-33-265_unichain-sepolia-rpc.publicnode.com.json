@@ -1,0 +1,9 @@
+{
+  "url": "https://unichain-sepolia-rpc.publicnode.com",
+  "expectedChainId": "1301",
+  "timestamp": "2025-05-08T16:49:33.265Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 31713
+}

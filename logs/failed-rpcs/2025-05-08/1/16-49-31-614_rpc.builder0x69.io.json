@@ -1,0 +1,10 @@
+{
+  "url": "https://rpc.builder0x69.io",
+  "expectedChainId": "1",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:31.614Z",
+  "stage": "eth_chainId",
+  "reason": "Exception",
+  "attempts": 3,
+  "testDuration": 30064
+}

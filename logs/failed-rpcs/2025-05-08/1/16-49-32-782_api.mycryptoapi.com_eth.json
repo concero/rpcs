@@ -1,0 +1,10 @@
+{
+  "url": "https://api.mycryptoapi.com/eth",
+  "expectedChainId": "1",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:32.782Z",
+  "stage": "eth_chainId",
+  "reason": "HTTP Error",
+  "attempts": 3,
+  "testDuration": 31231
+}

@@ -1,0 +1,10 @@
+{
+  "url": "https://arb-mainnet-public.unifra.io",
+  "expectedChainId": "42161",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:31.619Z",
+  "stage": "eth_chainId",
+  "reason": "Exception",
+  "attempts": 3,
+  "testDuration": 30066
+}

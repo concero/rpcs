@@ -1,0 +1,10 @@
+{
+  "url": "https://endpoints.omniatech.io/v1/zksync-era/sepolia/public",
+  "expectedChainId": "300",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:31.968Z",
+  "stage": "eth_chainId",
+  "reason": "HTTP Error",
+  "attempts": 3,
+  "testDuration": 30416
+}
