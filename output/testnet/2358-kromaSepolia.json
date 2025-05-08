@@ -1,8 +1,6 @@
 {
   "id": "2358",
-  "urls": [
-    "https://api.sepolia.kroma.network"
-  ],
+  "urls": ["https://api.sepolia.kroma.network/"],
   "chainSelector": 2358,
   "name": "kromaSepolia"
 }

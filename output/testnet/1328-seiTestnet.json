@@ -1,8 +1,7 @@
 {
   "id": "1328",
   "urls": [
-    "https://evm-rpc-testnet.sei-apis.com",
-    "https://sei-testnet.drpc.org"
+    "https://evm-rpc-testnet.sei-apis.com"
   ],
   "chainSelector": 1328,
   "name": "seiTestnet"

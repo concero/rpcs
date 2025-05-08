@@ -9,8 +9,6 @@
     "133": "hashkeyTestnet",
     "157": "shibariumPuppynet",
     "195": "xlayerSepolia",
-    "296": "hederaTestnet",
-    "300": "zksyncSepolia",
     "338": "cronosTestnet",
     "919": "modeTestnet",
     "1114": "coreTestnet",
@@ -18,7 +16,6 @@
     "1328": "seiTestnet",
     "1946": "soneiumMinato",
     "2021": "roninSaigon",
-    "2358": "kromaSepolia",
     "3636": "botanixTestnet",
     "5003": "mantleSepolia",
     "6342": "megaethTestnet",
@@ -31,7 +28,6 @@
     "57054": "sonicBlaze",
     "59141": "lineaSepolia",
     "80002": "polygonAmoy",
-    "80069": "berachainBepolia",
     "84532": "baseSepolia",
     "200810": "bitlayerTestnet",
     "421614": "arbitrumSepolia",
@@ -39,6 +35,15 @@
     "763373": "inkSepolia",
     "11155111": "ethereumSepolia",
     "11155420": "optimismSepolia",
-    "168587773": "blastSepolia"
+    "168587773": "blastSepolia",
+    "300": "zksyncSepolia",
+    "2358": "kromaSepolia",
+    "296": "hederaTestnet",
+    "80069": "berachainBepolia",
+    "1270": "irysTestnet",
+    "31": "rootstockTestnet",
+    "1313161555": "auroraTestnet",
+    "51": "xdcTestnet",
+    "4157": "crossfiTestnet"
   }
 }
