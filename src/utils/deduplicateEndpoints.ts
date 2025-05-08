@@ -14,12 +14,15 @@ export function deduplicateEndpoints(endpoints: {
   ];
 
   allEndpointsArray.forEach(endpoint => {
+    const sanitizedUrl = sanitizeUrl(endpoint.url);
+    endpoint.url = sanitizedUrl;
+
     if (
-      !urlMap.has(endpoint.url) ||
-      (endpoint.source === "chainlist" && urlMap.get(endpoint.url)?.source === "ethereum-lists") ||
+      !urlMap.has(sanitizedUrl) ||
+      (endpoint.source === "chainlist" && urlMap.get(sanitizedUrl)?.source === "ethereum-lists") ||
       endpoint.source === "v2-networks"
     ) {
-      urlMap.set(endpoint.url, endpoint);
+      urlMap.set(sanitizedUrl, endpoint);
     }
   });
 

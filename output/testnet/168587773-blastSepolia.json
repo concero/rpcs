@@ -1,7 +1,9 @@
 {
   "id": "168587773",
   "urls": [
-    "https://rpc.ankr.com/blast_testnet_sepolia"
+    "https://rpc.ankr.com/blast_testnet_sepolia",
+    "https://sepolia.blast.io",
+    "https://endpoints.omniatech.io/v1/blast/sepolia/public"
   ],
   "chainSelector": 1685877,
   "name": "blastSepolia"

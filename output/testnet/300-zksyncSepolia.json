@@ -1,8 +1,8 @@
 {
   "id": "300",
   "urls": [
-    "https://sepolia.era.zksync.dev",
-    "https://rpc.ankr.com/zksync_era_sepolia"
+    "https://rpc.ankr.com/zksync_era_sepolia",
+    "https://sepolia.era.zksync.dev"
   ],
   "chainSelector": 300,
   "name": "zksyncSepolia"
