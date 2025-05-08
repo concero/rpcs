@@ -25,8 +25,12 @@ export default {
     HTTP_REQUEST_CONCURRENCY: 200,
     HTTP_REQUEST_TIMEOUT_MS: 2 * 1000,
     RETRY_DELAY_MS: 10 * 1000,
-    MAX_RETRIES: 1,
+    MAX_RETRIES: 2,
     MAX_RETRY_AFTER_TIMEOUT_MS: 10 * 1000,
+    ENDPOINT_MAX_DURATION_MS: 120 * 1000, // 2 minutes
+    LOG_INTERVAL_MS: 10 * 1000, // 10 seconds
+    EXPONENTIAL_BACKOFF: true,
+    JSON_PARSE_TIMEOUT_MS: 5 * 1000, // 5 seconds
   },
 
   // urls

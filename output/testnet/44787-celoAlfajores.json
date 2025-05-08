@@ -1,6 +1,7 @@
 {
   "id": "44787",
   "urls": [
+    "https://celo-alfajores.drpc.org",
     "https://alfajores-forno.celo-testnet.org"
   ],
   "chainSelector": 44787,

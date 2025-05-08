@@ -2,6 +2,7 @@
   "id": "1301",
   "urls": [
     "https://unichain-sepolia.drpc.org",
+    "https://endpoints.omniatech.io/v1/unichain/sepolia/public",
     "https://sepolia.unichain.org"
   ],
   "chainSelector": 1301,

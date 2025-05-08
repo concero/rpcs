@@ -2,11 +2,10 @@
   "id": "42161",
   "urls": [
     "https://arbitrum.gateway.tenderly.co",
-    "https://arb-pokt.nodies.app",
-    "https://arbitrum.drpc.org",
     "https://arb1.lava.build",
+    "https://arb-pokt.nodies.app",
     "https://arbitrum.meowrpc.com",
-    "https://arbitrum.blockpi.network/v1/rpc/public",
+    "https://arbitrum.drpc.org",
     "https://arb1.arbitrum.io/rpc",
     "https://arbitrum.rpc.subquery.network/public",
     "https://1rpc.io/arb"

@@ -1,6 +1,5 @@
 import config from "../constants/config";
-import { error, info } from "../utils/logger";
-import { testRpcEndpoints } from "./rpcTester";
+import { error, info, debug, warn } from "../utils/logger";
 import { getSupportedChainIds } from "./chainService";
 import { commitAndPushChanges } from "./gitService";
 import { HealthyRpc } from "../types";
@@ -11,6 +10,8 @@ import { writeOutputFiles } from "../utils/writeOutputFiles";
 import { deduplicateEndpoints } from "../utils/deduplicateEndpoints";
 import { fetchEndpoints } from "./fetchEndpoints";
 import { processTestResults } from "../utils/processTestResults";
+import { RpcTester } from "./rpcTester";
+import { endpointFailureTracker } from "./endpointFailureTracker";
 
 export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
   try {
@@ -29,7 +30,14 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
         `${endpoints.total - dedupedEndpoints.length} duplicates removed)`,
     );
 
-    const testResult = await testRpcEndpoints(dedupedEndpoints);
+    const rpcTester = new RpcTester(config.RPC_TESTER, {
+      debug,
+      info,
+      warn,
+      error,
+    });
+
+    const testResult = await rpcTester.testEndpoints(dedupedEndpoints);
     const results = processTestResults(testResult, networkDetails, endpoints.initialCollection);
 
     const modifiedFiles = writeOutputFiles(results, networkDetails);
@@ -43,6 +51,8 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
     return results.healthyRpcs;
   } catch (err) {
     error(`Service run error: ${String(err)}, ${err.stack}`);
+    await endpointFailureTracker.flushAllLogs();
+
     throw err;
   }
 }

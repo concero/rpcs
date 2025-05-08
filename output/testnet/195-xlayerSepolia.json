@@ -1,6 +1,8 @@
 {
   "id": "195",
   "urls": [
+    "https://xlayer-testnet.drpc.org",
+    "https://testrpc.xlayer.tech",
     "https://rpc.ankr.com/xlayer_testnet"
   ],
   "chainSelector": 195,

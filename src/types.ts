@@ -16,16 +16,23 @@ export interface RpcTestStepResult {
   isTimeout?: boolean;
   chainId?: string;
   blockNumber?: number;
+  httpStatus?: number;
+  httpStatusText?: string;
 }
 
 interface RpcTestResult {
   healthyRpcs: HealthyRpc[];
   chainIdMismatches: Map<string, string[]>;
+  incomplete?: boolean;
 }
 
 interface HealthyRpc extends RpcEndpoint {
   responseTime: number;
   returnedChainId: string;
+  lastBlockNumber: number;
+  chainIdResponse?: JsonRpcResponse;
+  blockNumberResponse?: JsonRpcResponse;
+  getLogsResponse?: JsonRpcResponse;
 }
 
 interface ChainRpcOutput {
@@ -33,6 +40,15 @@ interface ChainRpcOutput {
   name?: string;
   urls: string[];
   chainSelector?: number;
+  debug?: {
+    responses: {
+      [url: string]: {
+        chainIdResponse?: JsonRpcResponse;
+        blockNumberResponse?: JsonRpcResponse;
+        getLogsResponse?: JsonRpcResponse;
+      }
+    }
+  };
 }
 
 export interface ChainlistRpc {
@@ -175,3 +191,16 @@ export interface JsonRpcResponse {
 export interface NodeFetchOptions extends RequestInit {
   agent?: http.Agent | https.Agent;
 }
+
+// Track active requests for debugging purposes
+export type EndpointStatus = {
+  url: string;
+  chainId: string;
+  startTime: number;
+  currentStage: "chainId" | "blockNumber" | "getLogs" | "waiting";
+  attempt: number;
+  maxRetries: number;
+  retryAfter: number | null;
+  waiting: boolean;
+  waitUntil: number | null;
+};

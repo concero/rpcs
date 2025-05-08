@@ -13,7 +13,8 @@ type LogLevel = keyof typeof LOG_LEVELS;
 
 const validateLogLevel = (level: string): LogLevel => {
   if (level in LOG_LEVELS) return level as LogLevel;
-  console.warn(`Invalid log level "${level}", defaulting to "info"`);
+  // Use standard output instead of logger to avoid circular dependency
+  process.stderr.write(`Warning: Invalid log level "${level}", defaulting to "info"\n`);
   return "info";
 };
 

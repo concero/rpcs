@@ -9,6 +9,7 @@ import {
 import { fetchEthereumListsChains } from "./ethereumListsService";
 import { info } from "../utils/logger";
 import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
+import { filterHttpEndpoints } from "../utils/filterHttpEndpoints";
 
 export async function fetchEndpoints(
   supportedChainIds: string[],
@@ -35,10 +36,11 @@ export async function fetchEndpoints(
       `${Object.keys(filteredEthereumListsChains).length} chains from ethereum-lists to process`,
   );
 
-  // Extract endpoints from the filtered data
-  const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
-  const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
-  const networkEndpoints = extractNetworkEndpoints(networkDetails);
+  const chainlistEndpoints = filterHttpEndpoints(extractChainlistEndpoints(filteredChainlistRpcs));
+  const ethereumListsEndpoints = filterHttpEndpoints(
+    extractEthereumListsEndpoints(filteredEthereumListsChains),
+  );
+  const networkEndpoints = filterHttpEndpoints(extractNetworkEndpoints(networkDetails));
 
   const initialEndpoints = createInitialEndpointCollection(
     chainlistEndpoints,
