@@ -1,11 +1,9 @@
 {
   "id": "1301",
   "urls": [
-    "https://endpoints.omniatech.io/v1/unichain/sepolia/public",
-    "https://unichain-sepolia.drpc.org",
-    "https://unichain-sepolia-rpc.publicnode.com",
     "https://sepolia.unichain.org",
-    "https://unichain-sepolia.api.onfinality.io/public"
+    "https://unichain-sepolia-rpc.publicnode.com",
+    "https://unichain-sepolia.drpc.org"
   ],
   "chainSelector": 1301,
   "name": "unichainSepolia"
