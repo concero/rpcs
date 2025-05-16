@@ -1,6 +1,6 @@
 {
   "id": "11155420",
-  "urls": ["https://sepolia.optimism.io"],
+  "urls": ["https://sepolia.optimism.io", "https://api.zan.top/opt-sepolia"],
   "chainSelector": 11155420,
   "name": "optimismSepolia"
 }
