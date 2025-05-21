@@ -1,6 +1,6 @@
 {
   "id": "168587773",
-  "urls": ["https://sepolia.blast.io", "https://rpc.ankr.com/blast_testnet_sepolia"],
+  "urls": ["https://rpc.ankr.com/blast_testnet_sepolia", "https://sepolia.blast.io"],
   "chainSelector": 1685877,
   "name": "blastSepolia"
 }
