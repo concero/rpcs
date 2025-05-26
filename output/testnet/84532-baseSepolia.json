@@ -3,8 +3,7 @@
   "urls": [
     "https://sepolia.base.org",
     "https://base-sepolia-rpc.publicnode.com",
-    "https://base-sepolia.drpc.org",
-    "https://base-sepolia.gateway.tenderly.co"
+    "https://base-sepolia.drpc.org"
   ],
   "chainSelector": 84532,
   "name": "baseSepolia"
