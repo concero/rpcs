@@ -43,6 +43,7 @@
     "31": "rootstockTestnet",
     "1313161555": "auroraTestnet",
     "51": "xdcTestnet",
-    "4157": "crossfiTestnet"
+    "4157": "crossfiTestnet",
+    "37111": "lensSepolia"
   }
 }

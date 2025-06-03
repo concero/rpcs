@@ -1,0 +1,6 @@
+{
+  "id": "37111",
+  "urls": ["https://rpc.testnet.lens.dev", "https://lens-testnet.drpc.org"],
+  "chainSelector": 37111,
+  "name": "lensSepolia"
+}
