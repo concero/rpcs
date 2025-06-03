@@ -1,6 +1,6 @@
 {
   "id": "1313161555",
-  "urls": ["https://testnet.aurora.dev"],
+  "urls": ["https://testnet.aurora.dev", "https://endpoints.omniatech.io/v1/aurora/testnet/public"],
   "chainSelector": 13131615,
   "name": "auroraTestnet"
 }
