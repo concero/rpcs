@@ -1,6 +1,6 @@
 {
   "id": "808813",
-  "urls": ["https://4801.rpc.thirdweb.com", "https://worldchain-sepolia.g.alchemy.com/public", "https://worldchain-sepolia.drpc.org"],
+  "urls": ["https://bob-testnet.drpc.org", "https://bob-sepolia.rpc.gobob.xyz"],
   "chainSelector": 808813,
   "name": "bobSepolia"
 }
