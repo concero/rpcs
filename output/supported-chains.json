@@ -46,6 +46,9 @@
     "4157": "crossfiTestnet",
     "37111": "lensSepolia",
     "44787": "celoAlfajores",
-    "5611": "opbnbTestnet"
+    "5611": "opbnbTestnet",
+    "18880": "expchainTestnet",
+    "4801": "worldchainTestnet",
+    "808813": "bobSepolia"
   }
 }

@@ -1,0 +1,6 @@
+{
+  "id": "18880",
+  "urls": ["https://rpc1-testnet.expchain.ai"],
+  "chainSelector": 18880,
+  "name": "expchainTestnet"
+}
