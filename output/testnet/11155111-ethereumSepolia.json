@@ -1,6 +1,6 @@
 {
   "id": "11155111",
-  "urls": ["https://ethereum-sepolia-rpc.publicnode.com"],
+  "urls": ["https://ethereum-sepolia-rpc.publicnode.com", "https://sepolia.drpc.org", "https://eth-sepolia.public.blastapi.io", "https://sepolia.gateway.tenderly.co"],
   "chainSelector": 11155111,
   "name": "ethereumSepolia"
 }
