@@ -1,0 +1,6 @@
+{
+  "id": "3441006",
+  "urls": ["https://pacific-rpc.sepolia-testnet.manta.network/http", "https://endpoints.omniatech.io/v1/manta-pacific/sepolia/public"],
+  "chainSelector": 3441006,
+  "name": "mantapacificSepolia"
+}

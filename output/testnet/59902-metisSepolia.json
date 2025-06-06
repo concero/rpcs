@@ -1,0 +1,6 @@
+{
+  "id": "59902",
+  "urls": ["https://sepolia.metisdevops.link", "https://metis-sepolia-rpc.publicnode.com"],
+  "chainSelector": 59902,
+  "name": "metisSepolia"
+}

@@ -1,0 +1,6 @@
+{
+  "id": "167009",
+  "urls": ["https://taiko-hekla-rpc.publicnode.com", "https://rpc.hekla.taiko.xyz", "https://rpc.ankr.com/taiko_hekla", "https://taiko-hekla.drpc.org"],
+  "chainSelector": 167009,
+  "name": "taikoTestnet"
+}

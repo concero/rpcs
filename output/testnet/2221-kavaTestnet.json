@@ -1,0 +1,6 @@
+{
+  "id": "2221",
+  "urls": ["https://evm.testnet.kava.io", "https://kava-testnet.drpc.org"],
+  "chainSelector": 2221,
+  "name": "kavaTestnet"
+}

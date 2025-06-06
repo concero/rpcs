@@ -49,6 +49,21 @@
     "5611": "opbnbTestnet",
     "18880": "expchainTestnet",
     "4801": "worldchainTestnet",
-    "808813": "bobSepolia"
+    "808813": "bobSepolia",
+    "1123": "b2Testnet",
+    "240": "cronoszkTestnet",
+    "545": "flowTestnet",
+    "2522": "fraxtalHolesky",
+    "59902": "metisSepolia",
+    "1112": "wemixTestnet",
+    "167009": "taikoTestnet",
+    "2221": "kavaTestnet",
+    "943": "pulsechainTestnet",
+    "314159": "filecoinCalibration",
+    "2810": "morphHolesky",
+    "1001": "kaiaKairos",
+    "3441006": "mantapacificSepolia",
+    "11124": "abstractSepolia",
+    "23295": "oasissapphireTestnet"
   }
 }
