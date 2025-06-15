@@ -64,6 +64,10 @@
     "1001": "kaiaKairos",
     "3441006": "mantapacificSepolia",
     "11124": "abstractSepolia",
-    "23295": "oasissapphireTestnet"
+    "23295": "oasissapphireTestnet",
+    "35443": "qTestnet",
+    "128123": "etherlinkTestnet",
+    "123420001114": "campv2Testnet",
+    "5124": "seismicDevnet"
   }
 }

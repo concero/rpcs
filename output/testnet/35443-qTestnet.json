@@ -1,0 +1,6 @@
+{
+  "id": "35443",
+  "urls": ["https://rpc.qtestnet.org"],
+  "chainSelector": 35443,
+  "name": "qTestnet"
+}
