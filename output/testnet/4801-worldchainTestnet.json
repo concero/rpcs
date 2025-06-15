@@ -1,6 +1,10 @@
 {
   "id": "4801",
-  "urls": ["https://worldchain-sepolia.drpc.org", "https://4801.rpc.thirdweb.com", "https://worldchain-sepolia.drpc.org"],
+  "urls": [
+    "https://4801.rpc.thirdweb.com",
+    "https://worldchain-sepolia.drpc.org",
+    "https://worldchain-sepolia.g.alchemy.com/public"
+  ],
   "chainSelector": 4801,
   "name": "worldchainTestnet"
 }
