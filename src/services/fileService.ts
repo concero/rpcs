@@ -30,7 +30,7 @@ interface ChainData {
 }
 
 /**
- * Generates consolidated RPC files instead of individual files per chain.
+ * Generates consolidated RPC files.
  * Creates two files: mainnet.json and testnet.json containing all chain RPCs.
  *
  * @param rpcsByChain Map of chain IDs to their healthy RPC endpoints
@@ -82,7 +82,6 @@ export function writeChainRpcFiles(
     }
   });
 
-  // Write mainnet file - single consolidated file with all mainnet chains
   if (Object.keys(mainnetChains).length > 0 && processMainnet) {
     const mainnetPath = path.join(outputDir, "mainnet.json");
     fs.writeFileSync(mainnetPath, JSON.stringify(mainnetChains, null, 2));
