@@ -4,7 +4,7 @@
  * This list contains domains that should be excluded from RPC testing & output.
  */
 export const domainBlacklist: string[] = [
-  "ankr.com", // Example
+  // "ankr.com", // Example
 ];
 
 /**

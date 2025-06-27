@@ -3,7 +3,6 @@ import { sanitizeUrl } from "./sanitizeUrl";
 import { isDomainBlacklisted } from "../constants/domainBlacklist";
 import config from "../constants/config";
 import { info } from "../utils/logger";
-import { domainBlacklist } from "../constants/domainBlacklist";
 
 /**
  * Filter endpoints based on domain blacklist and removes duplicates across all sources
@@ -15,23 +14,26 @@ export function filterEndpoints(endpoints: EndpointCollection): {
   filteredEndpoints: RpcEndpoint[];
 } {
   const urlMap = new Map<string, RpcEndpoint>();
-  let totalEndpoints = 0;
-  let chainlistCount = 0;
-  let ethereumListsCount = 0;
-  let v2NetworksCount = 0;
-  let blacklistedCount = 0;
+
+  const stats = {
+    total: 0,
+    sources: {
+      chainlist: 0,
+      ethereumLists: 0,
+      "v2-networks": 0,
+    },
+    blacklisted: 0,
+  };
 
   const processEndpoints = (
     source: "chainlist" | "ethereumLists" | "v2-networks",
     endpointMap: Map<string, RpcEndpoint[]>,
   ) => {
     for (const endpoints of endpointMap.values()) {
-      totalEndpoints += endpoints.length;
+      const count = endpoints.length;
+      stats.total += count;
 
-      // Count endpoints by source
-      if (source === "chainlist") chainlistCount += endpoints.length;
-      else if (source === "ethereumLists") ethereumListsCount += endpoints.length;
-      else if (source === "v2-networks") v2NetworksCount += endpoints.length;
+      stats.sources[source] += count;
 
       for (const endpoint of endpoints) {
         const sanitizedUrl = sanitizeUrl(endpoint.url);
@@ -39,7 +41,7 @@ export function filterEndpoints(endpoints: EndpointCollection): {
 
         // Skip blacklisted domains if enabled
         if (config.ENABLE_DOMAIN_BLACKLIST && isDomainBlacklisted(sanitizedUrl)) {
-          blacklistedCount++;
+          stats.blacklisted++;
           continue;
         }
 
@@ -51,35 +53,26 @@ export function filterEndpoints(endpoints: EndpointCollection): {
     }
   };
 
-  // Process all collections
   processEndpoints("chainlist", endpoints.chainlist);
   processEndpoints("ethereumLists", endpoints.ethereumLists);
   processEndpoints("v2-networks", endpoints.v2Networks);
 
   const filteredEndpoints = Array.from(urlMap.values());
-  const duplicatesRemoved = totalEndpoints - blacklistedCount - filteredEndpoints.length;
+  const duplicatesRemoved = stats.total - stats.blacklisted - filteredEndpoints.length;
 
-  // Log statistics about the filtering process
   const endpointInfoParts = [
-    `Testing ${filteredEndpoints.length} unique endpoints `,
-    `(${chainlistCount} from chainlist, `,
-    `${ethereumListsCount} from ethereum-lists, `,
-    `${v2NetworksCount} from v2-networks, `,
+    `Testing ${filteredEndpoints.length} unique endpoints: `,
+    `${stats.sources.chainlist} from chainlist, `,
+    `${stats.sources.ethereumLists} from ethereum-lists, `,
+    `${stats.sources["v2-networks"]} from v2-networks, `,
     `${duplicatesRemoved} duplicates removed`,
   ];
 
-  if (config.ENABLE_DOMAIN_BLACKLIST && blacklistedCount > 0) {
-    endpointInfoParts.push(`, ${blacklistedCount} blacklisted domains filtered`);
+  if (config.ENABLE_DOMAIN_BLACKLIST && stats.blacklisted > 0) {
+    endpointInfoParts.push(`, ${stats.blacklisted} blacklisted domains filtered`);
   }
 
-  endpointInfoParts.push(")");
   info(endpointInfoParts.join(""));
-
-  if (config.ENABLE_DOMAIN_BLACKLIST) {
-    info(
-      `Domain blacklist is active with ${domainBlacklist.length} entries: ${domainBlacklist.join(", ")}`,
-    );
-  }
 
   return {
     filteredEndpoints,

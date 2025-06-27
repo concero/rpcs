@@ -32,7 +32,7 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
 
-    const { filteredEndpoints } = filterEndpoints(endpoints);
+    const filteredEndpoints = filterEndpoints(endpoints);
 
     const testResult = await testRpcEndpoints(filteredEndpoints);
     const results = processTestResults(testResult, networkDetails, endpoints);
