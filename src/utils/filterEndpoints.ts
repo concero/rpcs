@@ -10,9 +10,7 @@ import { info } from "../utils/logger";
  * @param endpoints Collection of endpoints from different sources
  * @returns Filtered, deduplicated endpoints and related statistics
  */
-export function filterEndpoints(endpoints: EndpointCollection): {
-  filteredEndpoints: RpcEndpoint[];
-} {
+export function filterEndpoints(endpoints: EndpointCollection): RpcEndpoint[] {
   const urlMap = new Map<string, RpcEndpoint>();
 
   const stats = {
@@ -74,7 +72,5 @@ export function filterEndpoints(endpoints: EndpointCollection): {
 
   info(endpointInfoParts.join(""));
 
-  return {
-    filteredEndpoints,
-  };
+  return filteredEndpoints;
 }

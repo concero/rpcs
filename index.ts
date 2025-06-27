@@ -23,27 +23,42 @@ function loadChainData(): {
   testnet: Record<string, ChainRpcData>;
   all: Record<string, ChainRpcData>;
 } {
+  const mainnetPath = path.join(__dirname, "output/mainnet.json");
+  const testnetPath = path.join(__dirname, "output/testnet.json");
+
   const mainnetChains: Record<string, ChainRpcData> = {};
   const testnetChains: Record<string, ChainRpcData> = {};
   const allChains: Record<string, ChainRpcData> = {};
 
-  Object.entries(supportedChains.mainnet).forEach(([chainId, name]) => {
-    const filePath = path.join(__dirname, `output/mainnet/${chainId}-${name}.json`);
-    if (fs.existsSync(filePath)) {
-      const chainData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      mainnetChains[chainId] = chainData;
-      allChains[chainId] = chainData;
-    }
-  });
+  if (fs.existsSync(mainnetPath)) {
+    const mainnetData = JSON.parse(fs.readFileSync(mainnetPath, "utf-8"));
+    Object.entries(mainnetData).forEach(([chainId, data]) => {
+      const chainData = data as Omit<ChainRpcData, "id">;
+      const fullChainData: ChainRpcData = {
+        id: chainId,
+        urls: chainData.urls,
+        chainSelector: chainData.chainSelector,
+        name: chainData.name,
+      };
+      mainnetChains[chainId] = fullChainData;
+      allChains[chainId] = fullChainData;
+    });
+  }
 
-  Object.entries(supportedChains.testnet).forEach(([chainId, name]) => {
-    const filePath = path.join(__dirname, `output/testnet/${chainId}-${name}.json`);
-    if (fs.existsSync(filePath)) {
-      const chainData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-      testnetChains[chainId] = chainData;
-      allChains[chainId] = chainData;
-    }
-  });
+  if (fs.existsSync(testnetPath)) {
+    const testnetData = JSON.parse(fs.readFileSync(testnetPath, "utf-8"));
+    Object.entries(testnetData).forEach(([chainId, data]) => {
+      const chainData = data as Omit<ChainRpcData, "id">;
+      const fullChainData: ChainRpcData = {
+        id: chainId,
+        urls: chainData.urls,
+        chainSelector: chainData.chainSelector,
+        name: chainData.name,
+      };
+      testnetChains[chainId] = fullChainData;
+      allChains[chainId] = fullChainData;
+    });
+  }
 
   return {
     mainnet: mainnetChains,
