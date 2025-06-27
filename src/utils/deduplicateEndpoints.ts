@@ -1,5 +1,7 @@
 import { RpcEndpoint } from "../types";
 import { sanitizeUrl } from "./sanitizeUrl";
+import { isDomainBlacklisted } from "../constants/domainBlacklist";
+import config from "../constants/config";
 
 export function deduplicateEndpoints(endpoints: {
   chainlist: RpcEndpoint[];
@@ -16,6 +18,11 @@ export function deduplicateEndpoints(endpoints: {
   allEndpointsArray.forEach(endpoint => {
     const sanitizedUrl = sanitizeUrl(endpoint.url);
     endpoint.url = sanitizedUrl;
+
+    // Skip blacklisted domains if enabled
+    if (config.ENABLE_DOMAIN_BLACKLIST && isDomainBlacklisted(sanitizedUrl)) {
+      return;
+    }
 
     if (
       !urlMap.has(sanitizedUrl) ||

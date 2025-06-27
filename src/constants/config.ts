@@ -1,4 +1,9 @@
+import { domainBlacklist } from "./domainBlacklist";
+
 export default {
+  // Domain blacklist configuration
+  DOMAIN_BLACKLIST: domainBlacklist,
+  ENABLE_DOMAIN_BLACKLIST: true, // Set to false to disable domain blacklisting
   IGNORED_CHAINLIST_CHAIN_IDS: [
     200810, // bitlayer
     6342, // megaeth

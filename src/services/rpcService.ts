@@ -6,6 +6,7 @@ import { commitAndPushChanges } from "./gitService";
 import { HealthyRpc } from "../types";
 import { fetchAllNetworkDetails } from "./networkService";
 import { shouldCommitChanges } from "../utils/shouldCommitChanges";
+import { domainBlacklist } from "../constants/domainBlacklist";
 import { generateStatistics } from "../utils/generateStatistics";
 import { writeOutputFiles } from "../utils/writeOutputFiles";
 import { deduplicateEndpoints } from "../utils/deduplicateEndpoints";
@@ -35,11 +36,24 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
     const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
     const dedupedEndpoints = deduplicateEndpoints(endpoints);
 
-    info(
-      `Testing ${dedupedEndpoints.length} unique endpoints (${endpoints.chainlist.length} from chainlist, ` +
-        `${endpoints.ethereumLists.length} from ethereum-lists, ${endpoints.v2Networks.length} from v2-networks, ` +
-        `${endpoints.total - dedupedEndpoints.length} duplicates removed)`,
-    );
+    const endpointInfoParts = [
+      `Testing ${dedupedEndpoints.length} unique endpoints (${endpoints.chainlist.length} from chainlist, `,
+      `${endpoints.ethereumLists.length} from ethereum-lists, ${endpoints.v2Networks.length} from v2-networks, `,
+      `${endpoints.total - dedupedEndpoints.length} duplicates removed`,
+    ];
+
+    if (config.ENABLE_DOMAIN_BLACKLIST && endpoints.blacklisted > 0) {
+      endpointInfoParts.push(`, ${endpoints.blacklisted} blacklisted domains filtered`);
+    }
+
+    endpointInfoParts.push(")");
+    info(endpointInfoParts.join(""));
+
+    if (config.ENABLE_DOMAIN_BLACKLIST) {
+      info(
+        `Domain blacklist is active with ${domainBlacklist.length} entries: ${domainBlacklist.join(", ")}`,
+      );
+    }
 
     // Test all endpoints and process results
     const testResult = await testRpcEndpoints(dedupedEndpoints);
