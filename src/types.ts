@@ -112,7 +112,6 @@ export {
   ChainStats,
   HealthyRpc,
   RpcEndpoint,
-  HealthyRpcsByChain,
   RpcTestResult,
   NetworkDetails,
   NetworkData,

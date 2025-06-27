@@ -26,16 +26,16 @@ const customFormat = winston.format.combine(
 );
 
 const fileTransport = new winston.transports.DailyRotateFile({
-  dirname: config.LOG_DIR,
+  dirname: config.LOGGER.LOG_DIR,
   filename: "error-%DATE%.log",
   datePattern: "YYYY-MM-DD",
-  maxFiles: config.LOG_MAX_FILES,
+  maxFiles: config.LOGGER.LOG_MAX_FILES,
   level: "error",
 });
 
 const consoleTransport = new winston.transports.Console({
   format: customFormat,
-  level: validateLogLevel(config.LOG_LEVEL),
+  level: validateLogLevel(config.LOGGER.LOG_LEVEL),
 });
 
 const logger = winston.createLogger({
