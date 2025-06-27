@@ -17,6 +17,7 @@ export function writeOutputFiles(
     };
   });
 
-  generateSupportedChainsFile(networkDetails);
+  const supportedChainsFile = generateSupportedChainsFile(networkDetails);
+  modifiedFiles.push(supportedChainsFile);
   return modifiedFiles;
 }
