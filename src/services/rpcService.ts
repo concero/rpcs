@@ -6,10 +6,9 @@ import { commitAndPushChanges } from "./gitService";
 import { HealthyRpc } from "../types";
 import { fetchAllNetworkDetails } from "./networkService";
 import { shouldCommitChanges } from "../utils/shouldCommitChanges";
-import { domainBlacklist } from "../constants/domainBlacklist";
 import { generateStatistics } from "../utils/generateStatistics";
 import { writeOutputFiles } from "../utils/writeOutputFiles";
-import { deduplicateEndpoints } from "../utils/deduplicateEndpoints";
+import { filterEndpoints } from "../utils/filterEndpoints";
 import { fetchEndpoints } from "./fetchEndpoints";
 import { processTestResults } from "../utils/processTestResults";
 
@@ -32,32 +31,15 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
     const supportedChainIds = getSupportedChainIds(networkDetails);
     info(`Supported chain IDs: ${supportedChainIds.join(", ")}`);
 
-    // Fetch endpoints from all sources and remove duplicates
+    // Fetch endpoints from all sources
     const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
-    const dedupedEndpoints = deduplicateEndpoints(endpoints);
 
-    const endpointInfoParts = [
-      `Testing ${dedupedEndpoints.length} unique endpoints (${endpoints.chainlist.length} from chainlist, `,
-      `${endpoints.ethereumLists.length} from ethereum-lists, ${endpoints.v2Networks.length} from v2-networks, `,
-      `${endpoints.total - dedupedEndpoints.length} duplicates removed`,
-    ];
-
-    if (config.ENABLE_DOMAIN_BLACKLIST && endpoints.blacklisted > 0) {
-      endpointInfoParts.push(`, ${endpoints.blacklisted} blacklisted domains filtered`);
-    }
-
-    endpointInfoParts.push(")");
-    info(endpointInfoParts.join(""));
-
-    if (config.ENABLE_DOMAIN_BLACKLIST) {
-      info(
-        `Domain blacklist is active with ${domainBlacklist.length} entries: ${domainBlacklist.join(", ")}`,
-      );
-    }
+    // Filter endpoints (remove blacklisted domains and duplicates)
+    const { filteredEndpoints } = filterEndpoints(endpoints);
 
     // Test all endpoints and process results
-    const testResult = await testRpcEndpoints(dedupedEndpoints);
-    const results = processTestResults(testResult, networkDetails, endpoints.initialCollection);
+    const testResult = await testRpcEndpoints(filteredEndpoints);
+    const results = processTestResults(testResult, networkDetails, endpoints);
 
     // Write results to mainnet.json and testnet.json files
     const modifiedFiles = writeOutputFiles(results, networkDetails);
@@ -65,7 +47,7 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     // Commit and push changes if configured
     if (shouldCommitChanges(modifiedFiles)) {
-      await commitAndPushChanges(config.GIT_REPO_PATH, modifiedFiles);
+      await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
 
     info("Service run complete");

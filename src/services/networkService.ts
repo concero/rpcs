@@ -4,9 +4,9 @@ import { NetworkDetails, NetworkData } from "../types";
 
 export async function fetchNetworksData(isMainnet: boolean): Promise<NetworkData> {
   const networkType = isMainnet ? "mainnet" : "testnet";
-  const url = config.CONCERO_NETWORKS_DATA_URL_TEMPLATE.replace(
+  const url = config.URLS.CONCERO_NETWORKS_DATA_URL_TEMPLATE.replace(
     "${CONCERO_NETWORKS_GITHUB_BASE_URL}",
-    config.CONCERO_NETWORKS_GITHUB_BASE_URL,
+    config.URLS.CONCERO_NETWORKS_GITHUB_BASE_URL,
   ).replace("${networkType}", networkType);
 
   try {
@@ -31,9 +31,9 @@ export async function fetchNetworkDetails(
   isMainnet: boolean,
 ): Promise<NetworkDetails | null> {
   const networkType = isMainnet ? "mainnet" : "testnet";
-  const url = config.CONCERO_NETWORK_DETAILS_URL_TEMPLATE.replace(
+  const url = config.URLS.CONCERO_NETWORK_DETAILS_URL_TEMPLATE.replace(
     "${CONCERO_NETWORKS_GITHUB_BASE_URL}",
-    config.CONCERO_NETWORKS_GITHUB_BASE_URL,
+    config.URLS.CONCERO_NETWORKS_GITHUB_BASE_URL,
   )
     .replace("${networkType}", networkType)
     .replace("${networkName}", networkName);

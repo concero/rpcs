@@ -6,7 +6,7 @@ export async function fetchChainFromEthereumLists(
   chainId: string,
 ): Promise<EthereumListsChain | null> {
   try {
-    const url = config.ETHEREUM_LISTS_URL_TEMPLATE.replace("{chainId}", chainId);
+    const url = config.URLS.ETHEREUM_LISTS_URL_TEMPLATE.replace("{chainId}", chainId);
     const response = await fetch(url);
 
     if (!response.ok) {

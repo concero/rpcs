@@ -72,21 +72,6 @@ export function extractNetworkEndpoints(
     );
 }
 
-export function sortRpcs(testedRpcs: HealthyRpc[]): Map<string, HealthyRpc[]> {
-  const rpcsByChain = new Map<string, HealthyRpc[]>();
-
-  testedRpcs.forEach(rpc => {
-    if (!rpcsByChain.has(rpc.chainId)) {
-      rpcsByChain.set(rpc.chainId, []);
-    }
-    rpcsByChain.get(rpc.chainId)!.push(rpc);
-  });
-
-  rpcsByChain.forEach(rpcs => rpcs.sort((a, b) => a.responseTime - b.responseTime));
-
-  return rpcsByChain;
-}
-
 /**
  * Retrieves network details for a specific chain ID
  *

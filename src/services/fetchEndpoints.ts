@@ -10,20 +10,11 @@ import {
 import { fetchEthereumListsChains } from "./ethereumListsService";
 import { debug } from "../utils/logger";
 import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
-import { isDomainBlacklisted } from "../constants/domainBlacklist";
-import config from "../constants/config";
 
 export async function fetchEndpoints(
   supportedChainIds: string[],
   networkDetails: Record<string, NetworkDetails>,
-): Promise<{
-  chainlist: RpcEndpoint[];
-  ethereumLists: RpcEndpoint[];
-  v2Networks: RpcEndpoint[];
-  total: number;
-  blacklisted: number;
-  initialCollection: EndpointCollection;
-}> {
+): Promise<EndpointCollection> {
   const rawChainlistRpcs = await fetchChainlistRpcs();
   const parsedChainlistRpcs = parseChainlistRpcs(rawChainlistRpcs);
   const filteredChainlistRpcs = filterChainlistChains(parsedChainlistRpcs, supportedChainIds);
@@ -43,45 +34,13 @@ export async function fetchEndpoints(
   let ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
   let networkEndpoints = extractNetworkEndpoints(networkDetails);
 
-  // Count of blacklisted endpoints before filtering
-  const preFilterTotal =
-    chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length;
+  // // Calculate total number of endpoints before any filtering
+  // const totalEndpoints =
+  //   chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length;
 
-  // Filter out blacklisted domains if enabled
-  let blacklistedCount = 0;
-  if (config.ENABLE_DOMAIN_BLACKLIST) {
-    const originalChainlistLength = chainlistEndpoints.length;
-    const originalEthereumListsLength = ethereumListsEndpoints.length;
-    const originalNetworkEndpointsLength = networkEndpoints.length;
-
-    chainlistEndpoints = chainlistEndpoints.filter(endpoint => !isDomainBlacklisted(endpoint.url));
-    ethereumListsEndpoints = ethereumListsEndpoints.filter(
-      endpoint => !isDomainBlacklisted(endpoint.url),
-    );
-    networkEndpoints = networkEndpoints.filter(endpoint => !isDomainBlacklisted(endpoint.url));
-
-    blacklistedCount =
-      originalChainlistLength -
-      chainlistEndpoints.length +
-      (originalEthereumListsLength - ethereumListsEndpoints.length) +
-      (originalNetworkEndpointsLength - networkEndpoints.length);
-  }
-
-  const postFilterTotal =
-    chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length;
-
-  const initialEndpoints = createInitialEndpointCollection(
+  return createInitialEndpointCollection(
     chainlistEndpoints,
     ethereumListsEndpoints,
     networkEndpoints,
   );
-
-  return {
-    chainlist: chainlistEndpoints,
-    ethereumLists: ethereumListsEndpoints,
-    v2Networks: networkEndpoints,
-    total: postFilterTotal,
-    blacklisted: blacklistedCount,
-    initialCollection: initialEndpoints,
-  };
 }

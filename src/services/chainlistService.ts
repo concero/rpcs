@@ -9,7 +9,7 @@ interface JSNode {
 }
 
 export async function fetchChainlistRpcs() {
-  const response = await fetch(config.CHAINLIST_URL);
+  const response = await fetch(config.URLS.CHAINLIST_URL);
   const data = await response.text();
   return data;
 }

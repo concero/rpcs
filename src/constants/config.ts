@@ -1,9 +1,10 @@
 import { domainBlacklist } from "./domainBlacklist";
 
 export default {
-  // Domain blacklist configuration
+  NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
+
   DOMAIN_BLACKLIST: domainBlacklist,
-  ENABLE_DOMAIN_BLACKLIST: true, // Set to false to disable domain blacklisting
+  ENABLE_DOMAIN_BLACKLIST: true,
   IGNORED_CHAINLIST_CHAIN_IDS: [
     200810, // bitlayer
     6342, // megaeth
@@ -33,12 +34,11 @@ export default {
     11155420,
   ],
 
-  NETWORK_MODE: parseInt(process.env.NETWORK_MODE || "2", 10), // 0-testnet, 1-mainnet, 2-both
-
-  // logging
-  LOG_LEVEL: process.env.LOG_LEVEL || "info",
-  LOG_DIR: "logs",
-  LOG_MAX_FILES: "7d",
+  LOGGER: {
+    LOG_LEVEL: process.env.LOG_LEVEL || "info",
+    LOG_DIR: "logs",
+    LOG_MAX_FILES: "7d",
+  },
 
   RPC_TESTER: {
     HTTP_REQUEST_CONCURRENCY: 100,
@@ -47,19 +47,22 @@ export default {
     MAX_RETRIES: 1,
   },
 
-  // urls
-  CHAINLIST_URL:
-    "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
-  ETHEREUM_LISTS_URL_TEMPLATE:
-    "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",
-  CONCERO_NETWORKS_GITHUB_BASE_URL:
-    "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/master/networks",
-  CONCERO_NETWORKS_DATA_URL_TEMPLATE: "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}.json",
-  CONCERO_NETWORK_DETAILS_URL_TEMPLATE:
-    "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}/${networkName}.json",
+  URLS: {
+    CHAINLIST_URL:
+      "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
+    ETHEREUM_LISTS_URL_TEMPLATE:
+      "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",
+    CONCERO_NETWORKS_GITHUB_BASE_URL:
+      "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/master/networks",
+    CONCERO_NETWORKS_DATA_URL_TEMPLATE: "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}.json",
+    CONCERO_NETWORK_DETAILS_URL_TEMPLATE:
+      "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}/${networkName}.json",
+  },
 
-  GIT_REPO_PATH: process.env.GIT_REPO_PATH || ".",
-  ENABLE_GIT_SERVICE: process.env.ENABLE_GIT_SERVICE === "true" || false,
+  GIT: {
+    ENABLE_GIT_SERVICE: process.env.ENABLE_GIT_SERVICE === "true" || false,
+    REPO_PATH: process.env.GIT_REPO_PATH || ".",
+  },
 
   OUTPUT_DIR: "output/",
   CRON_SCHEDULE: process.env.CRON_SCHEDULE || "0 0 * * *",
