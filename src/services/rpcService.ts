@@ -29,23 +29,17 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
     // Fetch network details and determine supported chains
     const networkDetails = await fetchAllNetworkDetails();
     const supportedChainIds = getSupportedChainIds(networkDetails);
-    info(`Supported chain IDs: ${supportedChainIds.join(", ")}`);
 
-    // Fetch endpoints from all sources
     const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
 
-    // Filter endpoints (remove blacklisted domains and duplicates)
     const { filteredEndpoints } = filterEndpoints(endpoints);
 
-    // Test all endpoints and process results
     const testResult = await testRpcEndpoints(filteredEndpoints);
     const results = processTestResults(testResult, networkDetails, endpoints);
 
-    // Write results to mainnet.json and testnet.json files
     const modifiedFiles = writeOutputFiles(results, networkDetails);
     generateStatistics(results);
 
-    // Commit and push changes if configured
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
