@@ -21,7 +21,7 @@ export const supportedChains: SupportedChains = JSON.parse(
 function loadChainData(): {
   mainnet: Record<string, ChainRpcData>;
   testnet: Record<string, ChainRpcData>;
-  all: Record<string, ChainRpcData>;
+  allChains: Record<string, ChainRpcData>;
 } {
   const mainnetPath = path.join(__dirname, "output/mainnet.json");
   const testnetPath = path.join(__dirname, "output/testnet.json");
@@ -63,11 +63,11 @@ function loadChainData(): {
   return {
     mainnet: mainnetChains,
     testnet: testnetChains,
-    all: allChains,
+    allChains: allChains,
   };
 }
 
 const chainData = loadChainData();
 export const mainnetChains = chainData.mainnet;
 export const testnetChains = chainData.testnet;
-export const allChains = chainData.all;
+export const allChains = chainData.allChains;
