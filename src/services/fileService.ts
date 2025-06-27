@@ -18,7 +18,6 @@ export function ensureOutputDirectoryExists(outputDir: string) {
 }
 
 /**
- * Data structure for consolidated chain data files
  * Maps chain IDs to their RPC details
  */
 interface ChainData {
@@ -30,70 +29,52 @@ interface ChainData {
 }
 
 /**
- * Generates consolidated RPC files.
- * Creates two files: mainnet.json and testnet.json containing all chain RPCs.
+ * Writes consolidated mainnet.json and testnet.json files containing RPC endpoints
  *
  * @param rpcsByChain Map of chain IDs to their healthy RPC endpoints
  * @param outputDir Directory where the output files will be written
- * @param getNetworkForChain Function to get network details for a chain ID
- * @param processMainnet Whether to process mainnet networks
- * @param processTestnet Whether to process testnet networks
+ * @param networkDetails Record of all network details indexed by chain ID
  * @returns Array of paths to the modified files
  */
 export function writeChainRpcFiles(
   rpcsByChain: Map<string, HealthyRpc[]>,
   outputDir: string,
-  getNetworkForChain: (chainId: string) => {
-    mainnetNetwork?: NetworkDetails;
-    testnetNetwork?: NetworkDetails;
-  },
-  processMainnet: boolean = true,
-  processTestnet: boolean = true,
+  networkDetails: Record<string, NetworkDetails>,
 ): string[] {
   ensureOutputDirectoryExists(outputDir);
-  const modifiedFiles: string[] = [];
   const mainnetChains: ChainData = {};
   const testnetChains: ChainData = {};
 
   rpcsByChain.forEach((rpcs, chainId) => {
-    const { mainnetNetwork, testnetNetwork } = getNetworkForChain(chainId);
+    const network = networkDetails[chainId];
+    if (!network) return;
+
     const urls = rpcs.map(rpc => rpc.url);
 
-    // Process mainnet network if it exists and is enabled
-    if (mainnetNetwork && processMainnet) {
+    if (network.networkType === "mainnet") {
       mainnetChains[chainId] = {
         urls,
-        chainSelector: mainnetNetwork.chainSelector,
-        name: mainnetNetwork.name,
+        chainSelector: network.chainSelector,
+        name: network.name,
       };
-    }
-
-    // Process testnet network if it exists and is enabled
-    if (testnetNetwork && processTestnet) {
+    } else if (network.networkType === "testnet") {
       testnetChains[chainId] = {
         urls,
-        chainSelector: testnetNetwork.chainSelector,
-        name: testnetNetwork.name,
+        chainSelector: network.chainSelector,
+        name: network.name,
       };
-    }
-
-    if ((!mainnetNetwork || !processMainnet) && (!testnetNetwork || !processTestnet)) {
-      debug(`No applicable network configuration found for chain ID ${chainId}`);
     }
   });
 
-  if (Object.keys(mainnetChains).length > 0 && processMainnet) {
-    const mainnetPath = path.join(outputDir, "mainnet.json");
-    fs.writeFileSync(mainnetPath, JSON.stringify(mainnetChains, null, 2));
-    modifiedFiles.push(mainnetPath);
-  }
+  const modifiedFiles: string[] = [];
 
-  // Write testnet file - single consolidated file with all testnet chains
-  if (Object.keys(testnetChains).length > 0 && processTestnet) {
-    const testnetPath = path.join(outputDir, "testnet.json");
-    fs.writeFileSync(testnetPath, JSON.stringify(testnetChains, null, 2));
-    modifiedFiles.push(testnetPath);
-  }
+  const mainnetPath = path.join(outputDir, "mainnet.json");
+  fs.writeFileSync(mainnetPath, JSON.stringify(mainnetChains, null, 2));
+  modifiedFiles.push(mainnetPath);
+
+  const testnetPath = path.join(outputDir, "testnet.json");
+  fs.writeFileSync(testnetPath, JSON.stringify(testnetChains, null, 2));
+  modifiedFiles.push(testnetPath);
 
   return modifiedFiles;
 }

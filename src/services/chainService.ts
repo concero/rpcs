@@ -87,6 +87,13 @@ export function sortRpcs(testedRpcs: HealthyRpc[]): Map<string, HealthyRpc[]> {
   return rpcsByChain;
 }
 
+/**
+ * Retrieves network details for a specific chain ID
+ *
+ * @param chainId The chain ID to retrieve details for
+ * @param networkDetails Record of all network details indexed by chain ID
+ * @returns The NetworkDetails object for the chain ID or undefined if not found
+ */
 export function getNetworkDetails(
   chainId: string,
   networkDetails: Record<string, NetworkDetails>,
