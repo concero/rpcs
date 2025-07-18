@@ -13,7 +13,8 @@ type LogLevel = keyof typeof LOG_LEVELS;
 
 const validateLogLevel = (level: string): LogLevel => {
   if (level in LOG_LEVELS) return level as LogLevel;
-  console.warn(`Invalid log level "${level}", defaulting to "info"`);
+  // Use standard output instead of logger to avoid circular dependency
+  process.stderr.write(`Warning: Invalid log level "${level}", defaulting to "info"\n`);
   return "info";
 };
 
@@ -26,16 +27,16 @@ const customFormat = winston.format.combine(
 );
 
 const fileTransport = new winston.transports.DailyRotateFile({
-  dirname: config.LOG_DIR,
+  dirname: config.LOGGER.LOG_DIR,
   filename: "error-%DATE%.log",
   datePattern: "YYYY-MM-DD",
-  maxFiles: config.LOG_MAX_FILES,
+  maxFiles: config.LOGGER.LOG_MAX_FILES,
   level: "error",
 });
 
 const consoleTransport = new winston.transports.Console({
   format: customFormat,
-  level: validateLogLevel(config.LOG_LEVEL),
+  level: validateLogLevel(config.LOGGER.LOG_LEVEL),
 });
 
 const logger = winston.createLogger({

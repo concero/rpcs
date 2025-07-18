@@ -1,9 +1,0 @@
-{
-  "id": "59141",
-  "urls": [
-    "https://linea-sepolia.drpc.org",
-    "https://rpc.sepolia.linea.build"
-  ],
-  "chainSelector": 59141,
-  "name": "lineaSepolia"
-}

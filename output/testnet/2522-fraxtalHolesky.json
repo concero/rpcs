@@ -1,6 +1,0 @@
-{
-  "id": "2522",
-  "urls": ["https://fraxtal-holesky-rpc.publicnode.com", "https://rpc.testnet.frax.com"],
-  "chainSelector": 2522,
-  "name": "fraxtalHolesky"
-}

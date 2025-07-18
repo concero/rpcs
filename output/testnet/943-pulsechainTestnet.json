@@ -1,6 +1,0 @@
-{
-  "id": "943",
-  "urls": ["https://rpc.v4.testnet.pulsechain.com", "https://pulsechain-testnet-rpc.publicnode.com", "https://rpc-testnet-pulsechain.g4mm4.io"],
-  "chainSelector": 943,
-  "name": "pulsechainTestnet"
-}

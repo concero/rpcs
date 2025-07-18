@@ -10,7 +10,9 @@
   "scripts": {
     "start": "bun ./src/index.ts --run-once",
     "build": "tsc ./index.ts",
-    "clean": "rm -rf output",
+    "clean:output": "rm -rf output",
+    "clean:logs": "rm -rf logs",
+    "clean": "npm run clean:output && npm run clean:logs",
     "build:types": "tsc ./index.ts --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",

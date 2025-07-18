@@ -1,6 +1,0 @@
-{
-  "id": "808813",
-  "urls": ["https://bob-testnet.drpc.org", "https://bob-sepolia.rpc.gobob.xyz"],
-  "chainSelector": 808813,
-  "name": "bobSepolia"
-}

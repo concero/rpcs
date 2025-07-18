@@ -1,6 +1,0 @@
-{
-  "id": "1301",
-  "urls": ["https://sepolia.unichain.org", "https://unichain-sepolia-rpc.publicnode.com"],
-  "chainSelector": 1301,
-  "name": "unichainSepolia"
-}

@@ -1,6 +1,0 @@
-{
-  "id": "1112",
-  "urls": ["https://api.test.wemix.com", "https://wemix-testnet.drpc.org"],
-  "chainSelector": 1112,
-  "name": "wemixTestnet"
-}

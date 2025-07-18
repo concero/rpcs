@@ -1,8 +1,0 @@
-{
-  "id": "5003",
-  "urls": [
-      "https://rpc.sepolia.mantle.xyz"
-  ],
-  "chainSelector": 5003,
-  "name": "mantleSepolia"
-}

@@ -1,6 +1,7 @@
 import { runRpcService } from "./services/rpcService";
 import config from "./constants/config";
 import cron from "node-cron";
+import { error } from "./utils/logger";
 
 try {
   if (process.argv.includes("--run-once")) {
@@ -11,5 +12,5 @@ try {
     });
   }
 } catch (err) {
-  console.error(err);
+  error(err);
 }

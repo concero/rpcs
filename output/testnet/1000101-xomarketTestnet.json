@@ -1,6 +1,0 @@
-{
-  "id": "1000101",
-  "urls": ["https://dev-testnet-rpc.xo.market"],
-  "chainSelector": 1000101,
-  "name": "xomarketTestnet"
-}
