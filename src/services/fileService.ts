@@ -22,7 +22,7 @@ export function ensureOutputDirectoryExists(outputDir: string) {
  */
 interface ChainData {
   [chainId: string]: {
-    urls: string[];
+    rpcUrls: string[];
     chainSelector?: string | number;
     name: string;
   };
@@ -49,19 +49,17 @@ export function writeChainRpcFiles(
     const network = networkDetails[chainId];
     if (!network) return;
 
-    const urls = rpcs.map(rpc => rpc.url);
+    const rpcUrls = rpcs.map(rpc => rpc.url);
 
     if (network.networkType === "mainnet") {
       mainnetChains[chainId] = {
-        urls,
+        rpcUrls,
         chainSelector: network.chainSelector,
-        name: network.name,
       };
     } else if (network.networkType === "testnet") {
       testnetChains[chainId] = {
-        urls,
+        rpcUrls,
         chainSelector: network.chainSelector,
-        name: network.name,
       };
     }
   });
