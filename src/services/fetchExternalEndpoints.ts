@@ -1,20 +1,17 @@
 import { EndpointCollection, NetworkDetails, RpcEndpoint } from "../types";
 import {
   fetchChainlistData,
-  fetchChainlistRpcs,
-  filterSupportedChainlistRpcs,
-  parseChainlistRpcs,
 } from "./chainlistRpcService";
 import {
   extractChainlistEndpoints,
   extractEthereumListsEndpoints,
   extractNetworkEndpoints,
   filterEthereumListsChains,
-} from "./chainService";
+} from "./parsers";
 import { fetchEthereumListsChains } from "./ethereumListsService";
 
 import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
-import { debug } from "../utils/logger";
+
 
 export async function fetchExternalEndpoints(
   supportedChainIds: string[],

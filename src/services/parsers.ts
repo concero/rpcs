@@ -1,18 +1,11 @@
 import config from "../constants/config";
-import { ChainlistRpcs, HealthyRpc, RpcEndpoint } from "../types";
+import { ChainlistRpcs, RpcEndpoint } from "../types";
 import { NetworkDetails } from "../types";
-import { filterSupportedChainlistRpcs } from "./chainlistRpcService";
+
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
   const chainIds = Object.values(networkDetails).map(network => network.chainId.toString());
   return chainIds;
-}
-
-export function filterSupportedChainlistChains(
-  rawChainlistRpcs: ChainlistRpcs,
-  supportedChainIds: string[],
-): ChainlistRpcs {
-  return filterSupportedChainlistRpcs(rawChainlistRpcs, supportedChainIds);
 }
 
 export function filterEthereumListsChains(

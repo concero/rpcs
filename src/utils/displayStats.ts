@@ -1,9 +1,9 @@
 import { ChainStats, TestResultsCollection } from "../types";
-import { getNetworkDetails } from "../services/chainService";
+import { getNetworkDetails } from "../services/parsers";
 import { addMissingNetworksToStats } from "./addMissingNetworksToStats";
 import { displayNetworkStats } from "./displayNetworkStats";
 
-export function generateStatistics(results: TestResultsCollection): void {
+export function displayStats(results: TestResultsCollection): void {
   const mainnetStats: ChainStats[] = [];
   const testnetStats: ChainStats[] = [];
   const processedChainIds = new Set<string>();

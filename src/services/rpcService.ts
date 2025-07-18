@@ -1,12 +1,12 @@
 import config from "../constants/config";
 import { error, info, debug, warn } from "../utils/logger";
 import { testRpcEndpoints } from "./rpcTester";
-import { getSupportedChainIds } from "./chainService";
+import { getSupportedChainIds } from "./parsers";
 import { commitAndPushChanges } from "./gitService";
 import { HealthyRpc } from "../types";
 import { fetchConceroNetworks } from "./conceroNetworkService";
 import { shouldCommitChanges } from "../utils/shouldCommitChanges";
-import { generateStatistics } from "../utils/generateStatistics";
+import { displayStats } from "../utils/displayStats";
 import { writeOutputFiles } from "../utils/writeOutputFiles";
 import { filterEndpoints } from "../utils/filterEndpoints";
 import { fetchExternalEndpoints } from "./fetchExternalEndpoints";
@@ -39,17 +39,8 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     const results = processTestResults(testResult, conceroNetworks, endpoints);
 
-    // Log summary of healthy RPCs
-    const healthyRpcCount = Array.from(results.healthyRpcs.entries()).reduce(
-      (total, [_, rpcs]) => total + rpcs.length,
-      0,
-    );
-    const chainCount = results.healthyRpcs.size;
-
-    info(`Processed test results: ${healthyRpcCount} healthy RPCs across ${chainCount} chains`);
-
     const modifiedFiles = writeOutputFiles(results, conceroNetworks);
-    generateStatistics(results);
+    displayStats(results);
 
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
