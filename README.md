@@ -20,7 +20,7 @@ The service follows a modular architecture with clear separation of concerns:
 
 - **filterEndpoints**: Core utility that handles both domain blacklist filtering and endpoint deduplication based on source priority
 - **rpcTester**: Tests RPC endpoints for health and response time
-- **fetchEndpoints**: Collects RPC endpoints from multiple sources
+- **fetchExternalEndpoints**: Collects RPC endpoints from multiple sources
 
 ## Usage
 
@@ -87,7 +87,7 @@ The `filterEndpoints` utility function is the core function that handles three k
 // Usage example
 import { filterEndpoints } from "./utils/filterEndpoints";
 
-const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
+const endpoints = await fetchExternalEndpoints(supportedChainIds, networkDetails);
 const { filteredEndpoints, initialCollection } = filterEndpoints(
   endpoints.chainlist,
   endpoints.ethereumLists,
@@ -102,7 +102,7 @@ For backward compatibility, a helper function `deduplicateEndpoints` is provided
 // Legacy usage
 import { deduplicateEndpoints } from "./utils/deduplicateEndpoints";
 
-const endpoints = await fetchEndpoints(supportedChainIds, networkDetails);
+const endpoints = await fetchExternalEndpoints(supportedChainIds, networkDetails);
 const filteredEndpoints = deduplicateEndpoints(endpoints);
 ```
 

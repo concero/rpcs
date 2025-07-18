@@ -55,7 +55,7 @@ export function filterEndpoints(endpoints: EndpointCollection): RpcEndpoint[] {
   processEndpoints("ethereumLists", endpoints.ethereumLists);
   processEndpoints("v2-networks", endpoints.v2Networks);
 
-  const filteredEndpoints = Array.from(urlMap.values());
+  const filteredEndpoints = Array.from(urlMap.values()); // deduplication
   const duplicatesRemoved = stats.total - stats.blacklisted - filteredEndpoints.length;
 
   const endpointInfoParts = [
@@ -72,5 +72,6 @@ export function filterEndpoints(endpoints: EndpointCollection): RpcEndpoint[] {
 
   info(endpointInfoParts.join(""));
 
+  console.log(filteredEndpoints);
   return filteredEndpoints;
 }

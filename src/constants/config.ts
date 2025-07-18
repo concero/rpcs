@@ -41,10 +41,10 @@ export default {
   },
 
   RPC_TESTER: {
-    HTTP_REQUEST_CONCURRENCY: 100,
-    HTTP_REQUEST_TIMEOUT_MS: 6 * 1000,
+    HTTP_REQUEST_CONCURRENCY: 10,
+    HTTP_REQUEST_TIMEOUT_MS: 1000 * 5,
     RETRY_DELAY_MS: 0,
-    MAX_RETRIES: 1,
+    MAX_RETRIES: 3,
   },
 
   URLS: {
@@ -53,10 +53,7 @@ export default {
     ETHEREUM_LISTS_URL_TEMPLATE:
       "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",
     CONCERO_NETWORKS_GITHUB_BASE_URL:
-      "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/master/networks",
-    CONCERO_NETWORKS_DATA_URL_TEMPLATE: "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}.json",
-    CONCERO_NETWORK_DETAILS_URL_TEMPLATE:
-      "${CONCERO_NETWORKS_GITHUB_BASE_URL}/${networkType}/${networkName}.json",
+      "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/feature/single-file/networks",
   },
 
   GIT: {

@@ -1,6 +1,0 @@
-{
-  "id": "240",
-  "urls": ["https://testnet.zkevm.cronos.org"],
-  "chainSelector": 240,
-  "name": "cronoszkTestnet"
-}

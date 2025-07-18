@@ -5,7 +5,7 @@ interface RpcEndpoint {
 }
 
 interface RpcTestResult {
-  healthyRpcs: HealthyRpc[];
+  healthyRpcs: Map<string, HealthyRpc[]>;
   chainIdMismatches: Map<string, string[]>;
 }
 

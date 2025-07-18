@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { debug } from "../utils/logger";
+import { debug, info } from "../utils/logger";
 import { HealthyRpc, NetworkDetails } from "../types";
 import config from "../constants/config";
 
@@ -66,6 +66,10 @@ export function writeChainRpcFiles(
     }
   });
 
+  // Log how many chains are going into each file
+  info(`Writing mainnet.json with ${Object.keys(mainnetChains).length} chains`);
+  info(`Writing testnet.json with ${Object.keys(testnetChains).length} chains`);
+
   const modifiedFiles: string[] = [];
 
   const mainnetPath = path.join(outputDir, "mainnet.json");
@@ -80,7 +84,8 @@ export function writeChainRpcFiles(
 }
 
 /**
- * Generates a summary file listing all supported chains
+ * NOTE: This function is no longer used as we only generate mainnet.json and testnet.json
+ * Kept for reference but not called from writeOutputFiles.
  *
  * @param networkDetails Record of all network details indexed by chain ID
  * @returns Path to the generated supported-chains.json file

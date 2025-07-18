@@ -1,6 +1,0 @@
-{
-  "id": "1001",
-  "urls": ["https://responsive-green-emerald.kaia-kairos.quiknode.pro", "https://public-en-kairos.node.kaia.io", "https://kaia-kairos.blockpi.network/v1/rpc/public", "https://rpc.ankr.com/kaia_testnet"],
-  "chainSelector": 1001,
-  "name": "kaiaKairos"
-}

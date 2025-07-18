@@ -3,9 +3,9 @@ import { ChainlistRpcs, HealthyRpc, RpcEndpoint } from "../types";
 import { NetworkDetails } from "../types";
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
-  return Object.keys(networkDetails);
+  const chainIds = Object.values(networkDetails).map(network => network.chainId.toString());
+  return chainIds;
 }
-
 export function filterChainlistChains(
   rawChainlistRpcs: ChainlistRpcs,
   supportedChainIds: string[],

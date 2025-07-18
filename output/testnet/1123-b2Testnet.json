@@ -1,6 +1,0 @@
-{
-  "id": "1123",
-  "urls": ["https://b2-testnet.alt.technology", "https://testnet-rpc.bsquared.network"],
-  "chainSelector": 1123,
-  "name": "b2Testnet"
-}

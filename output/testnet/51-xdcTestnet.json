@@ -1,6 +1,0 @@
-{
-  "id": "51",
-  "urls": ["https://rpc.ankr.com/xdc_testnet", "https://rpc.apothem.network"],
-  "chainSelector": 51,
-  "name": "xdcTestnet"
-}

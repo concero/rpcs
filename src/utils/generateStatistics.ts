@@ -21,8 +21,8 @@ export function generateStatistics(results: TestResultsCollection): void {
     const initialEthereumListsCount =
       results.initialEndpoints.ethereumLists.get(chainId)?.length || 0;
 
-    const unhealthyChainlistCount = initialChainlistCount - chainlistRpcs.length;
-    const unhealthyEthereumListsCount = initialEthereumListsCount - ethereumListsRpcs.length;
+    const unhealthyChainlistCount = initialChainlistCount;
+    const unhealthyEthereumListsCount = initialEthereumListsCount;
 
     const stats = {
       chainId,

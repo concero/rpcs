@@ -1,6 +1,0 @@
-{
-  "id": "534351",
-  "urls": ["https://sepolia-rpc.scroll.io", "https://scroll-sepolia-rpc.publicnode.com"],
-  "chainSelector": 534351,
-  "name": "scrollSepolia"
-}

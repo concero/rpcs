@@ -1,6 +1,0 @@
-{
-  "id": "314159",
-  "urls": ["https://filecoin-calibration.chainup.net/rpc/v1", "https://api.calibration.node.glif.io/rpc/v1", "https://rpc.ankr.com/filecoin_testnet"],
-  "chainSelector": 314159,
-  "name": "filecoinCalibration"
-}

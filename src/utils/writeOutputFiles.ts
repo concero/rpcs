@@ -1,6 +1,7 @@
 import { NetworkDetails, TestResultsCollection } from "../types";
-import { generateSupportedChainsFile, writeChainRpcFiles } from "../services/fileService";
+import { writeChainRpcFiles } from "../services/fileService";
 import config from "../constants/config";
+import { info } from "../utils/logger";
 
 /**
  * Writes output files containing RPC endpoints and supported chains information
@@ -13,12 +14,11 @@ export function writeOutputFiles(
   results: TestResultsCollection,
   networkDetails: Record<string, NetworkDetails>,
 ): string[] {
-  // Write the main RPC files (mainnet.json and testnet.json)
+  // Write only the main RPC files (mainnet.json and testnet.json)
   const modifiedFiles = writeChainRpcFiles(results.healthyRpcs, config.OUTPUT_DIR, networkDetails);
 
-  // Generate and write the supported-chains.json file
-  const supportedChainsFile = generateSupportedChainsFile(networkDetails);
-  modifiedFiles.push(supportedChainsFile);
+  // No longer generating supported-chains.json file
+  info("Only mainnet.json and testnet.json files are generated");
 
   return modifiedFiles;
 }

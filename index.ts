@@ -8,27 +8,15 @@ export interface ChainRpcData {
   name: string;
 }
 
-export interface SupportedChains {
-  mainnet: Record<string, string>;
-  testnet: Record<string, string>;
-}
-
-const supportedChainsPath = path.join(__dirname, "output/supported-chains.json");
-export const supportedChains: SupportedChains = JSON.parse(
-  fs.readFileSync(supportedChainsPath, "utf-8"),
-);
-
 function loadChainData(): {
   mainnet: Record<string, ChainRpcData>;
   testnet: Record<string, ChainRpcData>;
-  allChains: Record<string, ChainRpcData>;
 } {
   const mainnetPath = path.join(__dirname, "output/mainnet.json");
   const testnetPath = path.join(__dirname, "output/testnet.json");
 
   const mainnetChains: Record<string, ChainRpcData> = {};
   const testnetChains: Record<string, ChainRpcData> = {};
-  const allChains: Record<string, ChainRpcData> = {};
 
   if (fs.existsSync(mainnetPath)) {
     const mainnetData = JSON.parse(fs.readFileSync(mainnetPath, "utf-8"));
@@ -41,7 +29,6 @@ function loadChainData(): {
         name: chainData.name,
       };
       mainnetChains[chainId] = fullChainData;
-      allChains[chainId] = fullChainData;
     });
   }
 
@@ -56,18 +43,15 @@ function loadChainData(): {
         name: chainData.name,
       };
       testnetChains[chainId] = fullChainData;
-      allChains[chainId] = fullChainData;
     });
   }
 
   return {
     mainnet: mainnetChains,
     testnet: testnetChains,
-    allChains: allChains,
   };
 }
 
 const chainData = loadChainData();
 export const mainnetChains = chainData.mainnet;
 export const testnetChains = chainData.testnet;
-export const allChains = chainData.allChains;

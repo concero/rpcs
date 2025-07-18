@@ -11,7 +11,7 @@ import { fetchEthereumListsChains } from "./ethereumListsService";
 import { debug } from "../utils/logger";
 import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
 
-export async function fetchEndpoints(
+export async function fetchExternalEndpoints(
   supportedChainIds: string[],
   networkDetails: Record<string, NetworkDetails>,
 ): Promise<EndpointCollection> {
