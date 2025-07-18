@@ -27,14 +27,15 @@ export default {
   },
 
   RPC_TESTER: {
-    HTTP_REQUEST_CONCURRENCY: 10,
+    HTTP_REQUEST_CONCURRENCY: 50,
     HTTP_REQUEST_TIMEOUT_MS: 1000 * 5,
     RETRY_DELAY_MS: 0,
     MAX_RETRIES: 3,
   },
 
   URLS: {
-    CHAINLIST_URL:
+    CHAINLIST_RPCS_URL: "https://chainlist.org/rpcs.json",
+    CHAINLIST_EXTRA_RPCS_URL:
       "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
     ETHEREUM_LISTS_URL_TEMPLATE:
       "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",

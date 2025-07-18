@@ -35,19 +35,7 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     const filteredEndpoints = filterEndpoints(endpoints);
 
-    info(`Starting RPC endpoint testing for ${filteredEndpoints.length} endpoints...`);
     const testResult = await testRpcEndpoints(filteredEndpoints);
-
-    debug(`Test results received: Map has ${testResult.healthyRpcs.size} entries`);
-    debug(`Chain ID mismatches: ${testResult.chainIdMismatches.size}`);
-
-    // Print out some sample data to debug
-    if (testResult.healthyRpcs.size > 0) {
-      const sampleChainId = Array.from(testResult.healthyRpcs.keys())[0];
-      debug(
-        `Sample chain ${sampleChainId} has ${testResult.healthyRpcs.get(sampleChainId)?.length || 0} healthy RPCs`,
-      );
-    }
 
     const results = processTestResults(testResult, conceroNetworks, endpoints);
 
@@ -60,25 +48,13 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     info(`Processed test results: ${healthyRpcCount} healthy RPCs across ${chainCount} chains`);
 
-    // Validate if we have any healthy RPCs
-    if (healthyRpcCount === 0) {
-      warn(`WARNING: No healthy RPCs found! Check the test and processing logic.`);
-    }
-
-    // Log details for each chain
-    results.healthyRpcs.forEach((rpcs, chainId) => {
-      const network = conceroNetworks[chainId];
-      const networkName = network ? network.name : "Unknown";
-      debug(`Chain ${chainId} (${networkName}): ${rpcs.length} healthy RPCs`);
-    });
-    const modifiedFiles = writeOutputFiles(results, conceroNetworks); // Only generates mainnet.json and testnet.json
+    const modifiedFiles = writeOutputFiles(results, conceroNetworks);
     generateStatistics(results);
 
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
 
-    info("Service run complete");
     return results.healthyRpcs;
   } catch (err) {
     error(`Service run error: ${String(err)}, ${err.stack}`);

@@ -34,15 +34,15 @@ export function filterSupportedChainlistRpcs(
 
 export async function fetchChainlistRpcs(): Promise<any> {
   try {
-    const response = await fetch(config.CHAINLIST_RPCS_URL);
+    const response = await fetch(config.URLS.CHAINLIST_RPCS_URL);
+
     if (!response.ok) {
       throw new Error(`Failed to fetch chainlist RPCs: ${response.status}`);
     }
     const data = await response.json();
-    info(`Fetched ${data.length} chains from chainlist primary source`);
     return data;
   } catch (error) {
-    debug(`Error fetching chainlist RPCs: ${error}`);
+    error(`Error fetching chainlist RPCs: ${error}`);
     return [];
   }
 }

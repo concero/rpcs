@@ -10,11 +10,12 @@ interface JSNode {
 }
 
 export async function fetchChainlistExtraRpcs(): Promise<string> {
-  const response = await fetch(config.CHAINLIST_EXTRA_RPCS_URL);
+  const response = await fetch(config.URLS.CHAINLIST_EXTRA_RPCS_URL);
+  return response.text();
+};
 export async function fetchChainlistRpcs() {
-  const response = await fetch(config.URLS.CHAINLIST_URL);
-  const data = await response.text();
-  return data;
+  const response = await fetch(config.URLS.CHAINLIST_EXTRA_RPCS_URL);
+  return response.text();
 }
 
 export function parseChainlistExtraRpcs(jsFileContent: string): ChainlistRpcs {
@@ -59,19 +60,16 @@ export function parseChainlistExtraRpcs(jsFileContent: string): ChainlistRpcs {
 
   for (const chainId in parsed) {
     if (parsed[chainId] && parsed[chainId].rpcs) {
-      debug(`Processing RPCs for chainId ${chainId}`);
 
       // Transform the RPCs array to extract URLs from objects when needed
       const rpcs = parsed[chainId].rpcs
         .map((rpc: any) => {
           if (typeof rpc === "string") {
-            debug(`Found string RPC: ${rpc}`);
             return rpc;
           } else if (rpc && typeof rpc === "object" && typeof rpc.url === "string") {
-            debug(`Found object RPC with URL: ${rpc.url}`);
             return rpc.url;
           } else {
-            debug(`Found unknown RPC format: ${JSON.stringify(rpc)}`);
+            // debug(`Found unknown RPC format: ${JSON.stringify(rpc)} for chain ${chainId}`);
             return null;
           }
         })

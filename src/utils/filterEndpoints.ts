@@ -72,6 +72,5 @@ export function filterEndpoints(endpoints: EndpointCollection): RpcEndpoint[] {
 
   info(endpointInfoParts.join(""));
 
-  console.log(filteredEndpoints);
   return filteredEndpoints;
 }
