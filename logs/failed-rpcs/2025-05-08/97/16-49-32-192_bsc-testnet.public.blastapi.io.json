@@ -1,9 +1,0 @@
-{
-  "url": "https://bsc-testnet.public.blastapi.io",
-  "expectedChainId": "97",
-  "timestamp": "2025-05-08T16:49:32.192Z",
-  "stage": "eth_getLogs",
-  "reason": "HTTP Error",
-  "attempts": 3,
-  "testDuration": 30641
-}

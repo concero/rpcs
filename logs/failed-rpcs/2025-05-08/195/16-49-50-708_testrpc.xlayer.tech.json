@@ -1,9 +1,0 @@
-{
-  "url": "https://testrpc.xlayer.tech",
-  "expectedChainId": "195",
-  "timestamp": "2025-05-08T16:49:50.708Z",
-  "stage": "eth_getLogs",
-  "reason": "Timeout",
-  "attempts": 3,
-  "testDuration": 49156
-}

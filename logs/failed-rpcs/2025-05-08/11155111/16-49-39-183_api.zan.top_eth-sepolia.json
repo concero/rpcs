@@ -1,9 +1,0 @@
-{
-  "url": "https://api.zan.top/eth-sepolia",
-  "expectedChainId": "11155111",
-  "timestamp": "2025-05-08T16:49:39.183Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 35763
-}

@@ -1,9 +1,0 @@
-{
-  "url": "https://uk.rpc.blxrbdn.com",
-  "expectedChainId": "1",
-  "timestamp": "2025-05-08T16:49:32.071Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 30521
-}

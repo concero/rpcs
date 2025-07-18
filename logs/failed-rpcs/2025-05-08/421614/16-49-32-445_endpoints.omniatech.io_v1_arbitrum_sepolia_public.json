@@ -1,9 +1,0 @@
-{
-  "url": "https://endpoints.omniatech.io/v1/arbitrum/sepolia/public",
-  "expectedChainId": "421614",
-  "timestamp": "2025-05-08T16:49:32.445Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 30433
-}

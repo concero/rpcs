@@ -1,9 +1,0 @@
-{
-  "url": "https://rpc.therpc.io/unichain-sepolia",
-  "expectedChainId": "1301",
-  "timestamp": "2025-05-08T16:49:35.745Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 34193
-}

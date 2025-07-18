@@ -1,9 +1,0 @@
-{
-  "url": "https://rpc.therpc.io/sonic-blaze",
-  "expectedChainId": "57054",
-  "timestamp": "2025-05-08T16:49:35.587Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 34033
-}

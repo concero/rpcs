@@ -1,9 +1,0 @@
-{
-  "url": "https://base-sepolia-rpc.publicnode.com",
-  "expectedChainId": "84532",
-  "timestamp": "2025-05-08T16:49:44.057Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 42503
-}

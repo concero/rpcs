@@ -1,9 +1,0 @@
-{
-  "url": "https://ava-testnet.public.blastapi.io/ext/bc/C/rpc",
-  "expectedChainId": "43113",
-  "timestamp": "2025-05-08T16:49:33.625Z",
-  "stage": "eth_getLogs",
-  "reason": "HTTP Error",
-  "attempts": 3,
-  "testDuration": 32072
-}

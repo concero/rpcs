@@ -1,9 +1,0 @@
-{
-  "url": "https://avalanche-fuji-c-chain-rpc.publicnode.com",
-  "expectedChainId": "43113",
-  "timestamp": "2025-05-08T16:49:44.069Z",
-  "stage": "eth_getLogs",
-  "reason": "Invalid getLogs response format",
-  "attempts": 3,
-  "testDuration": 42516
-}
