@@ -1,22 +1,18 @@
 import config from "../constants/config";
 import { ChainlistRpcs, HealthyRpc, RpcEndpoint } from "../types";
 import { NetworkDetails } from "../types";
+import { filterSupportedChainlistRpcs } from "./chainlistRpcService";
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
   const chainIds = Object.values(networkDetails).map(network => network.chainId.toString());
   return chainIds;
 }
-export function filterChainlistChains(
+
+export function filterSupportedChainlistChains(
   rawChainlistRpcs: ChainlistRpcs,
   supportedChainIds: string[],
 ): ChainlistRpcs {
-  return Object.fromEntries(
-    Object.entries(rawChainlistRpcs).filter(
-      ([chainId]) =>
-        supportedChainIds.includes(chainId) &&
-        !config.IGNORED_CHAINLIST_CHAIN_IDS.includes(parseInt(chainId, 10)),
-    ),
-  );
+  return filterSupportedChainlistRpcs(rawChainlistRpcs, supportedChainIds);
 }
 
 export function filterEthereumListsChains(

@@ -1,0 +1,10 @@
+{
+  "url": "https://rpc.notadegen.com/base/sepolia",
+  "expectedChainId": "84532",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:33.761Z",
+  "stage": "eth_chainId",
+  "reason": "Exception",
+  "attempts": 3,
+  "testDuration": 32207
+}

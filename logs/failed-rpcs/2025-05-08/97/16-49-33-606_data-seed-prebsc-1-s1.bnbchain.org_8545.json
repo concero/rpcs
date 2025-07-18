@@ -1,0 +1,9 @@
+{
+  "url": "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+  "expectedChainId": "97",
+  "timestamp": "2025-05-08T16:49:33.606Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 32055
+}

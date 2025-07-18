@@ -1,0 +1,10 @@
+{
+  "url": "https://public.stackup.sh/api/v1/node/base-sepolia",
+  "expectedChainId": "84532",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:33.045Z",
+  "stage": "eth_chainId",
+  "reason": "Exception",
+  "attempts": 3,
+  "testDuration": 31491
+}

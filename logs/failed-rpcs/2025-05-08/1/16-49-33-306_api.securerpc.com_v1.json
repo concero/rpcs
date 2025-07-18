@@ -1,0 +1,9 @@
+{
+  "url": "https://api.securerpc.com/v1",
+  "expectedChainId": "1",
+  "timestamp": "2025-05-08T16:49:33.306Z",
+  "stage": "eth_blockNumber",
+  "reason": "Invalid blockNumber format",
+  "attempts": 3,
+  "testDuration": 31756
+}

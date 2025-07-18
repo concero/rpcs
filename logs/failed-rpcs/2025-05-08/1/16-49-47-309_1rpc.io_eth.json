@@ -1,0 +1,9 @@
+{
+  "url": "https://1rpc.io/eth",
+  "expectedChainId": "1",
+  "timestamp": "2025-05-08T16:49:47.309Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 45760
+}

@@ -1,0 +1,12 @@
+{
+  "url": "https://main-light.eth.linkpool.io",
+  "expectedChainId": "1",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:33.918Z",
+  "stage": "eth_chainId",
+  "reason": "Client Error: unable to verify the first certificate",
+  "error": "unable to verify the first certificate",
+  "responseTime": 171,
+  "attempts": 3,
+  "testDuration": 32368
+}

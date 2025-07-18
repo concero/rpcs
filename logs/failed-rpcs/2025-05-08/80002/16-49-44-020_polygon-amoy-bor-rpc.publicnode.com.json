@@ -1,0 +1,9 @@
+{
+  "url": "https://polygon-amoy-bor-rpc.publicnode.com",
+  "expectedChainId": "80002",
+  "timestamp": "2025-05-08T16:49:44.020Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 42466
+}

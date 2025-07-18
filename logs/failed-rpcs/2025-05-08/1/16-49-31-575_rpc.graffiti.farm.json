@@ -1,0 +1,10 @@
+{
+  "url": "https://rpc.graffiti.farm",
+  "expectedChainId": "1",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:31.575Z",
+  "stage": "eth_chainId",
+  "reason": "Exception",
+  "attempts": 3,
+  "testDuration": 30024
+}

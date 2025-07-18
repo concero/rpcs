@@ -1,0 +1,9 @@
+{
+  "url": "https://api.zan.top/avax-fuji/ext/bc/C/rpc",
+  "expectedChainId": "43113",
+  "timestamp": "2025-05-08T16:49:14.975Z",
+  "stage": "eth_getLogs",
+  "reason": "Rate Limited",
+  "attempts": 2,
+  "testDuration": 13422
+}

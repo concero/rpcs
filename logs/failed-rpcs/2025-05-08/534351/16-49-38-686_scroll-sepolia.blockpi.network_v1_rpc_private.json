@@ -1,0 +1,10 @@
+{
+  "url": "https://scroll-sepolia.blockpi.network/v1/rpc/private",
+  "expectedChainId": "534351",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:38.686Z",
+  "stage": "eth_chainId",
+  "reason": "Timeout",
+  "attempts": 3,
+  "testDuration": 36003
+}

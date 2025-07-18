@@ -1,0 +1,10 @@
+{
+  "url": "https://eth-testnet.4everland.org/v1/37fa9972c1b1cd5fab542c7bdd4cde2f",
+  "expectedChainId": "11155111",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:34.453Z",
+  "stage": "eth_chainId",
+  "reason": "HTTP Error",
+  "attempts": 3,
+  "testDuration": 30941
+}

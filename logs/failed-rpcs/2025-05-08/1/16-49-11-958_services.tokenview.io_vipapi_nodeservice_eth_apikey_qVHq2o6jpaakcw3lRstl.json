@@ -1,0 +1,10 @@
+{
+  "url": "https://services.tokenview.io/vipapi/nodeservice/eth?apikey=qVHq2o6jpaakcw3lRstl",
+  "expectedChainId": "1",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:11.958Z",
+  "stage": "eth_chainId",
+  "reason": "Rate Limited",
+  "attempts": 2,
+  "testDuration": 10407
+}

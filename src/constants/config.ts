@@ -14,24 +14,10 @@ export default {
     919, // mode-sepolia
     157, // puppynet
     81, // astar-shibuya
-    44787, // celo
-    168587773,
-    1946,
-    10200,
-    80002,
-    534351,
-    11155420,
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
-    44787, // celo
-    168587773,
-    1946,
-    10200,
-    80002,
-    534351,
-    11155420,
   ],
 
   LOGGER: {

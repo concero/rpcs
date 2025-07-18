@@ -1,0 +1,9 @@
+{
+  "url": "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
+  "expectedChainId": "534351",
+  "timestamp": "2025-05-08T16:49:33.918Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 30842
+}

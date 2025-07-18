@@ -1,0 +1,12 @@
+{
+  "url": "https://node.histori.xyz/bsc-testnet/8ry9f6t9dct1se2hlagxnd9n2a",
+  "expectedChainId": "97",
+  "returnedChainId": "unknown",
+  "timestamp": "2025-05-08T16:49:31.618Z",
+  "stage": "eth_chainId",
+  "reason": "Client Error: Unable to connect. Is the computer able to access the url?",
+  "error": "Unable to connect. Is the computer able to access the url?",
+  "responseTime": 1,
+  "attempts": 3,
+  "testDuration": 30067
+}

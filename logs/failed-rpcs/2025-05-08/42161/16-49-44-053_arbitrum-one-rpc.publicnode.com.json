@@ -1,0 +1,9 @@
+{
+  "url": "https://arbitrum-one-rpc.publicnode.com",
+  "expectedChainId": "42161",
+  "timestamp": "2025-05-08T16:49:44.053Z",
+  "stage": "eth_getLogs",
+  "reason": "Invalid getLogs response format",
+  "attempts": 3,
+  "testDuration": 42500
+}
