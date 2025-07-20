@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { debug, info } from "../utils/logger";
+import { info } from "../utils/logger";
 import { HealthyRpc, NetworkDetails } from "../types";
 import config from "../constants/config";
 
@@ -18,13 +18,13 @@ export function ensureOutputDirectoryExists(outputDir: string) {
 }
 
 /**
- * Maps chain IDs to their RPC details
+ * Maps chain names to their RPC details
  */
 interface ChainData {
-  [chainId: string]: {
+  [chainName: string]: {
     rpcUrls: string[];
     chainSelector?: string | number;
-    name: string;
+    chainId: string;
   };
 }
 
@@ -45,21 +45,23 @@ export function writeChainRpcFiles(
   const mainnetChains: ChainData = {};
   const testnetChains: ChainData = {};
 
-  rpcsByChain.forEach((rpcs, chainId) => {
-    const network = networkDetails[chainId];
-    if (!network) return;
-
+  // Process all networks, not just those with healthy RPCs
+  Object.entries(networkDetails).forEach(([networkName, network]) => {
+    const chainId = network.chainId.toString();
+    const rpcs = rpcsByChain.get(networkName) || [];
     const rpcUrls = rpcs.map(rpc => rpc.url);
 
     if (network.networkType === "mainnet") {
-      mainnetChains[chainId] = {
+      mainnetChains[networkName] = {
         rpcUrls,
         chainSelector: network.chainSelector,
+        chainId: chainId,
       };
     } else if (network.networkType === "testnet") {
-      testnetChains[chainId] = {
+      testnetChains[networkName] = {
         rpcUrls,
         chainSelector: network.chainSelector,
+        chainId: chainId,
       };
     }
   });
@@ -79,37 +81,4 @@ export function writeChainRpcFiles(
   modifiedFiles.push(testnetPath);
 
   return modifiedFiles;
-}
-
-/**
- * NOTE: This function is no longer used as we only generate mainnet.json and testnet.json
- * Kept for reference but not called from writeOutputFiles.
- *
- * @param networkDetails Record of all network details indexed by chain ID
- * @returns Path to the generated supported-chains.json file
- */
-export function generateSupportedChainsFile(
-  networkDetails: Record<string, NetworkDetails>,
-): string {
-  ensureOutputDirectoryExists(config.OUTPUT_DIR);
-  const outputPath = path.join(config.OUTPUT_DIR, "supported-chains.json");
-
-  const mainnetObj: Record<string, string> = {};
-  const testnetObj: Record<string, string> = {};
-
-  Object.values(networkDetails).forEach(network => {
-    if (network.networkType === "mainnet") {
-      mainnetObj[network.chainId.toString()] = network.name;
-    } else {
-      testnetObj[network.chainId.toString()] = network.name;
-    }
-  });
-
-  const supportedChains = {
-    mainnet: mainnetObj,
-    testnet: testnetObj,
-  };
-
-  fs.writeFileSync(outputPath, JSON.stringify(supportedChains, null, 2));
-  return outputPath;
 }

@@ -1,6 +1,5 @@
 import { parse } from "acorn";
 import { simple } from "acorn-walk";
-import { debug } from "../utils/logger";
 import config from "../constants/config";
 import { ChainlistRpcs } from "../types";
 
@@ -10,10 +9,6 @@ interface JSNode {
 }
 
 export async function fetchChainlistExtraRpcs(): Promise<string> {
-  const response = await fetch(config.URLS.CHAINLIST_EXTRA_RPCS_URL);
-  return response.text();
-};
-export async function fetchChainlistRpcs() {
   const response = await fetch(config.URLS.CHAINLIST_EXTRA_RPCS_URL);
   return response.text();
 }

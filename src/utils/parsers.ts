@@ -1,7 +1,5 @@
 import config from "../constants/config";
-import { ChainlistRpcs, RpcEndpoint } from "../types";
-import { NetworkDetails } from "../types";
-
+import { ChainlistRpcs, NetworkDetails, RpcEndpoint } from "../types";
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
   const chainIds = Object.values(networkDetails).map(network => network.chainId.toString());
@@ -21,26 +19,36 @@ export function filterEthereumListsChains(
   );
 }
 
+// Generic endpoint extractor
+type EndpointExtractor<T> = (data: T) => Array<{ chainId: string; urls: string[] }>;
+
+export function extractEndpoints<T>(
+  data: T,
+  source: RpcEndpoint["source"],
+  extractor: EndpointExtractor<T>,
+): RpcEndpoint[] {
+  return extractor(data).flatMap(({ chainId, urls }) =>
+    urls.filter(url => url && url.startsWith("http")).map(url => ({ chainId, url, source })),
+  );
+}
+
+// Specific extractors using the generic function
 export function extractEthereumListsEndpoints(
   ethereumListsChains: Record<string, any>,
 ): RpcEndpoint[] {
-  return Object.entries(ethereumListsChains).flatMap(([chainId, chain]) =>
-    chain.rpc
-      .filter(url => url.startsWith("http"))
-      .map(url => ({
-        chainId,
-        url,
-        source: "ethereum-lists" as const,
-      })),
+  return extractEndpoints(ethereumListsChains, "ethereum-lists", data =>
+    Object.entries(data).map(([chainId, chain]) => ({
+      chainId,
+      urls: chain.rpc || [],
+    })),
   );
 }
 
 export function extractChainlistEndpoints(chainlistRpcs: ChainlistRpcs): RpcEndpoint[] {
-  return Object.entries(chainlistRpcs).flatMap(([chainId, { rpcs }]) =>
-    rpcs.map(rpc => ({
+  return extractEndpoints(chainlistRpcs, "chainlist", data =>
+    Object.entries(data).map(([chainId, { rpcs }]) => ({
       chainId,
-      url: rpc,
-      source: "chainlist" as const,
+      urls: rpcs,
     })),
   );
 }
@@ -48,17 +56,14 @@ export function extractChainlistEndpoints(chainlistRpcs: ChainlistRpcs): RpcEndp
 export function extractNetworkEndpoints(
   networkDetails: Record<string, NetworkDetails>,
 ): RpcEndpoint[] {
-  return Object.entries(networkDetails)
-    .filter(([_, details]) => details.rpcs && details.rpcs.length > 0)
-    .flatMap(([chainId, details]) =>
-      details.rpcs
-        .filter(url => url && url.startsWith("http"))
-        .map(url => ({
-          chainId,
-          url,
-          source: "v2-networks" as const,
-        })),
-    );
+  return extractEndpoints(networkDetails, "v2-networks", data =>
+    Object.entries(data)
+      .filter(([_, details]) => details.rpcs && details.rpcs.length > 0)
+      .map(([chainId, details]) => ({
+        chainId,
+        urls: details.rpcs,
+      })),
+  );
 }
 
 /**

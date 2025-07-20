@@ -1,76 +1,72 @@
-import { EndpointCollection, RpcEndpoint } from "../types";
+import { RpcEndpoint } from "../types";
 import { sanitizeUrl } from "./sanitizeUrl";
 import { isDomainBlacklisted } from "../constants/domainBlacklist";
 import config from "../constants/config";
 import { info } from "../utils/logger";
 
 /**
- * Filter endpoints based on domain blacklist and removes duplicates across all sources
+ * Filter endpoints based on domain blacklist and removes duplicates
  *
- * @param endpoints Collection of endpoints from different sources
- * @returns Filtered, deduplicated endpoints and related statistics
+ * @param endpoints Array of endpoints from all sources
+ * @returns Filtered, deduplicated endpoints
  */
-export function filterEndpoints(endpoints: EndpointCollection): RpcEndpoint[] {
-  const urlMap = new Map<string, RpcEndpoint>();
+export function filterEndpoints(endpoints: RpcEndpoint[]): RpcEndpoint[] {
+  // Sanitize all URLs
+  const sanitizedEndpoints = endpoints.map(endpoint => ({
+    ...endpoint,
+    url: sanitizeUrl(endpoint.url),
+  }));
 
+  // Track statistics
   const stats = {
-    total: 0,
-    sources: {
-      chainlist: 0,
-      ethereumLists: 0,
-      "v2-networks": 0,
-    },
+    total: sanitizedEndpoints.length,
+    bySource: new Map<string, number>(),
     blacklisted: 0,
+    duplicates: 0,
   };
 
-  const processEndpoints = (
-    source: "chainlist" | "ethereumLists" | "v2-networks",
-    endpointMap: Map<string, RpcEndpoint[]>,
-  ) => {
-    for (const endpoints of endpointMap.values()) {
-      const count = endpoints.length;
-      stats.total += count;
+  // Count by source
+  sanitizedEndpoints.forEach(endpoint => {
+    const count = stats.bySource.get(endpoint.source) || 0;
+    stats.bySource.set(endpoint.source, count + 1);
+  });
 
-      stats.sources[source] += count;
-
-      for (const endpoint of endpoints) {
-        const sanitizedUrl = sanitizeUrl(endpoint.url);
-        endpoint.url = sanitizedUrl;
-
-        // Skip blacklisted domains if enabled
-        if (config.ENABLE_DOMAIN_BLACKLIST && isDomainBlacklisted(sanitizedUrl)) {
+  // Filter blacklisted domains
+  const nonBlacklisted = config.ENABLE_DOMAIN_BLACKLIST
+    ? sanitizedEndpoints.filter(endpoint => {
+        if (isDomainBlacklisted(endpoint.url)) {
           stats.blacklisted++;
-          continue;
+          return false;
         }
+        return true;
+      })
+    : sanitizedEndpoints;
 
-        // Simple deduplication by URL
-        if (!urlMap.has(sanitizedUrl)) {
-          urlMap.set(sanitizedUrl, endpoint);
-        }
-      }
+  // Remove duplicates by URL
+  const seen = new Set<string>();
+  const uniqueEndpoints = nonBlacklisted.filter(endpoint => {
+    if (seen.has(endpoint.url)) {
+      stats.duplicates++;
+      return false;
     }
-  };
+    seen.add(endpoint.url);
+    return true;
+  });
 
-  processEndpoints("chainlist", endpoints.chainlist);
-  processEndpoints("ethereumLists", endpoints.ethereumLists);
-  processEndpoints("v2-networks", endpoints.v2Networks);
+  // Log statistics
+  const sourceCounts = Array.from(stats.bySource.entries())
+    .map(([source, count]) => `${count} from ${source}`)
+    .join(", ");
 
-  const filteredEndpoints = Array.from(urlMap.values()); // deduplication
-  const duplicatesRemoved = stats.total - stats.blacklisted - filteredEndpoints.length;
-
-  const endpointInfoParts = [
-    `Testing ${filteredEndpoints.length} unique endpoints: `,
-    `${stats.sources.chainlist} from chainlist, `,
-    `${stats.sources.ethereumLists} from ethereum-lists, `,
-    `${stats.sources["v2-networks"]} from v2-networks, `,
-    `${duplicatesRemoved} duplicates removed`,
-  ];
-
+  let message = `Testing ${uniqueEndpoints.length} unique endpoints: ${sourceCounts}`;
+  if (stats.duplicates > 0) {
+    message += `, ${stats.duplicates} duplicates removed`;
+  }
   if (config.ENABLE_DOMAIN_BLACKLIST && stats.blacklisted > 0) {
-    endpointInfoParts.push(`, ${stats.blacklisted} blacklisted domains filtered`);
+    message += `, ${stats.blacklisted} blacklisted domains filtered`;
   }
 
-  info(endpointInfoParts.join(""));
+  info(message);
 
-  return filteredEndpoints;
+  return uniqueEndpoints;
 }

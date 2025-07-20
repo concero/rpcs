@@ -46,8 +46,8 @@ interface ChainRpcOutput {
         chainIdResponse?: JsonRpcResponse;
         blockNumberResponse?: JsonRpcResponse;
         getLogsResponse?: JsonRpcResponse;
-      }
-    }
+      };
+    };
   };
 }
 
@@ -155,16 +155,11 @@ interface NetworkData {
 
 type EndpointMap = Map<string, RpcEndpoint[]>;
 
-export type EndpointCollection = {
-  chainlist: EndpointMap;
-  ethereumLists: EndpointMap;
-  v2Networks: EndpointMap;
-};
+// EndpointCollection removed - use RpcEndpoint[] directly
 
 export interface TestResultsCollection {
   healthyRpcs: Map<string, HealthyRpc[]>;
   networkDetails: Record<string, NetworkDetails>;
-  initialEndpoints: EndpointCollection;
 }
 
 export {
