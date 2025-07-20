@@ -1,4 +1,4 @@
-import { error, info, debug } from "../utils/logger";
+import { debug, error, info } from "../utils/logger";
 import config from "../constants/config";
 import { NetworkDetails } from "../types";
 
@@ -28,9 +28,6 @@ export async function fetchConceroNetworks(): Promise<Record<string, NetworkDeta
       }
       const data = await response.json();
       const networks = data as Record<string, NetworkDetails>;
-      // Add debugging for network format
-      const sampleKeys = Object.keys(networks).slice(0, 3);
-      debug(`Sample network keys from ${type}: ${sampleKeys.join(", ")}`);
 
       // Set networkType for all networks and add to result
       for (const [key, network] of Object.entries(networks)) {
@@ -38,12 +35,6 @@ export async function fetchConceroNetworks(): Promise<Record<string, NetworkDeta
         result[key] = network;
       }
 
-      for (const key of sampleKeys) {
-        const network = result[key];
-        debug(
-          `Network ${key}: chainId=${network.chainId}, name=${network.name}, type=${network.networkType}`,
-        );
-      }
     } catch (err) {
       error(`Error fetching ${type} networks: ${err}`);
       throw err;

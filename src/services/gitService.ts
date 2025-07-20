@@ -1,7 +1,7 @@
-import simpleGit, { SimpleGit, CheckRepoActions } from "simple-git";
+import simpleGit, { CheckRepoActions, SimpleGit } from "simple-git";
 import { promises as fs } from "fs";
 import path from "path";
-import { error, info, debug, warn } from "../utils/logger";
+import { debug, error, info, warn } from "../utils/logger";
 import config from "../constants/config";
 
 /**

@@ -1,5 +1,5 @@
-import { ChainStats, EndpointCollection, NetworkDetails } from "../types";
-import config from "../constants/config";
+import { ChainStats, EndpointCollection, NetworkDetails } from "../../types";
+import config from "../../constants/config";
 
 export function addMissingNetworksToStats(
   networkDetails: Record<string, NetworkDetails>,

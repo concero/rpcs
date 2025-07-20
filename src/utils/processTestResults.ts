@@ -1,6 +1,6 @@
 import { EndpointCollection, HealthyRpc, NetworkDetails, TestResultsCollection } from "../types";
 import { info, debug, error, warn } from "./logger";
-import { getNetworkDetails } from "../services/parsers";
+import { getNetworkDetails } from "./parsers";
 import { shouldProcessNetwork } from "./shouldProcessNetwork";
 
 export function processTestResults(

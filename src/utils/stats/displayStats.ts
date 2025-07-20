@@ -1,5 +1,5 @@
-import { ChainStats, TestResultsCollection } from "../types";
-import { getNetworkDetails } from "../services/parsers";
+import { ChainStats, TestResultsCollection } from "../../types";
+import { getNetworkDetails } from "../parsers";
 import { addMissingNetworksToStats } from "./addMissingNetworksToStats";
 import { displayNetworkStats } from "./displayNetworkStats";
 

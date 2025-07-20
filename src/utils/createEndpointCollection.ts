@@ -1,6 +1,6 @@
 import { EndpointCollection, RpcEndpoint } from "../types";
 
-export function createInitialEndpointCollection(
+export function createEndpointCollection(
   chainlistEndpoints: RpcEndpoint[],
   ethereumListsEndpoints: RpcEndpoint[],
   networkEndpoints: RpcEndpoint[],

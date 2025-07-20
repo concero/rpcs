@@ -1,7 +1,7 @@
-import { debug, info } from "../utils/logger";
+import { info } from "../utils/logger";
 import config from "../constants/config";
-import { ChainlistRpc, ChainlistRpcData, ChainlistRpcs } from "../types";
-import { fetchChainlistExtraRpcs, parseChainlistExtraRpcs } from "./chainlistExtraRpcService";
+import { ChainlistRpcs } from "../types";
+import { fetchChainlistExtraRpcs, parseChainlistExtraRpcs } from "./chainlistExtraRpcs";
 
 export async function fetchChainlistData(supportedChainIds: string[]): Promise<ChainlistRpcs> {
   const primaryData = await fetchChainlistRpcs();

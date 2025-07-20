@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { debug, info } from "../utils/logger";
+import { info } from "../utils/logger";
 import { HealthyRpc, NetworkDetails } from "../types";
 import config from "../constants/config";
 

@@ -1,23 +1,19 @@
-import { EndpointCollection, NetworkDetails, RpcEndpoint } from "../types";
-import {
-  fetchChainlistData,
-} from "./chainlistRpcService";
+import { EndpointCollection, NetworkDetails } from "../types";
+import { fetchChainlistData } from "../services/chainlistRpcs";
 import {
   extractChainlistEndpoints,
   extractEthereumListsEndpoints,
   extractNetworkEndpoints,
   filterEthereumListsChains,
 } from "./parsers";
-import { fetchEthereumListsChains } from "./ethereumListsService";
+import { fetchEthereumListsChains } from "../services/ethereumLists";
 
-import { createInitialEndpointCollection } from "../utils/createInitialEndpointCollection";
-
+import { createEndpointCollection } from "./createEndpointCollection";
 
 export async function fetchExternalEndpoints(
   supportedChainIds: string[],
   networkDetails: Record<string, NetworkDetails>,
 ): Promise<EndpointCollection> {
-
   const filteredChainlistRpcs = await fetchChainlistData(supportedChainIds);
 
   const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
@@ -25,7 +21,6 @@ export async function fetchExternalEndpoints(
     ethereumListsChains,
     supportedChainIds,
   );
-
 
   let chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
   let ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
@@ -35,9 +30,5 @@ export async function fetchExternalEndpoints(
   // const totalEndpoints =
   //   chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length;
 
-  return createInitialEndpointCollection(
-    chainlistEndpoints,
-    ethereumListsEndpoints,
-    networkEndpoints,
-  );
+  return createEndpointCollection(chainlistEndpoints, ethereumListsEndpoints, networkEndpoints);
 }

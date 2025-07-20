@@ -1,28 +1,28 @@
-import config from "../constants/config";
-import { error, info, debug, warn } from "../utils/logger";
-import { testRpcEndpoints } from "./rpcTester";
-import { getSupportedChainIds } from "./parsers";
-import { commitAndPushChanges } from "./gitService";
-import { HealthyRpc } from "../types";
-import { fetchConceroNetworks } from "./conceroNetworkService";
-import { shouldCommitChanges } from "../utils/shouldCommitChanges";
-import { displayStats } from "../utils/displayStats";
-import { writeOutputFiles } from "../utils/writeOutputFiles";
-import { filterEndpoints } from "../utils/filterEndpoints";
-import { fetchExternalEndpoints } from "./fetchExternalEndpoints";
-import { processTestResults } from "../utils/processTestResults";
+import config from "./constants/config";
+import { error, info } from "./utils/logger";
+import { testRpcEndpoints } from "./services/rpcTester";
+import { getSupportedChainIds } from "./utils/parsers";
+import { commitAndPushChanges } from "./services/gitService";
+import { HealthyRpc } from "./types";
+import { fetchConceroNetworks } from "./services/conceroNetworks";
+import { shouldCommitChanges } from "./utils/shouldCommitChanges";
+import { displayStats } from "./utils/stats/displayStats";
+import { writeChainRpcFiles } from "./services/fileService";
+import { filterEndpoints } from "./utils/filterEndpoints";
+import { fetchExternalEndpoints } from "./utils/fetchExternalEndpoints";
+import { processTestResults } from "./utils/processTestResults";
 
 /**
  * Main RPC service function that orchestrates the entire process:
  * 1. Fetch network details
  * 2. Fetch RPC endpoints from multiple sources
  * 3. Test endpoints for health and performance
- * 4. Process results and generate only two output files: mainnet.json and testnet.json
+ * 4. Process results and generate two output files: mainnet.json and testnet.json
  * 5. Commit changes to repository if configured
  *
  * @returns Map of chain IDs to their healthy RPC endpoints
  */
-export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
+export async function main(): Promise<Map<string, HealthyRpc[]>> {
   try {
     info("Starting RPC service...");
 
@@ -39,7 +39,11 @@ export async function runRpcService(): Promise<Map<string, HealthyRpc[]>> {
 
     const results = processTestResults(testResult, conceroNetworks, endpoints);
 
-    const modifiedFiles = writeOutputFiles(results, conceroNetworks);
+    const modifiedFiles = writeChainRpcFiles(
+      results.healthyRpcs,
+      config.OUTPUT_DIR,
+      conceroNetworks,
+    );
     displayStats(results);
 
     if (shouldCommitChanges(modifiedFiles)) {

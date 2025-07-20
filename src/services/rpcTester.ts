@@ -1,7 +1,7 @@
 import http from "http";
 import https from "https";
 import config from "../constants/config";
-import { debug, warn, info, error } from "../utils/logger";
+import { debug, error, info, warn } from "../utils/logger";
 import type { HealthyRpc, RpcEndpoint, RpcTestResult } from "../types";
 
 // Keep-alive agents for connection reuse

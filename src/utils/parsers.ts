@@ -1,6 +1,5 @@
 import config from "../constants/config";
-import { ChainlistRpcs, RpcEndpoint } from "../types";
-import { NetworkDetails } from "../types";
+import { ChainlistRpcs, NetworkDetails, RpcEndpoint } from "../types";
 
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
