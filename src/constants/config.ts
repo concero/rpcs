@@ -65,7 +65,7 @@ const config: Config = {
   RPC_TESTER: {
     HTTP_REQUEST_CONCURRENCY: 50,
     HTTP_REQUEST_TIMEOUT_MS: 1000 * 5,
-    RETRY_DELAY_MS: 0,
+    RETRY_DELAY_MS: 150,
     MAX_RETRIES: 3,
   },
 
@@ -82,7 +82,7 @@ const config: Config = {
   GIT: {
     ENABLE_GIT_SERVICE: process.env.ENABLE_GIT_SERVICE === "true" || false,
     REPO_PATH: process.env.GIT_REPO_PATH || ".",
-    COMMIT_MESSAGE: process.env.GIT_COMMIT_MESSAGE || "chore: update RPC endpoints",
+    COMMIT_MESSAGE: process.env.GIT_COMMIT_MESSAGE || "updating RPC endpoints",
     AUTHOR_NAME: process.env.GIT_AUTHOR_NAME || "RPC Service",
     AUTHOR_EMAIL: process.env.GIT_AUTHOR_EMAIL || "rpc-service@concero.io",
     BRANCH: process.env.GIT_BRANCH || "main",
