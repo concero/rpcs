@@ -59,7 +59,7 @@ interface GitOperationResult {
  * Get validated git configuration
  */
 function getGitConfig(repoPath: string): GitServiceConfig {
-  const gitConfig = config.GIT || {};
+  const gitConfig = config.GIT;
 
   return {
     repoPath,

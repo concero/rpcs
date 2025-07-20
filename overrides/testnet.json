@@ -1,26 +1,32 @@
 {
   "astarShibuya": {
     "rpcUrls": ["https://evm.shibuya.astar.network"],
-    "chainSelector": 81
+    "chainSelector": 81,
+    "chainId": "81"
   },
   "roninSaigon": {
     "rpcUrls": ["https://saigon-testnet.roninchain.com/rpc"],
-    "chainSelector": 2021
+    "chainSelector": 2021,
+    "chainId": "2021"
   },
   "irysTestnet": {
     "rpcUrls": ["https://testnet-rpc.irys.xyz/v1/execution-rpc"],
-    "chainSelector": 1270
+    "chainSelector": 1270,
+    "chainId": "1270"
   },
   "zircuitTestnet": {
     "rpcUrls": ["https://testnet.zircuit.com", "https://zircuit1-testnet.p2pify.com"],
-    "chainSelector": 48899
+    "chainSelector": 48899,
+    "chainId": "48899"
   },
   "litheumTestnet": {
     "rpcUrls": ["https://testnet.litheum.com"],
-    "chainSelector": 1174
+    "chainSelector": 1174,
+    "chainId": "1174"
   },
   "xomarketTestnet": {
     "rpcUrls": ["https://dev-testnet-rpc.xo.market"],
-    "chainSelector": 1000101
+    "chainSelector": 1000101,
+    "chainId": "1000101"
   }
 }

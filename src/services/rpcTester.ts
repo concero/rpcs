@@ -3,31 +3,11 @@ import https from "https";
 import config from "../constants/config";
 import { debug, error, info, warn } from "../utils/logger";
 import type { HealthyRpc, RpcEndpoint, RpcTestResult } from "../types";
+import { StatsCollector } from "../utils/StatsCollector";
 
 // Keep-alive agents for connection reuse
 const httpAgent = new http.Agent({ keepAlive: true, maxSockets: 50 });
 const httpsAgent = new https.Agent({ keepAlive: true, maxSockets: 50 });
-
-/**
- * Custom error types for better error handling
- */
-class RpcTestError extends Error {
-  constructor(
-    message: string,
-    public readonly endpoint: string,
-    public readonly cause?: Error,
-  ) {
-    super(message);
-    this.name = "RpcTestError";
-  }
-}
-
-class RpcTimeoutError extends RpcTestError {
-  constructor(endpoint: string, timeoutMs: number) {
-    super(`Request timed out after ${timeoutMs}ms`, endpoint);
-    this.name = "RpcTimeoutError";
-  }
-}
 
 /**
  * Configuration interface for better type safety
@@ -121,7 +101,6 @@ async function testSingleEndpoint(
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: payload,
-        agent,
         signal: controller.signal,
       });
 
@@ -143,7 +122,7 @@ async function testSingleEndpoint(
         return null;
       }
 
-      const responseBody = await response.json();
+      const responseBody = (await response.json()) as { result?: string; error?: any };
 
       if (!responseBody.result) {
         debug(`No result field from ${url}`);
@@ -164,7 +143,8 @@ async function testSingleEndpoint(
         source,
         responseTime,
         returnedChainId,
-      };
+        lastBlockNumber: 0, // TODO: Implement block number fetching
+      } as HealthyRpc;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : String(err);
 
@@ -189,60 +169,31 @@ function processRpcResults(healthyRpcs: HealthyRpc[]): RpcTestResult {
   const chainGroups = new Map<string, HealthyRpc[]>();
   const chainIdMismatches = new Map<string, string[]>();
 
-  // Group RPCs by expected chain ID
+  // Group RPCs by expected chain ID and filter out mismatches
   for (const rpc of healthyRpcs) {
-    const existing = chainGroups.get(rpc.chainId) || [];
-    existing.push(rpc);
-    chainGroups.set(rpc.chainId, existing);
-  }
-
-  const finalResults = new Map<string, HealthyRpc[]>();
-
-  // Process each chain group
-  for (const [expectedChainId, rpcs] of chainGroups) {
-    if (rpcs.length === 0) continue;
-
-    // Count returned chain IDs to find the dominant one
-    const returnedChainCounts = new Map<string, number>();
-    for (const rpc of rpcs) {
-      const count = returnedChainCounts.get(rpc.returnedChainId) || 0;
-      returnedChainCounts.set(rpc.returnedChainId, count + 1);
-    }
-
-    // Find the most common returned chain ID
-    const dominantChainId = Array.from(returnedChainCounts.entries()).reduce(
-      (best, [chainId, count]) => (count > best.count ? { chainId, count } : best),
-      { chainId: expectedChainId, count: 0 },
-    ).chainId;
-
-    // Track mismatches
-    if (dominantChainId !== expectedChainId) {
-      warn(`Chain ${expectedChainId}: majority returned ${dominantChainId}`);
-      chainIdMismatches.set(expectedChainId, [dominantChainId]);
-    }
-
-    // Filter RPCs matching the dominant chain ID
-    const validRpcs = rpcs.filter(rpc => {
-      if (rpc.returnedChainId === dominantChainId) {
-        return true;
-      }
-
-      // Track additional mismatches
-      const mismatches = chainIdMismatches.get(expectedChainId) || [];
+    // Only accept RPCs that returned the expected chain ID
+    if (rpc.returnedChainId === rpc.chainId) {
+      const existing = chainGroups.get(rpc.chainId) || [];
+      existing.push(rpc);
+      chainGroups.set(rpc.chainId, existing);
+    } else {
+      // Track the mismatch
+      const mismatches = chainIdMismatches.get(rpc.chainId) || [];
       if (!mismatches.includes(rpc.returnedChainId)) {
         mismatches.push(rpc.returnedChainId);
-        chainIdMismatches.set(expectedChainId, mismatches);
+        chainIdMismatches.set(rpc.chainId, mismatches);
       }
-
-      return false;
-    });
-
-    // Sort by response time (fastest first)
-    validRpcs.sort((a, b) => a.responseTime - b.responseTime);
-
-    if (validRpcs.length > 0) {
-      finalResults.set(expectedChainId, validRpcs);
+      debug(
+        `Chain ID mismatch: expected ${rpc.chainId}, got ${rpc.returnedChainId} from ${rpc.url}`,
+      );
     }
+  }
+
+  // Sort each chain's RPCs by response time (fastest first)
+  const finalResults = new Map<string, HealthyRpc[]>();
+  for (const [chainId, rpcs] of chainGroups) {
+    rpcs.sort((a, b) => a.responseTime - b.responseTime);
+    finalResults.set(chainId, rpcs);
   }
 
   return {
@@ -254,7 +205,10 @@ function processRpcResults(healthyRpcs: HealthyRpc[]): RpcTestResult {
 /**
  * Test multiple RPC endpoints with controlled concurrency
  */
-export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTestResult> {
+export async function testRpcEndpoints(
+  endpoints: RpcEndpoint[],
+  statsCollector?: StatsCollector,
+): Promise<RpcTestResult> {
   if (endpoints.length === 0) {
     info("No endpoints to test");
     return {
@@ -301,15 +255,20 @@ export async function testRpcEndpoints(endpoints: RpcEndpoint[]): Promise<RpcTes
       while (activeCount < concurrency && queue.length > 0) {
         const endpoint = queue.shift()!;
         activeCount++;
+        statsCollector?.recordTest();
 
         testSingleEndpoint(endpoint, testConfig)
           .then(result => {
             if (result) {
               healthyRpcs.push(result);
+              statsCollector?.recordHealthy(result);
+            } else {
+              statsCollector?.recordUnhealthy(endpoint.chainId);
             }
           })
           .catch(err => {
             debug(`Test failed for ${endpoint.url}: ${err.message}`);
+            statsCollector?.recordUnhealthy(endpoint.chainId);
           })
           .finally(() => {
             activeCount--;

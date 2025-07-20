@@ -1,4 +1,4 @@
-import { EndpointCollection, NetworkDetails } from "../types";
+import { RpcEndpoint, NetworkDetails } from "../types";
 import { fetchChainlistData } from "../services/chainlistRpcs";
 import {
   extractChainlistEndpoints,
@@ -8,12 +8,10 @@ import {
 } from "./parsers";
 import { fetchEthereumListsChains } from "../services/ethereumLists";
 
-import { createEndpointCollection } from "./createEndpointCollection";
-
 export async function fetchExternalEndpoints(
   supportedChainIds: string[],
   networkDetails: Record<string, NetworkDetails>,
-): Promise<EndpointCollection> {
+): Promise<RpcEndpoint[]> {
   const filteredChainlistRpcs = await fetchChainlistData(supportedChainIds);
 
   const ethereumListsChains = await fetchEthereumListsChains(supportedChainIds);
@@ -22,13 +20,10 @@ export async function fetchExternalEndpoints(
     supportedChainIds,
   );
 
-  let chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
-  let ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
-  let networkEndpoints = extractNetworkEndpoints(networkDetails);
+  const chainlistEndpoints = extractChainlistEndpoints(filteredChainlistRpcs);
+  const ethereumListsEndpoints = extractEthereumListsEndpoints(filteredEthereumListsChains);
+  const networkEndpoints = extractNetworkEndpoints(networkDetails);
 
-  // // Calculate total number of endpoints before any filtering
-  // const totalEndpoints =
-  //   chainlistEndpoints.length + ethereumListsEndpoints.length + networkEndpoints.length;
-
-  return createEndpointCollection(chainlistEndpoints, ethereumListsEndpoints, networkEndpoints);
+  // Merge all endpoints into a single array
+  return [...chainlistEndpoints, ...ethereumListsEndpoints, ...networkEndpoints];
 }

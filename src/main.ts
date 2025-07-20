@@ -6,11 +6,12 @@ import { commitAndPushChanges } from "./services/gitService";
 import { HealthyRpc } from "./types";
 import { fetchConceroNetworks } from "./services/conceroNetworks";
 import { shouldCommitChanges } from "./utils/shouldCommitChanges";
-import { displayStats } from "./utils/stats/displayStats";
+import { StatsCollector } from "./utils/StatsCollector";
 import { writeChainRpcFiles } from "./services/fileService";
 import { filterEndpoints } from "./utils/filterEndpoints";
 import { fetchExternalEndpoints } from "./utils/fetchExternalEndpoints";
 import { processTestResults } from "./utils/processTestResults";
+import { overrideService } from "./services/overrideService";
 
 /**
  * Main RPC service function that orchestrates the entire process:
@@ -26,31 +27,46 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
   try {
     info("Starting RPC service...");
 
-    // Fetch network details and determine supported chains
-    const conceroNetworks = await fetchConceroNetworks();
+    // 1. Fetch network configuration
+    const networks = await fetchConceroNetworks();
 
-    const supportedChainIds = getSupportedChainIds(conceroNetworks);
+    // Initialize stats collector
+    const statsCollector = new StatsCollector(networks);
+    statsCollector.initialize();
+    const chainIds = getSupportedChainIds(networks);
 
-    const endpoints = await fetchExternalEndpoints(supportedChainIds, conceroNetworks);
+    // 2. Fetch and filter endpoints
+    const allEndpoints = await fetchExternalEndpoints(chainIds, networks);
+    const uniqueEndpoints = filterEndpoints(allEndpoints);
 
-    const filteredEndpoints = filterEndpoints(endpoints);
+    // 3. Test endpoints
+    const testResult = await testRpcEndpoints(uniqueEndpoints, statsCollector);
 
-    const testResult = await testRpcEndpoints(filteredEndpoints);
+    // 4. Process results
+    const healthyRpcsByNetwork = processTestResults(testResult, networks);
 
-    const results = processTestResults(testResult, conceroNetworks, endpoints);
-
-    const modifiedFiles = writeChainRpcFiles(
-      results.healthyRpcs,
-      config.OUTPUT_DIR,
-      conceroNetworks,
+    // 5. Apply overrides
+    const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
+      healthyRpcsByNetwork,
+      networks,
     );
-    displayStats(results);
 
+    // 6. Write output files
+    const modifiedFiles = writeChainRpcFiles(
+      rpcsByNetworkWithOverrides,
+      config.OUTPUT_DIR,
+      networks,
+    );
+
+    // 7. Display statistics
+    statsCollector.display();
+
+    // 8. Optional: commit changes
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
 
-    return results.healthyRpcs;
+    return healthyRpcsByNetwork;
   } catch (err) {
     error(`Service run error: ${String(err)}, ${err.stack}`);
     throw err;
