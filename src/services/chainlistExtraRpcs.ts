@@ -55,7 +55,6 @@ export function parseChainlistExtraRpcs(jsFileContent: string): ChainlistRpcs {
 
   for (const chainId in parsed) {
     if (parsed[chainId] && parsed[chainId].rpcs) {
-
       // Transform the RPCs array to extract URLs from objects when needed
       const rpcs = parsed[chainId].rpcs
         .map((rpc: any) => {

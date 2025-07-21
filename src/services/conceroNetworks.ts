@@ -34,7 +34,6 @@ export async function fetchConceroNetworks(): Promise<Record<string, NetworkDeta
         network.networkType = type;
         result[key] = network;
       }
-
     } catch (err) {
       error(`Error fetching ${type} networks: ${err}`);
       throw err;
