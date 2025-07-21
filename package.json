@@ -13,7 +13,7 @@
     "clean:output": "rm -rf output",
     "clean:logs": "rm -rf logs",
     "clean": "npm run clean:output && npm run clean:logs",
-    "build:types": "tsc ./index.ts --emitDeclarationOnly",
+    "build:types": "tsc ./index.ts --declaration --emitDeclarationOnly",
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
     "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\""
