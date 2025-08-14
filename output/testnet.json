@@ -9,14 +9,15 @@
   "apechainCurtis": {
     "rpcUrls": [
       "https://apechain-curtis.drpc.org",
-      "https://curtis.rpc.caldera.xyz/http",
-      "https://rpc.curtis.apechain.com"
+      "https://rpc.curtis.apechain.com",
+      "https://curtis.rpc.caldera.xyz/http"
     ],
     "chainSelector": 33111,
     "chainId": "33111"
   },
   "arbitrumSepolia": {
     "rpcUrls": [
+      "https://arbitrum-sepolia.api.onfinality.io/public",
       "https://arbitrum-sepolia.gateway.tenderly.co",
       "https://arbitrum-sepolia-rpc.publicnode.com",
       "https://arbitrum-sepolia.drpc.org",
@@ -35,21 +36,20 @@
   "auroraTestnet": {
     "rpcUrls": [
       "https://aurora-testnet.drpc.org",
-      "https://testnet.aurora.dev",
-      "https://endpoints.omniatech.io/v1/aurora/testnet/public"
+      "https://endpoints.omniatech.io/v1/aurora/testnet/public",
+      "https://testnet.aurora.dev"
     ],
     "chainSelector": 1313161,
     "chainId": "1313161555"
   },
   "avalancheFuji": {
     "rpcUrls": [
-      "https://api.avax-test.network/ext/bc/C/rpc",
       "https://endpoints.omniatech.io/v1/avax/fuji/public",
+      "https://api.avax-test.network/ext/bc/C/rpc",
       "https://avalanche-fuji-c-chain-rpc.publicnode.com",
       "https://avalanche-fuji.therpc.io",
-      "https://avalanche-fuji.drpc.org",
       "https://ava-testnet.public.blastapi.io/ext/bc/C/rpc",
-      "https://api.zan.top/avax-fuji/ext/bc/C/rpc"
+      "https://avalanche-fuji.drpc.org"
     ],
     "chainSelector": 43113,
     "chainId": "43113"
@@ -65,9 +65,9 @@
   },
   "baseSepolia": {
     "rpcUrls": [
+      "https://base-sepolia-rpc.publicnode.com",
       "https://base-sepolia.api.onfinality.io/public",
       "https://base-sepolia.gateway.tenderly.co",
-      "https://base-sepolia-rpc.publicnode.com",
       "https://base-sepolia.drpc.org",
       "https://sepolia.base.org"
     ],
@@ -84,8 +84,8 @@
   "bitlayerTestnet": {
     "rpcUrls": [
       "https://rpc.ankr.com/bitlayer_testnet",
-      "https://testnet-rpc.bitlayer-rpc.com",
-      "https://testnet-rpc.bitlayer.org"
+      "https://testnet-rpc.bitlayer.org",
+      "https://testnet-rpc.bitlayer-rpc.com"
     ],
     "chainSelector": 200810,
     "chainId": "200810"
@@ -102,18 +102,17 @@
   "bnbTestnet": {
     "rpcUrls": [
       "https://bnb-testnet.api.onfinality.io/public",
-      "https://bsc-testnet-rpc.publicnode.com",
-      "https://bsc-testnet.drpc.org",
-      "https://bsc-testnet.public.blastapi.io",
       "https://bsc-testnet.therpc.io",
-      "https://data-seed-prebsc-2-s3.bnbchain.org:8545",
+      "https://bsc-testnet-rpc.publicnode.com",
+      "https://bsc-testnet.public.blastapi.io",
+      "https://bsc-testnet.drpc.org",
+      "https://data-seed-prebsc-2-s1.bnbchain.org:8545",
+      "https://endpoints.omniatech.io/v1/bsc/testnet/public",
+      "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
       "https://data-seed-prebsc-1-s2.bnbchain.org:8545",
       "https://data-seed-prebsc-2-s2.bnbchain.org:8545",
       "https://data-seed-prebsc-1-s3.bnbchain.org:8545",
-      "https://data-seed-prebsc-2-s1.bnbchain.org:8545",
-      "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
-      "https://endpoints.omniatech.io/v1/bsc/testnet/public",
-      "https://api.zan.top/bsc-testnet"
+      "https://data-seed-prebsc-2-s3.bnbchain.org:8545"
     ],
     "chainSelector": 97,
     "chainId": "97"
@@ -157,8 +156,8 @@
   },
   "cronosTestnet": {
     "rpcUrls": [
-      "https://cronos-testnet.drpc.org",
       "https://endpoints.omniatech.io/v1/cronos/testnet/public",
+      "https://cronos-testnet.drpc.org",
       "https://evm-t3.cronos.org"
     ],
     "chainSelector": 338,
@@ -167,23 +166,23 @@
   "ethereumSepolia": {
     "rpcUrls": [
       "https://gateway.tenderly.co/public/sepolia",
+      "https://0xrpc.io/sep",
       "https://eth-sepolia.api.onfinality.io/public",
-      "https://sepolia.gateway.tenderly.co",
       "https://ethereum-sepolia-rpc.publicnode.com",
       "https://sepolia.drpc.org",
-      "https://0xrpc.io/sep",
+      "https://sepolia.gateway.tenderly.co",
       "https://ethereum-sepolia.therpc.io",
       "https://rpc.sepolia.ethpandaops.io",
-      "https://eth-sepolia.public.blastapi.io",
       "https://ethereum-sepolia.rpc.subquery.network/public",
-      "https://1rpc.io/sepolia",
-      "https://api.zan.top/eth-sepolia"
+      "https://eth-sepolia.public.blastapi.io"
     ],
     "chainSelector": 11155111,
     "chainId": "11155111"
   },
   "expchainTestnet": {
-    "rpcUrls": ["https://rpc1-testnet.expchain.ai"],
+    "rpcUrls": [
+      "https://rpc1-testnet.expchain.ai"
+    ],
     "chainSelector": 18880,
     "chainId": "18880"
   },
@@ -196,8 +195,8 @@
   },
   "fraxtalHolesky": {
     "rpcUrls": [
-      "https://rpc.testnet.frax.com",
-      "https://fraxtal-holesky-rpc.publicnode.com"
+      "https://fraxtal-holesky-rpc.publicnode.com",
+      "https://rpc.testnet.frax.com"
     ],
     "chainSelector": 2522,
     "chainId": "2522"
@@ -205,8 +204,8 @@
   "gnosisChiado": {
     "rpcUrls": [
       "https://rpc.chiado.gnosis.gateway.fm",
-      "https://gnosis-chiado-rpc.publicnode.com",
       "https://rpc.chiadochain.net",
+      "https://gnosis-chiado-rpc.publicnode.com",
       "https://gnosis-chiado.drpc.org",
       "https://gnosis-chiado.therpc.io"
     ],
@@ -246,8 +245,8 @@
   "kaiaKairos": {
     "rpcUrls": [
       "https://rpc.ankr.com/kaia_testnet",
-      "https://kaia-kairos.blockpi.network/v1/rpc/public",
       "https://public-en-kairos.node.kaia.io",
+      "https://kaia-kairos.blockpi.network/v1/rpc/public",
       "https://responsive-green-emerald.kaia-kairos.quiknode.pro"
     ],
     "chainSelector": 1001,
@@ -272,7 +271,6 @@
   "lineaSepolia": {
     "rpcUrls": [
       "https://linea-sepolia-rpc.publicnode.com",
-      "https://linea-sepolia.therpc.io",
       "https://linea-sepolia.drpc.org",
       "https://rpc.sepolia.linea.build"
     ],
@@ -288,18 +286,18 @@
   },
   "mantapacificSepolia": {
     "rpcUrls": [
-      "https://endpoints.omniatech.io/v1/manta-pacific/sepolia/public",
+      "https://pacific-rpc.sepolia-testnet.manta.network/http",
       "https://manta-sepolia.rpc.caldera.xyz/http",
-      "https://pacific-rpc.sepolia-testnet.manta.network/http"
+      "https://endpoints.omniatech.io/v1/manta-pacific/sepolia/public"
     ],
     "chainSelector": 344100,
     "chainId": "3441006"
   },
   "mantleSepolia": {
     "rpcUrls": [
-      "https://endpoints.omniatech.io/v1/mantle/sepolia/public",
       "https://mantle-sepolia.drpc.org",
-      "https://rpc.sepolia.mantle.xyz"
+      "https://rpc.sepolia.mantle.xyz",
+      "https://endpoints.omniatech.io/v1/mantle/sepolia/public"
     ],
     "chainSelector": 5003,
     "chainId": "5003"
@@ -329,8 +327,8 @@
   },
   "monadTestnet": {
     "rpcUrls": [
-      "https://testnet-rpc.monad.xyz",
       "https://rpc.ankr.com/monad_testnet",
+      "https://testnet-rpc.monad.xyz",
       "https://monad-testnet.drpc.org"
     ],
     "chainSelector": 10143,
@@ -367,10 +365,8 @@
       "https://optimism-sepolia.gateway.tenderly.co",
       "https://sepolia.optimism.io",
       "https://optimism-sepolia.api.onfinality.io/public",
-      "https://endpoints.omniatech.io/v1/op/sepolia/public",
-      "https://optimism-sepolia.drpc.org",
       "https://optimism-sepolia.therpc.io",
-      "https://api.zan.top/opt-sepolia"
+      "https://optimism-sepolia.drpc.org"
     ],
     "chainSelector": 11155420,
     "chainId": "11155420"
@@ -378,20 +374,19 @@
   "polygonAmoy": {
     "rpcUrls": [
       "https://polygon-amoy.gateway.tenderly.co",
-      "https://polygon-amoy.api.onfinality.io/public",
       "https://polygon-amoy.gateway.tatum.io",
-      "https://polygon-amoy-bor-rpc.publicnode.com",
       "https://rpc-amoy.polygon.technology",
-      "https://polygon-amoy.drpc.org",
-      "https://api.zan.top/polygon-amoy"
+      "https://polygon-amoy.api.onfinality.io/public",
+      "https://polygon-amoy-bor-rpc.publicnode.com",
+      "https://polygon-amoy.drpc.org"
     ],
     "chainSelector": 80002,
     "chainId": "80002"
   },
   "pulsechainTestnet": {
     "rpcUrls": [
-      "https://pulsechain-testnet-rpc.publicnode.com",
       "https://rpc.v4.testnet.pulsechain.com",
+      "https://pulsechain-testnet-rpc.publicnode.com",
       "https://rpc-testnet-pulsechain.g4mm4.io"
     ],
     "chainSelector": 943,
@@ -406,18 +401,19 @@
   },
   "scrollSepolia": {
     "rpcUrls": [
-      "https://sepolia-rpc.scroll.io",
       "https://scroll-sepolia-rpc.publicnode.com",
+      "https://sepolia-rpc.scroll.io",
       "https://endpoints.omniatech.io/v1/scroll/sepolia/public",
-      "https://scroll-sepolia.drpc.org"
+      "https://scroll-sepolia.drpc.org",
+      "https://scroll-sepolia.therpc.io"
     ],
     "chainSelector": 534351,
     "chainId": "534351"
   },
   "seiTestnet": {
     "rpcUrls": [
-      "https://sei-testnet.drpc.org",
-      "https://evm-rpc-testnet.sei-apis.com"
+      "https://evm-rpc-testnet.sei-apis.com",
+      "https://sei-testnet.drpc.org"
     ],
     "chainSelector": 1328,
     "chainId": "1328"
@@ -438,17 +434,18 @@
   },
   "soneiumMinato": {
     "rpcUrls": [
-      "https://rpc.minato.soneium.org",
-      "https://soneium-minato.drpc.org"
+      "https://soneium-minato.drpc.org",
+      "https://rpc.minato.soneium.org"
     ],
     "chainSelector": 1946,
     "chainId": "1946"
   },
   "sonicBlaze": {
     "rpcUrls": [
+      "https://rpc.blaze.soniclabs.com",
       "https://sonic-blaze-rpc.publicnode.com",
-      "https://sonic-testnet.drpc.org",
-      "https://rpc.blaze.soniclabs.com"
+      "https://sonic-blaze.therpc.io",
+      "https://sonic-testnet.drpc.org"
     ],
     "chainSelector": 57054,
     "chainId": "57054"
@@ -456,9 +453,11 @@
   "taikoTestnet": {
     "rpcUrls": [
       "https://rpc.ankr.com/taiko_hekla",
+      "https://rpc.hekla.taiko.xyz",
       "https://taiko-hekla.gateway.tenderly.co",
-      "https://taiko-hekla.drpc.org",
-      "https://rpc.hekla.taiko.xyz"
+      "https://taiko-hekla-rpc.publicnode.com",
+      "https://taiko-hekla.therpc.io",
+      "https://taiko-hekla.drpc.org"
     ],
     "chainSelector": 167009,
     "chainId": "167009"
@@ -467,10 +466,10 @@
     "rpcUrls": [
       "https://unichain-sepolia-rpc.publicnode.com",
       "https://unichain-sepolia.therpc.io",
-      "https://unichain-sepolia.api.onfinality.io/public",
+      "https://endpoints.omniatech.io/v1/unichain/sepolia/public",
       "https://unichain-sepolia.drpc.org",
-      "https://sepolia.unichain.org",
-      "https://endpoints.omniatech.io/v1/unichain/sepolia/public"
+      "https://unichain-sepolia.api.onfinality.io/public",
+      "https://sepolia.unichain.org"
     ],
     "chainSelector": 1301,
     "chainId": "1301"
@@ -485,10 +484,9 @@
   },
   "worldchainTestnet": {
     "rpcUrls": [
-      "https://4801.rpc.thirdweb.com",
       "https://worldchain-sepolia.drpc.org",
-      "https://worldchain-sepolia.g.alchemy.com/public",
-      "https://worldchain-sepolia.gateway.tenderly.co"
+      "https://worldchain-sepolia.gateway.tenderly.co",
+      "https://worldchain-sepolia.g.alchemy.com/public"
     ],
     "chainSelector": 4801,
     "chainId": "4801"
@@ -497,8 +495,8 @@
     "rpcUrls": [
       "https://rpc.ankr.com/xlayer_testnet",
       "https://xlayer-testnet.drpc.org",
-      "https://xlayertestrpc.okx.com",
       "https://endpoints.omniatech.io/v1/xlayer/testnet/public",
+      "https://xlayertestrpc.okx.com",
       "https://testrpc.xlayer.tech"
     ],
     "chainSelector": 195,
@@ -523,10 +521,31 @@
     "rpcUrls": [
       "https://rpc.ankr.com/zksync_era_sepolia",
       "https://endpoints.omniatech.io/v1/zksync-era/sepolia/public",
-      "https://sepolia.era.zksync.dev",
-      "https://zksync-sepolia.drpc.org"
+      "https://zksync-sepolia.drpc.org",
+      "https://sepolia.era.zksync.dev"
     ],
     "chainSelector": 300,
     "chainId": "300"
+  },
+  "riseTestnet": {
+    "rpcUrls": [
+      "https://testnet.riselabs.xyz"
+    ],
+    "chainSelector": 11155931,
+    "chainId": "11155931"
+  },
+  "pharosTestnet": {
+    "rpcUrls": [
+      "https://testnet.dplabs-internal.com"
+    ],
+    "chainSelector": 688688,
+    "chainId": "688688"
+  },
+  "zenchainTestnet": {
+    "rpcUrls": [
+      "https://zenchain-testnet.api.onfinality.io/public"
+    ],
+    "chainSelector": 8408,
+    "chainId": "8408"
   }
 }
