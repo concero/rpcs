@@ -1,11 +1,11 @@
 {
   "astarShibuya": {
-    "rpcUrls": ["https://evm.shibuya.astar.network"],
+    "rpcUrls": [],
     "chainSelector": 81,
     "chainId": "81"
   },
   "roninSaigon": {
-    "rpcUrls": ["https://saigon-testnet.roninchain.com/rpc"],
+    "rpcUrls": [],
     "chainSelector": 2021,
     "chainId": "2021"
   },

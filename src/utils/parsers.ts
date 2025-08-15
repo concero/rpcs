@@ -58,10 +58,10 @@ export function extractNetworkEndpoints(
 ): RpcEndpoint[] {
   return extractEndpoints(networkDetails, "v2-networks", data =>
     Object.entries(data)
-      .filter(([_, details]) => details.rpcs && details.rpcs.length > 0)
-      .map(([chainId, details]) => ({
-        chainId,
-        urls: details.rpcs,
+      .filter(([_, details]) => details.rpcUrls && details.rpcUrls.length > 0)
+      .map(([_, details]) => ({
+        chainId: details.chainId.toString(),
+        urls: details.rpcUrls,
       })),
   );
 }

@@ -76,7 +76,7 @@ const config: Config = {
     ETHEREUM_LISTS_URL_TEMPLATE:
       "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",
     CONCERO_NETWORKS_GITHUB_BASE_URL:
-      "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/feature/single-file/networks",
+      "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/master/networks",
   },
 
   GIT: {

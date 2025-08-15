@@ -136,7 +136,7 @@ interface NetworkDetails {
   name: string;
   chainId: number;
   chainSelector: number;
-  rpcs: string[];
+  rpcUrls: string[];
   blockExplorers: {
     name: string;
     url: string;
