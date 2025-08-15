@@ -85,7 +85,7 @@ const config: Config = {
     COMMIT_MESSAGE: process.env.GIT_COMMIT_MESSAGE || "updating RPC endpoints",
     AUTHOR_NAME: process.env.GIT_AUTHOR_NAME || "RPC Service",
     AUTHOR_EMAIL: process.env.GIT_AUTHOR_EMAIL || "rpc-service@concero.io",
-    BRANCH: process.env.GIT_BRANCH || "main",
+    BRANCH: process.env.GIT_BRANCH || "master",
     DRY_RUN: process.env.GIT_DRY_RUN === "true" || false,
   },
 
