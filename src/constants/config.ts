@@ -42,13 +42,7 @@ const config: Config = {
   DOMAIN_BLACKLIST: domainBlacklist,
   ENABLE_DOMAIN_BLACKLIST: true,
   IGNORED_CHAINLIST_CHAIN_IDS: [
-    200810, // bitlayer
-    6342, // megaeth
-    3636, // botanix
     2021, // roninSaigon
-    1114, // btcs-testnet
-    919, // mode-sepolia
-    157, // puppynet
     81, // astar-shibuya
   ],
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: [
