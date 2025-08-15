@@ -5,6 +5,7 @@
  */
 export const domainBlacklist: string[] = [
   // "ankr.com", // Example
+  "api.zan.top",
 ];
 
 /**
