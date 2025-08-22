@@ -20,8 +20,7 @@
       "https://arbitrum-sepolia-rpc.publicnode.com",
       "https://arbitrum-sepolia.gateway.tenderly.co",
       "https://arbitrum-sepolia.api.onfinality.io/public",
-      "https://sepolia-rollup.arbitrum.io/rpc",
-      "https://arbitrum-sepolia.drpc.org"
+      "https://sepolia-rollup.arbitrum.io/rpc"
     ],
     "chainSelector": 421614,
     "chainId": "421614"
