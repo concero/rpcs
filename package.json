@@ -33,17 +33,17 @@
   },
   "homepage": "https://github.com/concero/rpcs#readme",
   "dependencies": {
-    "acorn": "^8.14.0",
-    "acorn-walk": "^8.3.4",
-    "node-cron": "^3.0.3",
-    "simple-git": "^3.27.0",
-    "winston": "^3.17.0",
-    "winston-daily-rotate-file": "^5.0.0"
+    "acorn": "8.14.0",
+    "acorn-walk": "8.3.4",
+    "node-cron": "3.0.3",
+    "simple-git": "3.27.0",
+    "winston": "3.17.0",
+    "winston-daily-rotate-file": "5.0.0"
   },
   "devDependencies": {
     "@types/node": "22.14.1",
-    "husky": "^9.1.7",
-    "prettier": "^3.5.3",
-    "typescript": "^5.3.3"
+    "husky": "9.1.7",
+    "prettier": "3.5.3",
+    "typescript": "5.3.3"
   }
 }
