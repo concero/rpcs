@@ -4,9 +4,6 @@
   "description": "A service for upkeeping a list of healthy RPC endpoints for multiple chains",
   "main": "index.js",
   "types": "index.d.ts",
-  "files": [
-    "index.js"
-  ],
   "scripts": {
     "start": "bun ./src/index.ts --run-once",
     "build": "tsc ./index.ts",
