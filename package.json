@@ -17,7 +17,8 @@
     "lint": "eslint --ext .ts src/",
     "lint:fix": "eslint --ext .ts src/ --fix",
     "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\" \"**/*.json\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "probe:finality": "bun ./src/scripts/finalityProbe.ts"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,5861 @@
+[
+  {
+    "url": "https://cloudflare-eth.com",
+    "chainId": "1",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Cannot fulfill request",
+    "safeError": "Cannot fulfill request"
+  },
+  {
+    "url": "https://rpc.quai.network/cyprus1",
+    "chainId": "9",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://cloudflare-eth.com/",
+    "chainId": "1",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Cannot fulfill request",
+    "safeError": "Cannot fulfill request"
+  },
+  {
+    "url": "https://node.eggs.cool",
+    "chainId": "2",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.thundercore.com",
+    "chainId": "18",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.glidefinance.io",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.glidefinance.io/",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.kardiachain.io",
+    "chainId": "24",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "method: eth_getBlockByNumber, error: invalid argument 0: strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "method: eth_getBlockByNumber, error: invalid argument 0: strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api-testnet.elastos.io/eth",
+    "chainId": "21",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aic.acria.ai",
+    "chainId": "47",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://api.elastos.io/esc",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api2.elastos.io/esc",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api2.elastos.io/eth",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.xdcrpc.com",
+    "chainId": "50",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.scai.network",
+    "chainId": "34",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://thundercore-testnet.drpc.org",
+    "chainId": "18",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api.elastos.io/eth",
+    "chainId": "20",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api.elastos.io/eid",
+    "chainId": "22",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-mainnet.u2u.xyz",
+    "chainId": "39",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.xinfin.network",
+    "chainId": "50",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://erpc.xinfin.network",
+    "chainId": "50",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://erpc.xinfin.network/",
+    "chainId": "50",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.coinex.net",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.coinex.net/",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.xdc.org",
+    "chainId": "50",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rootstock.drpc.org",
+    "chainId": "30",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid blocknumber finalized",
+    "safeError": "invalid blocknumber safe"
+  },
+  {
+    "url": "https://rootstock-testnet.drpc.org",
+    "chainId": "31",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid blocknumber finalized",
+    "safeError": "invalid blocknumber safe"
+  },
+  {
+    "url": "https://rpc1.coinex.net/",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.ankr.com/syscoin",
+    "chainId": "57",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://rpc.gochain.io",
+    "chainId": "60",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://besu-at.etc-network.info",
+    "chainId": "61",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://etc.etcdesktop.com",
+    "chainId": "61",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://geth-at.etc-network.info",
+    "chainId": "61",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://geth-mordor.etc-network.info",
+    "chainId": "63",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc1.coinex.net",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.coinex.net",
+    "chainId": "53",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://exchainrpc.okex.org",
+    "chainId": "66",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://dappnode4.ont.io:20339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://dappnode2.ont.io:20339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://dappnode1.ont.io:20339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://dappnode3.ont.io:20339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://ethnode.primusmoney.com/mainnet",
+    "chainId": "78",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.mordor.etccooperative.org",
+    "chainId": "63",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc4.coinex.net",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://meter.blockpi.network/v1/rpc/public",
+    "chainId": "82",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Internal error",
+    "safeError": "Internal error"
+  },
+  {
+    "url": "https://rpc4.coinex.net/",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc3.coinex.net",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://viction.blockpi.network/v1/rpc/public",
+    "chainId": "88",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dappnode4.ont.io:10339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dappnode1.ont.io:10339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dappnode3.ont.io:10339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dappnode2.ont.io:10339",
+    "chainId": "58",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc2.coinex.net",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc2.coinex.net/",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://1rpc.io/oktc",
+    "chainId": "66",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpctest.meter.io",
+    "chainId": "83",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Internal error",
+    "safeError": "Internal error"
+  },
+  {
+    "url": "https://rpc.viction.xyz",
+    "chainId": "88",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.swissdlt.ch",
+    "chainId": "94",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc3.coinex.net/",
+    "chainId": "52",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.meter.io",
+    "chainId": "82",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Internal error",
+    "safeError": "Internal error"
+  },
+  {
+    "url": "https://idchain.one/rpc",
+    "chainId": "74",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://idchain.one/rpc/",
+    "chainId": "74",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://viction.drpc.org",
+    "chainId": "88",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-testnet.viction.xyz",
+    "chainId": "89",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bitkubchain.io",
+    "chainId": "96",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://viction-testnet.drpc.org",
+    "chainId": "89",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.ankr.com/gnosis",
+    "chainId": "100",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://oktc.drpc.org",
+    "chainId": "66",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://evmexplorer.velas.com/rpc",
+    "chainId": "106",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: data did not match any variant of untagged enum BlockId.",
+    "safeError": "Invalid params: data did not match any variant of untagged enum BlockId."
+  },
+  {
+    "url": "https://mainnet-rpc.thundercore.com",
+    "chainId": "108",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.camdl.gov.kh",
+    "chainId": "95",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-2.japanopenchain.org:8545",
+    "chainId": "81",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc-3.japanopenchain.org",
+    "chainId": "81",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc-1.japanopenchain.org:8545",
+    "chainId": "81",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mainnet-rpc.thundertoken.net",
+    "chainId": "108",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.thundercore.io",
+    "chainId": "108",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://explorer.velas.com/rpc",
+    "chainId": "106",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: data did not match any variant of untagged enum BlockId.",
+    "safeError": "Invalid params: data did not match any variant of untagged enum BlockId."
+  },
+  {
+    "url": "https://fuse-public.nodies.app",
+    "chainId": "122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://thundercore.drpc.org",
+    "chainId": "108",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.fuse.io",
+    "chainId": "122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://fuse.liquify.com",
+    "chainId": "122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://0xrpc.io/etc",
+    "chainId": "61",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://fuse.api.pocket.network",
+    "chainId": "122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.fusespark.io",
+    "chainId": "123",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.ankr.com/polygon",
+    "chainId": "137",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://bellecour.iex.ec",
+    "chainId": "134",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://polygon.meowrpc.com",
+    "chainId": "137",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Failed to parse request",
+    "safeError": "Failed to parse request"
+  },
+  {
+    "url": "https://fuse.drpc.org",
+    "chainId": "122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://coinbit-rpc-mainnet.chain.sbcrypto.app",
+    "chainId": "112",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://mainnet.eteria.io/v1",
+    "chainId": "140",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://preseed-testnet-1.roburna.com",
+    "chainId": "159",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://evascan.io/api/eth-rpc",
+    "chainId": "160",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid block number",
+    "safeError": "Invalid block number"
+  },
+  {
+    "url": "https://testnet.evascan.io/api/eth-rpc",
+    "chainId": "161",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid block number",
+    "safeError": "Invalid block number"
+  },
+  {
+    "url": "https://rpc.abeychain.com",
+    "chainId": "179",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://node1.amechain.io",
+    "chainId": "180",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.bittorrentchain.io/",
+    "chainId": "199",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bt.io",
+    "chainId": "199",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bittorrentchain.io",
+    "chainId": "199",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testrpc.abeychain.com",
+    "chainId": "178",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://bittorrent.drpc.org",
+    "chainId": "199",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bitnetmoney.com",
+    "chainId": "210",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://vinuchain-rpc.com",
+    "chainId": "207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.choochain.io",
+    "chainId": "247",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://fantom-public.nodies.app",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpcapi.fantom.network",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://fantom.api.onfinality.io/public",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.fantom.network",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc2.fantom.network",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc3.fantom.network",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://fantom-json-rpc.stakely.io",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.maplabs.io",
+    "chainId": "212",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/fantom/mainnet/public",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dataseed1.idn-rpc.com",
+    "chainId": "215",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://dataseed2.idn-rpc.com",
+    "chainId": "215",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://fantom.api.pocket.network",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dataseed3.idn-rpc.com",
+    "chainId": "215",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.energyweb.org",
+    "chainId": "246",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://hpbnode.com",
+    "chainId": "269",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.mainnet.lachain.network",
+    "chainId": "274",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://fantom.drpc.org",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://1rpc.io/ftm",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainapi.omaxscan.com",
+    "chainId": "311",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc2.mainnet.lachain.network",
+    "chainId": "274",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://nc-rpc-prd1.neurochain.io",
+    "chainId": "313",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://api.zan.top/ftm-mainnet",
+    "chainId": "250",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://nc-rpc-prd2.neurochain.io",
+    "chainId": "313",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testapi.omaxray.com",
+    "chainId": "332",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.wemblockchain.com",
+    "chainId": "315",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.r5.network",
+    "chainId": "337",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mainapi.omaxray.com",
+    "chainId": "311",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainapi.omaxray.com/",
+    "chainId": "311",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.digitalregion.jp",
+    "chainId": "329",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.sx.technology",
+    "chainId": "416",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.testnet.lachain.network",
+    "chainId": "418",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.blackfort.network/mainnet/rpc",
+    "chainId": "488",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://node1.testnet.ozonechain.io",
+    "chainId": "401",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc1.testnet.camdl.gov.kh",
+    "chainId": "395",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://cronos-zkevm.drpc.org",
+    "chainId": "388",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "incorrect response body: wrong json-rpc response - there is neither result nor error",
+    "safeError": "incorrect response body: wrong json-rpc response - there is neither result nor error"
+  },
+  {
+    "url": "https://rpc.ankr.com/rollux",
+    "chainId": "570",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://rpc.verse.gesoten.com",
+    "chainId": "428",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://btb-dataseed.btbchain.org",
+    "chainId": "509",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://chain-rpc.arzio.co",
+    "chainId": "456",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gzn.linksme.info",
+    "chainId": "516",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-testnet.dogechain.dog",
+    "chainId": "568",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.toronto.sx.technology",
+    "chainId": "647",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.eiob.xyz",
+    "chainId": "612",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://datarpc1.xsc.pub",
+    "chainId": "520",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-testnet.nerochain.io",
+    "chainId": "689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://us-east.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://asia-southeast.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://eu-north.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://us-west.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://eu-west.lycanchain.com",
+    "chainId": "721",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.callistodao.org",
+    "chainId": "820",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://datarpc2.xsc.pub",
+    "chainId": "520",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gwan2-ssl.wandevs.org",
+    "chainId": "888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://datarpc3.xsc.pub",
+    "chainId": "520",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gwan-ssl.wandevs.org:56891",
+    "chainId": "888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://evm-dataseed1.meerscan.io",
+    "chainId": "813",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://evm-dataseed2.meerscan.io",
+    "chainId": "813",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.bitcoincode.technology",
+    "chainId": "963",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://evm-dataseed3.meerscan.io",
+    "chainId": "813",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://evm-dataseed.meerscan.com",
+    "chainId": "813",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://ethapi.topnetwork.org",
+    "chainId": "980",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://kaia-kairos.blockpi.network/v1/rpc/public",
+    "chainId": "1001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.testnet.lemonchain.io",
+    "chainId": "1005",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.lemonchain.io",
+    "chainId": "1006",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://relay.awakening.bdagscan.com",
+    "chainId": "1043",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://meta.evrice.com",
+    "chainId": "1010",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://pre-rpc.bt.io",
+    "chainId": "1029",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://responsive-green-emerald.kaia-kairos.quiknode.pro",
+    "chainId": "1001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://responsive-green-emerald.kaia-kairos.quiknode.pro/",
+    "chainId": "1001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.mainnet.dymension.aviaone.com",
+    "chainId": "1100",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://rpc.test.btcs.network",
+    "chainId": "1115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://global.rpc.mainnet.newtonproject.org",
+    "chainId": "1012",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.newchain.newtonproject.org",
+    "chainId": "1007",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.grxchain.io",
+    "chainId": "1110",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.statemesh.net",
+    "chainId": "1134",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://ultron-rpc.net",
+    "chainId": "1231",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://ultron-dev.io",
+    "chainId": "1230",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.bmcscan.io",
+    "chainId": "1199",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet.mosscan.com",
+    "chainId": "1188",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://dataseed.popcateum.org",
+    "chainId": "1213",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aiachain.bycrpc.com",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aiachain.znodes.net",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.omplatform.com",
+    "chainId": "1246",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.jaihochain.com",
+    "chainId": "1313",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.onino.io",
+    "chainId": "1425",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aia-dataseed4.aiachain.org",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aia-dataseed3.aiachain.org",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aia-dataseed2.aiachain.org",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://aia-dataseed1.aiachain.org",
+    "chainId": "1319",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://sei-testnet.drpc.org",
+    "chainId": "1328",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "incorrect response body: wrong json-rpc response - there is neither result nor error",
+    "safeError": "incorrect response body: wrong json-rpc response - there is neither result nor error"
+  },
+  {
+    "url": "https://rpc-canary-1.bevm.io/",
+    "chainId": "1501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://rpc-canary-1.bevm.io",
+    "chainId": "1501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://rpc-canary-2.bevm.io/",
+    "chainId": "1501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://blockchain.ramestta.com",
+    "chainId": "1370",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-canary-2.bevm.io",
+    "chainId": "1501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://rpc.vitruveo.xyz",
+    "chainId": "1490",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://aia-dataseed1-testnet.aiachain.org",
+    "chainId": "1320",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc01.dscscan.io",
+    "chainId": "1555",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.starworksglobal.com",
+    "chainId": "1578",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.whitechain.io",
+    "chainId": "1875",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.nerochain.io",
+    "chainId": "1689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://sentry.evm-rpc.injective.network",
+    "chainId": "1776",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid height parameter",
+    "safeError": "invalid height parameter"
+  },
+  {
+    "url": "https://palette-rpc.com:22000",
+    "chainId": "1718",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bitci.com",
+    "chainId": "1907",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/lightlink/phoenix/public",
+    "chainId": "1890",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "could not find block in the database: -3",
+    "safeError": "could not find block in the database: -4"
+  },
+  {
+    "url": "https://rpc.recordercoin.org",
+    "chainId": "1888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc1.recordercoin.org",
+    "chainId": "1888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://replicator.phoenix.lightlink.io/rpc/v1",
+    "chainId": "1890",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "could not find block in the database: -3",
+    "safeError": "could not find block in the database: -4"
+  },
+  {
+    "url": "https://replicator.pegasus.lightlink.io/rpc/v1",
+    "chainId": "1891",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "could not find block in the database: -3",
+    "safeError": "could not find block in the database: -4"
+  },
+  {
+    "url": "https://rpc-testnet.onuschain.io",
+    "chainId": "1945",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/lightlink/pegasus/public",
+    "chainId": "1891",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "could not find block in the database: -3",
+    "safeError": "could not find block in the database: -4"
+  },
+  {
+    "url": "https://rpc.onuschain.io",
+    "chainId": "1975",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://polytopia.org:8545",
+    "chainId": "2013",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.nowscan.io",
+    "chainId": "2014",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.vanarchain.com",
+    "chainId": "2040",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-us.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc02-sg.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc01-sg.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-sg.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc03-sg.dogechain.dog",
+    "chainId": "2000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://edgeware-evm3.jelliedowl.net",
+    "chainId": "2021",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://rpc-mainnet.ibvm.io",
+    "chainId": "2105",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-testnet.ibvm.io",
+    "chainId": "2107",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://edgeware-evm3.jelliedowl.net/",
+    "chainId": "2021",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://kava-evm-testnet.rpc.thirdweb.com",
+    "chainId": "2221",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid chain",
+    "safeError": "Invalid chain"
+  },
+  {
+    "url": "https://rpc-mainnet.findora.org",
+    "chainId": "2152",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://node1.cratd2csmartchain.io",
+    "chainId": "2310",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://kava-evm.rpc.thirdweb.com",
+    "chainId": "2222",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid chain",
+    "safeError": "Invalid chain"
+  },
+  {
+    "url": "https://node2.cratd2csmartchain.io",
+    "chainId": "2310",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://node3.cratd2csmartchain.io",
+    "chainId": "2310",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://greendinoswap.com",
+    "chainId": "2306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "method handler crashed",
+    "safeError": "method handler crashed"
+  },
+  {
+    "url": "https://rpc.6dochain.com",
+    "chainId": "2477",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-nebulas-testnet.uniultra.xyz",
+    "chainId": "2484",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-testnet.whitechain.io",
+    "chainId": "2625",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc3.6dochain.com",
+    "chainId": "2477",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc2.6dochain.com",
+    "chainId": "2477",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.splendor.org",
+    "chainId": "2691",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.nowscan.io",
+    "chainId": "2488",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.splendor.org",
+    "chainId": "2692",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.phochain.org",
+    "chainId": "2605",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-mainnet.noschain.org",
+    "chainId": "2643",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://splendor-rpc.org",
+    "chainId": "2691",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://splendor-rpc.org/",
+    "chainId": "2691",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://www.kortho-chain.com",
+    "chainId": "2559",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://rpc.beschyperchain.com",
+    "chainId": "2372",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.evoexplorer.com",
+    "chainId": "3424",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.tycoscan.com",
+    "chainId": "3630",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://elves-core3.alvey.io",
+    "chainId": "3797",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://elves-core2.alvey.io",
+    "chainId": "3797",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.jfinchain.com",
+    "chainId": "3501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.crossbell.io",
+    "chainId": "3737",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainapi.bchscan.io",
+    "chainId": "3030",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://datahub-asia01.bchscan.io/",
+    "chainId": "3030",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.kalychain.io/rpc",
+    "chainId": "3888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://fantom.api.onfinality.io/public",
+    "chainId": "4002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/fantom/testnet/public",
+    "chainId": "4002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://datahub-asia01.bchscan.io",
+    "chainId": "3030",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.n3.nahmii.io",
+    "chainId": "4061",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.testnet.nahmii.io",
+    "chainId": "4062",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnetrpc.kalychain.io/rpc",
+    "chainId": "3889",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.testnet.fantom.network/",
+    "chainId": "4002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.testnet.fantom.network",
+    "chainId": "4002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-mainnet.hydrachain.org",
+    "chainId": "4488",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://node1.ozonechain.io",
+    "chainId": "4000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.blackfort.network/testnet/rpc",
+    "chainId": "4888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://babel-api.mainnet.iotex.io",
+    "chainId": "4689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://babel-api.mainnet.iotex.one",
+    "chainId": "4689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://babel-api.fastblocks.io",
+    "chainId": "4689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://fantom-testnet.drpc.org",
+    "chainId": "4002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.memecore.net",
+    "chainId": "4352",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://babel-api.testnet.iotex.io",
+    "chainId": "4690",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://public-node1-rpc.emoney.network",
+    "chainId": "4545",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://rpc.verylabs.io",
+    "chainId": "4613",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://iotex.api.onfinality.io/public",
+    "chainId": "4689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://iotex-network.rpc.thirdweb.com",
+    "chainId": "4689",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "strconv.ParseUint: parsing \"finalized\": invalid syntax",
+    "safeError": "strconv.ParseUint: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://rpc1.netsbo.io",
+    "chainId": "5333",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.silverbitcoin.org",
+    "chainId": "5200",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid parameters: block_number must be a valid decimal number or hex (0x...)",
+    "safeError": "Invalid parameters: block_number must be a valid decimal number or hex (0x...)"
+  },
+  {
+    "url": "https://rpc2.netsbo.io",
+    "chainId": "5333",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.edexa.network",
+    "chainId": "5424",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.edexa.com",
+    "chainId": "5424",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.prodao.club",
+    "chainId": "4936",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.inertiascan.com",
+    "chainId": "5433",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://l2.nahmii.io/",
+    "chainId": "5551",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://l2.nahmii.io",
+    "chainId": "5551",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.zeroscan.org",
+    "chainId": "5080",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "http://polaris1.ont.io:20339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://polaris3.ont.io:20339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://polaris4.ont.io:20339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://polaris2.ont.io:20339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://polaris1.ont.io:10339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://polaris3.ont.io:10339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://polaris2.ont.io:10339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.cthscan.com",
+    "chainId": "5858",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://polaris4.ont.io:10339",
+    "chainId": "5851",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.steamexchange.io",
+    "chainId": "6278",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc-mainnet.goldsmartchain.com",
+    "chainId": "6789",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy.wegochain.io",
+    "chainId": "5869",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.tombchain.com",
+    "chainId": "6969",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bchscan.io",
+    "chainId": "6060",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc01.bchscan.io",
+    "chainId": "6060",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc01.bchscan.io/",
+    "chainId": "6060",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1-mainnet.emc.network",
+    "chainId": "6678",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.lorachain.org",
+    "chainId": "6359",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-mainnet-4.vrcchain.com",
+    "chainId": "7131",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://xylume-testnet.sparked.network/rpc",
+    "chainId": "6934",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Error 3469: Gas? Time? Luck? The universe isn’t sure, but something went sideways.",
+    "safeError": "Error 3469: Gas? Time? Luck? The universe isn’t sure, but something went sideways."
+  },
+  {
+    "url": "https://rpc-mainnet.inichain.com",
+    "chainId": "7233",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.testnet.pruv.network",
+    "chainId": "7336",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://adilchain-rpc.io",
+    "chainId": "7576",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.pruv.network",
+    "chainId": "7337",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-xpla-verse.xpla.dev",
+    "chainId": "7300",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.shyft.network/",
+    "chainId": "7341",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.shyft.network",
+    "chainId": "7341",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://testnet.adilchain-rpc.io",
+    "chainId": "7575",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.zeuschainscan.io",
+    "chainId": "7244",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet.isuncoin.com",
+    "chainId": "8017",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://kaia.blockpi.network/v1/rpc/public",
+    "chainId": "8217",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.toruschain.com",
+    "chainId": "8192",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.helachain.com",
+    "chainId": "8668",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://rpc-testnet.hydrachain.org",
+    "chainId": "8844",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc-testnet-dataseed.lerax.org",
+    "chainId": "8125",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://core.bloxberg.org",
+    "chainId": "8995",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://vsc-dataseed.vyvo.org:8889",
+    "chainId": "8889",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.bullionsx.org",
+    "chainId": "8732",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mainnet.xana.net/rpc",
+    "chainId": "8888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-asia.gmmtchain.io",
+    "chainId": "8989",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.larissa.network",
+    "chainId": "9898",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://kublayer2.kubchain.io",
+    "chainId": "9601",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://smartbch.greyh.at",
+    "chainId": "10000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://smartbch.fountainhead.cash/mainnet",
+    "chainId": "10000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.quadrans.io",
+    "chainId": "10946",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpctest.quadrans.io",
+    "chainId": "10947",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpceu.quadrans.io",
+    "chainId": "10946",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.vchain.pro",
+    "chainId": "10085",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-1.testnet.japanopenchain.org:8545",
+    "chainId": "10081",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpctest2.quadrans.io",
+    "chainId": "10947",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-2.testnet.japanopenchain.org:8545",
+    "chainId": "10081",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mars.rpc.movachain.com",
+    "chainId": "10323",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-3.testnet.japanopenchain.org",
+    "chainId": "10081",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.kudora.org",
+    "chainId": "12000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://rpc.polygonsupernet.public.arianee.net",
+    "chainId": "11891",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.egoldchain.com",
+    "chainId": "11451",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.immutable.com",
+    "chainId": "13371",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.testnet.immutable.com",
+    "chainId": "13473",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://node1.fibo-api.asia",
+    "chainId": "12306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://node2.fibo-api.asia",
+    "chainId": "12306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bthscan.io",
+    "chainId": "14149",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.mfevscan.com",
+    "chainId": "9982",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://node2.fibo-rpc.asia",
+    "chainId": "12306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.poodl.org",
+    "chainId": "15257",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.poodl.org",
+    "chainId": "15259",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://orchard.rpc.quai.network/cyprus1",
+    "chainId": "15000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://immutable-zkevm-testnet.drpc.org",
+    "chainId": "13473",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "http://rpc.satori.vana.org",
+    "chainId": "14801",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://node3.fibo-rpc.asia",
+    "chainId": "12306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://test-rpc.vitruveo.xyz",
+    "chainId": "14333",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://api.elastos.io/eco",
+    "chainId": "12343",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://node1.fibo-rpc.asia",
+    "chainId": "12306",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bit.diamonds",
+    "chainId": "17771",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://rpc-holesky.rockx.com",
+    "chainId": "17000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.secexplorer.io",
+    "chainId": "19515",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.genesys.network",
+    "chainId": "16507",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.secexplorer.io",
+    "chainId": "19516",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api.zan.top/eth-holesky",
+    "chainId": "17000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "param error; failed to parse url",
+    "safeError": "param error; failed to parse url"
+  },
+  {
+    "url": "https://api.kon-wallet.com",
+    "chainId": "17217",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://testnet-rpc.recordercoin.org",
+    "chainId": "18882",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://testnet-rpc.ivarex.com",
+    "chainId": "16888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://pubnodes.cypherium.io/rpc",
+    "chainId": "16166",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-mainnet.entropychain.live",
+    "chainId": "19911",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://palette-opennet.com:22000",
+    "chainId": "17180",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.actionblockchain.org",
+    "chainId": "21000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://seed.omchain.io",
+    "chainId": "21816",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.dcpay.io",
+    "chainId": "21223",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://beefledgerwallet.com:8544",
+    "chainId": "18122",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.mainnet.oasys.homeverse.games",
+    "chainId": "19011",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://sapphire.oasis.io",
+    "chainId": "23294",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://rpc-archive.incentiv.io",
+    "chainId": "24101",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://node1.mintme.com",
+    "chainId": "24734",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://node.1000x.ch",
+    "chainId": "24734",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.incentiv.io",
+    "chainId": "24101",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "http://rpc-mainnet.nftruth.io:8545",
+    "chainId": "21912",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.c4ex.net",
+    "chainId": "21133",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.nexurachain.io",
+    "chainId": "24125",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://ducx-testnet-node1.rocknblock.io",
+    "chainId": "26482",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet.steamexchange.io",
+    "chainId": "24116",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://ducx-mainnet-node1.rocknblock.io",
+    "chainId": "26483",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://ducx-testnet-node2.rocknblock.io",
+    "chainId": "26482",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet.sapphire.oasis.io",
+    "chainId": "23295",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://rpc-testnet.bitkubchain.io",
+    "chainId": "25925",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc3.testnet.incentiv.io",
+    "chainId": "28802",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://1rpc.io/oasis/sapphire",
+    "chainId": "23294",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://rpc.maplabs.io",
+    "chainId": "22776",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://cennznet.unfrastructure.io/public",
+    "chainId": "21337",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: non-decimal or missing 0x prefix."
+  },
+  {
+    "url": "https://rpc.xferchain.org",
+    "chainId": "28125",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://0xrpc.io/mint",
+    "chainId": "24734",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-bitgert.icecreamswap.com",
+    "chainId": "32520",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.core.testnet.ab.org",
+    "chainId": "26888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://nodeapi.energi.network",
+    "chainId": "39797",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://explorer.energi.network/api/eth-rpc",
+    "chainId": "39797",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid block number",
+    "safeError": "Invalid block number"
+  },
+  {
+    "url": "https://api.mainnetloop.com",
+    "chainId": "15551",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.qchain.kr",
+    "chainId": "30000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.bas.atrnx.com",
+    "chainId": "19966",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.core.ab.org",
+    "chainId": "36888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.core.ab.org",
+    "chainId": "36888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.zeuschainscan.io",
+    "chainId": "34504",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.assetchain.org",
+    "chainId": "42420",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://enugu-rpc.assetchain.org",
+    "chainId": "42421",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://emerald.oasis.io",
+    "chainId": "42262",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://testnet.emerald.oasis.io",
+    "chainId": "42261",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://1rpc.io/oasis/emerald",
+    "chainId": "42262",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://www.hammerchain.io/rpc",
+    "chainId": "25888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-floripa.wireshape.org",
+    "chainId": "49049",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://mainnet-1.rpc.banelabs.org",
+    "chainId": "47763",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-2.rpc.banelabs.org",
+    "chainId": "47763",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpcrichechain.com",
+    "chainId": "45578",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://nodeapi.test.energi.network",
+    "chainId": "49797",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://anon-entrypoint-test-1.atgraphite.com",
+    "chainId": "54170",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.formicarium.memecore.net",
+    "chainId": "43521",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.testnet.verse.gesoten.com",
+    "chainId": "42801",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://wireshape-floripa-testnet.rpc.thirdweb.com",
+    "chainId": "49049",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc.ankr.com/rollux_testnet",
+    "chainId": "57000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://nova.velo.org",
+    "chainId": "56789",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rei-rpc.moonrhythm.io",
+    "chainId": "55555",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://eticamainnet.eticaprotocol.org",
+    "chainId": "61803",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://eticamainnet.eticascan.org",
+    "chainId": "61803",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.scolcoin.com",
+    "chainId": "65450",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.cyberchain.xyz",
+    "chainId": "65535",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.mtv.ac",
+    "chainId": "62621",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.movachain.com",
+    "chainId": "61900",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-mainnet.guapcoinx.com",
+    "chainId": "71111",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-mainnet-1.guapcoinx.com",
+    "chainId": "71111",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-mainnet-2.guapcoinx.com",
+    "chainId": "71111",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainnet-rpc.apolloscan.io",
+    "chainId": "62606",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mahour.icbnetwork.info",
+    "chainId": "73115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://main1.rpc-icb-network.io",
+    "chainId": "73115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://main2.rpc-icb-network.io",
+    "chainId": "73115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc1-testnet.icbnetwork.info",
+    "chainId": "73114",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc1-mainnet.icbnetwork.info",
+    "chainId": "73115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc2-mainnet.icbnetwork.info",
+    "chainId": "73115",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc2-testnet.icbnetwork.info",
+    "chainId": "73114",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://ethnode.primusmoney.com/firenze",
+    "chainId": "78110",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-vanguard.vanarchain.com",
+    "chainId": "78600",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://volta-rpc.energyweb.org",
+    "chainId": "73799",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://testnet-api.applayer.com",
+    "chainId": "75338",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Parsing error: 'finalized' is in invalid format",
+    "safeError": "Parsing error: 'safe' is in invalid format"
+  },
+  {
+    "url": "https://proxy1.thinkiumrpc.net/",
+    "chainId": "70001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy1.thinkiumrpc.net",
+    "chainId": "70001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy2.thinkiumrpc.net/",
+    "chainId": "70002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy2.thinkiumrpc.net",
+    "chainId": "70002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy103.thinkiumrpc.net",
+    "chainId": "70103",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://proxy103.thinkiumrpc.net/",
+    "chainId": "70103",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.godwoken.io/rpc/eth-wallet",
+    "chainId": "71394",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://v1.mainnet.godwoken.io/rpc",
+    "chainId": "71402",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: blockParameter block number -> hexNumber without 0x prefix",
+    "safeError": "invalid argument 0: blockParameter block number -> hexNumber without 0x prefix"
+  },
+  {
+    "url": "https://rpc.hyperx.technology",
+    "chainId": "80808",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://public-node.api.boraportal.com/bora/mainnet",
+    "chainId": "77001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://84841.rpc.thirdweb.com",
+    "chainId": "84841",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "We are not able to process your request at this time. Please contact thirdweb support 1709207f-1405-4209-b92d-eb5241d893dd.",
+    "safeError": "We are not able to process your request at this time. Please contact thirdweb support 877c8821-e472-47e0-ae36-f79713187552."
+  },
+  {
+    "url": "https://public-node.api.boraportal.io/bora/mainnet",
+    "chainId": "77001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.lumoz.org",
+    "chainId": "96370",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc.test.smartlayer.network",
+    "chainId": "82459",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "server response 402 Payment Required (request={  }, response={  }, error=null, code=SERVER_ERROR, version=6.7.1)",
+    "safeError": "server response 402 Payment Required (request={  }, response={  }, error=null, code=SERVER_ERROR, version=6.7.1)"
+  },
+  {
+    "url": "https://mainnet-rpc.zedscan.net",
+    "chainId": "83872",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://node.sidrachain.com",
+    "chainId": "97453",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.metabenzscan.com",
+    "chainId": "97766",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://rpc.chain.metadap.io",
+    "chainId": "91120",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://c100501n3.deinfra.net:443/jsonrpc",
+    "chainId": "100501",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Internal error.",
+    "safeError": "Internal error."
+  },
+  {
+    "url": "https://rpc-hk.lumoz.org",
+    "chainId": "96370",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mainnet-s5-ethapi.quarkchain.io",
+    "chainId": "100006",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://mainnet-s0-ethapi.quarkchain.io",
+    "chainId": "100001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39004",
+    "chainId": "100005",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39001",
+    "chainId": "100002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39000",
+    "chainId": "100001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39007",
+    "chainId": "100008",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39005",
+    "chainId": "100006",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39003",
+    "chainId": "100004",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://mainnet-s4-ethapi.quarkchain.io",
+    "chainId": "100005",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39002",
+    "chainId": "100003",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://mainnet-s6-ethapi.quarkchain.io",
+    "chainId": "100007",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://mainnet-s2-ethapi.quarkchain.io",
+    "chainId": "100003",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://mainnet-s3-ethapi.quarkchain.io",
+    "chainId": "100004",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://rpc.test.siberium.net",
+    "chainId": "111000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ubitscan.io",
+    "chainId": "90002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "http://eth-jrpc.mainnet.quarkchain.io:39006",
+    "chainId": "100007",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://rpc.metachain.one",
+    "chainId": "112358",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-testnet.bthscan.io",
+    "chainId": "141491",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-s7-ethapi.quarkchain.io",
+    "chainId": "100008",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "GetBlockByNumber failed",
+    "safeError": "GetBlockByNumber failed"
+  },
+  {
+    "url": "https://rpc.kasplextest.xyz",
+    "chainId": "167012",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.testnet.chain.metadap.io",
+    "chainId": "119139",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://devnet.adilchain-rpc.io",
+    "chainId": "123456",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.bitlayer-rpc.com",
+    "chainId": "200901",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ankr.com/bitlayer",
+    "chainId": "200901",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.bitlayer.org",
+    "chainId": "200901",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc-testnet.nitrograph.foundation",
+    "chainId": "200024",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.bitlayer.org",
+    "chainId": "200810",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.bitlayer-rpc.com",
+    "chainId": "200810",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ankr.com/bitlayer_testnet",
+    "chainId": "200810",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://x1-testnet.xen.network",
+    "chainId": "204005",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://mainnet-rpc.biticablockchain.com",
+    "chainId": "188710",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://rpc.kultchain.com",
+    "chainId": "220312",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://kultrpc.kultchain.com",
+    "chainId": "220312",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "http://node.masnet.ai:8545",
+    "chainId": "220315",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.studio-scan.com",
+    "chainId": "240241",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainnet2.studio-blockchain.com",
+    "chainId": "240241",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainnet.studio-blockchain.com",
+    "chainId": "240241",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainnet3.studio-blockchain.com",
+    "chainId": "240241",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://mainnet2.studio-scan.com",
+    "chainId": "240241",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://openapi2.platon.network/rpc",
+    "chainId": "210425",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc-bitlayer.rockx.com",
+    "chainId": "200901",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.parex.network",
+    "chainId": "322202",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.sintrop.com",
+    "chainId": "250225",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.wabaworld.com",
+    "chainId": "327126",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gzn-test.linksme.info",
+    "chainId": "266256",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.oneworldchain.org",
+    "chainId": "309075",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://kublayer2.testnet.kubchain.io",
+    "chainId": "259251",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.tscscan.com",
+    "chainId": "330844",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://arbitrum-sepolia-testnet.api.pocket.network",
+    "chainId": "421614",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "the response returned by the endpoint is not a valid JSONRPC response",
+    "safeError": "the response returned by the endpoint is not a valid JSONRPC response"
+  },
+  {
+    "url": "https://anon-entrypoint-1.atgraphite.com",
+    "chainId": "440017",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dgs-rpc.digitsoul.co.th",
+    "chainId": "363636",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.mintrax.network",
+    "chainId": "478549",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://hypra.rpc.thirdweb.com",
+    "chainId": "622277",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "We are not able to process your request at this time. Please contact thirdweb support 6f3dc622-b67b-4549-bf7d-dc19a1cba4b7.",
+    "safeError": "We are not able to process your request at this time. Please contact thirdweb support 728f87c6-1ded-4021-beaa-64d38c1cf30c."
+  },
+  {
+    "url": "http://rpc.primeanetwork.com/rpc-http",
+    "chainId": "698369",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.oneworldchain.org",
+    "chainId": "552981",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://rpc.octa.space",
+    "chainId": "800001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet-rpc.alltra.global",
+    "chainId": "651940",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://mainnet.crosstoken.io:22001",
+    "chainId": "612055",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://brnkc-mainnet.bearnetwork.net",
+    "chainId": "641230",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.helachain.com",
+    "chainId": "666888",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://mainnet-rpc.miexs.com",
+    "chainId": "761412",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://neuron-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://cronos-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://quantum-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://corex-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://vertex-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://aether-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://nucleus-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://synapse-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://omni-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://axiom-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://mainnet-rpc.ecroxscan.com",
+    "chainId": "988207",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://node1.amchain.net",
+    "chainId": "999999",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ankr.com/xphere_testnet",
+    "chainId": "1998991",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "http://testnet.x-phere.com",
+    "chainId": "1998991",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://sc-rpc.dpu.ac.th",
+    "chainId": "2611555",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://api-cloud.coinweb.io/eth-rpc-service/bnb",
+    "chainId": "2222222",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Missing or invalid parameters",
+    "safeError": "Missing or invalid parameters"
+  },
+  {
+    "url": "https://new-york.fullnode.mainnet.coti.io/rpc",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://community-enabler-1.fullnode.mainnet.coti.io/rpc",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.jmdt.io",
+    "chainId": "7000700",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "unsupported block tag",
+    "safeError": "unsupported block tag"
+  },
+  {
+    "url": "https://testnet.coti.io/rpc",
+    "chainId": "7082400",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-magnus-validator.coti.io/rpc",
+    "chainId": "7082400",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-minor-validator.coti.io/rpc",
+    "chainId": "7082400",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://arcadia.khalani.network",
+    "chainId": "4278608",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params",
+    "safeError": "Invalid params"
+  },
+  {
+    "url": "https://coti-rpc.Hyperflow.finance",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet.coti.io/rpc",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.lootchain.com/http",
+    "chainId": "5151706",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://virginia.fullnode.mainnet.coti.io/rpc",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://xcap-mainnet.relay.xcap.network/znzvh2ueyvm2yts5fv5gnul395jbkfb2/rpc1",
+    "chainId": "9322252",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://tokyo.fullnode.mainnet.coti.io/rpc",
+    "chainId": "2632500",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://xcap-milvine.relay.xcap.network/zj5l55ftsgi027kz4nf14vs8d89inego/rpc1",
+    "chainId": "9322253",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://devnet2openapi.platon.network/rpc",
+    "chainId": "2206132",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet-rpc.roonchain.com",
+    "chainId": "13145201",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "http://testnet-rpc.vcity.app",
+    "chainId": "20230825",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://edgewallet1.xlon.org",
+    "chainId": "22052002",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://rpc1.qkiscan.io",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc3.qkiscan.io",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.vcity.app",
+    "chainId": "20250825",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://testnet.rpc.banelabs.org",
+    "chainId": "12227332",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ankr.com/xphere_mainnet",
+    "chainId": "20250217",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.qkirpc.org",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://en-bkk.x-phere.com",
+    "chainId": "20250217",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.unpchain.com",
+    "chainId": "47382916",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://autonity.rpc.web3cdn.network",
+    "chainId": "65000000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://autonity.rpc.web3cdn.network/testnet",
+    "chainId": "65010004",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.autonity-apis.com",
+    "chainId": "65000000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://testnet.skalenodes.com/v1/lanky-ill-funny-testnet",
+    "chainId": "37084624",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://bakerloo.autonity-apis.com",
+    "chainId": "65010004",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://c.onical.org",
+    "chainId": "61717561",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc3.qkiscan.cn",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc1.qkiscan.cn",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc2.qkiscan.cn",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet-rpc.oneledger.network",
+    "chainId": "311752642",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://powergold.aurora.dev",
+    "chainId": "1313161560",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "internal error",
+    "safeError": "internal error"
+  },
+  {
+    "url": "https://jsonapi1.smartmesh.cn",
+    "chainId": "20180430",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://base-sepolia-testnet.skalenodes.com/v1/jubilant-horrible-ancha",
+    "chainId": "324705682",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://rpc3.qkirpc.org",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet.skalenodes.com/v1/giant-half-dual-testnet",
+    "chainId": "974399131",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://testnet.skalenodes.com/v1/aware-fake-trim-testnet",
+    "chainId": "1020352220",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://hz.rpc.qkiscan.cn",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.ankr.com/harmony",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.",
+    "safeError": "Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free."
+  },
+  {
+    "url": "https://public.sepolia.rpc.status.network",
+    "chainId": "1660990954",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://mainnet.skalenodes.com/v1/wan-red-ain",
+    "chainId": "1273227453",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://api.harmony.one",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.s0.b.hmny.io",
+    "chainId": "1666700000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/harmony/testnet-0/public",
+    "chainId": "1666700000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.s1.b.hmny.io",
+    "chainId": "1666700001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.s0.t.hmny.io",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://endpoints.omniatech.io/v1/harmony/mainnet-0/public",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.s1.t.hmny.io",
+    "chainId": "1666600001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://s1.api.harmony.one",
+    "chainId": "1666600001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://mainnet.skalenodes.com/v1/parallel-stormy-spica",
+    "chainId": "1350216234",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://testnet.skalenodes.com/v1/juicy-low-small-testnet",
+    "chainId": "1444673419",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://harmony.api.pocket.network",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://skale-base.skalenodes.com/v1/base",
+    "chainId": "1187947933",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://rpc.ntity.io",
+    "chainId": "197710212030",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://api.s0.ps.hmny.io",
+    "chainId": "1666900000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.s1.ps.hmny.io",
+    "chainId": "1666900001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://api.zeniq.network",
+    "chainId": "383414847825",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://mainnet.skalenodes.com/v1/green-giddy-denebola",
+    "chainId": "1482601649",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://mainnet.skalenodes.com/v1/elated-tan-skat",
+    "chainId": "2046399126",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://a.api.s0.t.hmny.io",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://1rpc.io/one",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://blockchain.haradev.com",
+    "chainId": "197710212031",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://mainnet.skalenodes.com/v1/honorable-steel-rasalhague",
+    "chainId": "1564830818",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised",
+    "safeError": "INVALID_PARAMS: Invalid method parameters (invalid name and/or type) recognised"
+  },
+  {
+    "url": "https://harmony-0.drpc.org",
+    "chainId": "1666600000",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://harmony-1.drpc.org",
+    "chainId": "1666600001",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: strconv.ParseInt: parsing \"finalized\": invalid syntax",
+    "safeError": "invalid argument 0: strconv.ParseInt: parsing \"safe\": invalid syntax"
+  },
+  {
+    "url": "https://palm-mainnet.infura.io/v3/3a961d6501e54add9a41aa53f15de99b",
+    "chainId": "11297108109",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://evascan.io/api/eth-rpc/",
+    "chainId": "160",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid block number",
+    "safeError": "Invalid block number"
+  },
+  {
+    "url": "https://testnet.evascan.io/api/eth-rpc/",
+    "chainId": "161",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid block number",
+    "safeError": "Invalid block number"
+  },
+  {
+    "url": "https://node1.amechain.io/",
+    "chainId": "180",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.bitcoincode.technology/",
+    "chainId": "963",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc1.camdl.gov.kh/",
+    "chainId": "95",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc.lycanchain.com/",
+    "chainId": "721",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block error",
+    "safeError": "Unknown block error"
+  },
+  {
+    "url": "https://rpc.test.btcs.network/",
+    "chainId": "1115",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc1.testnet.camdl.gov.kh/",
+    "chainId": "395",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc2.qkirpc.org",
+    "chainId": "20181205",
+    "source": "chainlist",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet-rpc.coinex.net/",
+    "chainId": "53",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gwan-ssl.wandevs.org:56891/",
+    "chainId": "888",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://gwan-ssl.wandevs.org:46891/",
+    "chainId": "999",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.verse.gesoten.com/",
+    "chainId": "428",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://dimension-rpc.xpla.dev",
+    "chainId": "3701",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://public-node1-rpc.emoney.network/",
+    "chainId": "4545",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Method not found",
+    "safeError": "Method not found"
+  },
+  {
+    "url": "https://rpc.tombchain.com/",
+    "chainId": "6969",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.cthscan.com/",
+    "chainId": "5858",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://xylume-testnet.sparked.network/rpc/",
+    "chainId": "6934",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Error 3469: Gas? Time? Luck? The universe isn’t sure, but something went sideways.",
+    "safeError": "Error 3469: Gas? Time? Luck? The universe isn’t sure, but something went sideways."
+  },
+  {
+    "url": "https://rpc.bthscan.io/",
+    "chainId": "14149",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://testnet.emerald.oasis.io/",
+    "chainId": "42261",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "malformed blocknumber",
+    "safeError": "malformed blocknumber"
+  },
+  {
+    "url": "https://rpc.cyberchain.xyz/",
+    "chainId": "65535",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "'finalized' tag not supported on pre-merge network",
+    "safeError": "'safe' tag not supported on pre-merge network"
+  },
+  {
+    "url": "https://rpc-mainnet-1.guapcoinx.com/",
+    "chainId": "71111",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-mainnet.guapcoinx.com/",
+    "chainId": "71111",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc-mainnet-2.guapcoinx.com/",
+    "chainId": "71111",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Unknown block",
+    "safeError": "Unknown block"
+  },
+  {
+    "url": "https://rpc1-testnet.icbnetwork.info/",
+    "chainId": "73114",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc1-mainnet.icbnetwork.info/",
+    "chainId": "73115",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc2-testnet.icbnetwork.info/",
+    "chainId": "73114",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc2-mainnet.icbnetwork.info/",
+    "chainId": "73115",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid Params",
+    "safeError": "Invalid Params"
+  },
+  {
+    "url": "https://rpc-testnet.bthscan.io/",
+    "chainId": "141491",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  },
+  {
+    "url": "https://rpc.mainnet.oasys.homeverse.games/",
+    "chainId": "19011",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://rpc.testnet.verse.gesoten.com/",
+    "chainId": "42801",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "invalid argument 0: hex string without 0x prefix",
+    "safeError": "invalid argument 0: hex string without 0x prefix"
+  },
+  {
+    "url": "https://edgewallet1.xlon.org/",
+    "chainId": "22052002",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://mainnet-rpc.ecroxscan.com/",
+    "chainId": "988207",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://mainnet-rpc.biticablockchain.com/",
+    "chainId": "188710",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "Invalid params: Invalid block number: missing 0x prefix.",
+    "safeError": "Invalid params: Invalid block number: missing 0x prefix."
+  },
+  {
+    "url": "https://testnet.rpc.banelabs.org/",
+    "chainId": "12227332",
+    "source": "ethereum-lists",
+    "supportsFinalized": false,
+    "supportsSafe": false,
+    "finalizedError": "finalized block not found",
+    "safeError": "safe block not found"
+  }
+]
