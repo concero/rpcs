@@ -4,9 +4,9 @@
  * This list contains domains that should be excluded from RPC testing & output.
  */
 export const domainBlacklist: string[] = [
-  // "ankr.com", // Example
-  "api.zan.top",
-  "endpoints.omniatech.io",
+    // "ankr.com", // Example
+    "api.zan.top",
+    "endpoints.omniatech.io",
 ];
 
 /**
@@ -16,11 +16,11 @@ export const domainBlacklist: string[] = [
  * @returns boolean - True if the URL contains a blacklisted domain, false otherwise
  */
 export function isDomainBlacklisted(url: string): boolean {
-  try {
-    const urlObj = new URL(url);
-    return domainBlacklist.some(domain => urlObj.hostname.includes(domain));
-  } catch (error) {
-    // If URL parsing fails, return false
-    return false;
-  }
+    try {
+        const urlObj = new URL(url);
+        return domainBlacklist.some(domain => urlObj.hostname.includes(domain));
+    } catch (error) {
+        // If URL parsing fails, return false
+        return false;
+    }
 }

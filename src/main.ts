@@ -24,51 +24,51 @@ import { overrideService } from "./services/overrideService";
  * @returns Map of chain IDs to their healthy RPC endpoints
  */
 export async function main(): Promise<Map<string, HealthyRpc[]>> {
-  try {
-    info("Starting RPC service...");
+    try {
+        info("Starting RPC service...");
 
-    // 1. Fetch network configuration
-    const networks = await fetchConceroNetworks();
+        // 1. Fetch network configuration
+        const networks = await fetchConceroNetworks();
 
-    // Initialize stats collector
-    const statsCollector = new StatsCollector(networks);
-    statsCollector.initialize();
-    const chainIds = getSupportedChainIds(networks);
+        // Initialize stats collector
+        const statsCollector = new StatsCollector(networks);
+        statsCollector.initialize();
+        const chainIds = getSupportedChainIds(networks);
 
-    // 2. Fetch and filter endpoints
-    const allEndpoints = await fetchExternalEndpoints(chainIds, networks);
-    const uniqueEndpoints = filterEndpoints(allEndpoints);
+        // 2. Fetch and filter endpoints
+        const allEndpoints = await fetchExternalEndpoints(chainIds, networks);
+        const uniqueEndpoints = filterEndpoints(allEndpoints);
 
-    // 3. Test endpoints
-    const testResult = await testRpcEndpoints(uniqueEndpoints, statsCollector);
+        // 3. Test endpoints
+        const testResult = await testRpcEndpoints(uniqueEndpoints, statsCollector);
 
-    // 4. Process results
-    const healthyRpcsByNetwork = processTestResults(testResult, networks);
+        // 4. Process results
+        const healthyRpcsByNetwork = processTestResults(testResult, networks);
 
-    // 5. Apply overrides
-    const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
-      healthyRpcsByNetwork,
-      networks,
-    );
+        // 5. Apply overrides
+        const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
+            healthyRpcsByNetwork,
+            networks,
+        );
 
-    // 6. Write output files
-    const modifiedFiles = writeChainRpcFiles(
-      rpcsByNetworkWithOverrides,
-      config.OUTPUT_DIR,
-      networks,
-    );
+        // 6. Write output files
+        const modifiedFiles = writeChainRpcFiles(
+            rpcsByNetworkWithOverrides,
+            config.OUTPUT_DIR,
+            networks,
+        );
 
-    // 7. Display statistics
-    statsCollector.display();
+        // 7. Display statistics
+        statsCollector.display();
 
-    // 8. Optional: commit changes
-    if (shouldCommitChanges(modifiedFiles)) {
-      await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
+        // 8. Optional: commit changes
+        if (shouldCommitChanges(modifiedFiles)) {
+            await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
+        }
+
+        return healthyRpcsByNetwork;
+    } catch (err) {
+        error(`Service run error: ${String(err)}, ${err.stack}`);
+        throw err;
     }
-
-    return healthyRpcsByNetwork;
-  } catch (err) {
-    error(`Service run error: ${String(err)}, ${err.stack}`);
-    throw err;
-  }
 }
