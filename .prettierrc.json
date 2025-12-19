@@ -1,15 +1,15 @@
 {
-  "arrowParens": "avoid",
-  "printWidth": 100,
-  "tabWidth": 2,
-  "trailingComma": "all",
-  "plugins": [],
-  "overrides": [
-    {
-      "files": ["output/**/*.json", "overrides/**/*.json"],
-      "options": {
-        "printWidth": 30
-      }
-    }
-  ]
+    "arrowParens": "avoid",
+    "printWidth": 100,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "plugins": [],
+    "overrides": [
+        {
+            "files": ["output/**/*.json", "overrides/**/*.json"],
+            "options": {
+                "printWidth": 30
+            }
+        }
+    ]
 }
