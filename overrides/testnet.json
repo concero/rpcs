@@ -37,5 +37,37 @@
     ],
     "chainSelector": 1000101,
     "chainId": "1000101"
+  },
+  "fraxtalHolesky": {
+    "rpcUrls": [
+      "https://fraxtal-testnet.drpc.org",
+      "https://rpc.testnet.frax.com",
+      "https://fraxtal-holesky-rpc.publicnode.com"
+    ],
+    "chainSelector": 2522,
+    "chainId": "2522"
+  },
+  "megaethTestnet": {
+    "rpcUrls": [
+      "https://carrot.megaeth.com/rpc"
+    ],
+    "chainSelector": 6342,
+    "chainId": "6342"
+  },
+  "xlayerSepolia": {
+    "rpcUrls": [
+      "https://testrpc.xlayer.tech",
+      "https://xlayer-testnet.drpc.org",
+      "https://xlayertestrpc.okx.com"
+    ],
+    "chainSelector": 195,
+    "chainId": "195"
+  },
+  "iotaevmTestnet": {
+    "rpcUrls": [
+      "https://json-rpc.evm.testnet.iotaledger.net"
+    ],
+    "chainSelector": 1075,
+    "chainId": "1075"
   }
 }
