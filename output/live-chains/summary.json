@@ -1,0 +1,7 @@
+{
+  "totalChains": 1198,
+  "totalRpcsTested": 4979,
+  "liveRpcs": 2341,
+  "deadRpcs": 2638,
+  "chainsWithLiveRpcs": 1198
+}

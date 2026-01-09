@@ -21,6 +21,7 @@ interface Config {
     CHAINLIST_RPCS_URL: string;
     CHAINLIST_EXTRA_RPCS_URL: string;
     ETHEREUM_LISTS_URL_TEMPLATE: string;
+    ETHEREUM_LISTS_CHAINS_URL: string;
     CONCERO_NETWORKS_GITHUB_BASE_URL: string;
   };
   GIT: {
@@ -69,6 +70,7 @@ const config: Config = {
       "https://raw.githubusercontent.com/DefiLlama/chainlist/refs/heads/main/constants/extraRpcs.js",
     ETHEREUM_LISTS_URL_TEMPLATE:
       "https://raw.githubusercontent.com/ethereum-lists/chains/refs/heads/master/_data/chains/eip155-{chainId}.json",
+    ETHEREUM_LISTS_CHAINS_URL: "https://chainid.network/chains.json",
     CONCERO_NETWORKS_GITHUB_BASE_URL:
       "https://raw.githubusercontent.com/concero/v2-networks/refs/heads/master/networks",
   },

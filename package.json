@@ -18,7 +18,8 @@
     "lint:fix": "eslint --ext .ts src/ --fix",
     "format": "prettier --config .prettierrc.json --write \"src/**/*.ts\" \"**/*.json\"",
     "prepare": "husky",
-    "probe:finality": "bun ./src/scripts/finalityProbe.ts"
+    "probe:finality": "bun ./src/scripts/finalityProbe.ts",
+    "probe:live-chains": "bun ./src/scripts/liveChainProbe.ts"
   },
   "repository": {
     "type": "git",
