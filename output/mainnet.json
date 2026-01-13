@@ -1,66 +1,63 @@
 {
   "arbitrum": {
     "rpcUrls": [
-      "https://arbitrum.drpc.org",
-      "https://arbitrum.meowrpc.com",
-      "https://arbitrum-one.public.blastapi.io",
-      "https://public-arb-mainnet.fastnode.io",
-      "https://arbitrum-one-public.nodies.app",
-      "https://arbitrum.public.blockpi.network/v1/rpc/public",
-      "https://arbitrum.gateway.tenderly.co",
-      "https://arb1.lava.build",
-      "https://arb1.arbitrum.io/rpc",
-      "https://arbitrum-one-rpc.publicnode.com",
-      "https://arb-one.api.pocket.network",
       "https://1rpc.io/arb",
+      "https://arbitrum.gateway.tenderly.co",
+      "https://arb-one.api.pocket.network",
       "https://arbitrum.rpc.subquery.network/public",
-      "https://arbitrum.api.onfinality.io/public"
+      "https://arbitrum.meowrpc.com",
+      "https://arbitrum-one-public.nodies.app",
+      "https://arb1.lava.build",
+      "https://arbitrum-one-rpc.publicnode.com",
+      "https://api-arbitrum-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://arbitrum-one.public.blastapi.io",
+      "https://arbitrum.drpc.org",
+      "https://arb1.arbitrum.io/rpc",
+      "https://arbitrum.public.blockpi.network/v1/rpc/public",
+      "https://arbitrum.api.onfinality.io/public",
+      "https://public-arb-mainnet.fastnode.io"
     ],
     "chainSelector": 42161,
     "chainId": "42161"
   },
   "ethereum": {
     "rpcUrls": [
-      "https://cloudflare-eth.com",
-      "https://eth1.lava.build",
-      "https://eth.drpc.org",
-      "https://api-ethereum-mainnet-reth.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://gateway.tenderly.co/public/mainnet",
-      "https://eth-mainnet.public.blastapi.io",
-      "https://ethereum-public.nodies.app",
-      "https://ethereum-rpc.publicnode.com",
-      "https://mainnet.gateway.tenderly.co",
-      "https://ethereum.public.blockpi.network/v1/rpc/public",
-      "https://eth.meowrpc.com",
-      "https://public-eth.nownodes.io",
+      "https://rpc.mevblocker.io/fullprivacy",
       "https://go.getblock.io/aefd01aa907c4805ba3c00a9e5b48c6b",
-      "https://eth.blockrazor.xyz",
-      "https://rpc.eth.gateway.fm",
-      "https://eth.llamarpc.com",
-      "https://eth-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+      "https://rpc.mevblocker.io/fast",
+      "https://rpc.mevblocker.io/noreverts",
+      "https://mainnet.gateway.tenderly.co",
+      "https://gateway.tenderly.co/public/mainnet",
       "https://0xrpc.io/eth",
-      "https://eth.merkle.io",
       "https://ethereum-mainnet.gateway.tatum.io",
+      "https://eth.api.onfinality.io/public",
+      "https://rpc.eth.gateway.fm",
+      "https://cloudflare-eth.com",
+      "https://rpc.mevblocker.io",
+      "https://eth1.lava.build",
+      "https://api-ethereum-mainnet-reth.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://eth-mainnet.public.blastapi.io",
       "https://1rpc.io/eth",
+      "https://ethereum-rpc.publicnode.com",
+      "https://eth.drpc.org",
+      "https://eth.meowrpc.com",
+      "https://ethereum-public.nodies.app",
+      "https://eth.blockrazor.xyz",
       "https://rpc.fullsend.to",
       "https://rpc.flashbots.net/fast",
-      "https://virtual.mainnet.rpc.tenderly.co/5804dcf7-70e6-4988-b2b0-3672193e0c91",
-      "https://rpc.mevblocker.io/noreverts",
-      "https://rpc.mevblocker.io/fullprivacy",
-      "https://ethereum-json-rpc.stakely.io",
-      "https://virginia.rpc.blxrbdn.com",
+      "https://public-eth.nownodes.io",
       "https://eth.api.pocket.network",
-      "https://eth.api.onfinality.io/public",
-      "https://core.gashawk.io/rpc",
-      "https://rpc.mevblocker.io/fast",
-      "https://rpc.flashbots.net",
-      "https://rpc.mevblocker.io",
+      "https://eth.merkle.io",
       "https://eth.rpc.blxrbdn.com",
-      "https://uk.rpc.blxrbdn.com",
-      "https://singapore.rpc.blxrbdn.com",
-      "https://openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet",
+      "https://ethereum.public.blockpi.network/v1/rpc/public",
+      "https://ethereum-json-rpc.stakely.io",
+      "https://rpc.flashbots.net",
+      "https://eth-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+      "https://ethereum.rpc.subquery.network/public",
+      "https://eth.llamarpc.com",
       "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
-      "https://ethereum.rpc.subquery.network/public"
+      "https://core.gashawk.io/rpc",
+      "https://openapi.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet"
     ],
     "chainSelector": 1,
     "chainId": "1"
@@ -68,21 +65,21 @@
   "polygon": {
     "rpcUrls": [
       "https://gateway.tenderly.co/public/polygon",
+      "https://go.getblock.io/02667b699f05444ab2c64f9bff28f027",
+      "https://1rpc.io/matic",
       "https://api-polygon-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://polygon-public.nodies.app",
       "https://polygon.gateway.tenderly.co",
+      "https://polygon-rpc.com",
+      "https://poly.api.pocket.network",
+      "https://polygon-public.nodies.app",
+      "https://polygon.drpc.org",
       "https://polygon-bor-rpc.publicnode.com",
+      "https://polygon.rpc.subquery.network/public",
       "https://polygon.meowrpc.com",
       "https://polygon.lava.build",
-      "https://polygon-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://go.getblock.io/02667b699f05444ab2c64f9bff28f027",
-      "https://polygon.drpc.org",
-      "https://1rpc.io/matic",
-      "https://poly.api.pocket.network",
-      "https://polygon-rpc.com",
       "https://rpc-mainnet.matic.quiknode.pro",
-      "https://polygon.api.onfinality.io/public",
-      "https://polygon.rpc.subquery.network/public"
+      "https://polygon-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+      "https://polygon.api.onfinality.io/public"
     ],
     "chainSelector": 137,
     "chainId": "137"
@@ -92,34 +89,33 @@
       "https://gateway.tenderly.co/public/optimism",
       "https://go.getblock.io/e8a75f8dcf614861becfbcb185be6eb4",
       "https://1rpc.io/op",
-      "https://optimism.drpc.org",
       "https://mainnet.optimism.io",
-      "https://api-optimism-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://optimism-rpc.publicnode.com",
       "https://optimism-mainnet.gateway.tatum.io",
       "https://optimism.gateway.tenderly.co",
-      "https://optimism.meowrpc.com",
-      "https://optimism-public.nodies.app",
-      "https://optimism.public.blockpi.network/v1/rpc/public",
-      "https://public-op-mainnet.fastnode.io",
       "https://optimism.api.onfinality.io/public",
-      "https://optimism.rpc.subquery.network/public"
+      "https://optimism-rpc.publicnode.com",
+      "https://optimism.drpc.org",
+      "https://optimism.rpc.subquery.network/public",
+      "https://optimism-public.nodies.app",
+      "https://optimism.meowrpc.com",
+      "https://optimism.public.blockpi.network/v1/rpc/public",
+      "https://public-op-mainnet.fastnode.io"
     ],
     "chainSelector": 10,
     "chainId": "10"
   },
   "avalanche": {
     "rpcUrls": [
-      "https://api.avax.network/ext/bc/C/rpc",
-      "https://avalanche-mainnet.gateway.tenderly.co",
-      "https://avalanche-c-chain-rpc.publicnode.com",
-      "https://avax.meowrpc.com",
-      "https://avalanche-public.nodies.app/ext/bc/C/rpc",
       "https://spectrum-01.simplystaking.xyz/avalanche-mn-rpc/ext/bc/C/rpc",
-      "https://avalanche.drpc.org",
-      "https://avax.api.pocket.network",
       "https://1rpc.io/avax/c",
-      "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
+      "https://avalanche-mainnet.gateway.tenderly.co",
+      "https://api.avax.network/ext/bc/C/rpc",
+      "https://avax.api.pocket.network",
+      "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc",
+      "https://avalanche-c-chain-rpc.publicnode.com",
+      "https://avalanche-public.nodies.app/ext/bc/C/rpc",
+      "https://avalanche.drpc.org",
+      "https://avax.meowrpc.com"
     ],
     "chainSelector": 43114,
     "chainId": "43114"
@@ -127,71 +123,71 @@
   "base": {
     "rpcUrls": [
       "https://gateway.tenderly.co/public/base",
-      "https://base.lava.build",
-      "https://mainnet.base.org",
-      "https://base-rpc.publicnode.com",
-      "https://base-public.nodies.app",
-      "https://base.gateway.tenderly.co",
-      "https://base-mainnet.public.blastapi.io",
-      "https://base.public.blockpi.network/v1/rpc/public",
-      "https://base.meowrpc.com",
-      "https://base.llamarpc.com",
-      "https://base.api.pocket.network",
-      "https://base.drpc.org",
-      "https://developer-access-mainnet.base.org",
       "https://1rpc.io/base",
-      "https://base.api.onfinality.io/public",
-      "https://base.rpc.blxrbdn.com",
+      "https://base.gateway.tenderly.co",
+      "https://base.meowrpc.com",
+      "https://base.api.pocket.network",
+      "https://base-public.nodies.app",
+      "https://base.drpc.org",
       "https://base.rpc.subquery.network/public",
-      "https://api-base-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
+      "https://base-mainnet.public.blastapi.io",
+      "https://base-rpc.publicnode.com",
+      "https://api-base-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://base.api.onfinality.io/public",
+      "https://mainnet.base.org",
+      "https://developer-access-mainnet.base.org",
+      "https://base.lava.build",
+      "https://base.public.blockpi.network/v1/rpc/public",
+      "https://base.llamarpc.com",
+      "https://base.rpc.blxrbdn.com"
     ],
     "chainSelector": 8453,
     "chainId": "8453"
   },
   "bsc": {
     "rpcUrls": [
-      "https://bsc.drpc.org",
-      "https://bsc.blockrazor.xyz",
-      "https://bsc-rpc.publicnode.com",
-      "https://bsc.meowrpc.com",
       "https://go.getblock.io/cc778cdbdf5c4b028ec9456e0e6c0cf3",
-      "https://bsc-mainnet.public.blastapi.io",
-      "https://binance-smart-chain-public.nodies.app",
-      "https://rpc-bsc.48.club",
-      "https://public-bsc.nownodes.io",
-      "https://bsc.api.pocket.network",
-      "https://bsc-dataseed1.defibit.io",
-      "https://bsc-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://bsc-dataseed4.ninicoin.io",
-      "https://binance.llamarpc.com",
-      "https://0.48.club",
-      "https://bsc-dataseed2.ninicoin.io",
-      "https://bsc-dataseed3.ninicoin.io",
       "https://1rpc.io/bnb",
-      "https://bsc-dataseed1.ninicoin.io",
-      "https://bsc-dataseed3.defibit.io",
       "https://bsc.rpc.blxrbdn.com",
-      "https://bsc-dataseed4.defibit.io",
+      "https://bnb.api.onfinality.io/public",
+      "https://bsc.blockrazor.xyz",
+      "https://bnb.rpc.subquery.network/public",
+      "https://binance-smart-chain-public.nodies.app",
+      "https://bsc.drpc.org",
+      "https://bsc-rpc.publicnode.com",
+      "https://0.48.club",
+      "https://bsc.meowrpc.com",
+      "https://rpc-bsc.48.club",
+      "https://api-bsc-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://public-bsc.nownodes.io",
+      "https://bsc-mainnet.public.blastapi.io",
+      "https://bsc.api.pocket.network",
+      "https://bsc-dataseed3.defibit.io",
+      "https://bsc-dataseed1.defibit.io",
+      "https://bsc-dataseed4.ninicoin.io",
       "https://bsc-dataseed2.defibit.io",
+      "https://bsc-dataseed1.ninicoin.io",
+      "https://bsc-dataseed2.ninicoin.io",
+      "https://bsc-dataseed4.defibit.io",
+      "https://bsc-dataseed3.ninicoin.io",
       "https://bsc-dataseed1.bnbchain.org",
       "https://bsc-dataseed2.bnbchain.org",
-      "https://public-bsc-mainnet.fastnode.io",
       "https://bsc-dataseed3.bnbchain.org",
       "https://bsc-dataseed4.bnbchain.org",
-      "https://bsc-dataseed.bnbchain.org",
-      "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
-      "https://bnb.api.onfinality.io/public",
       "https://binance.nodereal.io",
-      "https://api-bsc-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://bnb.rpc.subquery.network/public"
+      "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://bsc-dataseed.bnbchain.org",
+      "https://bsc-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
+      "https://binance.llamarpc.com",
+      "https://public-bsc-mainnet.fastnode.io"
     ],
     "chainSelector": 56,
     "chainId": "56"
   },
   "okx": {
     "rpcUrls": [
-      "https://oktc.drpc.org",
       "https://1rpc.io/oktc",
+      "https://oktc.drpc.org",
       "https://exchainrpc.okex.org"
     ],
     "chainSelector": 66,
@@ -199,17 +195,18 @@
   },
   "gnosis": {
     "rpcUrls": [
+      "https://0xrpc.io/gno",
+      "https://1rpc.io/gnosis",
+      "https://rpc.gnosischain.com",
+      "https://rpc.gnosis.gateway.fm",
+      "https://gnosis.api.pocket.network",
       "https://gnosis-rpc.publicnode.com",
       "https://gnosis-public.nodies.app",
       "https://rpc.ap-southeast-1.gateway.fm/v4/gnosis/non-archival/mainnet",
-      "https://rpc.gnosischain.com",
-      "https://rpc.gnosis.gateway.fm",
       "https://gnosis.drpc.org",
-      "https://0xrpc.io/gno",
-      "https://gnosis.api.pocket.network",
-      "https://1rpc.io/gnosis",
-      "https://gnosis.oat.farm",
-      "https://gnosis.api.onfinality.io/public"
+      "https://gnosis.api.onfinality.io/public",
+      "https://public-gno-mainnet.fastnode.io",
+      "https://gnosis.oat.farm"
     ],
     "chainSelector": 100,
     "chainId": "100"
@@ -217,8 +214,8 @@
   "shibarium": {
     "rpcUrls": [
       "https://shibarium.drpc.org",
-      "https://rpc.shibrpc.com",
-      "https://www.shibrpc.com"
+      "https://www.shibrpc.com",
+      "https://rpc.shibrpc.com"
     ],
     "chainSelector": 109,
     "chainId": "109"
@@ -230,12 +227,12 @@
   },
   "sonic": {
     "rpcUrls": [
-      "https://rpc.soniclabs.com",
+      "https://sonic.api.onfinality.io/public",
+      "https://sonic.api.pocket.network",
+      "https://api-sonic-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://sonic-rpc.publicnode.com",
       "https://sonic.drpc.org",
-      "https://sonic.api.pocket.network",
-      "https://sonic-json-rpc.stakely.io",
-      "https://sonic.api.onfinality.io/public"
+      "https://sonic-json-rpc.stakely.io"
     ],
     "chainSelector": 146,
     "chainId": "146"
@@ -250,13 +247,13 @@
   },
   "xlayer": {
     "rpcUrls": [
-      "https://xlayer.drpc.org",
       "https://rpc.ankr.com/xlayer",
-      "https://flap-xlayer.rpc.blxrbdn.com",
-      "https://okx-xlayer.rpc.blxrbdn.com",
+      "https://xlayer.drpc.org",
       "https://xlayer.rpc.blxrbdn.com",
-      "https://rpc.xlayer.tech",
-      "https://xlayerrpc.okx.com"
+      "https://okx-xlayer.rpc.blxrbdn.com",
+      "https://flap-xlayer.rpc.blxrbdn.com",
+      "https://xlayerrpc.okx.com",
+      "https://rpc.xlayer.tech"
     ],
     "chainSelector": 196,
     "chainId": "196"
@@ -264,9 +261,9 @@
   "bsquared": {
     "rpcUrls": [
       "https://rpc.ankr.com/b2",
-      "https://b2-mainnet.alt.technology",
+      "https://mainnet.b2-rpc.com",
       "https://rpc.bsquared.network",
-      "https://mainnet.b2-rpc.com"
+      "https://b2-mainnet.alt.technology"
     ],
     "chainSelector": 223,
     "chainId": "223"
@@ -280,35 +277,35 @@
   },
   "lens": {
     "rpcUrls": [
+      "https://light-icy-dinghy.lens-mainnet.quiknode.pro",
       "https://rpc.lens.xyz",
-      "https://lens.drpc.org",
-      "https://light-icy-dinghy.lens-mainnet.quiknode.pro"
+      "https://lens.drpc.org"
     ],
     "chainSelector": 232,
     "chainId": "232"
   },
   "fantom": {
     "rpcUrls": [
-      "https://rpc.fantom.network",
-      "https://rpcapi.fantom.network",
-      "https://rpc2.fantom.network",
-      "https://fantom-json-rpc.stakely.io",
-      "https://rpc3.fantom.network",
-      "https://fantom.drpc.org",
-      "https://fantom-public.nodies.app",
       "https://1rpc.io/ftm",
       "https://fantom.api.pocket.network",
-      "https://fantom.api.onfinality.io/public"
+      "https://rpc3.fantom.network",
+      "https://fantom.api.onfinality.io/public",
+      "https://rpcapi.fantom.network",
+      "https://rpc.fantom.network",
+      "https://fantom-public.nodies.app",
+      "https://rpc2.fantom.network",
+      "https://fantom.drpc.org",
+      "https://fantom-json-rpc.stakely.io"
     ],
     "chainSelector": 250,
     "chainId": "250"
   },
   "fraxtal": {
     "rpcUrls": [
-      "https://fraxtal-rpc.publicnode.com",
       "https://fraxtal.gateway.tenderly.co",
-      "https://rpc.frax.com",
       "https://fraxtal.api.pocket.network",
+      "https://rpc.frax.com",
+      "https://fraxtal-rpc.publicnode.com",
       "https://fraxtal.drpc.org"
     ],
     "chainSelector": 252,
@@ -332,23 +329,24 @@
   },
   "zksync": {
     "rpcUrls": [
-      "https://api-zksync-era-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://zksync.meowrpc.com",
-      "https://mainnet.era.zksync.io",
-      "https://zksync.drpc.org",
       "https://rpc.ankr.com/zksync_era",
-      "https://zksync-era.api.pocket.network",
+      "https://go.getblock.io/f76c09905def4618a34946bf71851542",
       "https://1rpc.io/zksync2-era",
-      "https://zksync.api.onfinality.io/public"
+      "https://zksync.api.onfinality.io/public",
+      "https://zksync.meowrpc.com",
+      "https://zksync.drpc.org",
+      "https://mainnet.era.zksync.io",
+      "https://zksync-era.api.pocket.network",
+      "https://api-zksync-era-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
     ],
     "chainSelector": 324,
     "chainId": "324"
   },
   "worldchain": {
     "rpcUrls": [
+      "https://worldchain-mainnet.g.alchemy.com/public",
       "https://worldchain-mainnet.gateway.tenderly.co",
       "https://worldchain.drpc.org",
-      "https://worldchain-mainnet.g.alchemy.com/public",
       "https://sparkling-autumn-dinghy.worldchain-mainnet.quiknode.pro",
       "https://480.rpc.thirdweb.com"
     ],
@@ -357,10 +355,10 @@
   },
   "astar": {
     "rpcUrls": [
-      "https://astar.public.curie.radiumblock.co/ws",
       "https://1rpc.io/astr",
-      "https://astar.public.curie.radiumblock.co/http",
       "https://evm.astar.network",
+      "https://astar.public.curie.radiumblock.co/http",
+      "https://astar.public.curie.radiumblock.co/ws",
       "https://astar.api.onfinality.io/public"
     ],
     "chainSelector": 592,
@@ -368,12 +366,12 @@
   },
   "metis": {
     "rpcUrls": [
-      "https://metis-rpc.publicnode.com",
       "https://metis-andromeda.gateway.tenderly.co",
+      "https://metis.api.onfinality.io/public",
       "https://metis-public.nodies.app",
+      "https://metis-rpc.publicnode.com",
       "https://metis.drpc.org",
       "https://andromeda.metis.io/?owner=1088",
-      "https://metis.api.onfinality.io/public",
       "https://api.blockeden.xyz/metis/67nCBdZQSH9z3YqDDjdm",
       "https://metis-andromeda.rpc.thirdweb.com"
     ],
@@ -382,10 +380,10 @@
   },
   "polygonZkevm": {
     "rpcUrls": [
-      "https://zkevm-rpc.com",
+      "https://1rpc.io/polygon/zkevm",
       "https://polygon-zkevm-public.nodies.app",
       "https://polygon-zkevm.drpc.org",
-      "https://1rpc.io/polygon/zkevm"
+      "https://zkevm-rpc.com"
     ],
     "chainSelector": 1101,
     "chainId": "1101"
@@ -400,57 +398,57 @@
   },
   "core": {
     "rpcUrls": [
-      "https://rpc-core.icecreamswap.com",
-      "https://rpc.coredao.org",
-      "https://core.drpc.org",
       "https://rpc.ankr.com/core",
-      "https://1rpc.io/core"
+      "https://1rpc.io/core",
+      "https://rpc-core.icecreamswap.com",
+      "https://core.drpc.org",
+      "https://rpc.coredao.org"
     ],
     "chainSelector": 1116,
     "chainId": "1116"
   },
   "soneium": {
     "rpcUrls": [
-      "https://soneium.drpc.org",
-      "https://rpc.soneium.org"
+      "https://rpc.soneium.org",
+      "https://soneium.drpc.org"
     ],
     "chainSelector": 1868,
     "chainId": "1868"
   },
   "ronin": {
     "rpcUrls": [
-      "https://api-ronin-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://ronin.drpc.org",
       "https://api.roninchain.com/rpc",
-      "https://ronin.lgns.net/rpc"
+      "https://ronin.lgns.net/rpc",
+      "https://api-ronin-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
     ],
     "chainSelector": 2020,
     "chainId": "2020"
   },
   "botanix": {
     "rpcUrls": [
-      "https://rpc.botanixlabs.com",
-      "https://rpc.ankr.com/botanix_mainnet"
+      "https://rpc.ankr.com/botanix_mainnet",
+      "https://rpc.botanixlabs.com"
     ],
     "chainSelector": 3637,
     "chainId": "3637"
   },
   "merlin": {
     "rpcUrls": [
-      "https://merlin.drpc.org",
       "https://merlin.blockpi.network/v1/rpc/public",
-      "https://rpc.merlinchain.io"
+      "https://rpc.merlinchain.io",
+      "https://merlin.drpc.org"
     ],
     "chainSelector": 4200,
     "chainId": "4200"
   },
   "mantle": {
     "rpcUrls": [
-      "https://mantle-rpc.publicnode.com",
-      "https://mantle-public.nodies.app",
-      "https://mantle.drpc.org",
       "https://1rpc.io/mantle",
       "https://mantle.api.onfinality.io/public",
+      "https://mantle-public.nodies.app",
+      "https://mantle-rpc.publicnode.com",
+      "https://mantle.drpc.org",
       "https://rpc.mantle.xyz",
       "https://api-mantle-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
     ],
@@ -459,16 +457,15 @@
   },
   "kaia": {
     "rpcUrls": [
-      "https://kaia-public.nodies.app",
-      "https://go.getblock.io/d7094dbd80ab474ba7042603fe912332",
-      "https://klaytn.drpc.org",
-      "https://kaia.api.pocket.network",
-      "https://kaia.blockpi.network/v1/rpc/public",
-      "https://1rpc.io/klay",
       "https://rpc.ankr.com/kaia",
-      "https://alpha-hardworking-orb.kaia-mainnet.quiknode.pro",
-      "https://public-en.node.kaia.io",
-      "https://klaytn.api.onfinality.io/public"
+      "https://1rpc.io/klay",
+      "https://go.getblock.io/d7094dbd80ab474ba7042603fe912332",
+      "https://kaia.api.pocket.network",
+      "https://kaia-public.nodies.app",
+      "https://kaia.blockpi.network/v1/rpc/public",
+      "https://klaytn.drpc.org",
+      "https://klaytn.api.onfinality.io/public",
+      "https://public-en.node.kaia.io"
     ],
     "chainSelector": 8217,
     "chainId": "8217"
@@ -480,8 +477,8 @@
   },
   "mode": {
     "rpcUrls": [
-      "https://mode.drpc.org",
       "https://1rpc.io/mode",
+      "https://mode.drpc.org",
       "https://mainnet.mode.network"
     ],
     "chainSelector": 34443,
@@ -489,12 +486,13 @@
   },
   "celo": {
     "rpcUrls": [
-      "https://forno.celo.org",
-      "https://celo.drpc.org",
       "https://rpc.ankr.com/celo",
       "https://celo.api.onfinality.io/public",
-      "https://celo-json-rpc.stakely.io",
-      "https://rpc.celocolombia.org"
+      "https://forno.celo.org",
+      "https://api-celo-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://celo.drpc.org",
+      "https://rpc.celocolombia.org",
+      "https://celo-json-rpc.stakely.io"
     ],
     "chainSelector": 42220,
     "chainId": "42220"
@@ -509,33 +507,33 @@
   },
   "zircuit": {
     "rpcUrls": [
-      "https://zircuit-mainnet.drpc.org",
+      "https://mainnet.zircuit.com",
       "https://zircuit1-mainnet.liquify.com",
-      "https://zircuit1-mainnet.p2pify.com",
-      "https://mainnet.zircuit.com"
+      "https://zircuit-mainnet.drpc.org",
+      "https://zircuit1-mainnet.p2pify.com"
     ],
     "chainSelector": 48900,
     "chainId": "48900"
   },
   "ink": {
     "rpcUrls": [
+      "https://ink.api.pocket.network",
       "https://rpc-gel.inkonchain.com",
-      "https://ink-public.nodies.app",
       "https://rpc-qnd.inkonchain.com",
       "https://ink.drpc.org",
-      "https://ink.api.pocket.network"
+      "https://ink-public.nodies.app"
     ],
     "chainSelector": 57073,
     "chainId": "57073"
   },
   "linea": {
     "rpcUrls": [
-      "https://linea.drpc.org",
-      "https://api-linea-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://rpc.linea.build",
-      "https://linea-rpc.publicnode.com",
+      "https://1rpc.io/linea",
       "https://linea.api.pocket.network",
-      "https://1rpc.io/linea"
+      "https://api-linea-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://linea-rpc.publicnode.com",
+      "https://linea.drpc.org",
+      "https://rpc.linea.build"
     ],
     "chainSelector": 59144,
     "chainId": "59144"
@@ -556,23 +554,24 @@
   },
   "berachain": {
     "rpcUrls": [
-      "https://api-berachain-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://rpc.berachain.com",
       "https://berachain-rpc.publicnode.com",
+      "https://api-berachain-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://berachain.drpc.org",
-      "https://rpc.berachain-apis.com",
-      "https://rpc.berachain.com"
+      "https://rpc.berachain-apis.com"
     ],
     "chainSelector": 80094,
     "chainId": "80094"
   },
   "blast": {
     "rpcUrls": [
-      "https://blast-rpc.publicnode.com",
-      "https://blast-public.nodies.app",
       "https://blast.gateway.tenderly.co",
       "https://rpc.blast.io",
       "https://blast.api.pocket.network",
+      "https://blast-rpc.publicnode.com",
+      "https://blast-public.nodies.app",
       "https://blast.drpc.org",
+      "https://api-blast-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://blast.din.dev/rpc"
     ],
     "chainSelector": 81457,
@@ -588,14 +587,14 @@
   },
   "taiko": {
     "rpcUrls": [
-      "https://taiko-rpc.publicnode.com",
+      "https://rpc.ankr.com/taiko",
       "https://taiko-mainnet.gateway.tenderly.co",
-      "https://taiko-json-rpc.stakely.io",
-      "https://rpc.taiko.xyz",
-      "https://taiko.drpc.org",
       "https://taiko.api.pocket.network",
+      "https://rpc.taiko.xyz",
       "https://rpc.mainnet.taiko.xyz",
-      "https://rpc.ankr.com/taiko"
+      "https://taiko-rpc.publicnode.com",
+      "https://taiko.drpc.org",
+      "https://taiko-json-rpc.stakely.io"
     ],
     "chainSelector": 167000,
     "chainId": "167000"
@@ -612,14 +611,14 @@
   },
   "scroll": {
     "rpcUrls": [
+      "https://1rpc.io/scroll",
       "https://api-scroll-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://scroll-rpc.publicnode.com",
-      "https://scroll-public.nodies.app",
       "https://rpc.scroll.io",
       "https://scroll.api.pocket.network",
-      "https://scroll.drpc.org",
-      "https://1rpc.io/scroll",
-      "https://scroll.api.onfinality.io/public"
+      "https://scroll-rpc.publicnode.com",
+      "https://scroll-public.nodies.app",
+      "https://scroll.api.onfinality.io/public",
+      "https://scroll.drpc.org"
     ],
     "chainSelector": 534352,
     "chainId": "534352"
@@ -635,37 +634,37 @@
   "corn": {
     "rpcUrls": [
       "https://rpc.ankr.com/corn_maizenet",
-      "https://maizenet-rpc.usecorn.com",
-      "https://mainnet.corn-rpc.com"
+      "https://mainnet.corn-rpc.com",
+      "https://maizenet-rpc.usecorn.com"
     ],
     "chainSelector": 2100000,
     "chainId": "21000000"
   },
   "harmony": {
     "rpcUrls": [
-      "https://harmony.api.pocket.network",
-      "https://harmony-0.drpc.org",
       "https://1rpc.io/one",
       "https://api.s0.t.hmny.io",
       "https://api.harmony.one",
-      "https://a.api.s0.t.hmny.io"
+      "https://a.api.s0.t.hmny.io",
+      "https://harmony-0.drpc.org",
+      "https://harmony.api.pocket.network"
     ],
     "chainSelector": 1666600,
     "chainId": "1666600000"
   },
   "monad": {
     "rpcUrls": [
-      "https://monad-mainnet.drpc.org",
-      "https://rpc-mainnet.monadinfra.com",
       "https://monad.rpc.blxrbdn.com",
-      "https://monad-mainnet-rpc.spidernode.net",
       "https://rpc3.monad.xyz",
-      "https://rpc2.monad.xyz",
+      "https://rpc.monad.xyz",
+      "https://rpc-mainnet.monadinfra.com",
       "https://monad-mainnet.api.onfinality.io/public",
       "https://rpc1.monad.xyz",
-      "https://rpc.monad.xyz",
-      "https://infra.originstake.com/monad/evm",
-      "https://rpc4.monad.xyz"
+      "https://monad-mainnet.drpc.org",
+      "https://rpc2.monad.xyz",
+      "https://rpc4.monad.xyz",
+      "https://monad-mainnet-rpc.spidernode.net",
+      "https://infra.originstake.com/monad/evm"
     ],
     "chainSelector": 143,
     "chainId": "143"
@@ -688,17 +687,16 @@
   },
   "somniaNetwork": {
     "rpcUrls": [
-      "https://somnia-rpc.publicnode.com",
       "https://api.infra.mainnet.somnia.network",
-      "https://somnia-json-rpc.stakely.io"
+      "https://somnia-rpc.publicnode.com"
     ],
     "chainSelector": 5031,
     "chainId": "5031"
   },
   "oasisEmerald": {
     "rpcUrls": [
-      "https://emerald.oasis.io",
-      "https://1rpc.io/oasis/emerald"
+      "https://1rpc.io/oasis/emerald",
+      "https://emerald.oasis.io"
     ],
     "chainSelector": 42262,
     "chainId": "42262"
@@ -713,16 +711,16 @@
   "viction": {
     "rpcUrls": [
       "https://viction.drpc.org",
-      "https://rpc.viction.xyz",
-      "https://viction.blockpi.network/v1/rpc/public"
+      "https://viction.blockpi.network/v1/rpc/public",
+      "https://rpc.viction.xyz"
     ],
     "chainSelector": 88,
     "chainId": "88"
   },
   "orai": {
     "rpcUrls": [
-      "https://oraichain-mainnet-evm.itrocket.net",
-      "https://evm.orai.io"
+      "https://evm.orai.io",
+      "https://oraichain-mainnet-evm.itrocket.net"
     ],
     "chainSelector": 1081606,
     "chainId": "108160679"
@@ -734,22 +732,23 @@
   },
   "enuls": {
     "rpcUrls": [
-      "https://evmapi2.nuls.io",
-      "https://evmapi.nuls.io"
+      "https://evmapi.nuls.io",
+      "https://evmapi2.nuls.io"
     ],
     "chainSelector": 119,
     "chainId": "119"
   },
-  "hyperliquid": {
+  "hyperevm": {
     "rpcUrls": [
+      "https://hyperliquid.api.onfinality.io/evm/public",
       "https://hyperliquid.drpc.org",
       "https://rpc.hyperliquid.xyz/evm",
-      "https://hyperliquid.api.onfinality.io/evm/public",
       "https://hyperliquid.rpc.blxrbdn.com",
-      "https://rpc.hyperlend.finance",
-      "https://hyperliquid-json-rpc.stakely.io",
       "https://rpc.hypurrscan.io",
-      "https://rpc.countzero.xyz/evm"
+      "https://hyperliquid-json-rpc.stakely.io",
+      "https://rpc.countzero.xyz/evm",
+      "https://rpc.hyperlend.finance",
+      "https://gwan-ssl.wandevs.org:46891"
     ],
     "chainSelector": 999,
     "chainId": "999"
@@ -758,8 +757,8 @@
     "rpcUrls": [
       "https://1rpc.io/cro",
       "https://api-cronos-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://cronos-evm-rpc.publicnode.com",
       "https://cro-mainnet.gateway.tatum.io",
+      "https://cronos-evm-rpc.publicnode.com",
       "https://evm.cronos.org",
       "https://cronos.drpc.org",
       "https://rpc.vvs.finance"
@@ -769,12 +768,13 @@
   },
   "kava": {
     "rpcUrls": [
-      "https://kava-public.nodies.app",
-      "https://kava-evm-rpc.publicnode.com",
-      "https://kava.drpc.org",
       "https://rpc.ankr.com/kava_evm",
-      "https://kava.api.onfinality.io/public",
       "https://evm.kava-rpc.com",
+      "https://kava.api.pocket.network",
+      "https://kava-public.nodies.app",
+      "https://kava.drpc.org",
+      "https://kava-evm-rpc.publicnode.com",
+      "https://kava.api.onfinality.io/public",
       "https://evm.kava.io"
     ],
     "chainSelector": 2222,
@@ -782,10 +782,10 @@
   },
   "unichain": {
     "rpcUrls": [
-      "https://unichain-rpc.publicnode.com",
-      "https://unichain.drpc.org",
       "https://api-unichain-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://unichain.api.onfinality.io/public",
+      "https://unichain.drpc.org",
+      "https://unichain-rpc.publicnode.com",
       "https://mainnet.unichain.org"
     ],
     "chainSelector": 130,
@@ -793,46 +793,46 @@
   },
   "mantapacific": {
     "rpcUrls": [
-      "https://manta-pacific.drpc.org",
-      "https://pacific-rpc.manta.network/http",
       "https://1rpc.io/manta",
+      "https://manta-pacific.drpc.org",
+      "https://manta.nirvanalabs.xyz/mantapublic",
       "https://manta-pacific-gascap.calderachain.xyz/http",
-      "https://manta-pacific.calderachain.xyz/http",
-      "https://manta.nirvanalabs.xyz/mantapublic"
+      "https://pacific-rpc.manta.network/http",
+      "https://manta-pacific.calderachain.xyz/http"
     ],
     "chainSelector": 169,
     "chainId": "169"
   },
   "moonbeam": {
     "rpcUrls": [
-      "https://moonbeam-rpc.publicnode.com",
-      "https://rpc.api.moonbeam.network",
-      "https://moonbeam.drpc.org",
       "https://1rpc.io/glmr",
-      "https://moonbeam.public.curie.radiumblock.co/ws",
-      "https://moonbeam.api.onfinality.io/public",
       "https://moonbeam.unitedbloc.com",
-      "https://moonbeam.api.pocket.network"
+      "https://moonbeam.api.onfinality.io/public",
+      "https://rpc.api.moonbeam.network",
+      "https://moonbeam-rpc.publicnode.com",
+      "https://moonbeam.drpc.org",
+      "https://moonbeam.api.pocket.network",
+      "https://moonbeam.public.curie.radiumblock.co/ws"
     ],
     "chainSelector": 1284,
     "chainId": "1284"
   },
   "aurora": {
     "rpcUrls": [
+      "https://1rpc.io/aurora",
       "https://aurora.drpc.org",
-      "https://mainnet.aurora.dev",
-      "https://1rpc.io/aurora"
+      "https://mainnet.aurora.dev"
     ],
     "chainSelector": 1313161,
     "chainId": "1313161554"
   },
   "sei": {
     "rpcUrls": [
-      "https://sei-public.nodies.app",
-      "https://sei-evm-rpc.stakeme.pro",
       "https://sei.api.pocket.network",
+      "https://evm-rpc.sei-apis.com",
+      "https://sei-public.nodies.app",
       "https://sei.drpc.org",
-      "https://evm-rpc.sei-apis.com"
+      "https://sei-evm-rpc.stakeme.pro"
     ],
     "chainSelector": 1329,
     "chainId": "1329"
@@ -847,26 +847,27 @@
   },
   "opBnb": {
     "rpcUrls": [
+      "https://api-opbnb-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://1rpc.io/opbnb",
       "https://opbnb-rpc.publicnode.com",
       "https://opbnb.drpc.org",
-      "https://opbnb.api.pocket.network",
       "https://opbnb-mainnet-rpc.bnbchain.org",
-      "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
       "https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
-      "https://1rpc.io/opbnb"
+      "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://opbnb.api.pocket.network"
     ],
     "chainSelector": 204,
     "chainId": "204"
   },
   "pulseChain": {
     "rpcUrls": [
-      "https://pulsechain-rpc.publicnode.com",
-      "https://rpc.pulsechainrpc.com",
       "https://rpc.pulsechain.com",
       "https://rpc-pulsechain.g4mm4.io",
-      "https://rpc.gigatheminter.com",
+      "https://pulsechain-rpc.publicnode.com",
       "https://rpc.hairylabs.io/rpc",
-      "https://rpc.pulsechainstats.com"
+      "https://rpc.pulsechainstats.com",
+      "https://rpc.pulsechainrpc.com",
+      "https://rpc.gigatheminter.com"
     ],
     "chainSelector": 369,
     "chainId": "369"
@@ -874,11 +875,11 @@
   "dogechain": {
     "rpcUrls": [
       "https://rpc.dogechain.dog",
-      "https://rpc01-sg.dogechain.dog",
       "https://rpc02-sg.dogechain.dog",
       "https://rpc-us.dogechain.dog",
-      "https://rpc-sg.dogechain.dog",
-      "https://rpc03-sg.dogechain.dog"
+      "https://rpc01-sg.dogechain.dog",
+      "https://rpc03-sg.dogechain.dog",
+      "https://rpc-sg.dogechain.dog"
     ],
     "chainSelector": 2000,
     "chainId": "2000"
@@ -886,11 +887,10 @@
   "bobaNetwork": {
     "rpcUrls": [
       "https://gateway.tenderly.co/public/boba-ethereum",
-      "https://boba-ethereum.gateway.tenderly.co",
-      "https://api-boba-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://boba.api.pocket.network",
-      "https://boba-eth.drpc.org",
       "https://1rpc.io/boba/eth",
+      "https://boba-ethereum.gateway.tenderly.co",
+      "https://boba-eth.drpc.org",
+      "https://boba.api.pocket.network",
       "https://mainnet.boba.network"
     ],
     "chainSelector": 288,
@@ -898,11 +898,11 @@
   },
   "fuse": {
     "rpcUrls": [
-      "https://fuse-public.nodies.app",
-      "https://fuse.drpc.org",
       "https://fuse.liquify.com",
+      "https://rpc.fuse.io",
       "https://fuse.api.pocket.network",
-      "https://rpc.fuse.io"
+      "https://fuse-public.nodies.app",
+      "https://fuse.drpc.org"
     ],
     "chainSelector": 122,
     "chainId": "122"
@@ -927,10 +927,10 @@
   "flareNetwork": {
     "rpcUrls": [
       "https://flare-mainnet.gateway.tatum.io",
-      "https://flare.rpc.thirdweb.com",
       "https://flare-api.flare.network/ext/C/rpc",
-      "https://rpc.au.cc/flare",
-      "https://rpc.ankr.com/flare"
+      "https://rpc.ankr.com/flare",
+      "https://flare.rpc.thirdweb.com",
+      "https://rpc.au.cc/flare"
     ],
     "chainSelector": 14,
     "chainId": "14"
@@ -945,26 +945,28 @@
   },
   "ioTex": {
     "rpcUrls": [
-      "https://babel-api.mainnet.iotex.io",
-      "https://babel-api.mainnet.iotex.one",
       "https://iotex.api.onfinality.io/public",
-      "https://babel-api.fastblocks.io",
-      "https://iotex-network.rpc.thirdweb.com"
+      "https://api-iotex-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://babel-api.mainnet.iotex.one",
+      "https://babel-api.mainnet.iotex.io",
+      "https://iotex-network.rpc.thirdweb.com",
+      "https://babel-api.fastblocks.io"
     ],
     "chainSelector": 4689,
     "chainId": "4689"
   },
   "xdcNetwork": {
     "rpcUrls": [
+      "https://rpc.ankr.com/xdc",
       "https://xdc-mainnet.gateway.tatum.io",
-      "https://erpc.xinfin.network",
       "https://rpc.xinfin.network",
-      "https://erpc.xdcrpc.com",
-      "https://rpc1.xinfin.network",
+      "https://api-xdc-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
+      "https://earpc.xinfin.network",
       "https://rpc.xdc.network",
       "https://rpc.xdcrpc.com",
-      "https://rpc.ankr.com/xdc",
-      "https://earpc.xinfin.network",
+      "https://rpc1.xinfin.network",
+      "https://erpc.xinfin.network",
+      "https://erpc.xdcrpc.com",
       "https://rpc.xdc.org"
     ],
     "chainSelector": 50,
@@ -972,11 +974,11 @@
   },
   "filecoin": {
     "rpcUrls": [
-      "https://filecoin.drpc.org",
       "https://rpc.ankr.com/filecoin",
-      "https://api.node.glif.io",
+      "https://filecoin.drpc.org",
       "https://filecoin.lava.build",
       "https://filecoin.chainup.net/rpc/v1",
+      "https://api.node.glif.io",
       "https://api.chain.love/rpc/v1",
       "https://filfox.info/rpc/v1"
     ],
@@ -992,10 +994,10 @@
   },
   "evmos": {
     "rpcUrls": [
+      "https://evmos.api.onfinality.io/public",
       "https://evmos-evm-rpc.publicnode.com",
-      "https://evmos-json-rpc.stakely.io",
       "https://evmos.drpc.org",
-      "https://evmos.api.onfinality.io/public"
+      "https://evmos-json-rpc.stakely.io"
     ],
     "chainSelector": 9001,
     "chainId": "9001"
@@ -1009,9 +1011,9 @@
   },
   "conflux": {
     "rpcUrls": [
-      "https://conflux-espace-public.unifra.io",
+      "https://conflux-espace.blockpi.network/v1/rpc/public",
       "https://evm.confluxrpc.com",
-      "https://conflux-espace.blockpi.network/v1/rpc/public"
+      "https://conflux-espace-public.unifra.io"
     ],
     "chainSelector": 1030,
     "chainId": "1030"
@@ -1050,27 +1052,27 @@
   },
   "lisk": {
     "rpcUrls": [
-      "https://lisk.gateway.tenderly.co",
-      "https://lisk.drpc.org",
       "https://api-lisk-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://rpc.api.lisk.com"
+      "https://rpc.api.lisk.com",
+      "https://lisk.gateway.tenderly.co",
+      "https://lisk.drpc.org"
     ],
     "chainSelector": 1135,
     "chainId": "1135"
   },
   "story": {
     "rpcUrls": [
-      "https://mainnet.storyrpc.io",
-      "https://story-evm-rpc.krews.xyz",
-      "https://story-evm-rpc.spidernode.net",
+      "https://rpc.ankr.com/story_mainnet",
+      "https://rpc.evm.mainnet.story.despreadlabs.io",
+      "https://evm-rpc-archive.story.node75.org",
       "https://evmrpc.story.nodestake.org",
       "https://evm-rpc.story.mainnet.dteam.tech",
       "https://evm-rpc.story.silentvalidator.com",
-      "https://rpc.evm.mainnet.story.despreadlabs.io",
-      "https://rpc.ankr.com/story_mainnet",
-      "https://infra.originstake.com/story/evm",
-      "https://evm-rpc-archive.story.node75.org",
-      "https://lightnode-json-rpc-mainnet-story.grandvalleys.com"
+      "https://mainnet.storyrpc.io",
+      "https://lightnode-json-rpc-mainnet-story.grandvalleys.com",
+      "https://story-evm-rpc.spidernode.net",
+      "https://story-evm-rpc.krews.xyz",
+      "https://infra.originstake.com/story/evm"
     ],
     "chainSelector": 1514,
     "chainId": "1514"
@@ -1092,15 +1094,15 @@
   },
   "iotaevm": {
     "rpcUrls": [
-      "https://json-rpc.evm.iotaledger.net",
-      "https://rpc.ankr.com/iota_evm"
+      "https://rpc.ankr.com/iota_evm",
+      "https://json-rpc.evm.iotaledger.net"
     ],
     "chainSelector": 8822,
     "chainId": "8822"
   },
   "bitgert": {
     "rpcUrls": [
-      "https://node1.serverrpc.com"
+      "https://rpc-bitgert.icecreamswap.com"
     ],
     "chainSelector": 32520,
     "chainId": "32520"
@@ -1162,9 +1164,9 @@
   },
   "bahamut": {
     "rpcUrls": [
+      "https://rpc.ankr.com/bahamut",
       "https://rpc1.bahamut.io",
-      "https://rpc2.bahamut.io",
-      "https://rpc.ankr.com/bahamut"
+      "https://rpc2.bahamut.io"
     ],
     "chainSelector": 5165,
     "chainId": "5165"
@@ -1183,11 +1185,11 @@
   },
   "coti": {
     "rpcUrls": [
+      "https://new-york.fullnode.mainnet.coti.io/rpc",
+      "https://virginia.fullnode.mainnet.coti.io/rpc",
       "https://mainnet.coti.io/rpc",
       "https://coti-rpc.Hyperflow.finance",
-      "https://tokyo.fullnode.mainnet.coti.io/rpc",
-      "https://new-york.fullnode.mainnet.coti.io/rpc",
-      "https://virginia.fullnode.mainnet.coti.io/rpc"
+      "https://tokyo.fullnode.mainnet.coti.io/rpc"
     ],
     "chainSelector": 2632500,
     "chainId": "2632500"
@@ -1213,11 +1215,11 @@
   },
   "mezo": {
     "rpcUrls": [
-      "https://mezo.drpc.org",
-      "https://rpc_evm-mezo.imperator.co",
-      "https://rpc-internal.mezo.org",
       "https://rpc-http.mezo.boar.network",
-      "https://mainnet.mezo.public.validationcloud.io"
+      "https://rpc_evm-mezo.imperator.co",
+      "https://mainnet.mezo.public.validationcloud.io",
+      "https://mezo.drpc.org",
+      "https://rpc-internal.mezo.org"
     ],
     "chainSelector": 31612,
     "chainId": "31612"
@@ -1284,8 +1286,8 @@
   },
   "mint": {
     "rpcUrls": [
-      "https://rpc.mintchain.io",
-      "https://global.rpc.mintchain.io"
+      "https://global.rpc.mintchain.io",
+      "https://rpc.mintchain.io"
     ],
     "chainSelector": 185,
     "chainId": "185"
@@ -1325,9 +1327,9 @@
   "ethereumClassic": {
     "rpcUrls": [
       "https://0xrpc.io/etc",
-      "https://besu-at.etc-network.info",
-      "https://geth-at.etc-network.info",
       "https://etc.etcdesktop.com",
+      "https://geth-at.etc-network.info",
+      "https://besu-at.etc-network.info",
       "https://etc.rivet.link"
     ],
     "chainSelector": 61,
@@ -1437,9 +1439,10 @@
   },
   "chiliz": {
     "rpcUrls": [
+      "https://rpc.ankr.com/chiliz",
+      "https://api-chiliz-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://chiliz.publicnode.com",
-      "https://rpc.chiliz.com",
-      "https://rpc.ankr.com/chiliz"
+      "https://rpc.chiliz.com"
     ],
     "chainSelector": 88888,
     "chainId": "88888"
@@ -1516,11 +1519,11 @@
   },
   "elastos": {
     "rpcUrls": [
+      "https://rpc.glidefinance.io",
+      "https://api.elastos.io/eth",
       "https://api2.elastos.io/eth",
       "https://api2.elastos.io/esc",
-      "https://api.elastos.io/eth",
-      "https://api.elastos.io/esc",
-      "https://rpc.glidefinance.io"
+      "https://api.elastos.io/esc"
     ],
     "chainSelector": 20,
     "chainId": "20"
@@ -1562,8 +1565,8 @@
   },
   "everclear": {
     "rpcUrls": [
-      "https://everclear.drpc.org",
-      "https://rpc.everclear.raas.gelato.cloud"
+      "https://rpc.everclear.raas.gelato.cloud",
+      "https://everclear.drpc.org"
     ],
     "chainSelector": 25327,
     "chainId": "25327"
@@ -1615,10 +1618,10 @@
   },
   "haqq": {
     "rpcUrls": [
-      "https://haqq-evm-rpc.publicnode.com",
       "https://haqq-evm.publicnode.com",
-      "https://rpc.eth.haqq.network",
+      "https://haqq-evm-rpc.publicnode.com",
       "https://haqq.drpc.org",
+      "https://rpc.eth.haqq.network",
       "https://evm.haqq.sh"
     ],
     "chainSelector": 11235,
@@ -1659,17 +1662,16 @@
   },
   "hydration": {
     "rpcUrls": [
-      "https://rpc.hydradx.cloud",
-      "https://rpc.roach.hydration.cloud",
       "https://rpc.helikon.io/hydradx",
-      "https://hydration.dotters.network",
+      "https://hydration.ibp.network",
+      "https://rpc.hydradx.cloud",
       "https://rpc.zipp.hydration.cloud",
       "https://hydration-rpc.n.dwellir.com",
-      "https://hydration.ibp.network",
-      "https://rpc.cay.hydration.cloud",
-      "https://rpc.coke.hydration.cloud",
+      "https://rpc.parm.hydration.cloud",
+      "https://hydration.dotters.network",
+      "https://rpc.roach.hydration.cloud",
       "https://rpc.sin.hydration.cloud",
-      "https://rpc.parm.hydration.cloud"
+      "https://rpc.coke.hydration.cloud"
     ],
     "chainSelector": 222222,
     "chainId": "222222"
@@ -1705,5 +1707,39 @@
     ],
     "chainSelector": 984123,
     "chainId": "984123"
+  },
+  "immutablex": {
+    "rpcUrls": [],
+    "chainSelector": 13371,
+    "chainId": "13371"
+  },
+  "superposition": {
+    "rpcUrls": [
+      "https://rpc.superposition.so"
+    ],
+    "chainSelector": 55244,
+    "chainId": "55244"
+  },
+  "swellchain": {
+    "rpcUrls": [
+      "https://rpc.ankr.com/swell",
+      "https://swell-mainnet.alt.technology"
+    ],
+    "chainSelector": 1923,
+    "chainId": "1923"
+  },
+  "vana": {
+    "rpcUrls": [
+      "https://rpc.vana.org"
+    ],
+    "chainSelector": 1480,
+    "chainId": "1480"
+  },
+  "stable": {
+    "rpcUrls": [
+      "https://rpc.stable.xyz"
+    ],
+    "chainSelector": 988,
+    "chainId": "988"
   }
 }
