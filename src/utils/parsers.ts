@@ -28,7 +28,7 @@ export function extractEndpoints<T>(
   extractor: EndpointExtractor<T>,
 ): RpcEndpoint[] {
   return extractor(data).flatMap(({ chainId, urls }) =>
-    urls.filter(url => url && url.startsWith("http")).map(url => ({ chainId, url, source })),
+    urls.filter(url => url && url.startsWith("https://")).map(url => ({ chainId, url, source })),
   );
 }
 

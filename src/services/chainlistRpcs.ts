@@ -60,7 +60,7 @@ export function parseChainlistRpcs(data: any[]): ChainlistRpcs {
       ? item.rpc
           .filter((rpc: any) => {
             const url = typeof rpc === "string" ? rpc : rpc && rpc.url;
-            return url && typeof url === "string" && url.startsWith("http");
+            return url && typeof url === "string" && url.startsWith("https://");
           })
           .map((rpc: any) => (typeof rpc === "string" ? rpc : rpc.url))
       : [];

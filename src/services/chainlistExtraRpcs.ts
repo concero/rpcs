@@ -67,7 +67,7 @@ export function parseChainlistExtraRpcs(jsFileContent: string): ChainlistRpcs {
             return null;
           }
         })
-        .filter(Boolean); // Remove any null entries
+        .filter((url: string | null) => url && url.startsWith("https://"));
 
       if (rpcs.length > 0) {
         result[chainId] = {
