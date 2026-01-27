@@ -7,6 +7,7 @@ export const domainBlacklist: string[] = [
   // "ankr.com", // Example
   "api.zan.top",
   "endpoints.omniatech.io",
+  "data-seed-prebsc",
 ];
 
 /**
