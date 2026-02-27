@@ -1,0 +1,9 @@
+{
+  "rootstock": {
+    "rpcUrls": [
+      "https://rpc.mainnet.rootstock.io/5aEAfl6bC8CbaniczdROEU1MHfS3gn-M"
+    ],
+    "chainSelector": 30,
+    "chainId": "30"
+  }
+}

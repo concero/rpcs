@@ -17,6 +17,14 @@ interface Config {
     RETRY_DELAY_MS: number;
     MAX_RETRIES: number;
   };
+  GET_LOGS_TESTER: {
+    ENABLED: boolean;
+    CONCURRENCY: number;
+    TIMEOUT_MS: number;
+    MAX_RETRIES: number;
+    RETRY_DELAY_MS: number;
+    BLOCK_RANGES: number[];
+  };
   URLS: {
     CHAINLIST_RPCS_URL: string;
     CHAINLIST_EXTRA_RPCS_URL: string;
@@ -61,6 +69,15 @@ const config: Config = {
     HTTP_REQUEST_TIMEOUT_MS: 1000 * 5,
     RETRY_DELAY_MS: 150,
     MAX_RETRIES: 3,
+  },
+
+  GET_LOGS_TESTER: {
+    ENABLED: true,
+    CONCURRENCY: 20,
+    TIMEOUT_MS: 10_000,
+    MAX_RETRIES: 1,
+    RETRY_DELAY_MS: 300,
+    BLOCK_RANGES: [100, 1000, 2000, 5000, 10_000, 50_000, 100_000, 500_000, 1_000_000],
   },
 
   URLS: {

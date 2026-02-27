@@ -5,6 +5,7 @@ import { info, warn, debug } from "../utils/logger";
 
 interface OverrideEntry {
   rpcUrls: string[];
+  getLogsBlockDepth?: number[];
   chainSelector?: number;
   chainId: string;
 }
@@ -108,13 +109,14 @@ export class OverrideService {
       // Create HealthyRpc objects for override URLs that aren't already present
       const newRpcs: HealthyRpc[] = override.rpcUrls
         .filter(url => !existingUrls.has(url))
-        .map(url => ({
+        .map((url, idx) => ({
           chainId: network.chainId.toString(),
           url,
           source: "v2-networks" as const, // Mark overrides as coming from v2-networks
           responseTime: 0, // Override RPCs are assumed to be healthy
           returnedChainId: network.chainId.toString(),
           lastBlockNumber: 0,
+          getLogsBlockDepth: override.getLogsBlockDepth?.[idx] ?? 0,
         }));
 
       if (newRpcs.length > 0) {

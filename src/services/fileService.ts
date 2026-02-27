@@ -23,6 +23,7 @@ export function ensureOutputDirectoryExists(outputDir: string) {
 interface ChainData {
   [chainName: string]: {
     rpcUrls: string[];
+    getLogsBlockDepth: number[];
     chainSelector?: string | number;
     chainId: string;
   };
@@ -50,16 +51,19 @@ export function writeChainRpcFiles(
     const chainId = network.chainId.toString();
     const rpcs = rpcsByChain.get(networkName) || [];
     const rpcUrls = rpcs.map(rpc => rpc.url);
+    const getLogsBlockDepth = rpcs.map(rpc => rpc.getLogsBlockDepth ?? 0);
 
     if (network.networkType === "mainnet") {
       mainnetChains[networkName] = {
         rpcUrls,
+        getLogsBlockDepth,
         chainSelector: network.chainSelector,
         chainId: chainId,
       };
     } else if (network.networkType === "testnet") {
       testnetChains[networkName] = {
         rpcUrls,
+        getLogsBlockDepth,
         chainSelector: network.chainSelector,
         chainId: chainId,
       };

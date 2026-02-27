@@ -12,6 +12,7 @@ import { filterEndpoints } from "./utils/filterEndpoints";
 import { fetchExternalEndpoints } from "./utils/fetchExternalEndpoints";
 import { processTestResults } from "./utils/processTestResults";
 import { overrideService } from "./services/overrideService";
+import { testGetLogsBlockDepths } from "./services/getLogsBlockDepthTester";
 
 /**
  * Main RPC service function that orchestrates the entire process:
@@ -45,23 +46,28 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
     // 4. Process results
     const healthyRpcsByNetwork = processTestResults(testResult, networks);
 
-    // 5. Apply overrides
+    // 5. Test getLogs block depth (before overrides — override RPCs get values from config)
+    if (config.GET_LOGS_TESTER.ENABLED) {
+      await testGetLogsBlockDepths(healthyRpcsByNetwork);
+    }
+
+    // 6. Apply overrides (getLogsBlockDepth values come from override config)
     const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
       healthyRpcsByNetwork,
       networks,
     );
 
-    // 6. Write output files
+    // 7. Write output files
     const modifiedFiles = writeChainRpcFiles(
       rpcsByNetworkWithOverrides,
       config.OUTPUT_DIR,
       networks,
     );
 
-    // 7. Display statistics
+    // 8. Display statistics
     statsCollector.display();
 
-    // 8. Optional: commit changes
+    // 9. Optional: commit changes
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
