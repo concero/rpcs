@@ -24,6 +24,7 @@ interface ChainData {
   [chainName: string]: {
     rpcUrls: string[];
     getLogsBlockDepth: number[];
+    maxBatchSize: number[];
     chainSelector?: string | number;
     chainId: string;
   };
@@ -52,11 +53,13 @@ export function writeChainRpcFiles(
     const rpcs = rpcsByChain.get(networkName) || [];
     const rpcUrls = rpcs.map(rpc => rpc.url);
     const getLogsBlockDepth = rpcs.map(rpc => rpc.getLogsBlockDepth ?? 0);
+    const maxBatchSize = rpcs.map(rpc => rpc.maxBatchSize ?? 0);
 
     if (network.networkType === "mainnet") {
       mainnetChains[networkName] = {
         rpcUrls,
         getLogsBlockDepth,
+        maxBatchSize,
         chainSelector: network.chainSelector,
         chainId: chainId,
       };
@@ -64,6 +67,7 @@ export function writeChainRpcFiles(
       testnetChains[networkName] = {
         rpcUrls,
         getLogsBlockDepth,
+        maxBatchSize,
         chainSelector: network.chainSelector,
         chainId: chainId,
       };

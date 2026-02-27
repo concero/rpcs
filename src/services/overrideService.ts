@@ -6,6 +6,7 @@ import { info, warn, debug } from "../utils/logger";
 interface OverrideEntry {
   rpcUrls: string[];
   getLogsBlockDepth?: number[];
+  maxBatchSize?: number[];
   chainSelector?: number;
   chainId: string;
 }
@@ -117,6 +118,7 @@ export class OverrideService {
           returnedChainId: network.chainId.toString(),
           lastBlockNumber: 0,
           getLogsBlockDepth: override.getLogsBlockDepth?.[idx] ?? 0,
+          maxBatchSize: override.maxBatchSize?.[idx] ?? 0,
         }));
 
       if (newRpcs.length > 0) {

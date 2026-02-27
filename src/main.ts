@@ -13,6 +13,7 @@ import { fetchExternalEndpoints } from "./utils/fetchExternalEndpoints";
 import { processTestResults } from "./utils/processTestResults";
 import { overrideService } from "./services/overrideService";
 import { testGetLogsBlockDepths } from "./services/getLogsBlockDepthTester";
+import { testBatchSupport } from "./services/batchRequestTester";
 
 /**
  * Main RPC service function that orchestrates the entire process:
@@ -51,7 +52,12 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
       await testGetLogsBlockDepths(healthyRpcsByNetwork);
     }
 
-    // 6. Apply overrides (getLogsBlockDepth values come from override config)
+    // 6. Test batch request support
+    if (config.BATCH_TESTER.ENABLED) {
+      await testBatchSupport(healthyRpcsByNetwork);
+    }
+
+    // 7. Apply overrides (getLogsBlockDepth values come from override config)
     const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
       healthyRpcsByNetwork,
       networks,

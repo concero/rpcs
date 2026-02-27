@@ -25,6 +25,14 @@ interface Config {
     RETRY_DELAY_MS: number;
     BLOCK_RANGES: number[];
   };
+  BATCH_TESTER: {
+    ENABLED: boolean;
+    CONCURRENCY: number;
+    TIMEOUT_MS: number;
+    MAX_RETRIES: number;
+    RETRY_DELAY_MS: number;
+    BATCH_SIZES: number[];
+  };
   URLS: {
     CHAINLIST_RPCS_URL: string;
     CHAINLIST_EXTRA_RPCS_URL: string;
@@ -78,6 +86,15 @@ const config: Config = {
     MAX_RETRIES: 1,
     RETRY_DELAY_MS: 300,
     BLOCK_RANGES: [100, 1000, 2000, 5000, 10_000, 50_000, 100_000, 500_000, 1_000_000],
+  },
+
+  BATCH_TESTER: {
+    ENABLED: true,
+    CONCURRENCY: 20,
+    TIMEOUT_MS: 5_000,
+    MAX_RETRIES: 2,
+    RETRY_DELAY_MS: 300,
+    BATCH_SIZES: [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 5000, 10_000],
   },
 
   URLS: {
