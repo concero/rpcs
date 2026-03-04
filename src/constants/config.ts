@@ -4,6 +4,7 @@ interface Config {
   NETWORK_MODE: number;
   DOMAIN_BLACKLIST: string[];
   ENABLE_DOMAIN_BLACKLIST: boolean;
+  WHITELISTED_CHAIN_IDS: number[];
   IGNORED_CHAINLIST_CHAIN_IDS: number[];
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: number[];
   LOGGER: {
@@ -17,13 +18,15 @@ interface Config {
     RETRY_DELAY_MS: number;
     MAX_RETRIES: number;
   };
-  GET_LOGS_TESTER: {
+  DEPTH_TESTER: {
     ENABLED: boolean;
     CONCURRENCY: number;
     TIMEOUT_MS: number;
     MAX_RETRIES: number;
     RETRY_DELAY_MS: number;
     BLOCK_RANGES: number[];
+    MASS_THRESHOLD: number;
+    MIN_DEPTH: number;
   };
   BATCH_TESTER: {
     ENABLED: boolean;
@@ -32,6 +35,8 @@ interface Config {
     MAX_RETRIES: number;
     RETRY_DELAY_MS: number;
     BATCH_SIZES: number[];
+    MASS_THRESHOLD: number;
+    MIN_BATCH_SIZE: number;
   };
   URLS: {
     CHAINLIST_RPCS_URL: string;
@@ -57,6 +62,7 @@ const config: Config = {
 
   DOMAIN_BLACKLIST: domainBlacklist,
   ENABLE_DOMAIN_BLACKLIST: true,
+  WHITELISTED_CHAIN_IDS: [42161],
   IGNORED_CHAINLIST_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
@@ -79,22 +85,26 @@ const config: Config = {
     MAX_RETRIES: 3,
   },
 
-  GET_LOGS_TESTER: {
+  DEPTH_TESTER: {
     ENABLED: true,
-    CONCURRENCY: 20,
-    TIMEOUT_MS: 10_000,
-    MAX_RETRIES: 1,
-    RETRY_DELAY_MS: 300,
+    CONCURRENCY: 50,
+    TIMEOUT_MS: 5_000,
+    MAX_RETRIES: 3,
+    RETRY_DELAY_MS: 200,
     BLOCK_RANGES: [100, 1000, 2000, 5000, 10_000, 50_000, 100_000, 500_000, 1_000_000],
+    MASS_THRESHOLD: 0.5,
+    MIN_DEPTH: 100,
   },
 
   BATCH_TESTER: {
     ENABLED: true,
-    CONCURRENCY: 20,
+    CONCURRENCY: 50,
     TIMEOUT_MS: 5_000,
-    MAX_RETRIES: 2,
-    RETRY_DELAY_MS: 300,
-    BATCH_SIZES: [1, 5, 10, 20, 50, 100, 500, 1000, 2000, 5000, 10_000],
+    MAX_RETRIES: 3,
+    RETRY_DELAY_MS: 200,
+    BATCH_SIZES: [1, 5, 10, 20, 50, 100, 500, 1000],
+    MASS_THRESHOLD: 0.5,
+    MIN_BATCH_SIZE: 5,
   },
 
   URLS: {

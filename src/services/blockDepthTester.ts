@@ -2,11 +2,10 @@ import config from "../constants/config";
 import { debug, info, warn } from "../utils/logger";
 import type { HealthyRpc } from "../types";
 
-const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BLOCK_RANGES } =
-  config.GET_LOGS_TESTER;
+const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BLOCK_RANGES } = config.DEPTH_TESTER;
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
-const FINE_SEARCH_PRECISION = 10;
+const FINE_SEARCH_PRECISION = 100;
 
 async function fetchBlockNumber(url: string, timeoutMs: number): Promise<number | null> {
   const controller = new AbortController();
@@ -38,7 +37,7 @@ async function testGetLogsRange(
   fromBlock: number,
   toBlock: number,
   timeoutMs: number,
-): Promise<boolean> {
+): Promise<boolean | "rate_limited"> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -61,7 +60,10 @@ async function testGetLogsRange(
       signal: controller.signal,
     });
 
-    if (response.status === 429) return false;
+    if (response.status === 429) {
+      return "rate_limited";
+    }
+
     if (!response.ok) return false;
 
     const body = (await response.json()) as { result?: unknown; error?: unknown };
@@ -83,10 +85,18 @@ async function tryRangeWithRetries(
 ): Promise<boolean> {
   const fromBlock = Math.max(0, currentBlock - range);
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const success = await testGetLogsRange(url, fromBlock, currentBlock, timeoutMs);
-    if (success) return true;
+    const result = await testGetLogsRange(url, fromBlock, currentBlock, timeoutMs);
+
+    if (result) return true;
+
     if (attempt < maxRetries) {
-      await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+      if (result === "rate_limited") {
+        const backoffDelay = retryDelayMs * Math.pow(2, attempt);
+        debug(`Rate limited on ${url}, retrying in ${backoffDelay}ms`);
+        await new Promise(resolve => setTimeout(resolve, backoffDelay));
+      } else {
+        return false;
+      }
     }
   }
   return false;
@@ -148,24 +158,34 @@ async function findMaxBlockDepth(
 }
 
 export async function testGetLogsBlockDepths(
-  healthyRpcs: Map<string, HealthyRpc[]>,
-): Promise<void> {
+  inputHealthyRpcs: Map<string, HealthyRpc[]>,
+): Promise<Map<string, HealthyRpc[]>> {
+  const filtered = Array.from(
+    inputHealthyRpcs,
+    ([chainId, rpcs]) => [chainId, rpcs.map(rpc => ({ ...rpc }) as HealthyRpc)] as const,
+  ).filter(
+    ([chainId]) =>
+      config.WHITELISTED_CHAIN_IDS.length === 0 ||
+      config.WHITELISTED_CHAIN_IDS.includes(parseInt(chainId, 10)),
+  );
+
+  const healthyRpcs = new Map(filtered);
+
   const chainBlockNumbers = new Map<string, number>();
 
-  // Fetch current block number for each chain
-  for (const [chainId, rpcs] of healthyRpcs) {
-    let blockNumber: number | null = null;
-    for (const rpc of rpcs) {
-      blockNumber = await fetchBlockNumber(rpc.url, TIMEOUT_MS);
-      if (blockNumber !== null) break;
-    }
-
-    if (blockNumber !== null) {
-      chainBlockNumbers.set(chainId, blockNumber);
-    } else {
+  // Fetch current block number for all chains in parallel
+  await Promise.allSettled(
+    Array.from(healthyRpcs.entries()).map(async ([chainId, rpcs]) => {
+      for (const rpc of rpcs) {
+        const blockNumber = await fetchBlockNumber(rpc.url, TIMEOUT_MS);
+        if (blockNumber !== null) {
+          chainBlockNumbers.set(chainId, blockNumber);
+          return;
+        }
+      }
       warn(`Could not fetch block number for chain ${chainId}, skipping getLogs depth test`);
-    }
-  }
+    }),
+  );
 
   // Build flat queue of RPCs to test
   const queue: { rpc: HealthyRpc; currentBlock: number }[] = [];
@@ -238,4 +258,6 @@ export async function testGetLogsBlockDepths(
 
     processNext();
   });
+
+  return healthyRpcs;
 }

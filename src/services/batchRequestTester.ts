@@ -2,8 +2,7 @@ import config from "../constants/config";
 import { debug, info } from "../utils/logger";
 import type { HealthyRpc } from "../types";
 
-const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BATCH_SIZES } =
-  config.BATCH_TESTER;
+const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BATCH_SIZES } = config.BATCH_TESTER;
 
 const FINE_SEARCH_PRECISION = 2;
 
@@ -20,7 +19,7 @@ async function testBatchOfSize(
   url: string,
   size: number,
   timeoutMs: number,
-): Promise<boolean> {
+): Promise<boolean | "rate_limited"> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -32,15 +31,22 @@ async function testBatchOfSize(
       signal: controller.signal,
     });
 
-    if (!response.ok) return false;
+    if (response.status === 429) {
+      return "rate_limited";
+    }
+
+    if (!response.ok) {
+      debug(
+        `Error response from ${url} for batch size ${size}: ${response.status} ${response.statusText}`,
+      );
+      return false;
+    }
 
     const body = await response.json();
     if (!Array.isArray(body)) return false;
     if (body.length !== size) return false;
 
-    return body.every(
-      (item: { error?: unknown }) => item.error === undefined,
-    );
+    return body.every((item: { error?: unknown }) => item.error === undefined);
   } catch {
     return false;
   } finally {
@@ -56,9 +62,18 @@ async function tryBatchWithRetries(
   retryDelayMs: number,
 ): Promise<boolean> {
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    if (await testBatchOfSize(url, size, timeoutMs)) return true;
+    const result = await testBatchOfSize(url, size, timeoutMs);
+
+    if (result) return true;
+
     if (attempt < maxRetries) {
-      await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+      if (result === "rate_limited") {
+        const backoffDelay = retryDelayMs * Math.pow(2, attempt);
+        debug(`Rate limited on ${url}, retrying in ${backoffDelay}ms`);
+        await new Promise(resolve => setTimeout(resolve, backoffDelay));
+      } else {
+        return false;
+      }
     }
   }
   return false;
@@ -118,8 +133,19 @@ async function findMaxBatchSize(
 }
 
 export async function testBatchSupport(
-  healthyRpcs: Map<string, HealthyRpc[]>,
-): Promise<void> {
+  inputHealthyRpcs: Map<string, HealthyRpc[]>,
+): Promise<Map<string, HealthyRpc[]>> {
+  const filtered = Array.from(
+    inputHealthyRpcs,
+    ([chainId, rpcs]) => [chainId, rpcs.map(rpc => ({ ...rpc }) as HealthyRpc)] as const,
+  ).filter(
+    ([chainId]) =>
+      config.WHITELISTED_CHAIN_IDS.length === 0 ||
+      config.WHITELISTED_CHAIN_IDS.includes(parseInt(chainId, 10)),
+  );
+
+  const healthyRpcs = new Map(filtered);
+
   const queue: HealthyRpc[] = [];
   for (const rpcs of healthyRpcs.values()) {
     for (const rpc of rpcs) {
@@ -176,4 +202,6 @@ export async function testBatchSupport(
 
     processNext();
   });
+
+  return healthyRpcs;
 }

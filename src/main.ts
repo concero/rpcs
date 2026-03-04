@@ -7,13 +7,14 @@ import { HealthyRpc } from "./types";
 import { fetchConceroNetworks } from "./services/conceroNetworks";
 import { shouldCommitChanges } from "./utils/shouldCommitChanges";
 import { StatsCollector } from "./utils/StatsCollector";
-import { writeChainRpcFiles } from "./services/fileService";
+import { writeChainRpcFiles, writeValidatorConfigFiles } from "./services/fileService";
 import { filterEndpoints } from "./utils/filterEndpoints";
 import { fetchExternalEndpoints } from "./utils/fetchExternalEndpoints";
 import { processTestResults } from "./utils/processTestResults";
 import { overrideService } from "./services/overrideService";
-import { testGetLogsBlockDepths } from "./services/getLogsBlockDepthTester";
+import { testGetLogsBlockDepths } from "./services/blockDepthTester";
 import { testBatchSupport } from "./services/batchRequestTester";
+import { buildValidatorConfig } from "./utils/buildValidatorConfig";
 
 /**
  * Main RPC service function that orchestrates the entire process:
@@ -47,33 +48,37 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
     // 4. Process results
     const healthyRpcsByNetwork = processTestResults(testResult, networks);
 
-    // 5. Test getLogs block depth (before overrides — override RPCs get values from config)
-    if (config.GET_LOGS_TESTER.ENABLED) {
-      await testGetLogsBlockDepths(healthyRpcsByNetwork);
-    }
-
-    // 6. Test batch request support
-    if (config.BATCH_TESTER.ENABLED) {
-      await testBatchSupport(healthyRpcsByNetwork);
-    }
-
-    // 7. Apply overrides (getLogsBlockDepth values come from override config)
+    // 5. Apply overrides
     const rpcsByNetworkWithOverrides = await overrideService.applyOverrides(
       healthyRpcsByNetwork,
       networks,
     );
 
-    // 7. Write output files
+    // 6. Write output files
     const modifiedFiles = writeChainRpcFiles(
       rpcsByNetworkWithOverrides,
       config.OUTPUT_DIR,
       networks,
     );
 
-    // 8. Display statistics
+    let batchSupportMap = new Map<string, HealthyRpc[]>();
+    if (config.BATCH_TESTER.ENABLED) {
+      batchSupportMap = await testBatchSupport(testResult.healthyRpcs);
+    }
+
+    let blockDepthMap = new Map<string, HealthyRpc[]>();
+    if (config.DEPTH_TESTER.ENABLED) {
+      blockDepthMap = await testGetLogsBlockDepths(testResult.healthyRpcs);
+    }
+
+    const validatorConfig = buildValidatorConfig(blockDepthMap, batchSupportMap, networks);
+
+    writeValidatorConfigFiles(validatorConfig, config.OUTPUT_DIR, networks);
+
+    // 7. Display statistics
     statsCollector.display();
 
-    // 9. Optional: commit changes
+    // 8. Optional: commit changes
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
