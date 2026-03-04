@@ -1,267 +1,202 @@
 {
   "arbitrum": {
     "rpcUrls": [
-      "https://arbitrum.drpc.org",
-      "https://arbitrum-one-public.nodies.app",
-      "https://arbitrum-one-rpc.publicnode.com",
-      "https://public-arb-mainnet.fastnode.io",
-      "https://arbitrum.meowrpc.com",
-      "https://arb1.lava.build",
       "https://arbitrum.gateway.tenderly.co",
-      "https://arbitrum.public.blockpi.network/v1/rpc/public",
       "https://rpc.sentio.xyz/arbitrum-one",
-      "https://arb-one.api.pocket.network",
       "https://arbitrum-one.public.blastapi.io",
       "https://arb1.arbitrum.io/rpc",
       "https://arbitrum.rpc.subquery.network/public",
-      "https://arbitrum.api.onfinality.io/public"
+      "https://arbitrum-one-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 49921,
+    "maxBatchSize": 1000,
     "chainSelector": 42161,
     "chainId": "42161"
   },
   "ethereum": {
     "rpcUrls": [
-      "https://cloudflare-eth.com",
-      "https://eth.drpc.org",
       "https://api-ethereum-mainnet-reth.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://go.getblock.io/aefd01aa907c4805ba3c00a9e5b48c6b",
-      "https://eth1.lava.build",
-      "https://eth-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://ethereum-json-rpc.stakely.io",
-      "https://ethereum-mainnet.gateway.tatum.io",
-      "https://ethereum-rpc.publicnode.com",
-      "https://ethereum-public.nodies.app",
       "https://mainnet.gateway.tenderly.co",
-      "https://0xrpc.io/eth",
       "https://gateway.tenderly.co/public/mainnet",
-      "https://ethereum.public.blockpi.network/v1/rpc/public",
       "https://eth.blockrazor.xyz",
       "https://rpc.eth.gateway.fm",
       "https://rpc.mevblocker.io/noreverts",
       "https://rpc.mevblocker.io/fullprivacy",
       "https://rpc.mevblocker.io/fast",
-      "https://rpc.fullsend.to",
       "https://eth-mainnet.public.blastapi.io",
-      "https://eth.merkle.io",
-      "https://uk.rpc.blxrbdn.com",
-      "https://eth.llamarpc.com",
-      "https://rpc.flashbots.net/fast",
       "https://rpc.mevblocker.io",
       "https://rpc.sentio.xyz/mainnet",
-      "https://eth.rpc.blxrbdn.com",
-      "https://singapore.rpc.blxrbdn.com",
-      "https://virginia.rpc.blxrbdn.com",
-      "https://eth.api.pocket.network",
-      "https://rpc.flashbots.net",
-      "https://eth.api.onfinality.io/public",
-      "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7",
-      "https://ethereum.rpc.subquery.network/public"
+      "https://ethereum.rpc.subquery.network/public",
+      "https://eth-mainnet.nodereal.io/v1/1659dfb40aa24bbb8153a677b98064d7"
     ],
+    "getLogsBlockDepth": 21484,
+    "maxBatchSize": 1000,
     "chainSelector": 1,
     "chainId": "1"
   },
   "polygon": {
     "rpcUrls": [
-      "https://go.getblock.io/02667b699f05444ab2c64f9bff28f027",
-      "https://gateway.tenderly.co/public/polygon",
-      "https://polygon-bor-rpc.publicnode.com",
       "https://polygon.gateway.tenderly.co",
-      "https://polygon.lava.build",
-      "https://polygon.meowrpc.com",
+      "https://gateway.tenderly.co/public/polygon",
       "https://rpc.sentio.xyz/matic",
-      "https://polygon-mainnet.g.alchemy.com/v2/demo",
-      "https://polygon.drpc.org",
-      "https://poly.api.pocket.network",
-      "https://polygon-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://polygon.rpc.subquery.network/public",
-      "https://polygon.api.onfinality.io/public",
-      "https://rpc-mainnet.matic.quiknode.pro"
+      "https://polygon-mainnet.g.alchemy.com/v2/demo"
     ],
+    "getLogsBlockDepth": 3937,
+    "maxBatchSize": 100,
     "chainSelector": 137,
     "chainId": "137"
   },
   "optimism": {
     "rpcUrls": [
-      "https://optimism.drpc.org",
       "https://gateway.tenderly.co/public/optimism",
       "https://go.getblock.io/e8a75f8dcf614861becfbcb185be6eb4",
-      "https://optimism-rpc.publicnode.com",
-      "https://public-op-mainnet.fastnode.io",
-      "https://optimism.public.blockpi.network/v1/rpc/public",
-      "https://optimism-public.nodies.app",
       "https://optimism.gateway.tenderly.co",
-      "https://optimism.meowrpc.com",
-      "https://rpc.sentio.xyz/optimism",
       "https://optimism-mainnet.gateway.tatum.io",
-      "https://mainnet.optimism.io",
-      "https://optimism.api.onfinality.io/public",
-      "https://optimism.rpc.subquery.network/public"
+      "https://optimism.rpc.subquery.network/public",
+      "https://rpc.sentio.xyz/optimism",
+      "https://optimism-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 10,
     "chainId": "10"
   },
   "avalanche": {
     "rpcUrls": [
-      "https://api.avax.network/ext/bc/C/rpc",
-      "https://avalanche-public.nodies.app/ext/bc/C/rpc",
-      "https://avalanche-c-chain-rpc.publicnode.com",
       "https://avalanche-mainnet.gateway.tenderly.co",
-      "https://avax.meowrpc.com",
       "https://avax.api.pocket.network",
       "https://rpc.sentio.xyz/avalanche",
-      "https://avalanche.drpc.org",
       "https://spectrum-01.simplystaking.xyz/avalanche-mn-rpc/ext/bc/C/rpc",
+      "https://avalanche-c-chain-rpc.publicnode.com",
       "https://avalanche.api.onfinality.io/public/ext/bc/C/rpc"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 390,
     "chainSelector": 43114,
     "chainId": "43114"
   },
   "base": {
     "rpcUrls": [
-      "https://base.drpc.org",
       "https://gateway.tenderly.co/public/base",
-      "https://base-rpc.publicnode.com",
-      "https://base.public.blockpi.network/v1/rpc/public",
-      "https://base-public.nodies.app",
-      "https://base.lava.build",
       "https://base.gateway.tenderly.co",
       "https://rpc.sentio.xyz/base",
-      "https://developer-access-mainnet.base.org",
       "https://base-mainnet.public.blastapi.io",
-      "https://base.api.pocket.network",
-      "https://mainnet.base.org",
-      "https://api-base-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://base.llamarpc.com",
       "https://base.rpc.blxrbdn.com",
+      "https://base-rpc.publicnode.com",
+      "https://api-base-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://base.rpc.subquery.network/public"
     ],
+    "getLogsBlockDepth": 43906,
+    "maxBatchSize": 471,
     "chainSelector": 8453,
     "chainId": "8453"
   },
   "bsc": {
     "rpcUrls": [
-      "https://bsc.drpc.org",
-      "https://go.getblock.io/cc778cdbdf5c4b028ec9456e0e6c0cf3",
-      "https://bsc.rpc.blxrbdn.com",
-      "https://bsc.api.pocket.network",
-      "https://rpc-bsc.48.club",
-      "https://bsc-rpc.publicnode.com",
-      "https://bsc-mainnet.rpcfast.com?api_key=xbhWBI1Wkguk8SNMu1bvvLurPGLXmgwYeC4S6g2H7WdwFigZSmPWVZRxrskEQwIf",
-      "https://binance-smart-chain-public.nodies.app",
-      "https://public-bsc-mainnet.fastnode.io",
-      "https://0.48.club",
-      "https://public-bsc.nownodes.io",
       "https://rpc.sentio.xyz/bsc",
-      "https://bsc-mainnet.public.blastapi.io",
-      "https://bsc.blockrazor.xyz",
-      "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
-      "https://bsc-dataseed1.ninicoin.io",
-      "https://bsc-dataseed4.ninicoin.io",
-      "https://bsc-dataseed2.ninicoin.io",
-      "https://bsc-dataseed3.ninicoin.io",
-      "https://bsc-dataseed3.bnbchain.org",
-      "https://binance.nodereal.io",
-      "https://bsc-dataseed.bnbchain.org",
-      "https://bsc-dataseed2.bnbchain.org",
-      "https://bsc-dataseed1.bnbchain.org",
-      "https://bsc-dataseed4.bnbchain.org",
-      "https://binance.llamarpc.com",
-      "https://bsc-dataseed2.defibit.io",
-      "https://bsc-dataseed1.defibit.io",
       "https://bnb.api.onfinality.io/public",
-      "https://bsc-dataseed4.defibit.io",
-      "https://bnb.rpc.subquery.network/public",
-      "https://bsc-dataseed3.defibit.io"
+      "https://bsc.blockrazor.xyz",
+      "https://bsc.rpc.blxrbdn.com",
+      "https://bsc-rpc.publicnode.com",
+      "https://public-bsc.nownodes.io",
+      "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://rpc-bsc.48.club",
+      "https://0.48.club"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 100,
     "chainSelector": 56,
     "chainId": "56"
   },
   "gnosis": {
     "rpcUrls": [
-      "https://gnosis-public.nodies.app",
-      "https://gnosis-rpc.publicnode.com",
-      "https://public-gno-mainnet.fastnode.io",
-      "https://gnosis.api.pocket.network",
       "https://rpc.gnosis.gateway.fm",
-      "https://gnosis.drpc.org",
       "https://rpc.ap-southeast-1.gateway.fm/v4/gnosis/non-archival/mainnet",
-      "https://gnosis.oat.farm",
       "https://rpc.gnosischain.com",
-      "https://gnosis.api.onfinality.io/public"
+      "https://gnosis-rpc.publicnode.com",
+      "https://gnosis.api.onfinality.io/public",
+      "https://gnosis.oat.farm"
     ],
+    "getLogsBlockDepth": 50000,
+    "maxBatchSize": 128,
     "chainSelector": 100,
     "chainId": "100"
   },
   "shibarium": {
     "rpcUrls": [
-      "https://shibarium.drpc.org",
-      "https://rpc.shibarium.shib.io"
+      "https://rpc.shibarium.shib.io",
+      "https://shibarium.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 100,
     "chainSelector": 109,
     "chainId": "109"
   },
   "sonic": {
     "rpcUrls": [
-      "https://api-sonic-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://rpc.soniclabs.com",
-      "https://sonic-rpc.publicnode.com",
-      "https://rpc.sentio.xyz/sonic-mainnet",
+      "https://api-sonic-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://sonic-json-rpc.stakely.io",
-      "https://sonic.drpc.org",
-      "https://sonic.api.pocket.network",
-      "https://sonic.api.onfinality.io/public"
+      "https://sonic-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 50000,
+    "maxBatchSize": 18,
     "chainSelector": 146,
     "chainId": "146"
   },
   "hashkey": {
     "rpcUrls": [
-      "https://hashkey.drpc.org",
       "https://mainnet.hsk.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 177,
     "chainId": "177"
   },
   "xlayer": {
     "rpcUrls": [
-      "https://rpc.xlayer.tech",
-      "https://rpc.sentio.xyz/xlayer-mainnet",
-      "https://xlayer.drpc.org",
       "https://flap-xlayer.rpc.blxrbdn.com",
       "https://okx-xlayer.rpc.blxrbdn.com",
       "https://xlayer.rpc.blxrbdn.com",
-      "https://xlayerrpc.okx.com"
+      "https://rpc.sentio.xyz/xlayer-mainnet",
+      "https://rpc.xlayer.tech"
     ],
+    "getLogsBlockDepth": 4750,
+    "maxBatchSize": 10,
     "chainSelector": 196,
     "chainId": "196"
   },
   "bsquared": {
     "rpcUrls": [
-      "https://rpc.ankr.com/b2",
-      "https://b2-mainnet.alt.technology",
+      "https://rpc.bsquared.network",
       "https://mainnet.b2-rpc.com",
-      "https://rpc.bsquared.network"
+      "https://b2-mainnet.alt.technology"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 223,
     "chainId": "223"
   },
   "lens": {
     "rpcUrls": [
+      "https://light-icy-dinghy.lens-mainnet.quiknode.pro",
       "https://rpc.lens.xyz",
-      "https://lens.drpc.org",
-      "https://light-icy-dinghy.lens-mainnet.quiknode.pro"
+      "https://lens.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 232,
     "chainId": "232"
   },
   "fraxtal": {
     "rpcUrls": [
-      "https://rpc.frax.com",
-      "https://fraxtal-rpc.publicnode.com",
       "https://fraxtal.gateway.tenderly.co",
-      "https://fraxtal.drpc.org",
-      "https://fraxtal.api.pocket.network"
+      "https://fraxtal.api.pocket.network",
+      "https://fraxtal-rpc.publicnode.com",
+      "https://rpc.frax.com"
     ],
+    "getLogsBlockDepth": 50000,
+    "maxBatchSize": 250,
     "chainSelector": 252,
     "chainId": "252"
   },
@@ -269,90 +204,94 @@
     "rpcUrls": [
       "https://kroma.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 255,
     "chainId": "255"
   },
   "hedera": {
     "rpcUrls": [
       "https://hedera.linkpool.pro",
-      "https://mainnet.hashio.io/api",
-      "https://295.rpc.thirdweb.com"
+      "https://295.rpc.thirdweb.com",
+      "https://mainnet.hashio.io/api"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 295,
     "chainId": "295"
   },
   "zksync": {
     "rpcUrls": [
       "https://api-zksync-era-mainnet-full.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://zksync.meowrpc.com",
-      "https://zksync.drpc.org",
-      "https://mainnet.era.zksync.io",
-      "https://rpc.ankr.com/zksync_era",
+      "https://zksync.api.onfinality.io/public",
       "https://zksync-era.api.pocket.network",
-      "https://zksync.api.onfinality.io/public"
+      "https://mainnet.era.zksync.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 10,
     "chainSelector": 324,
     "chainId": "324"
   },
   "worldchain": {
     "rpcUrls": [
-      "https://worldchain.drpc.org",
       "https://worldchain-mainnet.g.alchemy.com/public",
       "https://worldchain-mainnet.gateway.tenderly.co",
-      "https://480.rpc.thirdweb.com",
       "https://sparkling-autumn-dinghy.worldchain-mainnet.quiknode.pro"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 5,
     "chainSelector": 480,
     "chainId": "480"
   },
   "astar": {
     "rpcUrls": [
-      "https://astar.public.curie.radiumblock.co/ws",
       "https://astar.public.curie.radiumblock.co/http",
-      "https://astar.api.onfinality.io/public",
+      "https://astar.public.curie.radiumblock.co/ws",
       "https://evm.astar.network"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1000,
     "chainSelector": 592,
     "chainId": "592"
   },
   "metis": {
     "rpcUrls": [
-      "https://metis-public.nodies.app",
       "https://metis-andromeda.gateway.tenderly.co",
-      "https://metis.drpc.org",
       "https://andromeda.metis.io/?owner=1088",
-      "https://metis-rpc.publicnode.com",
-      "https://metis-andromeda.rpc.thirdweb.com",
-      "https://metis.api.onfinality.io/public"
+      "https://metis-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 1088,
     "chainId": "1088"
   },
   "polygonZkevm": {
     "rpcUrls": [
       "https://rpc.sentio.xyz/polygon-zkevm",
-      "https://polygon-zkevm-public.nodies.app",
-      "https://zkevm-rpc.com",
-      "https://polygon-zkevm.drpc.org"
+      "https://zkevm-rpc.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 1101,
     "chainId": "1101"
   },
   "wemix": {
     "rpcUrls": [
-      "https://wemix.drpc.org",
-      "https://api.wemix.com"
+      "https://api.wemix.com",
+      "https://wemix.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 1111,
     "chainId": "1111"
   },
   "core": {
     "rpcUrls": [
       "https://rpc-core.icecreamswap.com",
-      "https://core.drpc.org",
-      "https://rpc.coredao.org",
-      "https://rpc.ankr.com/core"
+      "https://rpc.coredao.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 7,
     "chainSelector": 1116,
     "chainId": "1116"
   },
@@ -362,16 +301,20 @@
       "https://rpc.soneium.org",
       "https://soneium.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 1868,
     "chainId": "1868"
   },
   "ronin": {
     "rpcUrls": [
       "https://api-ronin-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://ronin.drpc.org",
       "https://ronin.lgns.net/rpc",
+      "https://ronin.drpc.org",
       "https://api.roninchain.com/rpc"
     ],
+    "getLogsBlockDepth": 493,
+    "maxBatchSize": 3,
     "chainSelector": 2020,
     "chainId": "2020"
   },
@@ -380,6 +323,8 @@
       "https://rpc.botanixlabs.com",
       "https://rpc.ankr.com/botanix_mainnet"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 3637,
     "chainId": "3637"
   },
@@ -389,60 +334,64 @@
       "https://merlin.blockpi.network/v1/rpc/public",
       "https://merlin.drpc.org"
     ],
+    "getLogsBlockDepth": 10,
+    "maxBatchSize": 3,
     "chainSelector": 4200,
     "chainId": "4200"
   },
   "mantle": {
     "rpcUrls": [
       "https://api-mantle-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://rpc.mantle.xyz",
       "https://mantle-rpc.publicnode.com",
-      "https://mantle-public.nodies.app",
-      "https://mantle.drpc.org",
-      "https://mantle.api.onfinality.io/public"
+      "https://mantle.api.onfinality.io/public",
+      "https://rpc.mantle.xyz"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 100,
     "chainSelector": 5000,
     "chainId": "5000"
   },
   "kaia": {
     "rpcUrls": [
-      "https://kaia-public.nodies.app",
-      "https://kaia.api.pocket.network",
       "https://go.getblock.io/d7094dbd80ab474ba7042603fe912332",
-      "https://klaytn.drpc.org",
-      "https://rpc.ankr.com/kaia",
-      "https://kaia.blockpi.network/v1/rpc/public",
       "https://public-en.node.kaia.io",
+      "https://kaia.api.pocket.network",
       "https://klaytn.api.onfinality.io/public"
     ],
+    "getLogsBlockDepth": 4187,
+    "maxBatchSize": 10,
     "chainSelector": 8217,
     "chainId": "8217"
   },
   "mode": {
     "rpcUrls": [
       "https://rpc.sentio.xyz/mode-mainnet",
-      "https://mode.drpc.org",
-      "https://mainnet.mode.network"
+      "https://mainnet.mode.network",
+      "https://mode.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 34443,
     "chainId": "34443"
   },
   "celo": {
     "rpcUrls": [
-      "https://forno.celo.org",
-      "https://celo.drpc.org",
-      "https://rpc.ankr.com/celo",
       "https://celo-json-rpc.stakely.io",
-      "https://celo.api.onfinality.io/public"
+      "https://celo.api.onfinality.io/public",
+      "https://forno.celo.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 10,
     "chainSelector": 42220,
     "chainId": "42220"
   },
   "hemi": {
     "rpcUrls": [
-      "https://hemi.drpc.org",
-      "https://rpc.hemi.network/rpc"
+      "https://rpc.hemi.network/rpc",
+      "https://hemi.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 43111,
     "chainId": "43111"
   },
@@ -451,28 +400,30 @@
       "https://rpc.sentio.xyz/zircuit",
       "https://mainnet.zircuit.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 100,
     "chainSelector": 48900,
     "chainId": "48900"
   },
   "ink": {
     "rpcUrls": [
-      "https://rpc-gel.inkonchain.com",
       "https://ink.api.pocket.network",
-      "https://ink-public.nodies.app",
-      "https://ink.drpc.org",
+      "https://rpc-gel.inkonchain.com",
       "https://rpc-qnd.inkonchain.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 10,
     "chainSelector": 57073,
     "chainId": "57073"
   },
   "linea": {
     "rpcUrls": [
-      "https://linea.drpc.org",
       "https://rpc.sentio.xyz/linea",
       "https://rpc.linea.build",
-      "https://linea-rpc.publicnode.com",
-      "https://linea.api.pocket.network"
+      "https://linea-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 50000,
+    "maxBatchSize": 3,
     "chainSelector": 59144,
     "chainId": "59144"
   },
@@ -480,98 +431,99 @@
     "rpcUrls": [
       "https://bob.gateway.tenderly.co",
       "https://rpc.sentio.xyz/bob",
-      "https://bob.drpc.org",
       "https://rpc.gobob.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 100,
     "chainSelector": 60808,
     "chainId": "60808"
   },
   "berachain": {
     "rpcUrls": [
+      "https://rpc.sentio.xyz/berachain",
       "https://berachain-rpc.publicnode.com",
       "https://rpc.berachain-apis.com",
-      "https://rpc.sentio.xyz/berachain",
-      "https://berachain.drpc.org",
       "https://rpc.berachain.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 485,
     "chainSelector": 80094,
     "chainId": "80094"
   },
   "blast": {
     "rpcUrls": [
-      "https://blast-public.nodies.app",
-      "https://blast-rpc.publicnode.com",
       "https://blast.gateway.tenderly.co",
       "https://rpc.sentio.xyz/blast-mainnet",
       "https://api-blast-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://blast.drpc.org",
-      "https://blast.api.pocket.network",
-      "https://rpc.blast.io",
-      "https://blast.din.dev/rpc"
+      "https://blast-rpc.publicnode.com"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 81457,
     "chainId": "81457"
   },
   "plume": {
     "rpcUrls": [
-      "https://plume.drpc.org",
       "https://rpc.plume.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 3,
     "chainSelector": 98866,
     "chainId": "98866"
   },
   "taiko": {
     "rpcUrls": [
-      "https://taiko.api.pocket.network",
-      "https://taiko-rpc.publicnode.com",
       "https://rpc.mainnet.taiko.xyz",
       "https://rpc.taiko.xyz",
-      "https://taiko.drpc.org",
-      "https://taiko-json-rpc.stakely.io",
       "https://taiko-mainnet.gateway.tenderly.co",
-      "https://rpc.ankr.com/taiko"
+      "https://taiko-rpc.publicnode.com",
+      "https://taiko-json-rpc.stakely.io"
     ],
+    "getLogsBlockDepth": 27421,
+    "maxBatchSize": 91,
     "chainSelector": 167000,
     "chainId": "167000"
   },
   "bitlayer": {
     "rpcUrls": [
-      "https://rpc.ankr.com/bitlayer",
-      "https://rpc.bitlayer.org",
-      "https://rpc.bitlayer-rpc.com",
       "https://rpc-bitlayer.rockx.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 200901,
     "chainId": "200901"
   },
   "scroll": {
     "rpcUrls": [
-      "https://scroll.drpc.org",
-      "https://scroll.api.pocket.network",
       "https://scroll-rpc.publicnode.com",
+      "https://scroll.api.pocket.network",
       "https://scroll-public.nodies.app",
-      "https://rpc.scroll.io",
-      "https://scroll.api.onfinality.io/public"
+      "https://scroll.api.onfinality.io/public",
+      "https://rpc.scroll.io"
     ],
+    "getLogsBlockDepth": 493,
+    "maxBatchSize": 10,
     "chainSelector": 534352,
     "chainId": "534352"
   },
   "katana": {
     "rpcUrls": [
-      "https://rpc.katana.network",
-      "https://katana.drpc.org",
       "https://katana.gateway.tenderly.co",
-      "https://rpc.katanarpc.com"
+      "https://rpc.katanarpc.com",
+      "https://rpc.katana.network"
     ],
+    "getLogsBlockDepth": 29921,
+    "maxBatchSize": 1000,
     "chainSelector": 747474,
     "chainId": "747474"
   },
   "corn": {
     "rpcUrls": [
-      "https://rpc.ankr.com/corn_maizenet",
       "https://maizenet-rpc.usecorn.com",
       "https://mainnet.corn-rpc.com"
     ],
+    "getLogsBlockDepth": 943,
+    "maxBatchSize": 10,
     "chainSelector": 2100000,
     "chainId": "21000000"
   },
@@ -579,37 +531,35 @@
     "rpcUrls": [
       "https://api.s0.t.hmny.io",
       "https://a.api.s0.t.hmny.io",
-      "https://api.harmony.one",
-      "https://harmony.api.pocket.network",
-      "https://harmony-0.drpc.org"
+      "https://api.harmony.one"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1000,
     "chainSelector": 1666600,
     "chainId": "1666600000"
   },
   "monad": {
     "rpcUrls": [
-      "https://monad-mainnet.drpc.org",
-      "https://rpc-mainnet.monadinfra.com",
       "https://monad.rpc.blxrbdn.com",
+      "https://monad-mainnet.drpc.org",
       "https://rpc.sentio.xyz/monad-mainnet",
       "https://rpc1.monad.xyz",
-      "https://rpc2.monad.xyz",
-      "https://rpc3.monad.xyz",
       "https://monad-mainnet.api.onfinality.io/public",
-      "https://monad-rpc.huginn.tech",
-      "https://rpc4.monad.xyz",
-      "https://rpc.monad.xyz"
+      "https://monad-rpc.huginn.tech"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 18,
     "chainSelector": 143,
     "chainId": "143"
   },
   "rootstock": {
     "rpcUrls": [
-      "https://rpc.mainnet.rootstock.io/5aEAfl6bC8CbaniczdROEU1MHfS3gn-M",
-      "https://rootstock.drpc.org",
       "https://mycrypto.rsk.co",
-      "https://public-node.rsk.co"
+      "https://public-node.rsk.co",
+      "https://rootstock.drpc.org"
     ],
+    "getLogsBlockDepth": 0,
+    "maxBatchSize": 3,
     "chainSelector": 30,
     "chainId": "30"
   },
@@ -617,6 +567,8 @@
     "rpcUrls": [
       "https://rpc.orderly.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 200,
     "chainSelector": 291,
     "chainId": "291"
   },
@@ -626,6 +578,8 @@
       "https://api.infra.mainnet.somnia.network",
       "https://rpc.ankr.com/somnia_mainnet"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 5031,
     "chainId": "5031"
   },
@@ -633,6 +587,8 @@
     "rpcUrls": [
       "https://emerald.oasis.io"
     ],
+    "getLogsBlockDepth": 100,
+    "maxBatchSize": 1000,
     "chainSelector": 42262,
     "chainId": "42262"
   },
@@ -640,15 +596,18 @@
     "rpcUrls": [
       "https://evmrpc.0g.ai"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 50,
     "chainSelector": 16661,
     "chainId": "16661"
   },
   "viction": {
     "rpcUrls": [
-      "https://viction.drpc.org",
-      "https://viction.blockpi.network/v1/rpc/public",
-      "https://rpc.viction.xyz"
+      "https://rpc.viction.xyz",
+      "https://viction.blockpi.network/v1/rpc/public"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 3,
     "chainSelector": 88,
     "chainId": "88"
   },
@@ -657,6 +616,8 @@
       "https://oraichain-mainnet-evm.itrocket.net",
       "https://evm.orai.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 1081606,
     "chainId": "108160679"
   },
@@ -665,47 +626,47 @@
       "https://evmapi2.nuls.io",
       "https://evmapi.nuls.io"
     ],
+    "getLogsBlockDepth": 0,
+    "maxBatchSize": 18,
     "chainSelector": 119,
     "chainId": "119"
   },
   "hyperevm": {
     "rpcUrls": [
-      "https://rpc.hypurrscan.io",
-      "https://hyperliquid.drpc.org",
-      "https://rpc.hyperliquid.xyz/evm",
-      "https://hyperliquid-json-rpc.stakely.io",
-      "https://rpc.hyperlend.finance",
-      "https://rpc.countzero.xyz/evm",
       "https://hyperliquid.api.onfinality.io/evm/public",
-      "https://hyperliquid.rpc.blxrbdn.com",
-      "https://gwan-ssl.wandevs.org:46891"
+      "https://gwan-ssl.wandevs.org:46891",
+      "https://rpc.hyperlend.finance",
+      "https://hyperliquid-json-rpc.stakely.io",
+      "https://rpc.hypurrscan.io",
+      "https://hyperliquid.rpc.blxrbdn.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 20,
     "chainSelector": 999,
     "chainId": "999"
   },
   "cronos": {
     "rpcUrls": [
-      "https://cronos.drpc.org",
+      "https://rpc.sentio.xyz/cronos",
+      "https://api-cronos-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://cronos-evm-rpc.publicnode.com",
       "https://evm.cronos.org",
-      "https://rpc.sentio.xyz/cronos",
-      "https://rpc.vvs.finance",
-      "https://api-cronos-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c"
+      "https://rpc.vvs.finance"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 10,
     "chainSelector": 25,
     "chainId": "25"
   },
   "kava": {
     "rpcUrls": [
       "https://kava-evm-rpc.publicnode.com",
-      "https://kava-public.nodies.app",
-      "https://kava.drpc.org",
-      "https://kava.api.pocket.network",
-      "https://rpc.ankr.com/kava_evm",
       "https://evm.kava-rpc.com",
       "https://kava.api.onfinality.io/public",
       "https://evm.kava.io"
     ],
+    "getLogsBlockDepth": 3500,
+    "maxBatchSize": 50,
     "chainSelector": 2222,
     "chainId": "2222"
   },
@@ -713,86 +674,92 @@
     "rpcUrls": [
       "https://unichain-rpc.publicnode.com",
       "https://rpc.sentio.xyz/unichain-mainnet",
-      "https://unichain.drpc.org",
-      "https://mainnet.unichain.org",
-      "https://unichain.api.onfinality.io/public"
+      "https://unichain.api.onfinality.io/public",
+      "https://mainnet.unichain.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 10,
     "chainSelector": 130,
     "chainId": "130"
   },
   "mantapacific": {
     "rpcUrls": [
-      "https://manta-pacific.drpc.org",
       "https://manta-pacific-gascap.calderachain.xyz/http",
       "https://manta-pacific.calderachain.xyz/http",
       "https://pacific-rpc.manta.network/http",
       "https://r1.pacific.manta.systems/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 169,
     "chainId": "169"
   },
   "moonbeam": {
     "rpcUrls": [
       "https://moonbeam-rpc.publicnode.com",
-      "https://rpc.api.moonbeam.network",
-      "https://moonbeam.drpc.org",
       "https://moonbeam.api.onfinality.io/public",
-      "https://moonbeam.api.pocket.network",
-      "https://moonbeam.public.curie.radiumblock.co/ws"
+      "https://rpc.api.moonbeam.network",
+      "https://moonbeam.drpc.org"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 1284,
     "chainId": "1284"
   },
   "aurora": {
     "rpcUrls": [
-      "https://aurora.drpc.org",
-      "https://mainnet.aurora.dev"
+      "https://mainnet.aurora.dev",
+      "https://aurora.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 1313161,
     "chainId": "1313161554"
   },
   "sei": {
     "rpcUrls": [
-      "https://sei-public.nodies.app",
-      "https://sei-evm-rpc.stakeme.pro",
       "https://evm-rpc.sei-apis.com",
-      "https://sei.drpc.org",
-      "https://sei.api.pocket.network"
+      "https://sei-evm-rpc.stakeme.pro"
     ],
+    "getLogsBlockDepth": 1625,
+    "maxBatchSize": 1000,
     "chainSelector": 1329,
     "chainId": "1329"
   },
   "plasma": {
     "rpcUrls": [
-      "https://plasma.drpc.org",
       "https://plasma.api.onfinality.io/public",
-      "https://rpc.plasma.to"
+      "https://rpc.plasma.to",
+      "https://plasma.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 9745,
     "chainId": "9745"
   },
   "opBnb": {
     "rpcUrls": [
-      "https://opbnb-rpc.publicnode.com",
       "https://opbnb.api.pocket.network",
-      "https://opbnb.drpc.org",
+      "https://opbnb-rpc.publicnode.com",
       "https://opbnb-mainnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5",
-      "https://opbnb-mainnet-rpc.bnbchain.org",
-      "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3"
+      "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://opbnb-mainnet-rpc.bnbchain.org"
     ],
+    "getLogsBlockDepth": 49921,
+    "maxBatchSize": 100,
     "chainSelector": 204,
     "chainId": "204"
   },
   "pulseChain": {
     "rpcUrls": [
       "https://rpc.pulsechain.com",
-      "https://pulsechain-rpc.publicnode.com",
       "https://rpc-pulsechain.g4mm4.io",
       "https://rpc.pulsechainrpc.com",
       "https://rpc.gigatheminter.com",
-      "https://rpc.hairylabs.io",
       "https://rpc.pulsechainstats.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 369,
     "chainId": "369"
   },
@@ -805,6 +772,8 @@
       "https://rpc02-sg.dogechain.dog",
       "https://rpc03-sg.dogechain.dog"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 10,
     "chainSelector": 2000,
     "chainId": "2000"
   },
@@ -812,22 +781,23 @@
     "rpcUrls": [
       "https://gateway.tenderly.co/public/boba-ethereum",
       "https://boba-ethereum.gateway.tenderly.co",
-      "https://boba.api.pocket.network",
       "https://api-boba-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://boba-eth.drpc.org",
+      "https://boba.api.pocket.network",
       "https://mainnet.boba.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 10,
     "chainSelector": 288,
     "chainId": "288"
   },
   "fuse": {
     "rpcUrls": [
-      "https://fuse.api.pocket.network",
       "https://rpc.fuse.io",
-      "https://fuse-public.nodies.app",
-      "https://fuse.drpc.org",
-      "https://fuse.liquify.com"
+      "https://fuse.liquify.com",
+      "https://fuse.api.pocket.network"
     ],
+    "getLogsBlockDepth": 4937,
+    "maxBatchSize": 998,
     "chainSelector": 122,
     "chainId": "122"
   },
@@ -836,75 +806,81 @@
       "https://injectiveevm-rpc.polkachu.com",
       "https://sentry.evm-rpc.injective.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 25,
     "chainSelector": 1776,
     "chainId": "1776"
   },
   "abstract": {
     "rpcUrls": [
+      "https://abstract.api.onfinality.io/public",
       "https://api.mainnet.abs.xyz",
-      "https://abstract.drpc.org",
-      "https://abstract.api.onfinality.io/public"
+      "https://abstract.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 2741,
     "chainId": "2741"
   },
   "flareNetwork": {
     "rpcUrls": [
       "https://flare-mainnet.gateway.tatum.io",
-      "https://flare-api.flare.network/ext/C/rpc",
-      "https://flare.rpc.thirdweb.com",
       "https://rpc.au.cc/flare",
-      "https://rpc.ankr.com/flare"
+      "https://flare.rpc.thirdweb.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1000,
     "chainSelector": 14,
     "chainId": "14"
   },
   "apeChain": {
     "rpcUrls": [
-      "https://apechain.drpc.org",
-      "https://rpc.apechain.com"
+      "https://rpc.apechain.com",
+      "https://apechain.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 33139,
     "chainId": "33139"
   },
   "ioTex": {
     "rpcUrls": [
+      "https://iotex.api.onfinality.io/public",
       "https://api-iotex-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
       "https://babel-api.mainnet.iotex.one",
       "https://babel-api.mainnet.iotex.io",
-      "https://babel-api.fastblocks.io",
-      "https://iotex.api.onfinality.io/public",
-      "https://iotex-network.rpc.thirdweb.com"
+      "https://babel-api.fastblocks.io"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 100,
     "chainSelector": 4689,
     "chainId": "4689"
   },
   "xdcNetwork": {
     "rpcUrls": [
       "https://api-xdc-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://erpc.xdcrpc.com",
-      "https://rpc.xdcrpc.com",
       "https://rpc.xdc.network",
       "https://erpc.xinfin.network",
       "https://earpc.xinfin.network",
       "https://rpc.xinfin.network",
       "https://rpc1.xinfin.network",
-      "https://rpc.ankr.com/xdc",
-      "https://rpc.xdc.org"
+      "https://rpc.xdc.org",
+      "https://erpc.xdcrpc.com",
+      "https://rpc.xdcrpc.com"
     ],
+    "getLogsBlockDepth": 29921,
+    "maxBatchSize": 1000,
     "chainSelector": 50,
     "chainId": "50"
   },
   "filecoin": {
     "rpcUrls": [
-      "https://filecoin.drpc.org",
-      "https://api.node.glif.io",
-      "https://api.chain.love/rpc/v1",
-      "https://rpc.ankr.com/filecoin",
       "https://filecoin.chainup.net/rpc/v1",
-      "https://filecoin.lava.build",
-      "https://filfox.info/rpc/v1"
+      "https://filfox.info/rpc/v1",
+      "https://rpc.ankr.com/filecoin"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 314,
     "chainId": "314"
   },
@@ -913,15 +889,18 @@
       "https://canto-rpc.ansybl.io",
       "https://canto.gravitychain.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 632,
     "chainSelector": 7700,
     "chainId": "7700"
   },
   "evmos": {
     "rpcUrls": [
       "https://evmos-evm-rpc.publicnode.com",
-      "https://evmos.drpc.org",
       "https://evmos.api.onfinality.io/public"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 9001,
     "chainId": "9001"
   },
@@ -929,15 +908,19 @@
     "rpcUrls": [
       "https://mainnet.evm.nodes.onflow.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 48,
     "chainSelector": 747,
     "chainId": "747"
   },
   "conflux": {
     "rpcUrls": [
-      "https://conflux-espace.blockpi.network/v1/rpc/public",
+      "https://evm.confluxrpc.com",
       "https://conflux-espace-public.unifra.io",
-      "https://evm.confluxrpc.com"
+      "https://conflux-espace.blockpi.network/v1/rpc/public"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 5,
     "chainSelector": 1030,
     "chainId": "1030"
   },
@@ -946,6 +929,8 @@
       "https://node.mainnet.etherlink.com",
       "https://rpc.ankr.com/etherlink_mainnet"
     ],
+    "getLogsBlockDepth": 437,
+    "maxBatchSize": 10,
     "chainSelector": 42793,
     "chainId": "42793"
   },
@@ -954,15 +939,19 @@
       "https://rpc.morphl2.io",
       "https://rpc-quicknode.morphl2.io"
     ],
+    "getLogsBlockDepth": 4937,
+    "maxBatchSize": 20,
     "chainSelector": 2818,
     "chainId": "2818"
   },
   "bittorrent": {
     "rpcUrls": [
-      "https://bittorrent.drpc.org",
       "https://rpc.bt.io",
-      "https://rpc.bittorrentchain.io"
+      "https://rpc.bittorrentchain.io",
+      "https://bittorrent.drpc.org"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 199,
     "chainId": "199"
   },
@@ -970,6 +959,8 @@
     "rpcUrls": [
       "https://mainnet.ethereumpow.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 10001,
     "chainId": "10001"
   },
@@ -979,6 +970,8 @@
       "https://rpc.api.lisk.com",
       "https://lisk.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 1135,
     "chainId": "1135"
   },
@@ -992,12 +985,13 @@
       "https://evm-rpc.story.silentvalidator.com",
       "https://evm-rpc-archive.story.node75.org",
       "https://lightnode-json-rpc-mainnet-story.grandvalleys.com",
-      "https://rpc.ankr.com/story_mainnet",
       "https://evm.story.cumulo.me",
       "https://story-json-rpc.stakely.io",
       "https://infra.originstake.com/story/evm",
       "https://evm-rpc.story.mainnet.dteam.tech"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1514,
     "chainId": "1514"
   },
@@ -1006,6 +1000,8 @@
       "https://rpc.gravity.xyz",
       "https://rpc.ankr.com/gravity"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 1625,
     "chainId": "1625"
   },
@@ -1013,6 +1009,8 @@
     "rpcUrls": [
       "https://evm-rpc.nibiru.fi"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 6900,
     "chainId": "6900"
   },
@@ -1021,6 +1019,8 @@
       "https://json-rpc.evm.iotaledger.net",
       "https://rpc.ankr.com/iota_evm"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 8822,
     "chainId": "8822"
   },
@@ -1031,6 +1031,8 @@
       "https://serverrpc.com",
       "https://node2.serverrpc.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 32520,
     "chainId": "32520"
   },
@@ -1038,6 +1040,8 @@
     "rpcUrls": [
       "https://rpc.mainnet.taraxa.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 841,
     "chainId": "841"
   },
@@ -1045,14 +1049,18 @@
     "rpcUrls": [
       "https://eth-rpc-acala.aca-api.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 29,
     "chainSelector": 787,
     "chainId": "787"
   },
   "bevm": {
     "rpcUrls": [
-      "https://rpc-canary-1.bevm.io",
-      "https://rpc-canary-2.bevm.io"
+      "https://rpc-canary-2.bevm.io",
+      "https://rpc-canary-1.bevm.io"
     ],
+    "getLogsBlockDepth": 38906,
+    "maxBatchSize": 1000,
     "chainSelector": 1501,
     "chainId": "1501"
   },
@@ -1060,6 +1068,8 @@
     "rpcUrls": [
       "https://rpc.degen.tips"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 6666666,
     "chainId": "666666666"
   },
@@ -1067,14 +1077,18 @@
     "rpcUrls": [
       "https://rpc.edu-chain.raas.gelato.cloud"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 100,
     "chainSelector": 41923,
     "chainId": "41923"
   },
   "xrplevm": {
     "rpcUrls": [
-      "https://xrpl.drpc.org",
-      "https://rpc.xrplevm.org"
+      "https://rpc.xrplevm.org",
+      "https://xrpl.drpc.org"
     ],
+    "getLogsBlockDepth": 9921,
+    "maxBatchSize": 3,
     "chainSelector": 1440000,
     "chainId": "1440000"
   },
@@ -1084,6 +1098,8 @@
       "https://rpc2.bahamut.io",
       "https://rpc.ankr.com/bahamut"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 5165,
     "chainId": "5165"
   },
@@ -1091,6 +1107,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.ailayer.xyz"
     ],
+    "getLogsBlockDepth": 99120,
+    "maxBatchSize": 1000,
     "chainSelector": 2649,
     "chainId": "2649"
   },
@@ -1100,6 +1118,8 @@
       "https://tokyo.fullnode.mainnet.coti.io/rpc",
       "https://virginia.fullnode.mainnet.coti.io/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2632500,
     "chainId": "2632500"
   },
@@ -1107,21 +1127,19 @@
     "rpcUrls": [
       "https://rpc.ankr.com/horizen_eon"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 0,
     "chainSelector": 7332,
     "chainId": "7332"
   },
-  "inevm": {
-    "rpcUrls": [],
-    "chainSelector": 2525,
-    "chainId": "2525"
-  },
   "mezo": {
     "rpcUrls": [
-      "https://mezo.drpc.org",
-      "https://mainnet.mezo.public.validationcloud.io",
       "https://rpc-internal.mezo.org",
+      "https://mainnet.mezo.public.validationcloud.io",
       "https://rpc-http.mezo.boar.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 31612,
     "chainId": "31612"
   },
@@ -1130,6 +1148,8 @@
       "https://rpc.sophon.xyz",
       "https://rpc-quicknode.sophon.xyz"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 20,
     "chainSelector": 50104,
     "chainId": "50104"
   },
@@ -1137,6 +1157,8 @@
     "rpcUrls": [
       "https://rpc.mainnet.ms"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 4158,
     "chainId": "4158"
   },
@@ -1144,6 +1166,8 @@
     "rpcUrls": [
       "https://hk.p.bifrost-rpc.liebi.com"
     ],
+    "getLogsBlockDepth": 144140,
+    "maxBatchSize": 1000,
     "chainSelector": 996,
     "chainId": "996"
   },
@@ -1151,6 +1175,8 @@
     "rpcUrls": [
       "https://evm-api.carbon.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 9790,
     "chainId": "9790"
   },
@@ -1162,6 +1188,8 @@
       "https://rpc3.coinex.net",
       "https://rpc2.coinex.net"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 52,
     "chainId": "52"
   },
@@ -1169,6 +1197,8 @@
     "rpcUrls": [
       "https://rpc-mainnet.findora.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2152,
     "chainId": "2152"
   },
@@ -1176,6 +1206,8 @@
     "rpcUrls": [
       "https://rpc.mintchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 185,
     "chainId": "185"
   },
@@ -1183,6 +1215,8 @@
     "rpcUrls": [
       "https://mainnet.sanko.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1996,
     "chainId": "1996"
   },
@@ -1190,6 +1224,8 @@
     "rpcUrls": [
       "https://fullnode-mainnet.bouncebitapi.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 20,
     "chainSelector": 6001,
     "chainId": "6001"
   },
@@ -1198,17 +1234,19 @@
       "https://rpc.ankr.com/tac",
       "https://rpc.tac.build"
     ],
+    "getLogsBlockDepth": 943,
+    "maxBatchSize": 10,
     "chainSelector": 239,
     "chainId": "239"
   },
   "ethereumClassic": {
     "rpcUrls": [
-      "https://0xrpc.io/etc",
       "https://etc.etcdesktop.com",
       "https://geth-at.etc-network.info",
-      "https://besu-at.etc-network.info",
       "https://etc.rivet.link"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 123,
     "chainSelector": 61,
     "chainId": "61"
   },
@@ -1217,6 +1255,8 @@
       "https://rpc.core.ab.org",
       "https://rpc1.core.ab.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 36888,
     "chainId": "36888"
   },
@@ -1224,6 +1264,8 @@
     "rpcUrls": [
       "https://rpc.alienxchain.io/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 10241024,
     "chainId": "10241024"
   },
@@ -1232,6 +1274,8 @@
       "https://elves-core2.alvey.io",
       "https://elves-core3.alvey.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 3797,
     "chainId": "3797"
   },
@@ -1239,6 +1283,8 @@
     "rpcUrls": [
       "https://rpc.ancient8.gg"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 182,
     "chainSelector": 8888888,
     "chainId": "888888888"
   },
@@ -1255,6 +1301,8 @@
       "https://mainnet-rpc2.areon.network",
       "https://mainnet-rpc.areon.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 463,
     "chainId": "463"
   },
@@ -1262,6 +1310,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.b3.fun"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 8333,
     "chainId": "8333"
   },
@@ -1269,6 +1319,8 @@
     "rpcUrls": [
       "https://rpc.bitkubchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 96,
     "chainId": "96"
   },
@@ -1276,49 +1328,48 @@
     "rpcUrls": [
       "https://rpc.bitnetmoney.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 210,
     "chainId": "210"
-  },
-  "bobaBnb": {
-    "rpcUrls": [],
-    "chainSelector": 56288,
-    "chainId": "56288"
   },
   "callisto": {
     "rpcUrls": [
       "https://rpc.callistodao.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 820,
     "chainId": "820"
   },
   "chiliz": {
     "rpcUrls": [
       "https://api-chiliz-mainnet-archive.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://chiliz.publicnode.com",
       "https://rpc.chiliz.com",
-      "https://rpc.ankr.com/chiliz"
+      "https://chiliz.publicnode.com"
     ],
+    "getLogsBlockDepth": 50000,
+    "maxBatchSize": 1000,
     "chainSelector": 88888,
     "chainId": "88888"
-  },
-  "crab": {
-    "rpcUrls": [],
-    "chainSelector": 44,
-    "chainId": "44"
   },
   "cyber": {
     "rpcUrls": [
       "https://cyber.alt.technology",
       "https://rpc.cyber.co"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 7560,
     "chainId": "7560"
   },
   "darwinia": {
     "rpcUrls": [
-      "https://rpc.darwinia.network",
-      "https://darwinia.rpc.subquery.network/public"
+      "https://darwinia.rpc.subquery.network/public",
+      "https://rpc.darwinia.network"
     ],
+    "getLogsBlockDepth": 249902,
+    "maxBatchSize": 1000,
     "chainSelector": 46,
     "chainId": "46"
   },
@@ -1327,6 +1378,8 @@
       "https://dmc.mydefichain.com/mainnet",
       "https://dmc01.mydefichain.com/mainnet"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 1000,
     "chainSelector": 1130,
     "chainId": "1130"
   },
@@ -1334,6 +1387,8 @@
     "rpcUrls": [
       "https://subnets.avax.network/dexalot/mainnet/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 21,
     "chainSelector": 432204,
     "chainId": "432204"
   },
@@ -1341,25 +1396,29 @@
     "rpcUrls": [
       "https://subnets.avax.network/defi-kingdoms/dfk-chain/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 25,
     "chainSelector": 53935,
     "chainId": "53935"
   },
   "elastos": {
     "rpcUrls": [
-      "https://api.elastos.io/eth",
-      "https://api2.elastos.io/eth",
-      "https://rpc.glidefinance.io",
       "https://api.elastos.io/esc",
-      "https://api2.elastos.io/esc"
+      "https://api2.elastos.io/esc",
+      "https://api.elastos.io/eth"
     ],
+    "getLogsBlockDepth": 4937,
+    "maxBatchSize": 40,
     "chainSelector": 20,
     "chainId": "20"
   },
   "electroneum": {
     "rpcUrls": [
-      "https://rpc.ankr.com/electroneum",
-      "https://rpc.electroneum.com"
+      "https://rpc.electroneum.com",
+      "https://rpc.ankr.com/electroneum"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 52014,
     "chainId": "52014"
   },
@@ -1367,6 +1426,8 @@
     "rpcUrls": [
       "https://rpc-endurance.fusionist.io"
     ],
+    "getLogsBlockDepth": 299902,
+    "maxBatchSize": 1000,
     "chainSelector": 648,
     "chainId": "648"
   },
@@ -1375,6 +1436,8 @@
       "https://nodeapi.energi.network",
       "https://explorer.energi.network/api/eth-rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 5,
     "chainSelector": 39797,
     "chainId": "39797"
   },
@@ -1382,14 +1445,18 @@
     "rpcUrls": [
       "https://rpc.energyweb.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 246,
     "chainId": "246"
   },
   "everclear": {
     "rpcUrls": [
-      "https://everclear.drpc.org",
-      "https://rpc.everclear.raas.gelato.cloud"
+      "https://rpc.everclear.raas.gelato.cloud",
+      "https://everclear.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 25327,
     "chainId": "25327"
   },
@@ -1397,6 +1464,8 @@
     "rpcUrls": [
       "https://evm.exsat.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 7200,
     "chainId": "7200"
   },
@@ -1404,6 +1473,8 @@
     "rpcUrls": [
       "https://rpc.mainnet.fluence.dev"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 100,
     "chainSelector": 9999999,
     "chainId": "9999999"
   },
@@ -1411,6 +1482,8 @@
     "rpcUrls": [
       "https://rpc.forma.art"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 984122,
     "chainId": "984122"
   },
@@ -1418,6 +1491,8 @@
     "rpcUrls": [
       "https://rpc.genesys.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 16507,
     "chainId": "16507"
   },
@@ -1425,17 +1500,20 @@
     "rpcUrls": [
       "https://rpc.gochain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 60,
     "chainId": "60"
   },
   "haqq": {
     "rpcUrls": [
       "https://haqq-evm.publicnode.com",
-      "https://rpc.eth.haqq.network",
       "https://evm.haqq.sh",
       "https://haqq-evm-rpc.publicnode.com",
-      "https://haqq.drpc.org"
+      "https://rpc.eth.haqq.network"
     ],
+    "getLogsBlockDepth": 9921,
+    "maxBatchSize": 1000,
     "chainSelector": 11235,
     "chainId": "11235"
   },
@@ -1443,6 +1521,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.helachain.com"
     ],
+    "getLogsBlockDepth": 100,
+    "maxBatchSize": 1000,
     "chainSelector": 8668,
     "chainId": "8668"
   },
@@ -1450,6 +1530,8 @@
     "rpcUrls": [
       "https://hpbnode.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 269,
     "chainId": "269"
   },
@@ -1457,6 +1539,8 @@
     "rpcUrls": [
       "https://huddle01.calderachain.xyz/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 12323,
     "chainId": "12323"
   },
@@ -1464,22 +1548,24 @@
     "rpcUrls": [
       "https://rpc-mainnet.hydrachain.org"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 1000,
     "chainSelector": 4488,
     "chainId": "4488"
   },
   "hydration": {
     "rpcUrls": [
-      "https://rpc.hydradx.cloud",
       "https://hydration.dotters.network",
-      "https://rpc.roach.hydration.cloud",
-      "https://rpc.parm.hydration.cloud",
-      "https://rpc.zipp.hydration.cloud",
       "https://hydration-rpc.n.dwellir.com",
+      "https://hydration.ibp.network",
+      "https://rpc.helikon.io/hydradx",
+      "https://rpc.roach.hydration.cloud",
       "https://rpc.coke.hydration.cloud",
       "https://rpc.sin.hydration.cloud",
-      "https://hydration.ibp.network",
-      "https://rpc.helikon.io/hydradx"
+      "https://rpc.zipp.hydration.cloud"
     ],
+    "getLogsBlockDepth": 88964,
+    "maxBatchSize": 10,
     "chainSelector": 222222,
     "chainId": "222222"
   },
@@ -1487,6 +1573,8 @@
     "rpcUrls": [
       "https://fx-json-web3.functionx.io:8545"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 925,
     "chainSelector": 530,
     "chainId": "530"
   },
@@ -1494,15 +1582,19 @@
     "rpcUrls": [
       "https://rpc-mainnet.funkichain.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 33979,
     "chainId": "33979"
   },
   "immutable": {
     "rpcUrls": [
       "https://immutable.gateway.tenderly.co",
-      "https://immutable-zkevm.drpc.org",
-      "https://rpc.immutable.com"
+      "https://rpc.immutable.com",
+      "https://immutable-zkevm.drpc.org"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 3,
     "chainSelector": 13371,
     "chainId": "13371"
   },
@@ -1510,15 +1602,19 @@
     "rpcUrls": [
       "https://rpc.superposition.so"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 165,
     "chainSelector": 55244,
     "chainId": "55244"
   },
   "swellchain": {
     "rpcUrls": [
       "https://rpc.sentio.xyz/swell-mainnet",
-      "https://rpc.ankr.com/swell",
-      "https://swell-mainnet.alt.technology"
+      "https://swell-mainnet.alt.technology",
+      "https://rpc.ankr.com/swell"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 7,
     "chainSelector": 1923,
     "chainId": "1923"
   },
@@ -1526,6 +1622,8 @@
     "rpcUrls": [
       "https://rpc.vana.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 60,
     "chainSelector": 1480,
     "chainId": "1480"
   },
@@ -1533,17 +1631,20 @@
     "rpcUrls": [
       "https://rpc.stable.xyz"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 988,
     "chainId": "988"
   },
   "arbitrumNova": {
     "rpcUrls": [
-      "https://arbitrum-nova-rpc.publicnode.com",
       "https://arbitrum-nova.gateway.tenderly.co",
-      "https://arbitrum-nova.drpc.org",
       "https://nova.arbitrum.io/rpc",
+      "https://arbitrum-nova-rpc.publicnode.com",
       "https://docs-demo.nova-mainnet.quiknode.pro"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 5,
     "chainSelector": 42170,
     "chainId": "42170"
   },
@@ -1551,17 +1652,20 @@
     "rpcUrls": [
       "https://main.doschain.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 7979,
     "chainId": "7979"
   },
   "moonriver": {
     "rpcUrls": [
       "https://moonriver-rpc.publicnode.com",
-      "https://rpc.api.moonriver.moonbeam.network",
-      "https://moonriver.drpc.org",
+      "https://moonriver.api.onfinality.io/public",
       "https://moonriver.api.pocket.network",
-      "https://moonriver.api.onfinality.io/public"
+      "https://rpc.api.moonriver.moonbeam.network"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 269,
     "chainSelector": 1285,
     "chainId": "1285"
   },
@@ -1571,36 +1675,39 @@
       "https://tenet-evm.publicnode.com",
       "https://rpc.ankr.com/tenet_evm"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1,
     "chainSelector": 1559,
     "chainId": "1559"
   },
   "meter": {
     "rpcUrls": [
-      "https://meter.blockpi.network/v1/rpc/public",
-      "https://rpc.meter.io"
+      "https://rpc.meter.io",
+      "https://meter.blockpi.network/v1/rpc/public"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 5,
     "chainSelector": 82,
     "chainId": "82"
-  },
-  "hubble": {
-    "rpcUrls": [],
-    "chainSelector": 1992,
-    "chainId": "1992"
   },
   "zora": {
     "rpcUrls": [
       "https://api-zora-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://zora.drpc.org",
-      "https://rpc.zora.energy"
+      "https://rpc.zora.energy",
+      "https://zora.drpc.org"
     ],
+    "getLogsBlockDepth": 381,
+    "maxBatchSize": 3,
     "chainSelector": 7777777,
     "chainId": "7777777"
   },
   "beam": {
     "rpcUrls": [
-      "https://subnets.avax.network/beam/mainnet/rpc",
-      "https://build.onbeam.com/rpc"
+      "https://build.onbeam.com/rpc",
+      "https://subnets.avax.network/beam/mainnet/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 25,
     "chainSelector": 4337,
     "chainId": "4337"
   },
@@ -1610,6 +1717,8 @@
       "https://rpc.ankr.com/telos",
       "https://telos.drpc.org"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 40,
     "chainId": "40"
   },
@@ -1617,6 +1726,8 @@
     "rpcUrls": [
       "https://dimension-evm-rpc.xpla.dev"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 37,
     "chainId": "37"
   },
@@ -1624,6 +1735,8 @@
     "rpcUrls": [
       "https://json-rpc.evm.shimmer.network"
     ],
+    "getLogsBlockDepth": 1500,
+    "maxBatchSize": 0,
     "chainSelector": 148,
     "chainId": "148"
   },
@@ -1632,36 +1745,26 @@
       "https://mainnet.rpc.rarichain.org/http",
       "https://rari.calderachain.xyz/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 13800126,
     "chainId": "1380012617"
   },
   "xai": {
     "rpcUrls": [
-      "https://rpc.ankr.com/xai",
       "https://xai-chain.net/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1,
     "chainSelector": 660279,
     "chainId": "660279"
-  },
-  "real": {
-    "rpcUrls": [],
-    "chainSelector": 111188,
-    "chainId": "111188"
-  },
-  "tiltyard": {
-    "rpcUrls": [],
-    "chainSelector": 710420,
-    "chainId": "710420"
-  },
-  "zkatana": {
-    "rpcUrls": [],
-    "chainSelector": 3776,
-    "chainId": "3776"
   },
   "homeverse": {
     "rpcUrls": [
       "https://rpc.mainnet.oasys.homeverse.games"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 19011,
     "chainId": "19011"
   },
@@ -1669,27 +1772,28 @@
     "rpcUrls": [
       "https://mainnet.skalenodes.com/v1/elated-tan-skat"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 128,
     "chainSelector": 2046399,
     "chainId": "2046399126"
-  },
-  "joc": {
-    "rpcUrls": [],
-    "chainSelector": 81,
-    "chainId": "81"
   },
   "zklink": {
     "rpcUrls": [
       "https://rpc.zklink.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 500,
     "chainSelector": 810180,
     "chainId": "810180"
   },
   "peaq": {
     "rpcUrls": [
-      "https://quicknode1.peaq.xyz",
       "https://quicknode2.peaq.xyz",
-      "https://quicknode3.peaq.xyz"
+      "https://quicknode3.peaq.xyz",
+      "https://quicknode1.peaq.xyz"
     ],
+    "getLogsBlockDepth": 19921,
+    "maxBatchSize": 1000,
     "chainSelector": 3338,
     "chainId": "3338"
   },
@@ -1697,11 +1801,17 @@
     "rpcUrls": [
       "https://replicator.phoenix.lightlink.io/rpc/v1"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 1000,
     "chainSelector": 1890,
     "chainId": "1890"
   },
   "lyralyra": {
-    "rpcUrls": [],
+    "rpcUrls": [
+      "https://rpc.lyra.finance"
+    ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 65,
     "chainSelector": 957,
     "chainId": "957"
   },
@@ -1709,18 +1819,17 @@
     "rpcUrls": [
       "https://rpc.reya.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 100,
     "chainSelector": 1729,
     "chainId": "1729"
-  },
-  "dm2verse": {
-    "rpcUrls": [],
-    "chainSelector": 68770,
-    "chainId": "68770"
   },
   "codex": {
     "rpcUrls": [
       "https://rpc.codex.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 165,
     "chainSelector": 81224,
     "chainId": "81224"
   },
@@ -1728,6 +1837,8 @@
     "rpcUrls": [
       "https://subnets.avax.network/space/mainnet/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 98,
     "chainSelector": 8227,
     "chainId": "8227"
   },
@@ -1735,24 +1846,30 @@
     "rpcUrls": [
       "https://rpc.glue.net"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1000,
     "chainSelector": 1300,
     "chainId": "1300"
   },
   "cronoszkevm": {
     "rpcUrls": [
       "https://rpc.sentio.xyz/cronos-zkevm",
-      "https://cronos-zkevm.drpc.org",
-      "https://mainnet.zkevm.cronos.org"
+      "https://mainnet.zkevm.cronos.org",
+      "https://cronos-zkevm.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 388,
     "chainId": "388"
   },
   "goat": {
     "rpcUrls": [
+      "https://rpc.goat.network",
       "https://goat-mainnet-alpha.drpc.org",
-      "https://rpc.ankr.com/goat_mainnet",
-      "https://rpc.goat.network"
+      "https://rpc.ankr.com/goat_mainnet"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1,
     "chainSelector": 2345,
     "chainId": "2345"
   },
@@ -1760,19 +1877,18 @@
     "rpcUrls": [
       "https://rpc.gunzchain.io/ext/bc/2M47TxWHGnhNtq6pM5zPXdATBtuqubxn5EPFgFmEawCQr9WFML/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 43419,
     "chainId": "43419"
   },
-  "animechain": {
-    "rpcUrls": [],
-    "chainSelector": 69000,
-    "chainId": "69000"
-  },
   "subtensorevm": {
     "rpcUrls": [
-      "https://bittensor-lite-public.nodies.app",
-      "https://lite.chain.opentensor.ai"
+      "https://lite.chain.opentensor.ai",
+      "https://bittensor-lite-public.nodies.app"
     ],
+    "getLogsBlockDepth": 493,
+    "maxBatchSize": 1000,
     "chainSelector": 964,
     "chainId": "964"
   },
@@ -1781,6 +1897,8 @@
       "https://rpc.silicon.network",
       "https://silicon-mainnet.nodeinfra.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 2355,
     "chainId": "2355"
   },
@@ -1788,6 +1906,8 @@
     "rpcUrls": [
       "https://rpc.camp.raas.gelato.cloud"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 100,
     "chainSelector": 484,
     "chainId": "484"
   },
@@ -1795,6 +1915,8 @@
     "rpcUrls": [
       "https://humanity-mainnet.g.alchemy.com/public"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 6985385,
     "chainId": "6985385"
   },
@@ -1802,6 +1924,8 @@
     "rpcUrls": [
       "https://rpc.nexus.mainnet.apexfusion.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 9069,
     "chainId": "9069"
   },
@@ -1809,6 +1933,8 @@
     "rpcUrls": [
       "https://subnets.avax.network/dinari/mainnet/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 98,
     "chainSelector": 202110,
     "chainId": "202110"
   },
@@ -1816,6 +1942,8 @@
     "rpcUrls": [
       "https://vflow-rpc.zkverify.io"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 1408,
     "chainId": "1408"
   },
@@ -1823,6 +1951,8 @@
     "rpcUrls": [
       "https://gatelayer-mainnet.gatenode.cc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 10088,
     "chainId": "10088"
   },
@@ -1830,14 +1960,18 @@
     "rpcUrls": [
       "https://rpc.openledger.xyz"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 1612,
     "chainId": "1612"
   },
   "doma": {
     "rpcUrls": [
-      "https://doma.drpc.org",
-      "https://rpc.doma.xyz"
+      "https://rpc.doma.xyz",
+      "https://doma.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 97477,
     "chainId": "97477"
   },
@@ -1845,15 +1979,19 @@
     "rpcUrls": [
       "https://rpc.nexera.network"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 1000,
     "chainSelector": 7208,
     "chainId": "7208"
   },
   "megaeth": {
     "rpcUrls": [
+      "https://rpc-megaeth-mainnet.globalstake.io",
       "https://mainnet.megaeth.com/rpc",
-      "https://megaeth.drpc.org",
-      "https://rpc-megaeth-mainnet.globalstake.io"
+      "https://megaeth.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 4326,
     "chainId": "4326"
   },
@@ -1861,6 +1999,8 @@
     "rpcUrls": [
       "https://horizen.calderachain.xyz/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 26514,
     "chainId": "26514"
   },
@@ -1868,6 +2008,8 @@
     "rpcUrls": [
       "https://governors.mainnet.redbelly.network"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 151,
     "chainId": "151"
   },
@@ -1875,6 +2017,8 @@
     "rpcUrls": [
       "https://rpc.mainnet.citrea.xyz"
     ],
+    "getLogsBlockDepth": 943,
+    "maxBatchSize": 100,
     "chainSelector": 4114,
     "chainId": "4114"
   },
@@ -1882,6 +2026,8 @@
     "rpcUrls": [
       "https://sagaevm.jsonrpc.sagarpc.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 498,
     "chainSelector": 5464,
     "chainId": "5464"
   },
@@ -1889,6 +2035,8 @@
     "rpcUrls": [
       "https://rpc.gokite.ai"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2366,
     "chainId": "2366"
   },
@@ -1896,6 +2044,8 @@
     "rpcUrls": [
       "https://rpc.pharos.xyz"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 800,
     "chainSelector": 1672,
     "chainId": "1672"
   },
@@ -1903,6 +2053,8 @@
     "rpcUrls": [
       "https://rpc.ethereal.trade"
     ],
+    "getLogsBlockDepth": 300000,
+    "maxBatchSize": 200,
     "chainSelector": 5064014,
     "chainId": "5064014"
   },
@@ -1910,18 +2062,21 @@
     "rpcUrls": [
       "https://sapphire.oasis.io"
     ],
+    "getLogsBlockDepth": 100,
+    "maxBatchSize": 1000,
     "chainSelector": 23294,
     "chainId": "23294"
   },
   "dymension": {
     "rpcUrls": [
-      "https://dymension.drpc.org",
       "https://dymension-evm-rpc.publicnode.com",
       "https://evm.rpc.mainnet.dymension.aviaone.com",
-      "https://jsonrpc.dymension.nodestake.org",
+      "https://rollapp.jrpc.cumulo.com.es",
       "https://dymension.api.onfinality.io/public",
-      "https://rollapp.jrpc.cumulo.com.es"
+      "https://jsonrpc.dymension.nodestake.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 373,
     "chainSelector": 1100,
     "chainId": "1100"
   },
@@ -1929,6 +2084,8 @@
     "rpcUrls": [
       "https://eth-rpc-api.thetatoken.org/rpc"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 118,
     "chainSelector": 361,
     "chainId": "361"
   },
@@ -1937,6 +2094,8 @@
       "https://shape-mainnet.g.alchemy.com/public",
       "https://mainnet.shape.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 360,
     "chainId": "360"
   },
@@ -1944,6 +2103,8 @@
     "rpcUrls": [
       "https://rpc.redstonechain.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 100,
     "chainSelector": 690,
     "chainId": "690"
   },
@@ -1951,14 +2112,18 @@
     "rpcUrls": [
       "https://eth-rpc.mainnet.near.org"
     ],
+    "getLogsBlockDepth": 0,
+    "maxBatchSize": 148,
     "chainSelector": 397,
     "chainId": "397"
   },
   "ely": {
     "rpcUrls": [
-      "https://rpc.elysiumchain.us",
-      "https://rpc.elysiumchain.tech"
+      "https://rpc.elysiumchain.tech",
+      "https://rpc.elysiumchain.us"
     ],
+    "getLogsBlockDepth": 48515,
+    "maxBatchSize": 1000,
     "chainSelector": 1339,
     "chainId": "1339"
   },
@@ -1967,19 +2132,18 @@
       "https://public-02.mainnet.bifrostnetwork.com/rpc",
       "https://public-01.mainnet.bifrostnetwork.com/rpc"
     ],
+    "getLogsBlockDepth": 86522,
+    "maxBatchSize": 1000,
     "chainSelector": 3068,
     "chainId": "3068"
-  },
-  "sxr": {
-    "rpcUrls": [],
-    "chainSelector": 4162,
-    "chainId": "4162"
   },
   "duckChainMainnet": {
     "rpcUrls": [
       "https://rpc.duckchain.io",
       "https://rpc-hk.duckchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 0,
     "chainSelector": 5545,
     "chainId": "5545"
   },
@@ -1987,6 +2151,8 @@
     "rpcUrls": [
       "https://evm.mantrachain.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 5888,
     "chainId": "5888"
   },
@@ -1994,6 +2160,8 @@
     "rpcUrls": [
       "https://jsonrpc.aura.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 6322,
     "chainId": "6322"
   },
@@ -2001,6 +2169,8 @@
     "rpcUrls": [
       "https://rpc.arena-z.gg"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 100,
     "chainSelector": 7897,
     "chainId": "7897"
   },
@@ -2008,6 +2178,8 @@
     "rpcUrls": [
       "https://api.shardeum.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 8118,
     "chainId": "8118"
   },
@@ -2016,6 +2188,8 @@
       "https://rpc-mainnet-1.geb.network",
       "https://rpc-mainnet-2.geb.network"
     ],
+    "getLogsBlockDepth": 62011,
+    "maxBatchSize": 1000,
     "chainSelector": 11501,
     "chainId": "11501"
   },
@@ -2023,6 +2197,8 @@
     "rpcUrls": [
       "https://rpc.q.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 35441,
     "chainId": "35441"
   },
@@ -2030,6 +2206,8 @@
     "rpcUrls": [
       "https://mainnet.skalenodes.com/v1/green-giddy-denebola"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 128,
     "chainSelector": 14826016,
     "chainId": "1482601649"
   },
@@ -2037,20 +2215,19 @@
     "rpcUrls": [
       "https://mainnet.skalenodes.com/v1/honorable-steel-rasalhague"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 128,
     "chainSelector": 15648308,
     "chainId": "1564830818"
   },
-  "datachain": {
-    "rpcUrls": [],
-    "chainSelector": 271828,
-    "chainId": "271828"
-  },
   "oas": {
     "rpcUrls": [
-      "https://oasys.blockpi.network/v1/rpc/public",
       "https://oasys.api.pocket.network",
-      "https://rpc.mainnet.oasys.games"
+      "https://rpc.mainnet.oasys.games",
+      "https://oasys.blockpi.network/v1/rpc/public"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 5,
     "chainSelector": 248,
     "chainId": "248"
   },
@@ -2058,6 +2235,8 @@
     "rpcUrls": [
       "https://mainnet.skalenodes.com/v1/parallel-stormy-spica"
     ],
+    "getLogsBlockDepth": 2000,
+    "maxBatchSize": 128,
     "chainSelector": 13502162,
     "chainId": "1350216234"
   },
@@ -2065,6 +2244,8 @@
     "rpcUrls": [
       "https://rpc.polynomial.fi"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 165,
     "chainSelector": 8008,
     "chainId": "8008"
   },
@@ -2074,32 +2255,39 @@
       "https://rpc.mainnet.lukso.network",
       "https://42.rpc.thirdweb.com"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 1000,
     "chainSelector": 42,
     "chainId": "42"
   },
   "tt": {
     "rpcUrls": [
       "https://mainnet-rpc.thundercore.com",
-      "https://mainnet-rpc.thundercore.io",
-      "https://thundercore.drpc.org",
-      "https://mainnet-rpc.thundertoken.net"
+      "https://mainnet-rpc.thundertoken.net",
+      "https://mainnet-rpc.thundercore.io"
     ],
+    "getLogsBlockDepth": 162402,
+    "maxBatchSize": 1000,
     "chainSelector": 108,
     "chainId": "108"
   },
   "sseed": {
     "rpcUrls": [
-      "https://superseed.drpc.org",
-      "https://mainnet.superseed.xyz"
+      "https://mainnet.superseed.xyz",
+      "https://superseed.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 5330,
     "chainId": "5330"
   },
   "matchain": {
     "rpcUrls": [
-      "https://rpc.ankr.com/matchain_mainnet",
-      "https://rpc.matchain.io"
+      "https://rpc.matchain.io",
+      "https://rpc.ankr.com/matchain_mainnet"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 10,
     "chainSelector": 698,
     "chainId": "698"
   },
@@ -2107,6 +2295,8 @@
     "rpcUrls": [
       "https://rpc.saakuru.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 7225878,
     "chainId": "7225878"
   },
@@ -2114,6 +2304,8 @@
     "rpcUrls": [
       "https://rpc.step.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1234,
     "chainId": "1234"
   },
@@ -2125,6 +2317,8 @@
       "https://mainnet-rpc.swanchain.org",
       "https://mainnet-rpc-04.swanchain.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 254,
     "chainId": "254"
   },
@@ -2135,18 +2329,21 @@
       "https://dappnode4.ont.io:10339",
       "https://dappnode1.ont.io:10339"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 1000,
     "chainSelector": 58,
     "chainId": "58"
   },
   "eni": {
     "rpcUrls": [
-      "https://enirpc.com",
       "https://rpc1.eniac.network",
       "https://rpc2.eniac.network",
       "https://jp.eniacrpc.net",
       "https://jp.enirpc.com",
       "https://rpc.eniac.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 173,
     "chainId": "173"
   },
@@ -2155,6 +2352,8 @@
       "https://gwan2-ssl.wandevs.org",
       "https://gwan-ssl.wandevs.org:56891"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 888,
     "chainId": "888"
   },
@@ -2162,17 +2361,20 @@
     "rpcUrls": [
       "https://rpc.xertra.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 105105,
     "chainId": "105105"
   },
   "zetachainMainnet": {
     "rpcUrls": [
       "https://api-zetachain-mainnet.n.dwellir.com/2ccf18bf-2916-4198-8856-42172854353c",
-      "https://zetachain-evm.blockpi.network/v1/rpc/public",
-      "https://zeta-chain.drpc.org",
+      "https://zetachain-mainnet.g.allthatnode.com/archive/evm",
       "https://7000.rpc.thirdweb.com",
-      "https://zetachain-mainnet.g.allthatnode.com/archive/evm"
+      "https://zetachain-evm.blockpi.network/v1/rpc/public"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 5,
     "chainSelector": 7000,
     "chainId": "7000"
   },
@@ -2181,15 +2383,19 @@
       "https://rpc-mainnet.kcc.network",
       "https://kcc-rpc.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 321,
     "chainId": "321"
   },
   "sgb": {
     "rpcUrls": [
-      "https://songbird-api.flare.network/ext/C/rpc",
       "https://rpc.ftso.au/songbird",
-      "https://rpc.au.cc/songbird"
+      "https://rpc.au.cc/songbird",
+      "https://songbird-api.flare.network/ext/C/rpc"
     ],
+    "getLogsBlockDepth": 10,
+    "maxBatchSize": 1000,
     "chainSelector": 19,
     "chainId": "19"
   },
@@ -2197,6 +2403,8 @@
     "rpcUrls": [
       "https://node.dioneprotocol.com/ext/bc/D/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 153153,
     "chainId": "153153"
   },
@@ -2206,6 +2414,8 @@
       "https://neon-mainnet.everstake.one",
       "https://neon-evm.drpc.org"
     ],
+    "getLogsBlockDepth": 9921,
+    "maxBatchSize": 1,
     "chainSelector": 2450229,
     "chainId": "245022934"
   },
@@ -2213,6 +2423,8 @@
     "rpcUrls": [
       "https://rpc-pepu-v2-mainnet-0.t.conduit.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 165,
     "chainSelector": 97741,
     "chainId": "97741"
   },
@@ -2220,6 +2432,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.parex.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 322202,
     "chainId": "322202"
   },
@@ -2227,6 +2441,8 @@
     "rpcUrls": [
       "https://rpc-mainnet.u2u.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 39,
     "chainId": "39"
   },
@@ -2234,6 +2450,8 @@
     "rpcUrls": [
       "https://evm.gatenode.cc"
     ],
+    "getLogsBlockDepth": 4937,
+    "maxBatchSize": 998,
     "chainSelector": 86,
     "chainId": "86"
   },
@@ -2241,6 +2459,8 @@
     "rpcUrls": [
       "https://eth-dataseed.aioz.network"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 0,
     "chainSelector": 168,
     "chainId": "168"
   },
@@ -2248,6 +2468,8 @@
     "rpcUrls": [
       "https://rpc.abeychain.com"
     ],
+    "getLogsBlockDepth": 493,
+    "maxBatchSize": 1000,
     "chainSelector": 179,
     "chainId": "179"
   },
@@ -2256,6 +2478,8 @@
       "https://mainnet-beta-rpc.irys.xyz/v1/execution-rpc",
       "https://mainnet-beta-rpc-2.irys.xyz/v1/execution-rpc"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 1000,
     "chainSelector": 3282,
     "chainId": "3282"
   },
@@ -2263,6 +2487,8 @@
     "rpcUrls": [
       "https://node1.amechain.io"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 1000,
     "chainSelector": 180,
     "chainId": "180"
   },
@@ -2270,6 +2496,8 @@
     "rpcUrls": [
       "https://rpc.waterfall.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 181,
     "chainId": "181"
   },
@@ -2277,6 +2505,8 @@
     "rpcUrls": [
       "https://prom-rpc.eu-north-2.gateway.fm"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 150,
     "chainSelector": 227,
     "chainId": "227"
   },
@@ -2284,6 +2514,8 @@
     "rpcUrls": [
       "https://rpc-mainnet.mindnetwork.xyz"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 228,
     "chainId": "228"
   },
@@ -2291,6 +2523,8 @@
     "rpcUrls": [
       "https://rpc.zkcandy.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 500,
     "chainSelector": 320,
     "chainId": "320"
   },
@@ -2298,6 +2532,8 @@
     "rpcUrls": [
       "https://rpc.appchain.xyz/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 466,
     "chainId": "466"
   },
@@ -2305,6 +2541,8 @@
     "rpcUrls": [
       "https://rpc.blackfort.network/mainnet/rpc"
     ],
+    "getLogsBlockDepth": 5000,
+    "maxBatchSize": 1000,
     "chainSelector": 488,
     "chainId": "488"
   },
@@ -2312,6 +2550,8 @@
     "rpcUrls": [
       "https://api.camino.network/ext/bc/C/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 500,
     "chainId": "500"
   },
@@ -2321,6 +2561,8 @@
       "https://datarpc2.xsc.pub",
       "https://datarpc3.xsc.pub"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 520,
     "chainId": "520"
   },
@@ -2328,6 +2570,8 @@
     "rpcUrls": [
       "https://glq-dataseed.graphlinq.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 614,
     "chainId": "614"
   },
@@ -2338,9 +2582,10 @@
       "https://rpc.woowow.io",
       "https://evm-dataseed1.meerscan.io",
       "https://evm-dataseed.meerscan.com",
-      "https://evm-dataseed2.meerscan.io",
-      "https://evm-dataseed3.meerscan.io"
+      "https://evm-dataseed2.meerscan.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 813,
     "chainId": "813"
   },
@@ -2348,6 +2593,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.ogpuscan.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1071,
     "chainId": "1071"
   },
@@ -2355,6 +2602,8 @@
     "rpcUrls": [
       "https://rpc.perennial.foundation"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 200,
     "chainSelector": 1424,
     "chainId": "1424"
   },
@@ -2362,6 +2611,8 @@
     "rpcUrls": [
       "https://rpc.onino.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1425,
     "chainId": "1425"
   },
@@ -2369,6 +2620,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.rnk.dev"
     ],
+    "getLogsBlockDepth": 29921,
+    "maxBatchSize": 1000,
     "chainSelector": 1597,
     "chainId": "1597"
   },
@@ -2376,14 +2629,18 @@
     "rpcUrls": [
       "https://rpc.nerochain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 1689,
     "chainId": "1689"
   },
   "metall2": {
     "rpcUrls": [
-      "https://metall2.drpc.org",
-      "https://rpc.metall2.com"
+      "https://rpc.metall2.com",
+      "https://metall2.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 1750,
     "chainId": "1750"
   },
@@ -2391,6 +2648,8 @@
     "rpcUrls": [
       "https://rpc.vanarchain.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2040,
     "chainId": "2040"
   },
@@ -2398,6 +2657,8 @@
     "rpcUrls": [
       "https://web3-rpc.thestratos.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 2048,
     "chainId": "2048"
   },
@@ -2407,6 +2668,8 @@
       "https://node1.cratd2csmartchain.io",
       "https://node3.cratd2csmartchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2310,
     "chainId": "2310"
   },
@@ -2414,15 +2677,19 @@
     "rpcUrls": [
       "https://rufus.calderachain.xyz/http"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2420,
     "chainId": "2420"
   },
   "atla": {
     "rpcUrls": [
       "https://rpc.atleta.mainnet.dteam.tech",
-      "https://rpc.ankr.com/atleta_mainnet",
-      "https://rpc.mainnet.atleta.network"
+      "https://rpc.mainnet.atleta.network",
+      "https://rpc.ankr.com/atleta_mainnet"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 3,
     "chainSelector": 2440,
     "chainId": "2440"
   },
@@ -2430,6 +2697,8 @@
     "rpcUrls": [
       "https://rpc.apertum.io/ext/bc/YDJ1r9RMkewATmA7B35q1bdV18aywzmdiXwd9zGBq3uQjsCnn/rpc"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2786,
     "chainId": "2786"
   },
@@ -2439,6 +2708,8 @@
       "https://node1.bityuan.com/eth",
       "https://mainnet.bityuan.com/eth"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 2999,
     "chainId": "2999"
   },
@@ -2446,6 +2717,8 @@
     "rpcUrls": [
       "https://rpc.skatechain.org"
     ],
+    "getLogsBlockDepth": 1000,
+    "maxBatchSize": 100,
     "chainSelector": 5050,
     "chainId": "5050"
   },
@@ -2453,6 +2726,8 @@
     "rpcUrls": [
       "https://rpc.canxium.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 3003,
     "chainId": "3003"
   },
@@ -2460,6 +2735,8 @@
     "rpcUrls": [
       "https://api.mainnet.playa3ull.games"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 3011,
     "chainId": "3011"
   },
@@ -2467,6 +2744,8 @@
     "rpcUrls": [
       "https://rpc.memecore.net"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 4352,
     "chainId": "4352"
   },
@@ -2474,6 +2753,8 @@
     "rpcUrls": [
       "https://rpc-publicnode.emoney.io"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 1000,
     "chainSelector": 4545,
     "chainId": "4545"
   },
@@ -2481,6 +2762,8 @@
     "rpcUrls": [
       "https://explorer-rpc-http.mainnet.stages.humanode.io"
     ],
+    "getLogsBlockDepth": 27421,
+    "maxBatchSize": 1000,
     "chainSelector": 5234,
     "chainId": "5234"
   },
@@ -2488,6 +2771,8 @@
     "rpcUrls": [
       "https://settlus-mainnet.g.alchemy.com/public"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 5371,
     "chainId": "5371"
   },
@@ -2495,6 +2780,8 @@
     "rpcUrls": [
       "https://mainnet.steamexchange.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 6278,
     "chainId": "6278"
   },
@@ -2502,6 +2789,8 @@
     "rpcUrls": [
       "https://mainnet-rpc.lumia.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 150,
     "chainSelector": 9948730,
     "chainId": "994873017"
   },
@@ -2509,6 +2798,8 @@
     "rpcUrls": [
       "https://rpc.mitosis.org"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 1000,
     "chainSelector": 124816,
     "chainId": "124816"
   },
@@ -2516,6 +2807,8 @@
     "rpcUrls": [
       "https://lit-chain-rpc.litprotocol.com"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 200,
     "chainSelector": 175200,
     "chainId": "175200"
   },
@@ -2523,6 +2816,8 @@
     "rpcUrls": [
       "https://mainnet.lazai.network"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 1000,
     "chainSelector": 52924,
     "chainId": "52924"
   },
@@ -2530,6 +2825,8 @@
     "rpcUrls": [
       "https://rpc.carrchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 7667,
     "chainId": "7667"
   },
@@ -2537,19 +2834,18 @@
     "rpcUrls": [
       "https://mainnet.ethernitychain.io"
     ],
+    "getLogsBlockDepth": 100000,
+    "maxBatchSize": 100,
     "chainSelector": 183,
     "chainId": "183"
-  },
-  "r5": {
-    "rpcUrls": [],
-    "chainSelector": 337,
-    "chainId": "337"
   },
   "river": {
     "rpcUrls": [
       "https://towns-mainnet.calderachain.xyz/http",
       "https://mainnet.rpc.river.build"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 550,
     "chainId": "550"
   },
@@ -2557,6 +2853,8 @@
     "rpcUrls": [
       "https://rpc.phala.network"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 200,
     "chainSelector": 2035,
     "chainId": "2035"
   },
@@ -2564,6 +2862,8 @@
     "rpcUrls": [
       "https://rpc.mainnet.dbkchain.io"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 1000,
     "chainSelector": 2024060,
     "chainId": "20240603"
   },
@@ -2571,20 +2871,19 @@
     "rpcUrls": [
       "https://rpc.onyx.org"
     ],
+    "getLogsBlockDepth": 500000,
+    "maxBatchSize": 200,
     "chainSelector": 80888,
     "chainId": "80888"
   },
   "zeroNetwork": {
     "rpcUrls": [
-      "https://zero.drpc.org",
-      "https://rpc.zerion.io/v1/zero"
+      "https://rpc.zerion.io/v1/zero",
+      "https://zero.drpc.org"
     ],
+    "getLogsBlockDepth": 10000,
+    "maxBatchSize": 3,
     "chainSelector": 543210,
     "chainId": "543210"
-  },
-  "mythos": {
-    "rpcUrls": [],
-    "chainSelector": 42018,
-    "chainId": "42018"
   }
 }

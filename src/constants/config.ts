@@ -62,7 +62,7 @@ const config: Config = {
 
   DOMAIN_BLACKLIST: domainBlacklist,
   ENABLE_DOMAIN_BLACKLIST: true,
-  WHITELISTED_CHAIN_IDS: [42161],
+  WHITELISTED_CHAIN_IDS: [],
   IGNORED_CHAINLIST_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
@@ -91,8 +91,8 @@ const config: Config = {
     TIMEOUT_MS: 5_000,
     MAX_RETRIES: 3,
     RETRY_DELAY_MS: 200,
-    BLOCK_RANGES: [100, 1000, 2000, 5000, 10_000, 50_000, 100_000, 500_000, 1_000_000],
-    MASS_THRESHOLD: 0.5,
+    BLOCK_RANGES: [10, 100, 1000, 5000, 10_000, 50_000, 100_000, 500_000],
+    MASS_THRESHOLD: 0.3,
     MIN_DEPTH: 100,
   },
 
@@ -103,8 +103,8 @@ const config: Config = {
     MAX_RETRIES: 3,
     RETRY_DELAY_MS: 200,
     BATCH_SIZES: [1, 5, 10, 20, 50, 100, 500, 1000],
-    MASS_THRESHOLD: 0.5,
-    MIN_BATCH_SIZE: 5,
+    MASS_THRESHOLD: 0.3,
+    MIN_BATCH_SIZE: 10,
   },
 
   URLS: {

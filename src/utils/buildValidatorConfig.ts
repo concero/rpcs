@@ -10,7 +10,7 @@ export interface ValidatorChainConfig {
   chainId: string;
 }
 
-const MIN_NETWORK_AMOUNT = 5;
+const MIN_NETWORK_AMOUNT = 10;
 
 export function buildValidatorConfig(
   blockDepthMap: Map<string, HealthyRpc[]>,
@@ -26,14 +26,12 @@ export function buildValidatorConfig(
 
     if (depthRpcs.length === 0 && batchRpcs.length === 0) continue;
 
+    const activeChain = depthRpcs.length > MIN_NETWORK_AMOUNT;
+
     const filterForDepth = (getLogsBlockDepth: number) =>
-      depthRpcs.length >= MIN_NETWORK_AMOUNT
-        ? getLogsBlockDepth >= config.DEPTH_TESTER.MIN_DEPTH
-        : getLogsBlockDepth > 0;
+      activeChain ? getLogsBlockDepth >= config.DEPTH_TESTER.MIN_DEPTH : getLogsBlockDepth > 0;
     const filterForBatch = (maxBatchSize: number) =>
-      batchRpcs.length >= MIN_NETWORK_AMOUNT
-        ? maxBatchSize >= config.BATCH_TESTER.MIN_BATCH_SIZE
-        : maxBatchSize > 0;
+      activeChain ? maxBatchSize >= config.BATCH_TESTER.MIN_BATCH_SIZE : maxBatchSize > 0;
 
     const depthValues = depthRpcs.map(r => r.getLogsBlockDepth ?? 0).filter(filterForDepth);
     const batchValues = batchRpcs.map(r => r.maxBatchSize ?? 0).filter(filterForBatch);
@@ -61,6 +59,23 @@ export function buildValidatorConfig(
         const depthB = depthUrlMap.get(b) ?? 0;
         return depthB - depthA;
       });
+
+    // TODO (if rpcUrls.length === 0 || 1) -> add all rpc and set default values for getLogsBlockDepth and maxBatchSize
+
+    if (rpcUrls.length === 0) {
+      console.log({
+        depthRpcs,
+        batchRpcs,
+        depthUrlMap,
+        batchUrlMap,
+        depthThreshold,
+        batchThreshold,
+        rpcUrls,
+        getLogsBlockDepth: depthThreshold,
+        maxBatchSize: batchThreshold,
+        chainId: network.chainId.toString(),
+      });
+    }
 
     result.set(networkName, {
       rpcUrls,

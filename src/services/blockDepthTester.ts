@@ -179,7 +179,7 @@ export async function testGetLogsBlockDepths(
       for (const rpc of rpcs) {
         const blockNumber = await fetchBlockNumber(rpc.url, TIMEOUT_MS);
         if (blockNumber !== null) {
-          chainBlockNumbers.set(chainId, blockNumber);
+          chainBlockNumbers.set(chainId, blockNumber - 1000); // Gap for bad rpcs
           return;
         }
       }
