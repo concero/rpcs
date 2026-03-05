@@ -15,6 +15,7 @@ import { overrideService } from "./services/overrideService";
 import { testGetLogsBlockDepths } from "./services/blockDepthTester";
 import { testBatchSupport } from "./services/batchRequestTester";
 import { buildValidatorConfig } from "./utils/buildValidatorConfig";
+import { buildAuditEntries, appendAuditEntries } from "./utils/auditLog";
 
 /**
  * Main RPC service function that orchestrates the entire process:
@@ -62,13 +63,30 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
     );
 
     let batchSupportMap = new Map<string, HealthyRpc[]>();
+    let batchErrors = new Map<string, string>();
     if (config.BATCH_TESTER.ENABLED) {
-      batchSupportMap = await testBatchSupport(testResult.healthyRpcs);
+      ({ healthyRpcs: batchSupportMap, rpcErrors: batchErrors } = await testBatchSupport(
+        testResult.healthyRpcs,
+      ));
     }
 
     let blockDepthMap = new Map<string, HealthyRpc[]>();
+    let depthErrors = new Map<string, string>();
     if (config.DEPTH_TESTER.ENABLED) {
-      blockDepthMap = await testGetLogsBlockDepths(testResult.healthyRpcs);
+      ({ healthyRpcs: blockDepthMap, rpcErrors: depthErrors } = await testGetLogsBlockDepths(
+        testResult.healthyRpcs,
+      ));
+    }
+
+    if (config.BUILD_AUDIT_ENTRIES) {
+      const auditEntries = buildAuditEntries(
+        batchSupportMap,
+        blockDepthMap,
+        batchErrors,
+        depthErrors,
+        networks,
+      );
+      appendAuditEntries(auditEntries, config.OUTPUT_DIR);
     }
 
     const validatorConfig = buildValidatorConfig(blockDepthMap, batchSupportMap, networks);

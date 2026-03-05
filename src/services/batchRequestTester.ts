@@ -6,6 +6,8 @@ const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BATCH_SIZES } = co
 
 const FINE_SEARCH_PRECISION = 2;
 
+type BatchOutcome = { ok: true } | { ok: false; error: string } | "rate_limited";
+
 function buildBatchPayload(size: number): object[] {
   return Array.from({ length: size }, (_, i) => ({
     jsonrpc: "2.0",
@@ -19,7 +21,7 @@ async function testBatchOfSize(
   url: string,
   size: number,
   timeoutMs: number,
-): Promise<boolean | "rate_limited"> {
+): Promise<BatchOutcome> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -39,16 +41,20 @@ async function testBatchOfSize(
       debug(
         `Error response from ${url} for batch size ${size}: ${response.status} ${response.statusText}`,
       );
-      return false;
+      return { ok: false, error: `HTTP ${response.status} ${response.statusText}` };
     }
 
     const body = await response.json();
-    if (!Array.isArray(body)) return false;
-    if (body.length !== size) return false;
+    if (!Array.isArray(body)) return { ok: false, error: "Response is not an array" };
+    if (body.length !== size)
+      return { ok: false, error: `Expected ${size} items, got ${body.length}` };
 
-    return body.every((item: { error?: unknown }) => item.error === undefined);
-  } catch {
-    return false;
+    const failedItem = body.find((item: { error?: unknown }) => item.error !== undefined);
+    if (failedItem) return { ok: false, error: `Item error: ${JSON.stringify(failedItem.error)}` };
+
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
   } finally {
     clearTimeout(timer);
   }
@@ -60,23 +66,28 @@ async function tryBatchWithRetries(
   timeoutMs: number,
   maxRetries: number,
   retryDelayMs: number,
-): Promise<boolean> {
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  let lastError = "Unknown error";
+
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     const result = await testBatchOfSize(url, size, timeoutMs);
 
-    if (result) return true;
+    if (result !== "rate_limited" && result.ok) return { ok: true };
 
-    if (attempt < maxRetries) {
-      if (result === "rate_limited") {
+    if (result !== "rate_limited" && result.ok === false) {
+      if (attempt < maxRetries) return { ok: false, error: result.error };
+      lastError = result.error;
+    } else if (result === "rate_limited") {
+      lastError = "Rate limited (HTTP 429)";
+      if (attempt < maxRetries) {
         const backoffDelay = retryDelayMs * Math.pow(2, attempt);
         debug(`Rate limited on ${url}, retrying in ${backoffDelay}ms`);
         await new Promise(resolve => setTimeout(resolve, backoffDelay));
-      } else {
-        return false;
       }
     }
   }
-  return false;
+
+  return { ok: false, error: lastError };
 }
 
 async function findMaxBatchSize(
@@ -85,15 +96,16 @@ async function findMaxBatchSize(
   timeoutMs: number,
   maxRetries: number,
   retryDelayMs: number,
-): Promise<number> {
+): Promise<{ maxSize: number; error: string }> {
   const sorted = [...sizes].sort((a, b) => a - b);
 
   const trySize = (size: number) =>
     tryBatchWithRetries(url, size, timeoutMs, maxRetries, retryDelayMs);
 
   // Quick check: if smallest size fails, batch is unsupported
-  if (!(await trySize(sorted[0]))) {
-    return 0;
+  const minResult = await trySize(sorted[0]);
+  if (minResult.ok === false) {
+    return { maxSize: 0, error: minResult.error };
   }
 
   // Coarse binary search over predefined sizes
@@ -102,7 +114,7 @@ async function findMaxBatchSize(
 
   while (lo <= hi) {
     const mid = Math.floor((lo + hi) / 2);
-    if (await trySize(sorted[mid])) {
+    if ((await trySize(sorted[mid])).ok) {
       lo = mid + 1;
     } else {
       hi = mid - 1;
@@ -113,7 +125,7 @@ async function findMaxBatchSize(
 
   // If the largest predefined size works, return it
   if (coarseIdx >= sorted.length - 1) {
-    return sorted[sorted.length - 1];
+    return { maxSize: sorted[sorted.length - 1], error: "" };
   }
 
   // Fine binary search between sorted[coarseIdx] and sorted[coarseIdx + 1]
@@ -122,19 +134,19 @@ async function findMaxBatchSize(
 
   while (hiBound - loBound > FINE_SEARCH_PRECISION) {
     const mid = Math.floor((loBound + hiBound) / 2);
-    if (await trySize(mid)) {
+    if ((await trySize(mid)).ok) {
       loBound = mid;
     } else {
       hiBound = mid;
     }
   }
 
-  return loBound;
+  return { maxSize: loBound, error: "" };
 }
 
 export async function testBatchSupport(
   inputHealthyRpcs: Map<string, HealthyRpc[]>,
-): Promise<Map<string, HealthyRpc[]>> {
+): Promise<{ healthyRpcs: Map<string, HealthyRpc[]>; rpcErrors: Map<string, string> }> {
   const filtered = Array.from(
     inputHealthyRpcs,
     ([chainId, rpcs]) => [chainId, rpcs.map(rpc => ({ ...rpc }) as HealthyRpc)] as const,
@@ -145,6 +157,7 @@ export async function testBatchSupport(
   );
 
   const healthyRpcs = new Map(filtered);
+  const rpcErrors = new Map<string, string>();
 
   const queue: HealthyRpc[] = [];
   for (const rpcs of healthyRpcs.values()) {
@@ -155,7 +168,7 @@ export async function testBatchSupport(
 
   if (queue.length === 0) {
     info("No RPCs to test for batch support");
-    return;
+    return { healthyRpcs, rpcErrors };
   }
 
   info(`Testing batch support for ${queue.length} RPCs with concurrency ${CONCURRENCY}`);
@@ -177,12 +190,14 @@ export async function testBatchSupport(
         activeCount++;
 
         findMaxBatchSize(rpc.url, BATCH_SIZES, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS)
-          .then(maxSize => {
+          .then(({ maxSize, error }) => {
             rpc.maxBatchSize = maxSize;
+            if (error) rpcErrors.set(rpc.url, error);
             debug(`${rpc.url} max batch size: ${maxSize}`);
           })
           .catch(err => {
             rpc.maxBatchSize = 0;
+            rpcErrors.set(rpc.url, String(err));
             debug(`Batch test failed for ${rpc.url}: ${err}`);
           })
           .finally(() => {
@@ -203,5 +218,5 @@ export async function testBatchSupport(
     processNext();
   });
 
-  return healthyRpcs;
+  return { healthyRpcs, rpcErrors };
 }

@@ -4,6 +4,7 @@ interface Config {
   NETWORK_MODE: number;
   DOMAIN_BLACKLIST: string[];
   ENABLE_DOMAIN_BLACKLIST: boolean;
+  BUILD_AUDIT_ENTRIES: boolean;
   WHITELISTED_CHAIN_IDS: number[];
   IGNORED_CHAINLIST_CHAIN_IDS: number[];
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: number[];
@@ -62,6 +63,7 @@ const config: Config = {
 
   DOMAIN_BLACKLIST: domainBlacklist,
   ENABLE_DOMAIN_BLACKLIST: true,
+  BUILD_AUDIT_ENTRIES: true,
   WHITELISTED_CHAIN_IDS: [],
   IGNORED_CHAINLIST_CHAIN_IDS: [
     2021, // roninSaigon
