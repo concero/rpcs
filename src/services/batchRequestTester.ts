@@ -108,6 +108,12 @@ async function findMaxBatchSize(
     return { maxSize: 0, error: minResult.error };
   }
 
+  // If the largest predefined size works, return it immediately
+  const maxSize = await trySize(sorted[sorted.length - 1]);
+  if (maxSize.ok) {
+    return { maxSize: sorted[sorted.length - 1], error: "" };
+  }
+
   // Coarse binary search over predefined sizes
   let lo = 0;
   let hi = sorted.length - 1;
@@ -122,11 +128,6 @@ async function findMaxBatchSize(
   }
 
   const coarseIdx = Math.max(0, lo - 1);
-
-  // If the largest predefined size works, return it
-  if (coarseIdx >= sorted.length - 1) {
-    return { maxSize: sorted[sorted.length - 1], error: "" };
-  }
 
   // Fine binary search between sorted[coarseIdx] and sorted[coarseIdx + 1]
   let loBound = sorted[coarseIdx];

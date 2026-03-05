@@ -134,6 +134,12 @@ async function findMaxBlockDepth(
     return { maxDepth: 0, error: minResult.error };
   }
 
+  // If the largest predefined range works, return it immediately
+  const maxResult = await tryRange(sortedRanges[sortedRanges.length - 1]);
+  if (maxResult.ok) {
+    return { maxDepth: sortedRanges[sortedRanges.length - 1], error: "" };
+  }
+
   // Coarse binary search over predefined ranges to find bracket
   let lo = 0;
   let hi = sortedRanges.length - 1;
@@ -148,11 +154,6 @@ async function findMaxBlockDepth(
   }
 
   const coarseIdx = Math.max(0, lo - 1);
-
-  // If the largest predefined range works, return it
-  if (coarseIdx >= sortedRanges.length - 1) {
-    return { maxDepth: sortedRanges[sortedRanges.length - 1], error: "" };
-  }
 
   // Fine binary search between sortedRanges[coarseIdx] and sortedRanges[coarseIdx + 1]
   let loBound = sortedRanges[coarseIdx];
