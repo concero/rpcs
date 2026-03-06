@@ -104,7 +104,7 @@ export function buildValidatorConfig(
     const rpcUrls = filterAndSortUrls(depthUrlMap, batchUrlMap, depthThreshold, batchThreshold);
 
     // Define fallback logic if we don't have enough good RPCs or if thresholds are too low
-    const allRpcsForChain = healthyRpcsMap.get(chainIdStr) || [];
+    const allRpcsForChain = healthyRpcsMap.get(networkName) || [];
 
     const needsFallback =
       rpcUrls.length <= MIN_RPC_AMOUNT && allRpcsForChain.length > MIN_RPC_AMOUNT;

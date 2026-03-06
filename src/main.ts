@@ -78,10 +78,13 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
       ));
     }
 
+    const { batchSupportMapWithOverrides, blockDepthMapWithOverrides } =
+      await overrideService.applyValidatorOverrides(batchSupportMap, blockDepthMap, networks);
+
     if (config.BUILD_AUDIT_ENTRIES) {
       const auditEntries = buildAuditEntries(
-        batchSupportMap,
-        blockDepthMap,
+        batchSupportMapWithOverrides,
+        blockDepthMapWithOverrides,
         batchErrors,
         depthErrors,
         networks,
@@ -90,9 +93,9 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
     }
 
     const validatorConfig = buildValidatorConfig(
-      blockDepthMap,
-      batchSupportMap,
-      testResult.healthyRpcs,
+      blockDepthMapWithOverrides,
+      batchSupportMapWithOverrides,
+      rpcsByNetworkWithOverrides,
       networks,
     );
 

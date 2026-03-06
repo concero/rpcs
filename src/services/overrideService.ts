@@ -15,6 +15,22 @@ interface OverrideData {
   [networkName: string]: OverrideEntry;
 }
 
+interface ValidatorOverrideRpc {
+  url: string;
+  getLogsBlockDepth?: number;
+  maxBatchSize?: number;
+}
+
+interface ValidatorOverrideEntry {
+  rpcUrls: ValidatorOverrideRpc[];
+  chainSelector?: number;
+  chainId: string;
+}
+
+interface ValidatorOverrideData {
+  [networkName: string]: ValidatorOverrideEntry;
+}
+
 /**
  * Service for handling RPC endpoint overrides
  * Allows manual addition of RPC endpoints that should always be included
@@ -75,6 +91,131 @@ export class OverrideService {
     await this.mergeOverrides(mergedRpcs, testnetOverrides, networkDetails, "testnet");
 
     return mergedRpcs;
+  }
+
+  private async readValidatorOverrideFile(filename: string): Promise<ValidatorOverrideData> {
+    const filePath = path.join(this.overridesDir, filename);
+
+    try {
+      const content = await fs.readFile(filePath, "utf-8");
+      if (!content.trim()) return {};
+      const data = JSON.parse(content) as ValidatorOverrideData;
+      debug(`Loaded ${Object.keys(data).length} validator override entries from ${filename}`);
+      return data;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+        debug(`No validator override file found at ${filePath}`);
+        return {};
+      }
+      warn(`Error reading validator override file ${filename}: ${error}`);
+      return {};
+    }
+  }
+
+  /**
+   * @dev Override config should looks like this
+   *  "ethereum": {
+   *     "rpcUrls": [{
+   *         "url": "https://eth.example.com",
+   *         "getLogsBlockDepth": 9999999,
+   *         "maxBatchSize": 9999999
+   *       }],
+   *   }
+   *   "chainSelector": 1,
+   *   "chainId": "1"
+   */
+  async applyValidatorOverrides(
+    batchSupportMap: Map<string, HealthyRpc[]>,
+    blockDepthMap: Map<string, HealthyRpc[]>,
+    networkDetails: Record<string, NetworkDetails>,
+  ): Promise<{
+    batchSupportMapWithOverrides: Map<string, HealthyRpc[]>;
+    blockDepthMapWithOverrides: Map<string, HealthyRpc[]>;
+  }> {
+    info("Applying validator overrides...");
+
+    const batchSupportMapWithOverrides = new Map(batchSupportMap);
+    const blockDepthMapWithOverrides = new Map(blockDepthMap);
+
+    const mainnetOverrides = await this.readValidatorOverrideFile("cre.mainnet.json");
+    this.mergeValidatorOverrides(
+      batchSupportMapWithOverrides,
+      blockDepthMapWithOverrides,
+      mainnetOverrides,
+      networkDetails,
+      "mainnet",
+    );
+
+    const testnetOverrides = await this.readValidatorOverrideFile("cre.testnet.json");
+    this.mergeValidatorOverrides(
+      batchSupportMapWithOverrides,
+      blockDepthMapWithOverrides,
+      testnetOverrides,
+      networkDetails,
+      "testnet",
+    );
+
+    return { batchSupportMapWithOverrides, blockDepthMapWithOverrides };
+  }
+
+  private mergeValidatorOverrides(
+    batchMap: Map<string, HealthyRpc[]>,
+    depthMap: Map<string, HealthyRpc[]>,
+    overrides: ValidatorOverrideData,
+    networkDetails: Record<string, NetworkDetails>,
+    networkType: "mainnet" | "testnet",
+  ): void {
+    for (const [networkName, entry] of Object.entries(overrides)) {
+      const network = networkDetails[networkName];
+
+      if (!network) {
+        warn(`Validator override network "${networkName}" not found in network details`);
+        continue;
+      }
+
+      if (network.networkType !== networkType) {
+        warn(
+          `Validator override network "${networkName}" is ${network.networkType} but found in cre.${networkType}.json`,
+        );
+        continue;
+      }
+
+      const chainId = entry.chainId;
+
+      const existingDepthUrls = new Set((depthMap.get(chainId) || []).map(r => r.url));
+      const existingBatchUrls = new Set((batchMap.get(chainId) || []).map(r => r.url));
+
+      for (const rpc of entry.rpcUrls) {
+        const baseRpc: HealthyRpc = {
+          chainId,
+          url: rpc.url,
+          source: "v2-networks" as const,
+          responseTime: 0,
+          returnedChainId: chainId,
+          lastBlockNumber: 0,
+        };
+
+        if (rpc.getLogsBlockDepth != null && !existingDepthUrls.has(rpc.url)) {
+          const depthList = depthMap.get(chainId) || [];
+          depthList.push({
+            ...baseRpc,
+            getLogsBlockDepth: rpc.getLogsBlockDepth,
+          });
+          depthMap.set(chainId, depthList);
+          existingDepthUrls.add(rpc.url);
+        }
+
+        if (rpc.maxBatchSize != null && !existingBatchUrls.has(rpc.url)) {
+          const batchList = batchMap.get(chainId) || [];
+          batchList.push({
+            ...baseRpc,
+            maxBatchSize: rpc.maxBatchSize,
+          });
+          batchMap.set(chainId, batchList);
+          existingBatchUrls.add(rpc.url);
+        }
+      }
+    }
   }
 
   /**
