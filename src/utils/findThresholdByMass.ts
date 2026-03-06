@@ -1,7 +1,4 @@
-export function findThresholdByMass(
-  arr: number[],
-  minShare = 0.3,
-): number {
+export function findThresholdByMass(arr: number[], minShare = 0.3): number {
   const freq = new Map<number, number>();
   let total = 0;
 
