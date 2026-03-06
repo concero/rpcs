@@ -4,6 +4,9 @@ interface Config {
   NETWORK_MODE: number;
   DOMAIN_BLACKLIST: string[];
   ENABLE_DOMAIN_BLACKLIST: boolean;
+  ENABLE_VALIDATOR_CONFIG: boolean;
+  BUILD_AUDIT_ENTRIES: boolean;
+  WHITELISTED_CHAIN_IDS: number[];
   IGNORED_CHAINLIST_CHAIN_IDS: number[];
   IGNORED_ETHEREUM_LISTS_CHAIN_IDS: number[];
   LOGGER: {
@@ -16,6 +19,30 @@ interface Config {
     HTTP_REQUEST_TIMEOUT_MS: number;
     RETRY_DELAY_MS: number;
     MAX_RETRIES: number;
+  };
+  DEPTH_TESTER: {
+    CONCURRENCY: number;
+    TIMEOUT_MS: number;
+    MAX_RETRIES: number;
+    RETRY_DELAY_MS: number;
+    BLOCK_RANGES: number[];
+  };
+  BATCH_TESTER: {
+    CONCURRENCY: number;
+    TIMEOUT_MS: number;
+    MAX_RETRIES: number;
+    RETRY_DELAY_MS: number;
+    BATCH_LIMITS: number[];
+  };
+  CRE_CONFIG: {
+    MIN_RPC_AMOUNT: number;
+    MIN_ACTIVE_NETWORK_RPC_AMOUNT: number;
+    MIN_BATCH_THRESHOLD: number;
+    MIN_DEPTH_THRESHOLD: number;
+    MIN_ACTIVE_CHAIN_BATCH: number;
+    MIN_ACTIVE_CHAIN_DEPTH: number;
+    BATCH_MASS_THRESHOLD: number;
+    DEPTH_MASS_THRESHOLD: number;
   };
   URLS: {
     CHAINLIST_RPCS_URL: string;
@@ -41,6 +68,9 @@ const config: Config = {
 
   DOMAIN_BLACKLIST: domainBlacklist,
   ENABLE_DOMAIN_BLACKLIST: true,
+  ENABLE_VALIDATOR_CONFIG: true,
+  BUILD_AUDIT_ENTRIES: false,
+  WHITELISTED_CHAIN_IDS: [],
   IGNORED_CHAINLIST_CHAIN_IDS: [
     2021, // roninSaigon
     81, // astar-shibuya
@@ -61,6 +91,33 @@ const config: Config = {
     HTTP_REQUEST_TIMEOUT_MS: 1000 * 5,
     RETRY_DELAY_MS: 150,
     MAX_RETRIES: 3,
+  },
+
+  DEPTH_TESTER: {
+    CONCURRENCY: 50,
+    TIMEOUT_MS: 5_000,
+    MAX_RETRIES: 3,
+    RETRY_DELAY_MS: 200,
+    BLOCK_RANGES: [10, 100, 1000, 5000, 10_000, 50_000, 100_000, 500_000],
+  },
+
+  BATCH_TESTER: {
+    CONCURRENCY: 50,
+    TIMEOUT_MS: 5_000,
+    MAX_RETRIES: 3,
+    RETRY_DELAY_MS: 200,
+    BATCH_LIMITS: [1, 5, 10, 20, 50, 100, 500, 1000],
+  },
+
+  CRE_CONFIG: {
+    MIN_RPC_AMOUNT: 1,
+    MIN_ACTIVE_NETWORK_RPC_AMOUNT: 10,
+    MIN_BATCH_THRESHOLD: 2,
+    MIN_DEPTH_THRESHOLD: 10,
+    MIN_ACTIVE_CHAIN_BATCH: 10,
+    MIN_ACTIVE_CHAIN_DEPTH: 100,
+    BATCH_MASS_THRESHOLD: 0.3,
+    DEPTH_MASS_THRESHOLD: 0.3,
   },
 
   URLS: {

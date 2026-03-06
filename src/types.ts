@@ -33,6 +33,8 @@ interface HealthyRpc extends RpcEndpoint {
   chainIdResponse?: JsonRpcResponse;
   blockNumberResponse?: JsonRpcResponse;
   getLogsResponse?: JsonRpcResponse;
+  getLogsBlockDepth?: number;
+  batchRequestLimit?: number;
 }
 
 interface ChainRpcOutput {

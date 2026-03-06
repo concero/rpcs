@@ -2,7 +2,13 @@ import config from "../constants/config";
 import { ChainlistRpcs, NetworkDetails, RpcEndpoint } from "../types";
 
 export function getSupportedChainIds(networkDetails: Record<string, NetworkDetails>): string[] {
-  const chainIds = Object.values(networkDetails).map(network => network.chainId.toString());
+  const chainIds = Object.values(networkDetails)
+    .map(network => network.chainId.toString())
+    .filter(
+      chainId =>
+        config.WHITELISTED_CHAIN_IDS.length === 0 ||
+        config.WHITELISTED_CHAIN_IDS.includes(parseInt(chainId, 10)),
+    );
   return chainIds;
 }
 

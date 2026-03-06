@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { info } from "../utils/logger";
 import { HealthyRpc, NetworkDetails } from "../types";
-import config from "../constants/config";
+import { ValidatorChainConfig } from "../utils/buildValidatorConfig";
 
 /**
  * Ensures the output directory exists, creating it if necessary
@@ -77,6 +77,43 @@ export function writeChainRpcFiles(
   modifiedFiles.push(mainnetPath);
 
   const testnetPath = path.join(outputDir, "testnet.json");
+  fs.writeFileSync(testnetPath, JSON.stringify(testnetChains, null, 2));
+  modifiedFiles.push(testnetPath);
+
+  return modifiedFiles;
+}
+
+export function writeValidatorConfigFiles(
+  validatorConfig: Map<string, ValidatorChainConfig>,
+  outputDir: string,
+  networkDetails: Record<string, NetworkDetails>,
+): string[] {
+  ensureOutputDirectoryExists(outputDir);
+
+  const mainnetChains: Record<string, ValidatorChainConfig> = {};
+  const testnetChains: Record<string, ValidatorChainConfig> = {};
+
+  for (const [networkName, data] of validatorConfig) {
+    const network = networkDetails[networkName];
+    if (!network) continue;
+
+    if (network.networkType === "mainnet") {
+      mainnetChains[networkName] = data;
+    } else if (network.networkType === "testnet") {
+      testnetChains[networkName] = data;
+    }
+  }
+
+  info(`Writing cre.mainnet.json with ${Object.keys(mainnetChains).length} chains`);
+  info(`Writing cre.testnet.json with ${Object.keys(testnetChains).length} chains`);
+
+  const modifiedFiles: string[] = [];
+
+  const mainnetPath = path.join(outputDir, `cre.mainnet.json`);
+  fs.writeFileSync(mainnetPath, JSON.stringify(mainnetChains, null, 2));
+  modifiedFiles.push(mainnetPath);
+
+  const testnetPath = path.join(outputDir, `cre.testnet.json`);
   fs.writeFileSync(testnetPath, JSON.stringify(testnetChains, null, 2));
   modifiedFiles.push(testnetPath);
 
