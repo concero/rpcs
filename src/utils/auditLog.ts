@@ -9,7 +9,7 @@ interface RpcAuditChainEntry {
     rpc: string;
     params: {
       getLogsBlockDepth: number;
-      maxBatchSize: number;
+      batchRequestLimit: number;
       error: string;
     };
   }[];
@@ -45,7 +45,7 @@ export function buildAuditEntries(
         rpc: url,
         params: {
           getLogsBlockDepth: depthByUrl.get(url)?.getLogsBlockDepth ?? 0,
-          maxBatchSize: batchByUrl.get(url)?.maxBatchSize ?? 0,
+          batchRequestLimit: batchByUrl.get(url)?.batchRequestLimit ?? 0,
           error,
         },
       };

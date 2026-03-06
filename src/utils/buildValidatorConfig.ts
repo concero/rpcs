@@ -5,7 +5,7 @@ import { findThresholdByMass } from "./findThresholdByMass";
 export interface ValidatorChainConfig {
   rpcUrls: string[];
   getLogsBlockDepth?: number;
-  maxBatchSize?: number;
+  batchRequestLimit?: number;
   chainSelector?: string | number;
   chainId: string;
 }
@@ -34,20 +34,18 @@ function computeChainThresholds(
   batchUrlMap: UrlMap;
 } {
   const filterForDepth = (getLogsBlockDepth: number) =>
-    activeChain
-      ? getLogsBlockDepth >= MIN_ACTIVE_CHAIN_DEPTH
-      : getLogsBlockDepth > 0;
-  const filterForBatch = (maxBatchSize: number) =>
-    activeChain ? maxBatchSize >= MIN_ACTIVE_CHAIN_BATCH : maxBatchSize > 0;
+    activeChain ? getLogsBlockDepth >= MIN_ACTIVE_CHAIN_DEPTH : getLogsBlockDepth > 0;
+  const filterForBatch = (batchRequestLimit: number) =>
+    activeChain ? batchRequestLimit >= MIN_ACTIVE_CHAIN_BATCH : batchRequestLimit > 0;
 
   const depthValues = depthRpcs.map(r => r.getLogsBlockDepth ?? 0).filter(filterForDepth);
-  const batchValues = batchRpcs.map(r => r.maxBatchSize ?? 0).filter(filterForBatch);
+  const batchValues = batchRpcs.map(r => r.batchRequestLimit ?? 0).filter(filterForBatch);
 
   const depthThreshold = findThresholdByMass(depthValues, DEPTH_MASS_THRESHOLD);
   const batchThreshold = findThresholdByMass(batchValues, BATCH_MASS_THRESHOLD);
 
   const depthUrlMap = new Map(depthRpcs.map(r => [r.url, r.getLogsBlockDepth ?? 0]));
-  const batchUrlMap = new Map(batchRpcs.map(r => [r.url, r.maxBatchSize ?? 0]));
+  const batchUrlMap = new Map(batchRpcs.map(r => [r.url, r.batchRequestLimit ?? 0]));
 
   return { depthThreshold, batchThreshold, depthUrlMap, batchUrlMap };
 }
@@ -120,7 +118,7 @@ export function buildValidatorConfig(
     result.set(networkName, {
       rpcUrls: finalUrls,
       ...(includeDepth && { getLogsBlockDepth: depthThreshold }),
-      ...(includeBatch && { maxBatchSize: batchThreshold }),
+      ...(includeBatch && { batchRequestLimit: batchThreshold }),
       chainSelector: network.chainSelector,
       chainId: chainIdStr,
     });

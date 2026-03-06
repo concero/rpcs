@@ -2,7 +2,7 @@ import config from "../constants/config";
 import { debug, info } from "../utils/logger";
 import type { HealthyRpc } from "../types";
 
-const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BATCH_SIZES } = config.BATCH_TESTER;
+const { CONCURRENCY, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS, BATCH_LIMITS } = config.BATCH_TESTER;
 
 const FINE_SEARCH_PRECISION = 2;
 
@@ -90,7 +90,7 @@ async function tryBatchWithRetries(
   return { ok: false, error: lastError };
 }
 
-async function findMaxBatchSize(
+async function findBatchRequestLimit(
   url: string,
   sizes: number[],
   timeoutMs: number,
@@ -190,14 +190,14 @@ export async function testBatchSupport(
         const rpc = items.shift()!;
         activeCount++;
 
-        findMaxBatchSize(rpc.url, BATCH_SIZES, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS)
+        findBatchRequestLimit(rpc.url, BATCH_LIMITS, TIMEOUT_MS, MAX_RETRIES, RETRY_DELAY_MS)
           .then(({ maxSize, error }) => {
-            rpc.maxBatchSize = maxSize;
+            rpc.batchRequestLimit = maxSize;
             if (error) rpcErrors.set(rpc.url, error);
             debug(`${rpc.url} max batch size: ${maxSize}`);
           })
           .catch(err => {
-            rpc.maxBatchSize = 0;
+            rpc.batchRequestLimit = 0;
             rpcErrors.set(rpc.url, String(err));
             debug(`Batch test failed for ${rpc.url}: ${err}`);
           })

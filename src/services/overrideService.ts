@@ -6,7 +6,7 @@ import { info, warn, debug } from "../utils/logger";
 interface OverrideEntry {
   rpcUrls: string[];
   getLogsBlockDepth?: number;
-  maxBatchSize?: number;
+  batchRequestLimit?: number;
   chainSelector?: number;
   chainId: string;
 }
@@ -18,7 +18,7 @@ interface OverrideData {
 interface ValidatorOverrideRpc {
   url: string;
   getLogsBlockDepth?: number;
-  maxBatchSize?: number;
+  batchRequestLimit?: number;
 }
 
 interface ValidatorOverrideEntry {
@@ -118,7 +118,7 @@ export class OverrideService {
    *     "rpcUrls": [{
    *         "url": "https://eth.example.com",
    *         "getLogsBlockDepth": 9999999,
-   *         "maxBatchSize": 9999999
+   *         "batchRequestLimit": 9999999
    *       }],
    *   }
    *   "chainSelector": 1,
@@ -205,11 +205,11 @@ export class OverrideService {
           existingDepthUrls.add(rpc.url);
         }
 
-        if (rpc.maxBatchSize != null && !existingBatchUrls.has(rpc.url)) {
+        if (rpc.batchRequestLimit != null && !existingBatchUrls.has(rpc.url)) {
           const batchList = batchMap.get(chainId) || [];
           batchList.push({
             ...baseRpc,
-            maxBatchSize: rpc.maxBatchSize,
+            batchRequestLimit: rpc.batchRequestLimit,
           });
           batchMap.set(chainId, batchList);
           existingBatchUrls.add(rpc.url);
@@ -259,7 +259,7 @@ export class OverrideService {
           returnedChainId: network.chainId.toString(),
           lastBlockNumber: 0,
           getLogsBlockDepth: override.getLogsBlockDepth ?? 0,
-          maxBatchSize: override.maxBatchSize ?? 0,
+          batchRequestLimit: override.batchRequestLimit ?? 0,
         }));
 
       if (newRpcs.length > 0) {

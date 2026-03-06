@@ -23,7 +23,8 @@ import { buildAuditEntries, appendAuditEntries } from "./utils/auditLog";
  * 2. Fetch RPC endpoints from multiple sources
  * 3. Test endpoints for health and performance
  * 4. Process results and generate two output files: mainnet.json and testnet.json
- * 5. Commit changes to repository if configured
+ * 5. Build separate validator config with batchRequestLimit and getLogsBlockDepth
+ * 6. Commit changes to repository if configured
  *
  * @returns Map of chain IDs to their healthy RPC endpoints
  */
@@ -62,49 +63,44 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
       networks,
     );
 
-    let batchSupportMap = new Map<string, HealthyRpc[]>();
-    let batchErrors = new Map<string, string>();
-    if (config.BATCH_TESTER.ENABLED) {
-      ({ healthyRpcs: batchSupportMap, rpcErrors: batchErrors } = await testBatchSupport(
-        testResult.healthyRpcs,
-      ));
-    }
-
-    let blockDepthMap = new Map<string, HealthyRpc[]>();
-    let depthErrors = new Map<string, string>();
-    if (config.DEPTH_TESTER.ENABLED) {
-      ({ healthyRpcs: blockDepthMap, rpcErrors: depthErrors } = await testGetLogsBlockDepths(
-        testResult.healthyRpcs,
-      ));
-    }
-
-    const { batchSupportMapWithOverrides, blockDepthMapWithOverrides } =
-      await overrideService.applyValidatorOverrides(batchSupportMap, blockDepthMap, networks);
-
-    if (config.BUILD_AUDIT_ENTRIES) {
-      const auditEntries = buildAuditEntries(
-        batchSupportMapWithOverrides,
-        blockDepthMapWithOverrides,
-        batchErrors,
-        depthErrors,
-        networks,
-      );
-      appendAuditEntries(auditEntries, config.OUTPUT_DIR);
-    }
-
-    const validatorConfig = buildValidatorConfig(
-      blockDepthMapWithOverrides,
-      batchSupportMapWithOverrides,
-      rpcsByNetworkWithOverrides,
-      networks,
-    );
-
-    writeValidatorConfigFiles(validatorConfig, config.OUTPUT_DIR, networks);
-
     // 7. Display statistics
     statsCollector.display();
 
-    // 8. Optional: commit changes
+    // 8. Optional: Create validator config if enabled
+    if (config.ENABLE_VALIDATOR_CONFIG) {
+      const { healthyRpcs: batchSupportMap, rpcErrors: batchErrors } = await testBatchSupport(
+        testResult.healthyRpcs,
+      );
+
+      const { healthyRpcs: blockDepthMap, rpcErrors: depthErrors } = await testGetLogsBlockDepths(
+        testResult.healthyRpcs,
+      );
+
+      const { batchSupportMapWithOverrides, blockDepthMapWithOverrides } =
+        await overrideService.applyValidatorOverrides(batchSupportMap, blockDepthMap, networks);
+
+      if (config.BUILD_AUDIT_ENTRIES) {
+        const auditEntries = buildAuditEntries(
+          batchSupportMapWithOverrides,
+          blockDepthMapWithOverrides,
+          batchErrors,
+          depthErrors,
+          networks,
+        );
+        appendAuditEntries(auditEntries, config.OUTPUT_DIR);
+      }
+
+      const validatorConfig = buildValidatorConfig(
+        blockDepthMapWithOverrides,
+        batchSupportMapWithOverrides,
+        rpcsByNetworkWithOverrides,
+        networks,
+      );
+
+      writeValidatorConfigFiles(validatorConfig, config.OUTPUT_DIR, networks);
+    }
+
+    // 9. Optional: commit changes
     if (shouldCommitChanges(modifiedFiles)) {
       await commitAndPushChanges(config.GIT.REPO_PATH, modifiedFiles);
     }
