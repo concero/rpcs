@@ -4,17 +4,85 @@ import { findThresholdByMass } from "./findThresholdByMass";
 
 export interface ValidatorChainConfig {
   rpcUrls: string[];
-  getLogsBlockDepth: number;
-  maxBatchSize: number;
+  getLogsBlockDepth?: number;
+  maxBatchSize?: number;
   chainSelector?: string | number;
   chainId: string;
 }
 
-const MIN_NETWORK_AMOUNT = 10;
+type UrlMap = Map<string, number>;
+
+const {
+  MIN_RPC_AMOUNT,
+  MIN_ACTIVE_NETWORK_RPC_AMOUNT,
+  MIN_BATCH_THRESHOLD,
+  MIN_DEPTH_THRESHOLD,
+  MIN_ACTIVE_CHAIN_BATCH,
+  MIN_ACTIVE_CHAIN_DEPTH,
+  BATCH_MASS_THRESHOLD,
+  DEPTH_MASS_THRESHOLD,
+} = config.CRE_CONFIG;
+
+function computeChainThresholds(
+  depthRpcs: HealthyRpc[],
+  batchRpcs: HealthyRpc[],
+  activeChain: boolean,
+): {
+  depthThreshold: number;
+  batchThreshold: number;
+  depthUrlMap: UrlMap;
+  batchUrlMap: UrlMap;
+} {
+  const filterForDepth = (getLogsBlockDepth: number) =>
+    activeChain
+      ? getLogsBlockDepth >= MIN_ACTIVE_CHAIN_DEPTH
+      : getLogsBlockDepth > 0;
+  const filterForBatch = (maxBatchSize: number) =>
+    activeChain ? maxBatchSize >= MIN_ACTIVE_CHAIN_BATCH : maxBatchSize > 0;
+
+  const depthValues = depthRpcs.map(r => r.getLogsBlockDepth ?? 0).filter(filterForDepth);
+  const batchValues = batchRpcs.map(r => r.maxBatchSize ?? 0).filter(filterForBatch);
+
+  const depthThreshold = findThresholdByMass(depthValues, DEPTH_MASS_THRESHOLD);
+  const batchThreshold = findThresholdByMass(batchValues, BATCH_MASS_THRESHOLD);
+
+  const depthUrlMap = new Map(depthRpcs.map(r => [r.url, r.getLogsBlockDepth ?? 0]));
+  const batchUrlMap = new Map(batchRpcs.map(r => [r.url, r.maxBatchSize ?? 0]));
+
+  return { depthThreshold, batchThreshold, depthUrlMap, batchUrlMap };
+}
+
+function filterAndSortUrls(
+  depthUrlMap: UrlMap,
+  batchUrlMap: UrlMap,
+  depthThreshold: number,
+  batchThreshold: number,
+): string[] {
+  const allUrls = new Set([...depthUrlMap.keys(), ...batchUrlMap.keys()]);
+
+  const rpcUrls = [...allUrls]
+    .filter(url => {
+      const depth = depthUrlMap.get(url) ?? 0;
+      const batch = batchUrlMap.get(url) ?? 0;
+      return depth >= depthThreshold && batch >= batchThreshold;
+    })
+    .sort((a, b) => {
+      const batchA = batchUrlMap.get(a) ?? 0;
+      const batchB = batchUrlMap.get(b) ?? 0;
+      if (batchA !== batchB) return batchB - batchA;
+
+      const depthA = depthUrlMap.get(a) ?? 0;
+      const depthB = depthUrlMap.get(b) ?? 0;
+      return depthB - depthA;
+    });
+
+  return rpcUrls;
+}
 
 export function buildValidatorConfig(
   blockDepthMap: Map<string, HealthyRpc[]>,
   batchSupportMap: Map<string, HealthyRpc[]>,
+  healthyRpcsMap: Map<string, HealthyRpc[]>,
   networkDetails: Record<string, NetworkDetails>,
 ): Map<string, ValidatorChainConfig> {
   const result = new Map<string, ValidatorChainConfig>();
@@ -26,63 +94,35 @@ export function buildValidatorConfig(
 
     if (depthRpcs.length === 0 && batchRpcs.length === 0) continue;
 
-    const activeChain = depthRpcs.length > MIN_NETWORK_AMOUNT;
+    const activeChain = depthRpcs.length > MIN_ACTIVE_NETWORK_RPC_AMOUNT;
+    const { depthThreshold, batchThreshold, depthUrlMap, batchUrlMap } = computeChainThresholds(
+      depthRpcs,
+      batchRpcs,
+      activeChain,
+    );
 
-    const filterForDepth = (getLogsBlockDepth: number) =>
-      activeChain ? getLogsBlockDepth >= config.DEPTH_TESTER.MIN_DEPTH : getLogsBlockDepth > 0;
-    const filterForBatch = (maxBatchSize: number) =>
-      activeChain ? maxBatchSize >= config.BATCH_TESTER.MIN_BATCH_SIZE : maxBatchSize > 0;
+    const rpcUrls = filterAndSortUrls(depthUrlMap, batchUrlMap, depthThreshold, batchThreshold);
 
-    const depthValues = depthRpcs.map(r => r.getLogsBlockDepth ?? 0).filter(filterForDepth);
-    const batchValues = batchRpcs.map(r => r.maxBatchSize ?? 0).filter(filterForBatch);
+    // Define fallback logic if we don't have enough good RPCs or if thresholds are too low
+    const allRpcsForChain = healthyRpcsMap.get(chainIdStr) || [];
 
-    const depthThreshold = findThresholdByMass(depthValues, config.DEPTH_TESTER.MASS_THRESHOLD);
-    const batchThreshold = findThresholdByMass(batchValues, config.BATCH_TESTER.MASS_THRESHOLD);
+    const needsFallback =
+      rpcUrls.length <= MIN_RPC_AMOUNT && allRpcsForChain.length > MIN_RPC_AMOUNT;
+    const thresholdsTooLow =
+      depthThreshold < MIN_DEPTH_THRESHOLD && batchThreshold < MIN_BATCH_THRESHOLD;
+    const useFallbackUrls = needsFallback || thresholdsTooLow;
 
-    const depthUrlMap = new Map(depthRpcs.map(r => [r.url, r.getLogsBlockDepth ?? 0]));
-    const batchUrlMap = new Map(batchRpcs.map(r => [r.url, r.maxBatchSize ?? 0]));
+    const finalUrls = useFallbackUrls ? allRpcsForChain.map(r => r.url) : rpcUrls;
 
-    const allUrls = new Set([...depthUrlMap.keys(), ...batchUrlMap.keys()]);
-
-    const rpcUrls = [...allUrls]
-      .filter(url => {
-        const depth = depthUrlMap.get(url) ?? 0;
-        const batch = batchUrlMap.get(url) ?? 0;
-        return depth >= depthThreshold && batch >= batchThreshold;
-      })
-      .sort((a, b) => {
-        const batchA = batchUrlMap.get(a) ?? 0;
-        const batchB = batchUrlMap.get(b) ?? 0;
-        if (batchA !== batchB) return batchB - batchA;
-
-        const depthA = depthUrlMap.get(a) ?? 0;
-        const depthB = depthUrlMap.get(b) ?? 0;
-        return depthB - depthA;
-      });
-
-    // TODO (if rpcUrls.length === 0 || 1) -> add all rpc and set default values for getLogsBlockDepth and maxBatchSize
-
-    if (rpcUrls.length === 0) {
-      console.log({
-        depthRpcs,
-        batchRpcs,
-        depthUrlMap,
-        batchUrlMap,
-        depthThreshold,
-        batchThreshold,
-        rpcUrls,
-        getLogsBlockDepth: depthThreshold,
-        maxBatchSize: batchThreshold,
-        chainId: network.chainId.toString(),
-      });
-    }
+    const includeDepth = !useFallbackUrls && depthThreshold >= MIN_DEPTH_THRESHOLD;
+    const includeBatch = !useFallbackUrls && batchThreshold >= MIN_BATCH_THRESHOLD;
 
     result.set(networkName, {
-      rpcUrls,
-      getLogsBlockDepth: depthThreshold,
-      maxBatchSize: batchThreshold,
+      rpcUrls: finalUrls,
+      ...(includeDepth && { getLogsBlockDepth: depthThreshold }),
+      ...(includeBatch && { maxBatchSize: batchThreshold }),
       chainSelector: network.chainSelector,
-      chainId: network.chainId.toString(),
+      chainId: chainIdStr,
     });
   }
 

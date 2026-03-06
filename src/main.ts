@@ -89,7 +89,12 @@ export async function main(): Promise<Map<string, HealthyRpc[]>> {
       appendAuditEntries(auditEntries, config.OUTPUT_DIR);
     }
 
-    const validatorConfig = buildValidatorConfig(blockDepthMap, batchSupportMap, networks);
+    const validatorConfig = buildValidatorConfig(
+      blockDepthMap,
+      batchSupportMap,
+      testResult.healthyRpcs,
+      networks,
+    );
 
     writeValidatorConfigFiles(validatorConfig, config.OUTPUT_DIR, networks);
 

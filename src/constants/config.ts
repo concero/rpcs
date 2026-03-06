@@ -26,8 +26,6 @@ interface Config {
     MAX_RETRIES: number;
     RETRY_DELAY_MS: number;
     BLOCK_RANGES: number[];
-    MASS_THRESHOLD: number;
-    MIN_DEPTH: number;
   };
   BATCH_TESTER: {
     ENABLED: boolean;
@@ -36,8 +34,16 @@ interface Config {
     MAX_RETRIES: number;
     RETRY_DELAY_MS: number;
     BATCH_SIZES: number[];
-    MASS_THRESHOLD: number;
-    MIN_BATCH_SIZE: number;
+  };
+  CRE_CONFIG: {
+    MIN_RPC_AMOUNT: number;
+    MIN_ACTIVE_NETWORK_RPC_AMOUNT: number;
+    MIN_BATCH_THRESHOLD: number;
+    MIN_DEPTH_THRESHOLD: number;
+    MIN_ACTIVE_CHAIN_BATCH: number;
+    MIN_ACTIVE_CHAIN_DEPTH: number;
+    BATCH_MASS_THRESHOLD: number;
+    DEPTH_MASS_THRESHOLD: number;
   };
   URLS: {
     CHAINLIST_RPCS_URL: string;
@@ -94,8 +100,6 @@ const config: Config = {
     MAX_RETRIES: 3,
     RETRY_DELAY_MS: 200,
     BLOCK_RANGES: [10, 100, 1000, 5000, 10_000, 50_000, 100_000, 500_000],
-    MASS_THRESHOLD: 0.3,
-    MIN_DEPTH: 100,
   },
 
   BATCH_TESTER: {
@@ -105,8 +109,17 @@ const config: Config = {
     MAX_RETRIES: 3,
     RETRY_DELAY_MS: 200,
     BATCH_SIZES: [1, 5, 10, 20, 50, 100, 500, 1000],
-    MASS_THRESHOLD: 0.3,
-    MIN_BATCH_SIZE: 10,
+  },
+
+  CRE_CONFIG: {
+    MIN_RPC_AMOUNT: 1,
+    MIN_ACTIVE_NETWORK_RPC_AMOUNT: 10,
+    MIN_BATCH_THRESHOLD: 2,
+    MIN_DEPTH_THRESHOLD: 10,
+    MIN_ACTIVE_CHAIN_BATCH: 10,
+    MIN_ACTIVE_CHAIN_DEPTH: 100,
+    BATCH_MASS_THRESHOLD: 0.3,
+    DEPTH_MASS_THRESHOLD: 0.3,
   },
 
   URLS: {
