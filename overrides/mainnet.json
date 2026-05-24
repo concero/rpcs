@@ -1,0 +1,9 @@
+{
+  "mythos": {
+    "chainId": 42018,
+    "chainSelector": 42018,
+    "rpcUrls": [
+      "https://mythos-mainnet.g.alchemy.com/public/"
+    ]
+  }
+}
